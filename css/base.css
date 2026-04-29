@@ -2015,6 +2015,67 @@ h2 {
 .sidebar-coupon-item__dl img { width: 16px; height: 16px; filter: brightness(0) invert(1); }
 
 /* =====================================================
+   RESTRICT PAGE — 서비스 이용 제한
+===================================================== */
+.restrict-page {
+    min-height: calc(100vh - var(--header-height) - 360px);
+    background: linear-gradient(135deg, #EDE9FF 0%, #FFE9E9 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 40px 60px;
+    gap: 48px;
+}
+
+.restrict-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 960px;
+    width: 100%;
+}
+
+.restrict-illust {
+    flex-shrink: 0;
+}
+
+.restrict-img {
+    width: 340px;
+    height: auto;
+}
+
+.restrict-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.restrict-title {
+    font-size: 30px;
+    color: var(--color-gray);
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+}
+
+.restrict-title strong {
+    font-weight: 700;
+}
+
+.restrict-desc {
+    font-size: 30px;
+    color: var(--color-gray);
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+}
+
+.restrict-notice {
+    font-size: var(--font-b2);
+    color: #AAAAAA;
+    text-align: center;
+}
+
+/* =====================================================
    RESPONSIVE — 태블릿 (max-width: 1024px)
 ===================================================== */
 @media (max-width: 1024px) {
@@ -2111,5 +2172,10 @@ h2 {
 
     .price-discount,
     .price-final { font-size: 16px; }
+
+    /* Restrict Page */
+    .restrict-content { flex-direction: column; gap: 32px; text-align: center; }
+    .restrict-img { width: 220px; }
+    .restrict-title, .restrict-desc { font-size: 20px; }
 }
 
