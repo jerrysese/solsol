@@ -2076,6 +2076,133 @@ h2 {
 }
 
 /* =====================================================
+   AUTH PAGE — 회원가입 / 로그인
+===================================================== */
+.auth-body {
+    background: #F2F2F2;
+    min-height: 100vh;
+}
+
+.auth-breadcrumb {
+    position: fixed;
+    top: 16px;
+    left: 20px;
+    font-size: var(--font-b2);
+    color: #AAAAAA;
+}
+
+.auth-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 16px 160px;
+}
+
+.auth-card {
+    width: 640px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 50px 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
+}
+
+.auth-logo img {
+    width: 114px;
+    height: 20px;
+}
+
+.auth-title {
+    font-size: var(--font-h2);
+    font-weight: 500;
+    color: var(--color-gray);
+    letter-spacing: -0.3px;
+    margin: 0;
+}
+
+.auth-google-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-social-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    font-size: var(--font-h5);
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    letter-spacing: -0.2px;
+}
+
+.auth-btn-ico {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 20px;
+}
+
+.auth-btn--google {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+}
+
+.auth-btn--kakao {
+    background: #FEE500;
+    color: #191919;
+}
+
+.auth-btn--naver {
+    background: #03C75A;
+    color: #FFFFFF;
+}
+
+.auth-btn--apple {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.auth-btn--facebook {
+    background: #1877F2;
+    color: #FFFFFF;
+}
+
+.auth-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-b2);
+    color: #AAAAAA;
+    line-height: 1.5;
+}
+
+.auth-info-ico {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* =====================================================
    RESPONSIVE — 태블릿 (max-width: 1024px)
 ===================================================== */
 @media (max-width: 1024px) {
@@ -2177,5 +2304,8 @@ h2 {
     .restrict-content { flex-direction: column; gap: 32px; text-align: center; }
     .restrict-img { width: 220px; }
     .restrict-title, .restrict-desc { font-size: 20px; }
+
+    /* Auth Page */
+    .auth-card { width: 100%; padding: 40px 24px; border-radius: 20px; }
 }
 
