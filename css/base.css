@@ -2138,7 +2138,7 @@ h2 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0;
 }
 
 .auth-btn {
@@ -2186,7 +2186,7 @@ h2 {
 }
 
 .auth-btn--facebook {
-    background: #8866FF;
+    background: #0866FF;
     color: #FFFFFF;
 }
 
