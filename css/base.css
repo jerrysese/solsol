@@ -2163,6 +2163,7 @@ h2 {
     cursor: pointer;
     position: relative;
     letter-spacing: -0.2px;
+    overflow: hidden;
 }
 
 .auth-btn-ico {
@@ -2196,6 +2197,36 @@ h2 {
 .auth-btn--facebook {
     background: #0866FF;
     color: #FFFFFF;
+}
+
+.auth-recent-badge {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.auth-recent-badge__nub {
+    width: 6px;
+    height: 22px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.auth-recent-badge__text {
+    display: flex;
+    padding: 5px 12px;
+    align-items: center;
+    border-radius: 3px;
+    background: #7954C6;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.24px;
+    line-height: 1.5;
+    white-space: nowrap;
 }
 
 .auth-info {
