@@ -2203,8 +2203,10 @@ h2 {
     align-items: center;
     gap: 6px;
     font-size: var(--font-b2);
-    color: #AAAAAA;
+    font-weight: 500;
+    color: #888888;
     line-height: 1.5;
+    letter-spacing: -0.48px;
 }
 
 .auth-info-ico {
