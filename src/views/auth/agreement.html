@@ -8,7 +8,7 @@
 </head>
 <body class="auth-body">
 
-    <span class="auth-breadcrumb">회원가입</span>
+    <span class="auth-breadcrumb">회원가입 &gt; 약관동의</span>
 
     <main class="auth-wrap">
         <div class="auth-card">
@@ -69,5 +69,23 @@
         </div>
     </main>
 
+    <script>
+        const agreeAll = document.getElementById('agreeAll');
+        const items = [
+            document.getElementById('agree1'),
+            document.getElementById('agree2'),
+            document.getElementById('agree3')
+        ];
+
+        agreeAll.addEventListener('change', () => {
+            items.forEach(cb => cb.checked = agreeAll.checked);
+        });
+
+        items.forEach(cb => {
+            cb.addEventListener('change', () => {
+                agreeAll.checked = items.every(c => c.checked);
+            });
+        });
+    </script>
 </body>
 </html>
