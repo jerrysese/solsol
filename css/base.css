@@ -2201,7 +2201,7 @@ h2 {
 
 .auth-recent-badge {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
