@@ -2355,6 +2355,122 @@ h2 {
 
 
 /* =====================================================
+   AUTH AGREEMENT MODAL — 약관 상세 모달
+===================================================== */
+.modal-overlay {
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.agreement-modal {
+    width: 640px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.agreement-modal__header {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.agreement-modal__title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #323232;
+    letter-spacing: -0.8px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.agreement-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.agreement-modal__close img {
+    width: 17px;
+    height: 17px;
+}
+
+.agreement-modal__body {
+    display: flex;
+    padding: 0 30px 30px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.agreement-modal__content {
+    height: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    background: #F8F8F8;
+    overflow-y: auto;
+    align-self: stretch;
+    font-size: 13px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.8;
+    letter-spacing: -0.26px;
+}
+
+.agreement-modal__content p {
+    margin-bottom: 14px;
+}
+
+.agreement-modal__content strong {
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+.agreement-modal__agree {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 5px;
+    background: var(--color-primary);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-base);
+    font-size: 17px;
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    transition: opacity 0.15s ease;
+}
+
+.agreement-modal__agree:hover { opacity: 0.88; }
+
+.agreement-modal__agree-ico {
+    width: 14px;
+    height: 10px;
+}
+
+
+/* =====================================================
    RESPONSIVE — 태블릿 (max-width: 1024px)
 ===================================================== */
 @media (max-width: 1024px) {
