@@ -2321,7 +2321,7 @@ h2 {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 0 5px 5px;
     flex-shrink: 0;
 }
 
@@ -2339,7 +2339,7 @@ h2 {
     cursor: pointer;
     font-family: var(--font-base);
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 500;
     color: #FFFFFF;
     letter-spacing: -1px;
     transition: opacity 0.15s ease;
