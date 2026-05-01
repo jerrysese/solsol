@@ -2214,6 +2214,125 @@ h2 {
 }
 
 /* =====================================================
+   AUTH AGREEMENT PAGE — 약관 동의
+===================================================== */
+.agree-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.agree-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-primary);
+    flex-shrink: 0;
+    cursor: pointer;
+    margin: 0;
+}
+
+.agree-all {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    border-bottom: 1px solid #EEEEEE;
+    cursor: pointer;
+}
+
+.agree-all-text {
+    font-size: var(--font-h5);
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.6px;
+    line-height: 1.5;
+}
+
+.agree-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.agree-item--last { border-bottom: none; }
+
+.agree-row-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    height: 100%;
+    cursor: pointer;
+}
+
+.agree-badge {
+    display: flex;
+    width: 45px;
+    height: 25px;
+    padding: 3.5px 11px 3.5px 13px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-size: var(--font-b2);
+    font-weight: 500;
+    color: #FFFFFF;
+    flex-shrink: 0;
+}
+
+.agree-badge--required { background: #FC5758; }
+.agree-badge--optional { background: #2BACF4; }
+
+.agree-label {
+    font-size: var(--font-h5);
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.6px;
+    line-height: 1.5;
+}
+
+.agree-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+.agree-submit-btn {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 5px;
+    background: var(--color-primary);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-base);
+    font-size: var(--font-h5);
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: -0.6px;
+    transition: opacity 0.15s ease;
+}
+
+.agree-submit-btn:hover { opacity: 0.88; }
+
+.agree-submit-ico {
+    width: 15px;
+    height: 15px;
+    filter: brightness(0) invert(1);
+}
+
+
+/* =====================================================
    RESPONSIVE — 태블릿 (max-width: 1024px)
 ===================================================== */
 @media (max-width: 1024px) {

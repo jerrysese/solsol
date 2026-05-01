@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="../../../css/base.css">
+</head>
+<body class="auth-body">
+
+    <span class="auth-breadcrumb">회원가입</span>
+
+    <main class="auth-wrap">
+        <div class="auth-card">
+
+            <a href="#" class="auth-logo">
+                <img src="../../images/monzo.png" alt="로고">
+            </a>
+
+            <h1 class="auth-title">회원가입</h1>
+
+            <div class="agree-section">
+
+                <label class="agree-all" for="agreeAll">
+                    <input type="checkbox" id="agreeAll" class="agree-checkbox">
+                    <span class="agree-all-text">전체동의</span>
+                </label>
+
+                <div class="agree-item">
+                    <label class="agree-row-left" for="agree1">
+                        <input type="checkbox" id="agree1" class="agree-checkbox">
+                        <span class="agree-badge agree-badge--required">필수</span>
+                        <span class="agree-label">이용약관</span>
+                    </label>
+                    <button class="agree-toggle" type="button" aria-label="이용약관 보기">
+                        <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5.5 5L10 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="agree-item">
+                    <label class="agree-row-left" for="agree2">
+                        <input type="checkbox" id="agree2" class="agree-checkbox">
+                        <span class="agree-badge agree-badge--required">필수</span>
+                        <span class="agree-label">개인정보처리방침</span>
+                    </label>
+                    <button class="agree-toggle" type="button" aria-label="개인정보처리방침 보기">
+                        <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5.5 5L10 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="agree-item agree-item--last">
+                    <label class="agree-row-left" for="agree3">
+                        <input type="checkbox" id="agree3" class="agree-checkbox">
+                        <span class="agree-badge agree-badge--optional">선택</span>
+                        <span class="agree-label">마케팅정보수신동의</span>
+                    </label>
+                    <button class="agree-toggle" type="button" aria-label="마케팅정보수신동의 보기">
+                        <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5.5 5L10 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+
+            <button class="agree-submit-btn" type="button">
+                <img src="../../images/ico-profile.svg" alt="" class="agree-submit-ico">
+                회원가입
+            </button>
+
+        </div>
+    </main>
+
+</body>
+</html>
