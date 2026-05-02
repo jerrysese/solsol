@@ -2885,7 +2885,7 @@ h2 {
 .community-list-sub-bar__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 100px;
     width: 100%;
 }
 
@@ -2918,6 +2918,7 @@ h2 {
     letter-spacing: -0.8px;
     line-height: 150%;
     white-space: nowrap;
+    margin-left: 10px;
 }
 
 .community-list-sub-items {
