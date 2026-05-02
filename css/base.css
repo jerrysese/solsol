@@ -2872,18 +2872,21 @@ h2 {
 /* 구독정보 바 */
 .community-list-sub-bar {
     width: 100%;
-    padding: 15px 20px 15px 40px;
-    border: 1px solid #EEEEEE;
+    height: 80px;
+    padding: 0 20px 0 40px;
     border-radius: 10px;
-    background: #FFFFFF;
+    background: #F8F8F8;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
 }
 
 .community-list-sub-bar__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex: 1 0 0;
+    width: 100%;
 }
 
 .community-list-sub-label {
