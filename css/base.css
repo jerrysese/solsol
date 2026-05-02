@@ -2572,10 +2572,11 @@ h2 {
 
 .community-card__thumb-text {
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 0;
     right: 0;
-    padding: 20px;
+    transform: translateY(-50%);
+    padding: 0 20px;
     font-size: 18px;
     font-weight: 500;
     color: #888888;
@@ -2756,6 +2757,8 @@ h2 {
     justify-content: space-between;
     width: 100%;
     gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
 }
 
 /* 상품명 */
@@ -2791,7 +2794,6 @@ h2 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #EEEEEE;
 }
 
 .community-benefits-heading {
