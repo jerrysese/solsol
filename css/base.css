@@ -2504,6 +2504,259 @@ h2 {
 
 
 /* =====================================================
+   COMMUNITY PAGE
+===================================================== */
+
+.page-banner--community {
+    background-image: url('../src/images/community-index-banner.png');
+}
+
+.community-content {
+    max-width: 1440px;
+    width: 100%;
+    margin: 80px auto 100px;
+    padding: 0 40px;
+}
+
+.community-title {
+    font-size: var(--font-h1);
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -1.7px;
+    margin-bottom: 30px;
+}
+
+.community-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 카드 */
+.community-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 50px;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+/* 썸네일 */
+.community-card__thumb {
+    width: 260px;
+    min-height: 260px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.community-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 카드 본문 */
+.community-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.community-card__top {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* 구독중 배지 */
+.community-badge--active {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    height: 26px;
+    padding: 0 10px;
+    background: #31AD60;
+    border-radius: 13px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: -0.39px;
+}
+
+/* 상품명 */
+.community-card__name {
+    font-size: var(--font-h3);
+    font-weight: 700;
+    color: #222222;
+    letter-spacing: -0.6px;
+}
+
+/* 가격 */
+.community-card__price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.community-card__price-label {
+    font-size: var(--font-h5);
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.45px;
+}
+
+.community-card__price {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.78px;
+}
+
+.community-card__price-unit {
+    font-size: var(--font-h5);
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.45px;
+}
+
+/* 설명 */
+.community-card__desc {
+    font-size: var(--font-h5);
+    font-weight: 400;
+    color: #555555;
+    letter-spacing: -0.45px;
+    line-height: 1.65;
+}
+
+/* 혜택 목록 */
+.community-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.community-benefit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.community-benefit__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #A882EE 0%, #7954C6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.community-benefit__icon img {
+    width: 14px;
+    height: 14px;
+}
+
+.community-benefit__text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333;
+    letter-spacing: -0.42px;
+}
+
+/* 하단 버튼 + 정보 */
+.community-card__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #EEEEEE;
+}
+
+/* 구독 시작 버튼 */
+.community-btn--subscribe {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 30px;
+    background: var(--color-primary);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: -0.48px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s ease;
+}
+
+.community-btn--subscribe:hover { opacity: 0.88; }
+
+/* 바로가기 버튼 */
+.community-btn--goto {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 50px;
+    padding: 0 24px;
+    background: #F4F0FC;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: -0.48px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.15s ease;
+}
+
+.community-btn--goto img {
+    width: 10px;
+    height: 9px;
+}
+
+.community-btn--goto:hover { background: #EBE4FA; }
+
+/* 구독 정보 행 */
+.community-sub-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.community-sub-row {
+    display: flex;
+    align-items: center;
+}
+
+.community-sub-label {
+    font-size: var(--font-b1);
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.39px;
+    min-width: 90px;
+}
+
+.community-sub-value {
+    font-size: var(--font-b1);
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.39px;
+}
+
+
+/* =====================================================
    RESPONSIVE — 태블릿 (max-width: 1024px)
 ===================================================== */
 @media (max-width: 1024px) {
