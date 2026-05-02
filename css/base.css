@@ -2522,9 +2522,10 @@ h2 {
 
 .community-title {
     font-size: var(--font-h1);
-    font-weight: 700;
+    font-weight: 500;
     color: #333333;
-    letter-spacing: -1.36px;
+    line-height: 150%;
+    letter-spacing: -1.7px;
 }
 
 .community-list {
