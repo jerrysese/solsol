@@ -3012,10 +3012,15 @@ h2 {
 .community-list-search-input {
     width: 419px;
     height: 40px;
-    padding: 0 20px;
+    padding: 0 26px 0 20px;
     border: 1px solid #EEEEEE;
-    border-radius: 0 20px 20px 0;
-    background: #FEFDFE;
+    border-right: none;
+    border-radius: 0;
+    background-color: #FEFDFE;
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='40'><path d='M20 0A20 20 0 0 0 20 40z' fill='white'/><path d='M20 0A20 20 0 0 0 20 40' stroke='rgb(238,238,238)' stroke-width='1' fill='none'/></svg>");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 20px 40px;
     font-size: 12px;
     font-weight: 400;
     color: #333333;
