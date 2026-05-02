@@ -3007,6 +3007,8 @@ h2 {
     display: flex;
     align-items: center;
     position: relative;
+    width: 419px;
+    flex-shrink: 0;
 }
 
 .community-list-search-input {
@@ -3047,8 +3049,8 @@ h2 {
 }
 
 .community-list-search-btn img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 23px;
 }
 
 /* 게시글 목록 */
