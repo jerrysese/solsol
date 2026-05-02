@@ -81,114 +81,123 @@
 
                 <!-- 카드 1: 구독중 상품 -->
                 <div class="community-card">
-                    <div class="community-card__thumb">
-                        <img src="../../images/community-card-thumb.png" alt="커뮤니티 썸네일">
-                    </div>
-                    <div class="community-card__body">
-                        <div class="community-card__top">
+
+                    <!-- 왼쪽: 썸네일 + 버튼 + 구독 정보 -->
+                    <div class="community-card__left">
+                        <div class="community-card__thumb">
                             <span class="community-badge--active">구독중</span>
-                            <h2 class="community-card__name">DJ테크트리 멤버십 커뮤니티</h2>
-                            <div class="community-card__price-wrap">
-                                <span class="community-card__price-label">월</span>
-                                <span class="community-card__price">00,000</span>
-                                <span class="community-card__price-unit">원</span>
+                            <img src="../../images/community-card-thumb.png" alt="커뮤니티 썸네일">
+                        </div>
+                        <button class="community-btn--goto" type="button">
+                            <img src="../../images/arrow-left.svg" alt="">
+                            바로가기
+                        </button>
+                        <div class="community-sub-info">
+                            <div class="community-sub-row">
+                                <span class="community-sub-icon">
+                                    <img src="../../images/ico-calendar.svg" alt="">
+                                </span>
+                                <span class="community-sub-label">시작일</span>
+                                <span class="community-sub-value">2000.00.00</span>
                             </div>
-                            <p class="community-card__desc">프리미엄 멤버십에 가입하고 다양한 전용 콘텐츠와 혜택을 누려보세요. 멤버 전용 커뮤니티에서 강사와 직접 소통하고 특별한 경험을 만들어 보세요.</p>
+                            <div class="community-sub-row">
+                                <span class="community-sub-icon">
+                                    <img src="../../images/ico-clock.svg" alt="">
+                                </span>
+                                <span class="community-sub-label">구독유지기간</span>
+                                <span class="community-sub-value">0개월</span>
+                            </div>
+                            <div class="community-sub-row">
+                                <span class="community-sub-icon">
+                                    <img src="../../images/ico-calendar.svg" alt="">
+                                </span>
+                                <span class="community-sub-label">결제예정일</span>
+                                <span class="community-sub-value community-sub-value--alert">2000.00.00</span>
+                            </div>
+                            <div class="community-sub-row">
+                                <span class="community-sub-icon">
+                                    <img src="../../images/ico-calendar.svg" alt="">
+                                </span>
+                                <span class="community-sub-label">만료일</span>
+                                <span class="community-sub-value community-sub-value--alert">2000.00.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 콘텐츠 박스 -->
+                    <div class="community-card__right">
+                        <span class="community-card__category">멤버십 상품</span>
+                        <div class="community-card__title-row">
+                            <h2 class="community-card__name">DJ테크트리 멤버십 커뮤니티</h2>
+                            <span class="community-card__price">₩ 00,000 / 월</span>
+                        </div>
+                        <p class="community-card__desc">프리미엄 멤버십에 가입하고 다양한 전용 콘텐츠와 혜택을 누려보세요. 멤버 전용 커뮤니티에서 강사와 직접 소통하고 특별한 경험을 만들어 보세요.</p>
+                        <div class="community-benefits-section">
+                            <h3 class="community-benefits-heading">혜택</h3>
                             <ul class="community-benefits">
                                 <li class="community-benefit">
-                                    <span class="community-benefit__icon">
-                                        <img src="../../images/ico-benefit.svg" alt="">
-                                    </span>
+                                    <span class="community-benefit__icon" aria-hidden="true"></span>
                                     <span class="community-benefit__text">멤버 전용 비공개 커뮤니티 게시판 이용</span>
                                 </li>
                                 <li class="community-benefit">
-                                    <span class="community-benefit__icon">
-                                        <img src="../../images/ico-benefit.svg" alt="">
-                                    </span>
+                                    <span class="community-benefit__icon" aria-hidden="true"></span>
                                     <span class="community-benefit__text">월 1회 전용 라이브 스트리밍 참여 가능</span>
                                 </li>
                                 <li class="community-benefit">
-                                    <span class="community-benefit__icon">
-                                        <img src="../../images/ico-benefit.svg" alt="">
-                                    </span>
+                                    <span class="community-benefit__icon" aria-hidden="true"></span>
                                     <span class="community-benefit__text">오프라인 모임 및 네트워킹 이벤트 참여</span>
                                 </li>
                                 <li class="community-benefit">
-                                    <span class="community-benefit__icon">
-                                        <img src="../../images/ico-benefit.svg" alt="">
-                                    </span>
+                                    <span class="community-benefit__icon" aria-hidden="true"></span>
                                     <span class="community-benefit__text">강의 및 디지털 상품 멤버 전용 할인 혜택</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="community-card__bottom">
-                            <button class="community-btn community-btn--goto" type="button">
-                                <img src="../../images/ico-arrow-left.svg" alt="">
-                                바로가기
-                            </button>
-                            <div class="community-sub-info">
-                                <div class="community-sub-row">
-                                    <span class="community-sub-label">시작일</span>
-                                    <span class="community-sub-value">2000.00.00</span>
-                                </div>
-                                <div class="community-sub-row">
-                                    <span class="community-sub-label">구독유지기간</span>
-                                    <span class="community-sub-value">0개월</span>
-                                </div>
-                                <div class="community-sub-row">
-                                    <span class="community-sub-label">결제예정일</span>
-                                    <span class="community-sub-value">2000.00.00</span>
-                                </div>
-                                <div class="community-sub-row">
-                                    <span class="community-sub-label">만료일</span>
-                                    <span class="community-sub-value">2000.00.00</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+
                 </div>
 
                 <!-- 카드 2: 미구독 상품 -->
                 <div class="community-card">
-                    <div class="community-card__thumb">
-                        <img src="../../images/community-card-thumb.png" alt="커뮤니티 썸네일">
+
+                    <!-- 왼쪽: 썸네일 + 구독 버튼 -->
+                    <div class="community-card__left">
+                        <div class="community-card__thumb">
+                            <img src="../../images/community-card-thumb.png" alt="커뮤니티 썸네일">
+                        </div>
+                        <button class="community-btn--subscribe" type="button">
+                            <img src="../../images/ico-signup.svg" alt="">
+                            구독 시작하기
+                        </button>
                     </div>
-                    <div class="community-card__body">
-                        <div class="community-card__top">
+
+                    <!-- 오른쪽: 콘텐츠 박스 -->
+                    <div class="community-card__right">
+                        <span class="community-card__category">멤버십 상품</span>
+                        <div class="community-card__title-row">
                             <h2 class="community-card__name">DJ테크트리 스탠다드 커뮤니티</h2>
-                            <div class="community-card__price-wrap">
-                                <span class="community-card__price-label">월</span>
-                                <span class="community-card__price">00,000</span>
-                                <span class="community-card__price-unit">원</span>
-                            </div>
-                            <p class="community-card__desc">스탠다드 커뮤니티에서 기본 멤버십 혜택을 경험해 보세요. 정기적인 콘텐츠 업데이트와 다양한 멤버 전용 혜택이 제공됩니다.</p>
+                            <span class="community-card__price">₩ 00,000 / 월</span>
+                        </div>
+                        <p class="community-card__desc">스탠다드 커뮤니티에서 기본 멤버십 혜택을 경험해 보세요. 정기적인 콘텐츠 업데이트와 다양한 멤버 전용 혜택이 제공됩니다.</p>
+                        <div class="community-benefits-section">
+                            <h3 class="community-benefits-heading">혜택</h3>
                             <ul class="community-benefits">
                                 <li class="community-benefit">
-                                    <span class="community-benefit__icon">
-                                        <img src="../../images/ico-benefit.svg" alt="">
-                                    </span>
+                                    <span class="community-benefit__icon" aria-hidden="true"></span>
                                     <span class="community-benefit__text">멤버 전용 비공개 커뮤니티 게시판 이용</span>
                                 </li>
                                 <li class="community-benefit">
-                                    <span class="community-benefit__icon">
-                                        <img src="../../images/ico-benefit.svg" alt="">
-                                    </span>
+                                    <span class="community-benefit__icon" aria-hidden="true"></span>
                                     <span class="community-benefit__text">월 1회 전용 라이브 스트리밍 참여 가능</span>
                                 </li>
                                 <li class="community-benefit">
-                                    <span class="community-benefit__icon">
-                                        <img src="../../images/ico-benefit.svg" alt="">
-                                    </span>
+                                    <span class="community-benefit__icon" aria-hidden="true"></span>
                                     <span class="community-benefit__text">강의 및 디지털 상품 멤버 전용 할인 혜택</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="community-card__bottom">
-                            <button class="community-btn community-btn--subscribe" type="button">
-                                구독 시작하기
-                            </button>
-                        </div>
                     </div>
+
                 </div>
 
             </div>
