@@ -3201,6 +3201,8 @@ h2 {
 }
 
 .community-post-body {
+    flex: 1;
+    min-width: 0;
     font-size: 13px;
     font-weight: 400;
     color: #555;
