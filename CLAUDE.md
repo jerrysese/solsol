@@ -41,6 +41,25 @@ CSS 클래스: `.agree-submit-btn` / `.agree-submit-ico` (base.css 정의)
 </button>
 ```
 
+## 공통 검색창 패턴
+
+**기준 페이지: `src/views/live/list.html`** — 모든 페이지의 검색창은 이 디자인을 따른다.
+
+```html
+<div class="filter-search">
+    <input type="text" class="filter-search__input" placeholder="검색어를 입력해주세요.">
+    <button class="filter-search__btn" type="button" aria-label="검색">
+        <img src="../../images/ico-search.svg" alt="검색">
+    </button>
+</div>
+```
+
+CSS 클래스: `.filter-search` / `.filter-search__input` / `.filter-search__btn` (base.css 정의)
+- 컨테이너: width 460px, height 40px, border 1px solid #DDDDDD, border-radius 5px
+- 버튼: 우측 고정, border-left 구분선, ico-search.svg 아이콘
+
+---
+
 ## CSS 파일 구조
 - `css/base.css` — 전체 공통 스타일 (컴포넌트 별 섹션으로 구분)
 - Auth 페이지 섹션: `AUTH PAGE`, `AUTH AGREEMENT PAGE`, `AUTH AGREEMENT MODAL`
