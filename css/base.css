@@ -3320,9 +3320,9 @@ h2 {
 /* 제목 행 (독립 박스) */
 .write-title-row {
     display: flex;
-    padding: 10px;
+    padding: 8px;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     align-self: stretch;
     background: #F8F8F8;
     border-radius: 10px;
@@ -3345,20 +3345,23 @@ h2 {
     letter-spacing: -0.8px;
     line-height: 150%;
     flex-shrink: 0;
+    padding: 0 12px;
     cursor: default;
 }
 
 .write-title-input {
-    flex: 1;
-    height: 30px;
-    border: none;
-    background: transparent;
+    flex: 1 0 0;
+    height: 50px;
+    border: 0.6px solid #EEEEEE;
+    border-radius: 8px;
+    background: #FFFFFF;
     font-family: var(--font-base);
     font-size: 15px;
     color: #333333;
     letter-spacing: -0.3px;
-    padding: 0 8px;
+    padding: 0 20px;
     outline: none;
+    box-sizing: border-box;
 }
 
 .write-title-input::placeholder {
