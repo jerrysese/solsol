@@ -3526,22 +3526,28 @@ h2 {
 
 .write-file-item {
     display: flex;
+    height: 50px;
+    padding: 0 20px;
     align-items: center;
-    gap: 8px;
-    max-width: 360px;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 5px;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
 }
 
 .write-file-ico {
-    width: 16px;
+    width: 13px;
     height: 16px;
     flex-shrink: 0;
 }
 
 .write-file-name {
     flex: 1;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 400;
     color: #333333;
-    letter-spacing: -0.28px;
+    line-height: normal;
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3549,8 +3555,8 @@ h2 {
 }
 
 .write-file-remove {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3559,14 +3565,12 @@ h2 {
     cursor: pointer;
     flex-shrink: 0;
     padding: 0;
-    opacity: 0.6;
+    margin-left: auto;
 }
 
-.write-file-remove:hover { opacity: 1; }
-
 .write-file-remove img {
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
 }
 
 .write-file-preview {
