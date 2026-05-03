@@ -3327,6 +3327,23 @@ h2 {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
+
+    /* Community Index */
+    .community-content { margin: 60px auto 100px; padding: 0 24px; }
+    .community-card { gap: 30px; padding: 24px; }
+    .community-card__left { flex: 0 0 320px; width: 320px; }
+    .community-card__thumb { height: 190px; }
+    .community-card__right { padding: 30px; }
+    .community-card__right-col { gap: 30px; }
+
+    /* Community List */
+    .community-list-content { margin: 60px auto 100px; padding: 0 24px; }
+    .community-list-sub-bar { padding: 0 20px; }
+    .community-list-sub-bar__inner { gap: 40px; }
+    .community-list-sub-label__text,
+    .community-list-sub-name,
+    .community-list-sub-value { font-size: 15px; letter-spacing: -0.6px; }
+    .community-list-sub-items { gap: 24px; }
 }
 
 
@@ -3398,5 +3415,72 @@ h2 {
 
     /* Auth Page */
     .auth-card { width: 100%; padding: 40px 24px; border-radius: 20px; }
+
+    /* Community Index */
+    .community-content { margin: 40px auto 80px; padding: 0 16px; }
+
+    .community-card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .community-card__left {
+        flex: none;
+        width: 100%;
+    }
+
+    .community-card__thumb { height: 200px; }
+
+    .community-card__right-col {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .community-card__right {
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .community-card__title-row { flex-direction: column; gap: 8px; }
+
+    .community-card__name { font-size: 22px; }
+
+    .community-card__price { font-size: 18px; }
+
+    /* Community List */
+    .community-list-content { margin: 40px auto 80px; padding: 0 16px; gap: 16px; }
+
+    .community-list-sub-bar {
+        height: auto;
+        padding: 16px;
+    }
+
+    .community-list-sub-bar__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .community-list-sub-label__text,
+    .community-list-sub-name { font-size: 14px; letter-spacing: -0.56px; white-space: normal; }
+
+    .community-list-sub-name { margin-left: 6px; }
+
+    .community-list-sub-items { flex-wrap: wrap; gap: 8px 16px; }
+
+    .community-list-sub-value { font-size: 14px; letter-spacing: -0.56px; }
+
+    .community-list-sub-badge { font-size: 11px; padding: 0 8px; height: 22px; }
+
+    .community-list-filter { flex-direction: column; gap: 10px; }
+
+    .community-list-sort { width: 100%; }
+
+    .filter-search { width: 100%; }
+
+    .community-load-more-btn { font-size: 15px; }
+
+    .community-write-row { margin-top: 0; }
 }
 
