@@ -3235,22 +3235,21 @@ h2 {
 
 /* 더보기 버튼 */
 .community-load-more-btn {
-    width: 100%;
-    height: 60px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    border-radius: 5px;
-    border: 1px solid #EEEEEE;
-    background: #FFFFFF;
+    gap: 20px;
+    margin: 0 auto 30px;
+    padding: 0;
+    background: none;
+    border: none;
     cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
-    color: #333333;
-    letter-spacing: -0.6px;
-    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 600;
+    color: #BBBBBB;
+    letter-spacing: -1px;
+    line-height: normal;
 }
 
 .community-load-more-btn img {
@@ -3263,7 +3262,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 10px;
     align-self: stretch;
 }
 
@@ -3274,6 +3272,7 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    padding: 5px;
     border-radius: 5px;
     background: var(--color-primary);
     color: #FFFFFF;
@@ -3282,6 +3281,7 @@ h2 {
     letter-spacing: -0.68px;
     cursor: pointer;
     border: none;
+    box-sizing: border-box;
 }
 
 .community-write-btn img {
