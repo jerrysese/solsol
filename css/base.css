@@ -3469,10 +3469,18 @@ h2 {
     position: absolute;
     bottom: 30px;
     right: 30px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
-    color: #BBBBBB;
-    letter-spacing: -0.24px;
+    line-height: 150%;
+    letter-spacing: -0.26px;
+}
+
+.write-usage__used {
+    color: #212121;
+}
+
+.write-usage__total {
+    color: #BDBDBD;
 }
 
 /* 파일 등록 섹션 */
