@@ -3157,7 +3157,7 @@ h2 {
 .community-post-content {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 100px;
 }
 
 .community-post-text {
