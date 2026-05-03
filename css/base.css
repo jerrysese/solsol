@@ -3136,7 +3136,7 @@ h2 {
 .community-post-stats {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
 }
 
 .community-post-stat {
@@ -3145,7 +3145,9 @@ h2 {
     gap: 4px;
     font-size: 13px;
     font-weight: 400;
-    color: #888888;
+    color: #555;
+    line-height: 20px;
+    letter-spacing: -0.65px;
 }
 
 .community-post-stat img {
