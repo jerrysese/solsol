@@ -3320,13 +3320,12 @@ h2 {
 /* 제목 행 (독립 박스) */
 .write-title-row {
     display: flex;
-    padding: 8px;
-    align-items: center;
-    gap: 10px;
+    align-items: stretch;
     align-self: stretch;
-    background: #F8F8F8;
-    border-radius: 10px;
+    height: 50px;
     border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    overflow: hidden;
     box-sizing: border-box;
 }
 
@@ -3339,21 +3338,25 @@ h2 {
 }
 
 .write-title-label {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
     font-size: 20px;
     font-weight: 500;
     color: #333333;
     letter-spacing: -0.8px;
     line-height: 150%;
     flex-shrink: 0;
-    padding: 0 12px;
+    background: #F8F8F8;
+    border-right: 1px solid #EEEEEE;
     cursor: default;
+    white-space: nowrap;
 }
 
 .write-title-input {
     flex: 1 0 0;
-    height: 50px;
-    border: 0.6px solid #EEEEEE;
-    border-radius: 8px;
+    height: 100%;
+    border: none;
     background: #FFFFFF;
     font-family: var(--font-base);
     font-size: 15px;
@@ -3361,7 +3364,6 @@ h2 {
     letter-spacing: -0.3px;
     padding: 0 20px;
     outline: none;
-    box-sizing: border-box;
 }
 
 .write-title-input::placeholder {
