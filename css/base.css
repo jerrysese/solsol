@@ -3491,27 +3491,31 @@ h2 {
 }
 
 .write-file-label {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
     color: #333333;
-    letter-spacing: -0.64px;
+    letter-spacing: -0.8px;
+    line-height: 150%;
 }
 
 .write-file-btn {
     display: flex;
-    height: 36px;
-    padding: 0 18px;
+    width: 150px;
+    height: 50px;
+    padding: 5px;
     align-items: center;
     justify-content: center;
-    background: #444444;
+    gap: 10px;
+    background: #555555;
     border: none;
     border-radius: 5px;
     color: #FFFFFF;
     font-family: var(--font-base);
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
-    letter-spacing: -0.28px;
+    letter-spacing: -0.3px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .write-file-list {
