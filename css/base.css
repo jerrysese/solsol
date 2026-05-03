@@ -3057,20 +3057,19 @@ h2 {
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .community-post-item {
     width: 100%;
     padding: 30px;
-    border-bottom: 1px solid #EEEEEE;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.community-post-item:first-child {
-    border-top: 1px solid #EEEEEE;
+    align-self: stretch;
 }
 
 /* 게시글 메타 */
