@@ -3361,7 +3361,12 @@ h2 {
 }
 
 .write-title-input::placeholder {
-    color: #BBBBBB;
+    color: #333333;
+    opacity: 0.5;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.52px;
 }
 
 /* 위지윅 툴바 */
