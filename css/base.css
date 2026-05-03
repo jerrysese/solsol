@@ -3204,9 +3204,11 @@ h2 {
     color: #555;
     letter-spacing: -0.26px;
     line-height: 150%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .community-post-thumb {
