@@ -2984,10 +2984,11 @@ h2 {
     border: 1px solid #EEEEEE;
     border-radius: 5px;
     background: #FFFFFF;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
     color: #333333;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.48px;
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
