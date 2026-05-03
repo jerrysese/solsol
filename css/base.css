@@ -3521,7 +3521,8 @@ h2 {
 .write-file-list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 10px;
+    width: 100%;
 }
 
 .write-file-item {
@@ -3531,8 +3532,6 @@ h2 {
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    border-radius: 5px;
-    border: 1px solid #EEEEEE;
     box-sizing: border-box;
 }
 
@@ -3555,8 +3554,8 @@ h2 {
 }
 
 .write-file-remove {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3569,8 +3568,8 @@ h2 {
 }
 
 .write-file-remove img {
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
 }
 
 .write-file-preview {
