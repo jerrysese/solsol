@@ -97,6 +97,169 @@ CSS 클래스: `.filter-search` / `.filter-search__input` / `.filter-search__btn
 
 ---
 
+## 공통 색상 변수
+
+### 상품 리스트 컬러 (`:root`)
+| 변수 | 값 | 용도 |
+|------|-----|------|
+| `--color-purple` / `--color-purple-bg` | `#7954C6` / `#F8F5FF` | 일반강의, 보라 계열 |
+| `--color-blue` / `--color-blue-bg` | `#2BACF4` / `#F7FBFF` | 패키지상품, 파랑 계열 |
+| `--color-red` / `--color-red-bg` | `#FC5758` / `#FFEAEA` | 라이브강의, 빨강 계열 |
+| `--color-green` / `--color-green-bg` | `#31AD60` / `#EDF9F2` | 화상강의, 초록 계열 |
+| `--color-gray` / `--color-gray-bg` | `#333333` / `#F8F8F8` | 디지털상품, 회색 계열 |
+
+### 아이콘/라인 컬러
+- 아이콘 기본색: `#888888`
+- 구분선 기본색: `#EEEEEE`
+
+---
+
+## 빈 상태 (Empty State) 패턴
+
+### 전체형 (중앙 정렬)
+```html
+<div class="empty-state">
+    <div class="empty-state__icon">
+        <img src="../../images/ico-empty-box.svg" alt="">
+    </div>
+    <p class="empty-state__title">아직 비어있어요</p>
+    <p class="empty-state__desc">조금만 기다려 주세요.<br>알찬 상품으로 채워질 예정이에요.</p>
+</div>
+```
+
+### 인라인형 (아이콘 + 텍스트 가로 배치)
+```html
+<div class="empty-inline">
+    <div class="empty-inline__icon">
+        <img src="../../images/ico-empty.svg" alt="">
+    </div>
+    <span class="empty-inline__text">구독중인 멤버십이 없어요</span>
+</div>
+```
+
+CSS 클래스: `.empty-state` / `.empty-state__icon` / `.empty-state__title` / `.empty-state__desc`  
+인라인: `.empty-inline` / `.empty-inline__icon` / `.empty-inline__text`
+
+---
+
+## 상품 카드 리본 배지 패턴
+
+상품 카드 썸네일 좌상단에 삼각형 리본으로 상품 유형 표시
+
+```html
+<div class="course-card__thumb">
+    <div class="course-card__ribbon course-card__ribbon--normal">
+        <span>일반강의</span>
+    </div>
+    <img src="..." alt="">
+</div>
+```
+
+| 클래스 | 색상 | 상품 유형 |
+|--------|------|---------|
+| `--normal` | `#7954C6` 보라 | 일반강의 |
+| `--live` | `#FC5758` 빨강 | 라이브강의 |
+| `--package` | `#2BACF4` 파랑 | 패키지상품 |
+| `--digital` | `#555555` 어두운 | 디지털상품 |
+| `--video` | `#31AD60` 초록 | 화상강의 |
+
+---
+
+## 결제 상태 배지 패턴
+
+```html
+<span class="badge-payment badge-payment--complete">결제완료</span>
+<span class="badge-payment badge-payment--fail">결제실패</span>
+```
+
+| 클래스 | 의미 |
+|--------|------|
+| `--complete` | 결제완료 (초록) |
+| `--cancel` | 결제취소 (회색) |
+| `--fail` | 결제실패 (빨강) |
+| `--defer` | 결제유예 (노랑) |
+| `--unpaid` | 미결제 (빨강) |
+| `--expired` | 기간만료 (어두운 회색) |
+| `--link` | 영수증보기 (링크 스타일) |
+
+---
+
+## 드롭다운 패턴
+
+```html
+<div class="dropdown">
+    <button class="dropdown__trigger" type="button">
+        전체 카테고리
+        <img src="../../images/ico-chevron-down.svg" alt="">
+    </button>
+    <div class="dropdown__panel">
+        <div class="dropdown__item active">전체 카테고리</div>
+        <div class="dropdown__item">메뉴 3</div>
+        <div class="dropdown__item">메뉴 4</div>
+    </div>
+</div>
+```
+
+열기/닫기는 JS로 `.dropdown` 에 `.open` 클래스 토글.
+
+---
+
+## 왼쪽 사이드바 메뉴 패턴
+
+마이페이지 등 좌측 프로필+네비게이션 패널. 너비 280px.
+
+```html
+<aside class="left-sidebar">
+    <!-- 프로필 -->
+    <div class="left-sidebar__profile">
+        <div class="left-sidebar__avatar"><img src="..." alt=""></div>
+        <div class="left-sidebar__user">
+            <span class="left-sidebar__role">학습자</span>
+            <span class="left-sidebar__name">홍길동</span>
+            <span class="left-sidebar__email">user@example.com</span>
+        </div>
+        <button class="left-sidebar__logout" type="button">
+            <img src="../../images/ico-logout.svg" alt="로그아웃">
+        </button>
+    </div>
+    <!-- 멤버십 바 -->
+    <div class="left-sidebar__memberships">
+        <a href="#" class="left-sidebar__mem-bar">
+            <span class="left-sidebar__mem-name">멤버십</span>
+            <span class="left-sidebar__mem-status">구독 전 ›</span>
+        </a>
+        <a href="#" class="left-sidebar__mem-bar left-sidebar__mem-bar--community">
+            <span class="left-sidebar__mem-name">프리미엄 커뮤니티</span>
+            <span class="left-sidebar__mem-status">2개 구독중 ›</span>
+        </a>
+    </div>
+    <!-- 통계 -->
+    <div class="left-sidebar__stats">
+        <div class="left-sidebar__stat">
+            <span class="left-sidebar__stat-label">내 상품</span>
+            <span class="left-sidebar__stat-value">7</span>
+        </div>
+        <div class="left-sidebar__stat">
+            <span class="left-sidebar__stat-badge">3</span>
+            <span class="left-sidebar__stat-label">보유 쿠폰</span>
+            <span class="left-sidebar__stat-value">1</span>
+        </div>
+    </div>
+    <!-- 네비게이션 -->
+    <nav class="left-sidebar__nav">
+        <div class="left-sidebar__nav-group">
+            <span class="left-sidebar__nav-group-label">상품 관리</span>
+            <a href="#" class="left-sidebar__nav-item active">
+                <img src="../../images/ico-bag.svg" alt="">내 상품
+            </a>
+        </div>
+    </nav>
+</aside>
+```
+
+---
+
 ## CSS 파일 구조
 - `css/base.css` — 전체 공통 스타일 (컴포넌트 별 섹션으로 구분)
 - Auth 페이지 섹션: `AUTH PAGE`, `AUTH AGREEMENT PAGE`, `AUTH AGREEMENT MODAL`
+- 공통 컴포넌트 섹션: `EMPTY STATE`, `PAYMENT BADGE`, `COURSE CARD RIBBON`, `DROPDOWN`, `LEFT SIDEBAR`, `CONTEXT ACTIONS`

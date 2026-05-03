@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공통 스타일 가이드</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <style>
+        body { background: #F5F5F5; padding: 40px; }
+        .sg-section {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid #EEEEEE;
+        }
+        .sg-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            letter-spacing: -0.8px;
+            margin-bottom: 30px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #7954C6;
+        }
+        .sg-subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            color: #888;
+            letter-spacing: -0.26px;
+            text-transform: uppercase;
+            margin: 24px 0 12px;
+        }
+        .sg-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .sg-label {
+            font-size: 11px;
+            color: #AAAAAA;
+            margin-top: 4px;
+        }
+        .sg-divider {
+            border: none;
+            border-top: 1px dashed #EEEEEE;
+            margin: 24px 0;
+        }
+        .sg-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .sg-box {
+            border: 1px solid #EEEEEE;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="font-size:28px;font-weight:700;color:#333;margin-bottom:8px;letter-spacing:-1px;">공통 스타일 가이드</h1>
+<p style="font-size:13px;color:#888;margin-bottom:40px;">base.css 공통 컴포넌트 시각 확인용 페이지</p>
+
+
+<!-- ===== 1. BADGE ===== -->
+<div class="sg-section">
+    <div class="sg-title">① BADGE</div>
+
+    <div class="sg-subtitle">상품 유형 배지 (.badge)</div>
+    <div class="sg-row">
+        <span class="badge badge--normal">일반강의</span>
+        <span class="badge badge--live">라이브강의</span>
+        <span class="badge badge--package">패키지상품</span>
+        <span class="badge badge--digital">디지털상품</span>
+        <span class="badge badge--video">화상강의</span>
+        <span class="badge badge--free">멤버십 무료</span>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">상태 배지 (.badge-status)</div>
+    <div class="sg-row">
+        <span class="badge-status badge-status--live">
+            <span class="badge-status__dot"></span>LIVE
+        </span>
+        <span class="badge-status badge-status--upcoming">
+            <span class="badge-status__dot"></span>예정
+        </span>
+        <span class="badge-status badge-status--ended">
+            <span class="badge-status__dot"></span>종료
+        </span>
+        <span class="badge-status badge-status--closed">판매마감</span>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">결제 상태 배지 (.badge-payment)</div>
+    <div class="sg-row">
+        <span class="badge-payment badge-payment--complete">결제완료</span>
+        <span class="badge-payment badge-payment--cancel">결제취소</span>
+        <span class="badge-payment badge-payment--fail">결제실패</span>
+        <span class="badge-payment badge-payment--defer">결제유예</span>
+        <span class="badge-payment badge-payment--unpaid">미결제</span>
+        <span class="badge-payment badge-payment--expired">기간만료</span>
+        <span class="badge-payment badge-payment--link">영수증보기</span>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">역할 배지 (.review-badge)</div>
+    <div class="sg-row">
+        <span class="review-badge review-badge--learner">학습자</span>
+        <span class="review-badge review-badge--instructor">강사</span>
+        <span class="review-badge review-badge--admin">운영자</span>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">태그 배지 (.badge-tag)</div>
+    <div class="sg-row">
+        <span class="badge-tag">구독중</span>
+    </div>
+</div>
+
+
+<!-- ===== 2. BUTTONS ===== -->
+<div class="sg-section">
+    <div class="sg-title">② BUTTON</div>
+
+    <div class="sg-subtitle">표준 버튼 150×50 (.btn)</div>
+    <div class="sg-row">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <button class="btn btn--primary" type="button">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 12L12 2M12 2H5M12 2V9" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                저장하기
+            </button>
+            <span class="sg-label">btn--primary</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <button class="btn btn--outline" type="button">← 바로가기</button>
+            <span class="sg-label">btn--outline</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <button class="btn btn--dark" type="button">파일선택</button>
+            <span class="sg-label">btn--dark</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <button class="btn" disabled style="background:#F1F1F1;color:#BBBBBB;cursor:default;">인증완료</button>
+            <span class="sg-label">disabled</span>
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">와이드 버튼 440×50 (.btn-wide)</div>
+    <div class="sg-row" style="flex-direction:column;align-items:flex-start;">
+        <button class="btn-wide" type="button">구매하기</button>
+        <button class="btn-wide btn-wide--video" type="button">화상강의 참여하기</button>
+        <button class="btn-wide btn-wide--live" type="button">라이브 참여하기</button>
+        <button class="btn-wide disabled" type="button">아직 모집기간이 아닙니다</button>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">소형 버튼 70×35 (.btn-sm)</div>
+    <div class="sg-row">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <button class="btn-sm btn-sm--outline" type="button">취소</button>
+            <span class="sg-label">outline</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <button class="btn-sm btn-sm--fill" type="button">수정</button>
+            <span class="sg-label">fill</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <button class="btn-sm disabled" type="button" style="background:#F1F1F1;color:#BBBBBB;border:none;cursor:default;">등록하기</button>
+            <span class="sg-label">disabled</span>
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">찜/공유 버튼 (.btn-wish / .btn-share)</div>
+    <div class="sg-row">
+        <button class="btn-wish" type="button">
+            <img src="../images/ico-heart.svg" alt="" style="width:16px;height:16px;">
+            찜하기
+        </button>
+        <button class="btn-share" type="button">
+            <img src="../images/ico-share.svg" alt="" style="width:16px;height:16px;">
+            공유하기
+        </button>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">더보기 버튼 (.btn-more)</div>
+    <button class="btn-more" type="button">
+        더보기
+        <img src="../images/ico-chevron-down.svg" alt="">
+    </button>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">컨텍스트 액션 버튼 (.ctx-btn)</div>
+    <div class="sg-row">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div class="ctx-actions">
+                <button class="ctx-btn" type="button">수정</button>
+                <button class="ctx-btn" type="button">삭제</button>
+            </div>
+            <span class="sg-label">기본</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div class="ctx-actions">
+                <button class="ctx-btn ctx-btn--active" type="button">수정</button>
+                <button class="ctx-btn" type="button">삭제</button>
+            </div>
+            <span class="sg-label">수정 활성</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div class="ctx-actions">
+                <button class="ctx-btn" type="button">수정</button>
+                <button class="ctx-btn ctx-btn--active" type="button">삭제</button>
+            </div>
+            <span class="sg-label">삭제 활성</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== 3. EMPTY STATE ===== -->
+<div class="sg-section">
+    <div class="sg-title">③ EMPTY STATE</div>
+
+    <div class="sg-two-col">
+        <div class="sg-box">
+            <div class="empty-state">
+                <div class="empty-state__icon">
+                    <img src="../images/notice-ico-empty.svg" alt="">
+                </div>
+                <p class="empty-state__title">아직 비어있어요</p>
+                <p class="empty-state__desc">조금만 기다려 주세요.<br>알찬 상품으로 채워질 예정이에요.</p>
+            </div>
+        </div>
+        <div class="sg-box">
+            <div class="empty-state">
+                <div class="empty-state__icon">
+                    <img src="../images/notice-ico-notfound.svg" alt="">
+                </div>
+                <p class="empty-state__title">검색 결과가 없어요</p>
+                <p class="empty-state__desc">다른 검색어로 다시 시도해 주세요.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sg-two-col" style="margin-top:16px;">
+        <div class="sg-box">
+            <div class="empty-state">
+                <div class="empty-state__icon">
+                    <img src="../images/notice-ico-nopost.svg" alt="">
+                </div>
+                <p class="empty-state__title">아직 등록된 게시글이 없어요</p>
+                <p class="empty-state__desc">이 공간의 첫 이야기를 시작해 보세요.</p>
+            </div>
+        </div>
+        <div class="sg-box">
+            <div class="empty-state">
+                <div class="empty-state__icon">
+                    <img src="../images/notice-ico-nonotice.svg" alt="">
+                </div>
+                <p class="empty-state__title">아직 등록된 공지사항이 없어요</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">인라인형 (.empty-inline)</div>
+    <div style="border:1px solid #EEEEEE;border-radius:8px;padding:0 20px;">
+        <div class="empty-inline">
+            <div class="empty-inline__icon">
+                <img src="../images/notice-ico-review.svg" alt="">
+            </div>
+            <span class="empty-inline__text">아직 작성된 후기가 없어요.</span>
+        </div>
+        <div class="empty-inline" style="border-top:1px solid #EEEEEE;">
+            <div class="empty-inline__icon">
+                <img src="../images/notice-ico-empty.svg" alt="">
+            </div>
+            <span class="empty-inline__text">구독중인 멤버십이 없어요</span>
+        </div>
+        <div class="empty-inline" style="border-top:1px solid #EEEEEE;">
+            <div class="empty-inline__icon">
+                <img src="../images/notice-ico-coupon.svg" alt="">
+            </div>
+            <span class="empty-inline__text">받을 수 있는 쿠폰이 비어있어요</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== 4. COURSE CARD RIBBON ===== -->
+<div class="sg-section">
+    <div class="sg-title">④ COURSE CARD RIBBON (상품 리본 배지)</div>
+
+    <div class="sg-row">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="position:relative;width:120px;height:100px;background:#F0F0F0;border-radius:8px;overflow:hidden;">
+                <div class="course-card__ribbon course-card__ribbon--normal">
+                    <span>일반강의</span>
+                </div>
+            </div>
+            <span class="sg-label">--normal (보라)</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="position:relative;width:120px;height:100px;background:#F0F0F0;border-radius:8px;overflow:hidden;">
+                <div class="course-card__ribbon course-card__ribbon--live">
+                    <span>라이브강의</span>
+                </div>
+            </div>
+            <span class="sg-label">--live (빨강)</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="position:relative;width:120px;height:100px;background:#F0F0F0;border-radius:8px;overflow:hidden;">
+                <div class="course-card__ribbon course-card__ribbon--package">
+                    <span>패키지상품</span>
+                </div>
+            </div>
+            <span class="sg-label">--package (파랑)</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="position:relative;width:120px;height:100px;background:#F0F0F0;border-radius:8px;overflow:hidden;">
+                <div class="course-card__ribbon course-card__ribbon--digital">
+                    <span>디지털상품</span>
+                </div>
+            </div>
+            <span class="sg-label">--digital (어두운)</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="position:relative;width:120px;height:100px;background:#F0F0F0;border-radius:8px;overflow:hidden;">
+                <div class="course-card__ribbon course-card__ribbon--video">
+                    <span>화상강의</span>
+                </div>
+            </div>
+            <span class="sg-label">--video (초록)</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== 5. DROPDOWN ===== -->
+<div class="sg-section">
+    <div class="sg-title">⑤ DROPDOWN</div>
+
+    <div class="sg-row" style="align-items:flex-start;gap:40px;">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+            <span class="sg-subtitle" style="margin:0 0 8px;">닫힌 상태</span>
+            <div class="dropdown" id="dd1">
+                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('dd1')">
+                    전체 카테고리
+                    <img src="../images/ico-chevron-down.svg" alt="">
+                </button>
+                <div class="dropdown__panel">
+                    <div class="dropdown__item active">전체 카테고리</div>
+                    <div class="dropdown__item">일반강의</div>
+                    <div class="dropdown__item">라이브강의</div>
+                    <div class="dropdown__item">화상강의</div>
+                    <div class="dropdown__item">패키지상품</div>
+                    <div class="dropdown__item">디지털상품</div>
+                </div>
+            </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+            <span class="sg-subtitle" style="margin:0 0 8px;">열린 상태</span>
+            <div class="dropdown open" id="dd2">
+                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('dd2')">
+                    전체 카테고리
+                    <img src="../images/ico-chevron-down.svg" alt="">
+                </button>
+                <div class="dropdown__panel">
+                    <div class="dropdown__item active">전체 카테고리</div>
+                    <div class="dropdown__item">일반강의</div>
+                    <div class="dropdown__item">라이브강의</div>
+                    <div class="dropdown__item">화상강의</div>
+                    <div class="dropdown__item">패키지상품</div>
+                    <div class="dropdown__item">디지털상품</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== 6. LEFT SIDEBAR ===== -->
+<div class="sg-section">
+    <div class="sg-title">⑥ LEFT SIDEBAR (좌측 메뉴)</div>
+
+    <aside class="left-sidebar" style="display:inline-flex;flex-direction:column;">
+        <!-- 프로필 -->
+        <div class="left-sidebar__profile">
+            <div class="left-sidebar__avatar">
+                <img src="../images/monzo.png" alt="">
+            </div>
+            <div class="left-sidebar__user">
+                <span class="left-sidebar__role">학습자</span>
+                <span class="left-sidebar__name">홍길동</span>
+                <span class="left-sidebar__email">hong@example.com</span>
+            </div>
+            <button class="left-sidebar__logout" type="button">
+                <img src="../images/ico-logout.svg" alt="로그아웃">
+            </button>
+        </div>
+        <!-- 멤버십 바 -->
+        <div class="left-sidebar__memberships">
+            <a href="#" class="left-sidebar__mem-bar">
+                <span class="left-sidebar__mem-name">멤버십</span>
+                <span class="left-sidebar__mem-status">구독 전 ›</span>
+            </a>
+            <a href="#" class="left-sidebar__mem-bar left-sidebar__mem-bar--community">
+                <span class="left-sidebar__mem-name">프리미엄 커뮤니티</span>
+                <span class="left-sidebar__mem-status">2개 구독중 ›</span>
+            </a>
+        </div>
+        <!-- 통계 -->
+        <div class="left-sidebar__stats">
+            <div class="left-sidebar__stat">
+                <span class="left-sidebar__stat-label">내 상품</span>
+                <span class="left-sidebar__stat-value">7</span>
+            </div>
+            <div class="left-sidebar__stat">
+                <span class="left-sidebar__stat-badge">3</span>
+                <span class="left-sidebar__stat-label">보유 쿠폰</span>
+                <span class="left-sidebar__stat-value">1</span>
+            </div>
+        </div>
+        <!-- 네비게이션 -->
+        <nav class="left-sidebar__nav">
+            <div class="left-sidebar__nav-group">
+                <span class="left-sidebar__nav-group-label">상품 관리</span>
+                <a href="#" class="left-sidebar__nav-item active">
+                    <img src="../images/ico-bag.svg" alt="">내 상품
+                </a>
+                <a href="#" class="left-sidebar__nav-item">
+                    <img src="../images/ico-certificate.svg" alt="">수료증
+                </a>
+                <a href="#" class="left-sidebar__nav-item">
+                    <img src="../images/ico-heart.svg" alt="">찜하기
+                </a>
+            </div>
+            <div class="left-sidebar__nav-group">
+                <span class="left-sidebar__nav-group-label">결제 관리</span>
+                <a href="#" class="left-sidebar__nav-item">
+                    <img src="../images/ico-coupon-small.svg" alt="">쿠폰
+                </a>
+                <a href="#" class="left-sidebar__nav-item">
+                    <img src="../images/ico-pay-list.svg" alt="">결제 내역
+                </a>
+                <a href="#" class="left-sidebar__nav-item">
+                    <img src="../images/ico-pay-info.svg" alt="">결제 정보
+                </a>
+            </div>
+            <div class="left-sidebar__nav-group">
+                <span class="left-sidebar__nav-group-label">커뮤니티</span>
+                <a href="#" class="left-sidebar__nav-item">
+                    <img src="../images/ico-pencil.svg" alt="">내 게시글
+                </a>
+                <a href="#" class="left-sidebar__nav-item">
+                    <img src="../images/ico-messages.svg" alt="">1:1 문의내역
+                </a>
+            </div>
+            <div class="left-sidebar__nav-group">
+                <span class="left-sidebar__nav-group-label">설정</span>
+                <a href="#" class="left-sidebar__nav-item">
+                    <img src="../images/ico-profile.svg" alt="">프로필
+                </a>
+            </div>
+        </nav>
+    </aside>
+</div>
+
+<script>
+function toggleDropdown(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+깃허브 소스보기 링크 
+https://github.com/jerrysese/solsol/blob/main/src/views/auth/signup.html
+
+깃허브 브라우저에서 보기 링크
+https://jerrysese.github.io/solsol/src/views/auth/signup.html
