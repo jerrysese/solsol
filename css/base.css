@@ -3294,6 +3294,55 @@ h2 {
 
 
 /* =====================================================
+   COMMON BUTTONS
+===================================================== */
+
+/* 공통 기본 버튼 */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 150px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: var(--font-base);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.68px;
+    line-height: normal;
+    cursor: pointer;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: none;
+}
+
+/* Primary — 보라 채움 (저장하기, 글쓰기 등) */
+.btn--primary {
+    background: var(--color-primary);
+    color: #FFFFFF;
+}
+
+/* Outline — 보라 테두리 (바로가기, 더보기, 이전 등) */
+.btn--outline {
+    background: #FFFFFF;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Dark — 어두운 채움 (파일선택 등) */
+.btn--dark {
+    background: #555555;
+    color: #FFFFFF;
+}
+
+.btn img {
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
    COMMUNITY ADD PAGE (글쓰기)
 ===================================================== */
 
@@ -3612,7 +3661,7 @@ h2 {
 
 .write-submit-btn {
     display: flex;
-    width: 160px;
+    width: 150px;
     height: 50px;
     align-items: center;
     justify-content: center;

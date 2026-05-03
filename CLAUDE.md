@@ -32,6 +32,35 @@
 
 ## 공통 버튼 패턴
 
+### 표준 버튼 (150×50px, 3종)
+저장하기·글쓰기·바로가기·파일선택 등 모든 액션 버튼은 아래 공통 클래스를 사용한다.
+
+```html
+<!-- Primary: 보라 채움 (저장하기, 글쓰기 등) -->
+<button class="btn btn--primary" type="button">
+    <img src="..." alt="">
+    저장하기
+</button>
+
+<!-- Outline: 보라 테두리 (바로가기, 이전 등) -->
+<button class="btn btn--outline" type="button">
+    바로가기
+</button>
+
+<!-- Dark: 어두운 채움 (파일선택 등) -->
+<button class="btn btn--dark" type="button">
+    파일선택
+</button>
+```
+
+CSS 클래스: `.btn` / `.btn--primary` / `.btn--outline` / `.btn--dark` (base.css 정의)
+- 공통: `width 150px`, `height 50px`, `border-radius 5px`, `font-size 17px`, `font-weight 500`
+- Primary: `background var(--color-primary)`, `color #FFF`
+- Outline: `border 1px solid var(--color-primary)`, `color var(--color-primary)`
+- Dark: `background #555`, `color #FFF`
+
+---
+
 ### 동의/확인 버튼 (보라색, 전체 너비)
 ```html
 <button class="agree-submit-btn" type="button">
