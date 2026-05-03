@@ -3294,6 +3294,313 @@ h2 {
 
 
 /* =====================================================
+   COMMUNITY ADD PAGE (글쓰기)
+===================================================== */
+
+.community-add-content {
+    max-width: 1440px;
+    width: 100%;
+    margin: 80px auto 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+/* 에디터 전체 래퍼 */
+.write-editor-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+/* 제목 행 */
+.write-title-row {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 5px;
+    align-self: stretch;
+    background: #F8F8F8;
+    border-radius: 10px 10px 0 0;
+    border-top: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-left: 1px solid #EEEEEE;
+    box-sizing: border-box;
+}
+
+.write-title-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.8px;
+    line-height: 150%;
+    flex-shrink: 0;
+    cursor: default;
+}
+
+.write-title-input {
+    flex: 1;
+    height: 30px;
+    border: none;
+    background: transparent;
+    font-family: var(--font-base);
+    font-size: 15px;
+    color: #333333;
+    letter-spacing: -0.3px;
+    padding: 0 8px;
+    outline: none;
+}
+
+.write-title-input::placeholder {
+    color: #BBBBBB;
+}
+
+/* 위지윅 툴바 */
+.write-toolbar {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    background: #F8F8F8;
+    border: 1px solid #EEEEEE;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.write-tb-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-base);
+    font-size: 14px;
+    color: #555555;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.write-tb-btn:hover {
+    background: #EEEEEE;
+}
+
+.write-tb-btn--b { font-weight: 700; }
+.write-tb-btn--i { font-style: italic; font-family: Georgia, serif; }
+.write-tb-btn--u { text-decoration: underline; }
+.write-tb-btn--s { text-decoration: line-through; }
+.write-tb-btn--tx { font-size: 12px; font-weight: 500; }
+
+.write-tb-sep {
+    width: 1px;
+    height: 20px;
+    background: #DDDDDD;
+    flex-shrink: 0;
+    margin: 0 4px;
+}
+
+/* 에디터 내용 영역 */
+.write-editor-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    min-height: 280px;
+    align-self: stretch;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    border-radius: 0 0 10px 10px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.write-editor-placeholder p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: #BBBBBB;
+    letter-spacing: -0.26px;
+    line-height: 1.65;
+}
+
+.write-preview-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 28px;
+    border: 1.5px solid var(--color-primary);
+    border-radius: 50px;
+    background: #FFFFFF;
+    color: var(--color-primary);
+    font-family: var(--font-base);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.write-preview-btn img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+}
+
+.write-usage {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #BBBBBB;
+    letter-spacing: -0.24px;
+}
+
+/* 파일 등록 섹션 */
+.write-file-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.write-file-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.write-file-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    letter-spacing: -0.64px;
+}
+
+.write-file-btn {
+    display: flex;
+    height: 36px;
+    padding: 0 18px;
+    align-items: center;
+    justify-content: center;
+    background: #444444;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: var(--font-base);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.28px;
+    cursor: pointer;
+}
+
+.write-file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.write-file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 360px;
+}
+
+.write-file-ico {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.write-file-name {
+    flex: 1;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: -0.28px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.write-file-remove {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0;
+    opacity: 0.6;
+}
+
+.write-file-remove:hover { opacity: 1; }
+
+.write-file-remove img {
+    width: 12px;
+    height: 12px;
+}
+
+.write-file-preview {
+    max-width: 360px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #888888;
+    letter-spacing: -0.26px;
+    box-sizing: border-box;
+}
+
+/* 저장하기 행 */
+.write-submit-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-self: stretch;
+}
+
+.write-submit-btn {
+    display: flex;
+    width: 160px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 5px;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    font-family: var(--font-base);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.68px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
    RESPONSIVE — 태블릿 (max-width: 1024px)
 ===================================================== */
 @media (max-width: 1024px) {
@@ -3327,6 +3634,10 @@ h2 {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
+
+    /* Community Add */
+    .community-add-content { margin: 60px auto 100px; padding: 0 24px; }
+    .write-title-label { font-size: 17px; }
 
     /* Community Index */
     .community-content { margin: 60px auto 100px; padding: 0 24px; }
@@ -3415,6 +3726,18 @@ h2 {
 
     /* Auth Page */
     .auth-card { width: 100%; padding: 40px 24px; border-radius: 20px; }
+
+    /* Community Add */
+    .community-add-content { margin: 40px auto 80px; padding: 0 16px; gap: 20px; }
+    .write-title-label { font-size: 15px; }
+    .write-editor-body { min-height: 220px; padding: 20px; }
+    .write-preview-btn { bottom: 20px; padding: 8px 20px; font-size: 14px; }
+    .write-usage { bottom: 20px; right: 20px; }
+    .write-toolbar { gap: 2px; }
+    .write-tb-btn { width: 26px; height: 26px; font-size: 13px; }
+    .write-file-item,
+    .write-file-preview { max-width: 100%; }
+    .write-submit-btn { width: 140px; height: 46px; font-size: 15px; }
 
     /* Community Index */
     .community-content { margin: 40px auto 80px; padding: 0 16px; }
