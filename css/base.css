@@ -476,7 +476,7 @@ img { display: block; max-width: 100%; }
     gap: 10px;
     font-family: var(--font-base);
     font-weight: 600;
-    letter-spacing: -0.4px;
+    letter-spacing: -1px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -4696,7 +4696,7 @@ h2 {
     font-size: 17px;
     font-weight: 600;
     color: #FFFFFF;
-    letter-spacing: -0.34px;
+    letter-spacing: -1px;
     cursor: pointer;
     margin-top: auto;
     flex-shrink: 0;
