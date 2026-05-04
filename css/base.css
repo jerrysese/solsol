@@ -4134,7 +4134,6 @@ h2 {
     content: '';
     position: absolute;
     inset: 0;
-    clip-path: polygon(41.77% 0%, 0% 41.77%, 0% 100%, 100% 0%);
     background-repeat: no-repeat, no-repeat;
     background-position: 66.6px 0, 0 67px;
     background-size: 6px 6px, 6px 6px;
@@ -4150,8 +4149,8 @@ h2 {
     display: block;
     position: absolute;
     width: 52px;
-    top: 20px;
-    left: 1px;
+    top: 18px;
+    left: 0px;
     text-align: center;
     font-size: 12px;
     font-weight: 700;
