@@ -4104,6 +4104,7 @@ h2 {
 
 /* =====================================================
    COURSE CARD RIBBON — 상품 카드 리본 배지 (좌상단 삼각형)
+   SVG path: M30.493 0L0 30.493V73L73 0H30.493Z → clip-path polygon
 ===================================================== */
 .course-card__ribbon {
     position: absolute;
@@ -4111,32 +4112,39 @@ h2 {
     left: 0;
     width: 73px;
     height: 73px;
-    overflow: hidden;
     pointer-events: none;
     z-index: 1;
 }
 
+.course-card__ribbon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(41.77% 0%, 0% 41.77%, 0% 100%, 100% 0%);
+    opacity: 0.6;
+}
+
+.course-card__ribbon--normal::before  { background: #7954C6; }
+.course-card__ribbon--live::before    { background: #FC5758; }
+.course-card__ribbon--package::before { background: #2BACF4; }
+.course-card__ribbon--digital::before { background: #555555; }
+.course-card__ribbon--video::before   { background: #31AD60; }
+
 .course-card__ribbon span {
     display: block;
     position: absolute;
-    top: 15px;
-    left: -21px;
-    width: 88px;
+    width: 52px;
+    top: 20px;
+    left: 4px;
     text-align: center;
     font-size: 12px;
     font-weight: 700;
     color: #FFFFFF;
-    padding: 4px 0;
-    transform: rotate(-45deg);
+    line-height: 150%;
     letter-spacing: -0.24px;
+    transform: rotate(-45deg);
     white-space: nowrap;
 }
-
-.course-card__ribbon--normal  span { background: rgba(121, 84,  198, 0.6); }
-.course-card__ribbon--live    span { background: rgba(252, 87,  88,  0.6); }
-.course-card__ribbon--package span { background: rgba(43,  172, 244, 0.6); }
-.course-card__ribbon--digital span { background: rgba(51,  51,  51,  0.6); }
-.course-card__ribbon--video   span { background: rgba(49,  173, 96,  0.6); }
 
 
 /* =====================================================
