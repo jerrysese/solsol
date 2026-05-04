@@ -1952,7 +1952,8 @@ h2 {
     background: var(--color-primary);
     border-radius: 8px;
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -1px;
     color: #FFFFFF;
     border: none;
     cursor: pointer;
@@ -1961,7 +1962,7 @@ h2 {
 }
 
 .sidebar-btn-buy:hover { opacity: 0.88; }
-.sidebar-btn-buy img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
+.sidebar-btn-buy img { width: 20px; height: 15.556px; flex-shrink: 0; filter: brightness(0) invert(1); }
 
 /* 찜하기 / 공유하기 */
 .sidebar-btn-row {
