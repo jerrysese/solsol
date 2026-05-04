@@ -584,12 +584,12 @@ img { display: block; max-width: 100%; }
     height: 50px;
     font-size: 17px;
     background: #F8F8F8;
-    color: var(--btn-primary);
+    color: #555555;
     border: 1px solid #EEEEEE;
 }
 
 .btn-wish:hover,
-.btn-share:hover { border-color: var(--btn-primary); background: var(--color-primary-bg); opacity: 1; }
+.btn-share:hover { border-color: var(--btn-primary); background: var(--color-primary-bg); color: var(--btn-primary); opacity: 1; }
 
 /* =====================================================
    작은 버튼 (70×35px) — 2가지 타입
@@ -637,22 +637,80 @@ img { display: block; max-width: 100%; }
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     width: 100%;
     height: 60px;
     font-size: 20px;
     font-weight: 600;
     color: #BBBBBB;
-    background: #F1F1F1;
-    border: none;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
     border-radius: 5px;
     cursor: pointer;
     letter-spacing: -1px;
     font-family: var(--font-base);
 }
 
-.btn-more:hover { background: #E8E8E8; }
-.btn-more img { width: 12px; height: auto; filter: brightness(0) invert(0.73); }
+.btn-more:hover { background: #F8F8F8; }
+.btn-more img { width: 12px; height: auto; }
+
+/* =====================================================
+   프로필 업데이트 버튼 (180×50px)
+===================================================== */
+.btn-profile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 180px;
+    height: 50px;
+    font-family: var(--font-base);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: var(--btn-primary);
+    color: #FFFFFF;
+    white-space: nowrap;
+    transition: opacity 0.15s ease;
+}
+.btn-profile:hover { opacity: 0.88; }
+.btn-profile img { flex-shrink: 0; }
+
+/* =====================================================
+   다운로드 / 복사 아웃라인 버튼 (35px height)
+===================================================== */
+.btn-dl-all,
+.btn-dl,
+.btn-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 35px;
+    font-family: var(--font-base);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid var(--btn-primary);
+    color: var(--btn-primary);
+    white-space: nowrap;
+    transition: background 0.15s ease;
+}
+.btn-dl-all { width: 130px; }
+.btn-dl     { width: 100px; }
+.btn-copy   { width: 100px; }
+.btn-dl-all:hover,
+.btn-dl:hover,
+.btn-copy:hover { background: var(--color-primary-bg); }
+.btn-dl-all img,
+.btn-dl img,
+.btn-copy img { flex-shrink: 0; width: 14px; height: auto; }
 
 
 /* =====================================================

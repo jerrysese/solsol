@@ -131,151 +131,162 @@
 <div class="sg-section">
     <div class="sg-title">② BUTTON</div>
 
-    <!-- ① 와이드 버튼 -->
-    <div class="sg-subtitle">와이드 버튼 440×50 (.btn-wide)</div>
-    <div class="sg-row" style="flex-direction:column;align-items:flex-start;gap:16px;">
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn-wide" type="button">구매하기</button>
-            <span class="sg-label">btn-wide — #7954C6</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn-wide btn-wide--video" type="button">화상강의 참여하기</button>
-            <span class="sg-label">btn-wide--video — #31AD60</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn-wide btn-wide--live" type="button">라이브 참여하기</button>
-            <span class="sg-label">btn-wide--live — #FC5758</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn-wide" disabled type="button">아직 모집기간이 아닙니다</button>
-            <span class="sg-label">disabled — #F1F1F1 / #BBBBBB</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn-wide btn-wide--purchased" type="button">구매완료</button>
-            <span class="sg-label">btn-wide--purchased — #F8F5FF / #7954C6</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn-wide btn-wide--rating" type="button">
-                <img src="../images/ico-star.svg" alt="" style="width:18px;height:18px;">
-                별점 남기기
-            </button>
-            <span class="sg-label">btn-wide--rating — border #FFCC00</span>
-        </div>
+    <!-- ① 와이드 버튼 (440×50) -->
+    <div class="sg-subtitle">① 와이드 버튼 440×50 (.btn-wide)</div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <button class="btn-wide" disabled type="button">아직 모집기간이 아닙니다</button>
+        <button class="btn-wide" disabled type="button">마감된 상품입니다</button>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <button class="btn-wide" type="button">
+            <img src="../images/free-icon-buy.svg" alt="" style="width:18px;height:auto;">구매하기
+        </button>
+        <button class="btn-wide" type="button">
+            <img src="../images/free-icon-plus.svg" alt="" style="width:18px;height:auto;">카드 등록 하기
+        </button>
+        <button class="btn-wide" type="button">
+            <img src="../images/free-icon-lesson.svg" alt="" style="width:18px;height:auto;">강의실 바로가기
+        </button>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <button class="btn-wide" type="button">
+            <img src="../images/free-icon-member-list.svg" alt="" style="width:18px;height:auto;">회원가입
+        </button>
+        <button class="btn-wide" type="button">
+            <img src="../images/free-icon-cart.svg" alt="" style="width:18px;height:auto;">내 상품 바로가기
+        </button>
+        <button class="btn-wide" type="button">
+            <img src="../images/free-icon-newsletter-subscribe.svg" alt="" style="width:18px;height:auto;">구독 시작하기
+        </button>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <button class="btn-wide" disabled type="button">수료 전</button>
+        <button class="btn-wide btn-wide--purchased" type="button">수료 중</button>
+        <button class="btn-wide" type="button">
+            <img src="../images/free-icon-certificate.svg" alt="" style="width:18px;height:auto;">수료중 보기
+        </button>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <button class="btn-wide btn-wide--video" type="button">
+            <img src="../images/free-icon-play.svg" alt="" style="width:18px;height:auto;">화상강의 참여하기
+        </button>
+        <button class="btn-wide btn-wide--live" type="button">
+            <img src="../images/free-icon-signal-stream.svg" alt="" style="width:18px;height:auto;">라이브 참여하기
+        </button>
+        <button class="btn-wide btn-wide--rating" type="button">
+            <img src="../images/free-icon-star.svg" alt="" style="width:18px;height:auto;">5.0
+        </button>
     </div>
 
     <hr class="sg-divider">
 
-    <!-- ② 일반 버튼 -->
-    <div class="sg-subtitle">일반 버튼 150×50 (.btn)</div>
-    <div class="sg-row">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <button class="btn btn--primary" type="button">
-                <img src="../images/ico-pencil-white.svg" alt="" style="width:14px;height:14px;">
-                저장하기
-            </button>
-            <span class="sg-label">btn--primary (#7954C6)</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <button class="btn btn--outline" type="button">취소하기</button>
-            <span class="sg-label">btn--outline</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <button class="btn btn--dark" type="button">파일선택</button>
-            <span class="sg-label">btn--dark (#555555)</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <button class="btn btn--primary" disabled>인증완료</button>
-            <span class="sg-label">disabled</span>
-        </div>
+    <!-- ② 일반 버튼 (150×50) -->
+    <div class="sg-subtitle">② 일반 버튼 150×50 (.btn)</div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+        <button class="btn btn--primary" type="button">
+            <img src="../images/free-icon-left-white-arrow.svg" alt="" style="width:16px;height:auto;">바로가기
+        </button>
+        <button class="btn btn--primary" type="button">
+            다음<img src="../images/free-icon-right-arrow.svg" alt="" style="width:16px;height:auto;">
+        </button>
+        <button class="btn btn--primary" type="button">
+            <img src="../images/free-icon-slant-arrow.svg" alt="" style="width:16px;height:auto;">저장하기
+        </button>
+        <button class="btn btn--primary" type="button">
+            <img src="../images/free-icon-white-bookmark.svg" alt="" style="width:16px;height:auto;">대표 카드
+        </button>
+        <button class="btn btn--primary" type="button">
+            <img src="../images/free-icon-slant-arrow.svg" alt="" style="width:16px;height:auto;">상품 상세보기
+        </button>
+        <button class="btn btn--primary" type="button">
+            <img src="../images/free-icon-whtie-check.svg" alt="" style="width:16px;height:auto;">본인인증
+        </button>
+        <button class="btn btn--primary" type="button">
+            <img src="../images/free-icon-coupon.svg" alt="" style="width:16px;height:auto;">쿠폰선택
+        </button>
+        <button class="btn btn--primary" type="button">
+            <img src="../images/free-icon-pencil.svg" alt="" style="width:16px;height:auto;">글쓰기
+        </button>
+        <button class="btn-profile" type="button">
+            <img src="../images/free-icon-up-arrow.svg" alt="" style="width:16px;height:auto;">프로필 업데이트
+        </button>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+        <button class="btn btn--outline" type="button">
+            <img src="../images/free-icon-left-violet-arrow.svg" alt="" style="width:16px;height:auto;">바로가기
+        </button>
+        <button class="btn btn--outline" type="button">
+            <img src="../images/free-icon-left-violet-arrow.svg" alt="" style="width:16px;height:auto;">더보기
+        </button>
+        <button class="btn btn--outline" type="button">
+            <img src="../images/free-icon-left-violet-arrow.svg" alt="" style="width:16px;height:auto;">이전
+        </button>
+        <button class="btn btn--outline" type="button">
+            <img src="../images/free-icon-violet-bookmark.svg" alt="" style="width:16px;height:auto;">대표 카드
+        </button>
+        <button class="btn btn--outline" type="button">
+            <img src="../images/free-icon-violet-x.svg" alt="" style="width:16px;height:auto;">취소
+        </button>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <button class="btn btn--primary" disabled type="button">
+            <img src="../images/free-icon-gray-check.svg" alt="" style="width:16px;height:auto;">인증완료
+        </button>
+        <button class="btn btn--primary" disabled type="button">
+            <img src="../images/free-icon-gray-x.svg" alt="" style="width:16px;height:auto;">삭제
+        </button>
     </div>
 
     <hr class="sg-divider">
 
-    <!-- ③ 소형 버튼 -->
-    <div class="sg-subtitle">소형 버튼 70×35 (.btn-sm)</div>
-    <div class="sg-row">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <button class="btn-sm btn-sm--outline" type="button">취소</button>
-            <span class="sg-label">outline</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <button class="btn-sm btn-sm--fill" type="button">수정</button>
-            <span class="sg-label">fill</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <button class="btn-sm" disabled>등록하기</button>
-            <span class="sg-label">disabled</span>
-        </div>
+    <!-- ③ 파일선택 / 찜하기 / 공유하기 -->
+    <div class="sg-subtitle">③ 파일선택 / 찜하기 / 공유하기</div>
+    <div class="sg-row" style="gap:16px;">
+        <button class="btn btn--dark" type="button">파일선택</button>
+        <button class="btn-wish" type="button">
+            <img src="../images/free-icon-violet-heart.svg" alt="" style="width:16px;height:auto;">찜하기
+        </button>
+        <button class="btn-share" type="button">
+            <img src="../images/free-icon-violet-share.svg" alt="" style="width:16px;height:auto;">공유하기
+        </button>
     </div>
 
     <hr class="sg-divider">
 
-    <!-- ④ 특수 버튼 -->
-    <div class="sg-subtitle">특수 버튼</div>
-    <div class="sg-row" style="flex-wrap:wrap;gap:20px;">
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn-wish" type="button">
-                <img src="../images/ico-heart.svg" alt="" style="width:16px;height:16px;">
-                찜하기
-            </button>
-            <span class="sg-label">btn-wish — 215×50 (#F8F8F8)</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn-share" type="button">
-                <img src="../images/ico-share.svg" alt="" style="width:16px;height:16px;">
-                공유하기
-            </button>
-            <span class="sg-label">btn-share — 215×50</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn btn--primary" style="width:180px;" type="button">프로필 업데이트</button>
-            <span class="sg-label">btn--primary — 180×50</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-            <button class="btn btn--dark" type="button">
-                <img src="../images/ico-download.svg" alt="" style="width:14px;height:14px;filter:brightness(0) invert(1);">
-                다운로드
-            </button>
-            <span class="sg-label">btn--dark + icon</span>
-        </div>
+    <!-- ④ 소형 버튼 (70×35) + 아웃라인 다운로드/복사 -->
+    <div class="sg-subtitle">④ 소형 버튼 70×35 (.btn-sm) + 다운로드/복사</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+        <button class="btn-sm btn-sm--outline" type="button">취소</button>
+        <button class="btn-sm btn-sm--fill" type="button">수정하기</button>
+        <button class="btn-sm" disabled type="button">등록하기</button>
+        <button class="btn-sm btn-sm--fill" type="button">등록하기</button>
+        <button class="btn-dl-all" type="button">
+            <img src="../images/free-icon-violet-download.svg" alt="">한번에 다운로드
+        </button>
+        <button class="btn-dl" type="button">
+            <img src="../images/free-icon-violet-download.svg" alt="">다운로드
+        </button>
+        <button class="btn-copy" type="button">
+            <img src="../images/free-icon-violet-copy.svg" alt="">복사
+        </button>
     </div>
 
     <hr class="sg-divider">
 
     <!-- ⑤ 더보기 버튼 -->
-    <div class="sg-subtitle">더보기 버튼 (.btn-more) — 100% × 60px</div>
+    <div class="sg-subtitle">⑤ 더보기 버튼 (.btn-more) — 100% × 60px</div>
     <button class="btn-more" type="button">
         더보기
-        <img src="../images/ico-chevron-down.svg" alt="">
+        <img src="../images/free-icon-more_view.svg" alt="" style="width:12px;height:auto;">
     </button>
-
-    <hr class="sg-divider">
-
-    <!-- ⑥ 컨텍스트 액션 버튼 -->
-    <div class="sg-subtitle">컨텍스트 액션 버튼 (.ctx-btn) — 60×32</div>
-    <div class="sg-row">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <div class="ctx-actions">
-                <button class="ctx-btn" type="button">수정</button>
-                <button class="ctx-btn" type="button">삭제</button>
-            </div>
-            <span class="sg-label">기본</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <div class="ctx-actions">
-                <button class="ctx-btn ctx-btn--active" type="button">수정</button>
-                <button class="ctx-btn" type="button">삭제</button>
-            </div>
-            <span class="sg-label">수정 활성</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <div class="ctx-actions">
-                <button class="ctx-btn" type="button">수정</button>
-                <button class="ctx-btn ctx-btn--active" type="button">삭제</button>
-            </div>
-            <span class="sg-label">삭제 활성</span>
-        </div>
-    </div>
 </div>
 
 
