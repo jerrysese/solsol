@@ -1643,9 +1643,9 @@ h2 {
     flex-shrink: 0;
 }
 
-.review-badge--learner    { background: #2BACF4; color: #FFFFFF; }
-.review-badge--instructor { background: #7954C6; color: #FFFFFF; }
-.review-badge--admin      { background: #FC5758; color: #FFFFFF; }
+.review-badge--learner    { background: #F7FBFF; color: #2BACF4; }
+.review-badge--instructor { background: #F8F5FF; color: #7954C6; }
+.review-badge--admin      { background: #FFEAEA; color: #FC5758; }
 
 .review-item__name {
     font-size: 14px;
