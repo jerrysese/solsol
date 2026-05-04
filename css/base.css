@@ -4130,12 +4130,27 @@ h2 {
 .course-card__ribbon--digital::before { background: #555555; }
 .course-card__ribbon--video::before   { background: #31AD60; }
 
+.course-card__ribbon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 24.5px 0, 0 24.5px;
+    background-size: 6px 6px, 6px 6px;
+}
+
+.course-card__ribbon--normal::after  { background-image: url('../images/free-icon-ribbon-offline-edge-top.svg'), url('../images/free-icon-ribbon-offline-edge-bottom.svg'); }
+.course-card__ribbon--live::after    { background-image: url('../images/free-icon-ribbon-live-edge-top.svg'), url('../images/free-icon-ribbon-live-edge-bottom.svg'); }
+.course-card__ribbon--package::after { background-image: url('../images/free-icon-ribbon-package-edge-top.svg'), url('../images/free-icon-ribbon-package-edge-bottom.svg'); }
+.course-card__ribbon--digital::after { background-image: url('../images/free-icon-ribbon-digital-edge-top.svg'), url('../images/free-icon-ribbon-digital-edge-bottom.svg'); }
+.course-card__ribbon--video::after   { background-image: url('../images/free-icon-ribbon-vod-edge-top.svg'), url('../images/free-icon-ribbon-vod-edge-bottom.svg'); }
+
 .course-card__ribbon span {
     display: block;
     position: absolute;
     width: 52px;
     top: 20px;
-    left: 4px;
+    left: 1px;
     text-align: center;
     font-size: 12px;
     font-weight: 700;
