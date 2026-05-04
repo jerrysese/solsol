@@ -709,8 +709,8 @@ img { display: block; max-width: 100%; }
 .btn-dl:hover,
 .btn-copy:hover { background: var(--color-primary-bg); }
 .btn-dl-all img,
-.btn-dl img,
-.btn-copy img { flex-shrink: 0; width: 14px; height: auto; }
+.btn-dl img { flex-shrink: 0; width: 12px; height: 14px; }
+.btn-copy img { flex-shrink: 0; width: 13px; height: 13px; aspect-ratio: 1/1; }
 
 
 /* =====================================================
