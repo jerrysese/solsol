@@ -70,59 +70,83 @@
 <div class="sg-section">
     <div class="sg-title">① BADGE</div>
 
-    <div class="sg-subtitle">상품 유형 배지 (.badge)</div>
-    <div class="sg-row">
-        <span class="badge badge--normal">일반강의</span>
-        <span class="badge badge--live">라이브강의</span>
-        <span class="badge badge--package">패키지상품</span>
-        <span class="badge badge--digital">디지털상품</span>
-        <span class="badge badge--video">화상강의</span>
-        <span class="badge badge--free">멤버십 무료</span>
-    </div>
+    <!-- Row 1: 상품유형 / 플랫폼 / 상태 / 역할 / 멤버십 -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;">
 
-    <hr class="sg-divider">
+        <!-- 상품 유형 텍스트 (.badge-type) -->
+        <span class="badge-type">일반강의</span>
+        <span class="badge-type">라이브강의</span>
+        <span class="badge-type">디지털상품</span>
+        <span class="badge-type">패키지상품</span>
+        <span class="badge-type">화상강의</span>
 
-    <div class="sg-subtitle">상태 배지 (.badge-status)</div>
-    <div class="sg-row">
+        <!-- 플랫폼 (.badge-platform) -->
+        <span class="badge-platform">
+            <img src="../images/free-icon-google-meet.svg" alt="" style="width:15px;height:14px;flex-shrink:0;">Googlemeet
+        </span>
+        <span class="badge-platform">
+            <img src="../images/free-icon-zoom.svg" alt="" style="width:20px;height:20px;flex-shrink:0;">Zoom
+        </span>
+
+        <!-- 상태 뱃지 (.badge-status) -->
         <span class="badge-status badge-status--live">
-            <span class="badge-status__dot"></span>LIVE
+            <img src="../images/free-icon-live.svg" alt="" style="width:8px;height:8px;flex-shrink:0;">LIVE
         </span>
         <span class="badge-status badge-status--upcoming">
-            <span class="badge-status__dot"></span>예정
+            <img src="../images/free-icon-schedule.svg" alt="" style="width:8px;height:8px;flex-shrink:0;">예정
         </span>
         <span class="badge-status badge-status--ended">
-            <span class="badge-status__dot"></span>종료
+            <img src="../images/free-icon-close.svg" alt="" style="width:8px;height:8px;flex-shrink:0;">종료
         </span>
         <span class="badge-status badge-status--closed">판매마감</span>
-    </div>
 
-    <hr class="sg-divider">
-
-    <div class="sg-subtitle">결제 상태 배지 (.badge-payment)</div>
-    <div class="sg-row">
-        <span class="badge-payment badge-payment--complete">결제완료</span>
-        <span class="badge-payment badge-payment--cancel">결제취소</span>
-        <span class="badge-payment badge-payment--fail">결제실패</span>
-        <span class="badge-payment badge-payment--defer">결제유예</span>
-        <span class="badge-payment badge-payment--unpaid">미결제</span>
-        <span class="badge-payment badge-payment--expired">기간만료</span>
-        <span class="badge-payment badge-payment--link">영수증보기</span>
-    </div>
-
-    <hr class="sg-divider">
-
-    <div class="sg-subtitle">역할 배지 (.review-badge)</div>
-    <div class="sg-row">
-        <span class="review-badge review-badge--learner">학습자</span>
-        <span class="review-badge review-badge--instructor">강사</span>
-        <span class="review-badge review-badge--admin">운영자</span>
-    </div>
-
-    <hr class="sg-divider">
-
-    <div class="sg-subtitle">태그 배지 (.badge-tag)</div>
-    <div class="sg-row">
+        <!-- 구독중 (.badge-tag) -->
         <span class="badge-tag">구독중</span>
+
+        <!-- 역할 배지 (.review-badge) -->
+        <span class="review-badge review-badge--instructor">강사</span>
+        <span class="review-badge review-badge--learner">학습자</span>
+        <span class="review-badge review-badge--admin">운영자</span>
+
+        <!-- 멤버십 무료 (.badge--free) -->
+        <span class="badge badge--free"><b>멤버십 무료</b></span>
+    </div>
+
+    <hr class="sg-divider">
+
+    <!-- Row 2: 리본 배지 + 결제 상태 배지 -->
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px;">
+
+        <!-- 상품 카드 리본 배지 (.course-card__ribbon) -->
+        <div style="display:flex;gap:10px;">
+            <div style="position:relative;width:73px;height:73px;overflow:hidden;flex-shrink:0;">
+                <div class="course-card__ribbon course-card__ribbon--package"><span>패키지상품</span></div>
+            </div>
+            <div style="position:relative;width:73px;height:73px;overflow:hidden;flex-shrink:0;">
+                <div class="course-card__ribbon course-card__ribbon--normal"><span>일반강의</span></div>
+            </div>
+            <div style="position:relative;width:73px;height:73px;overflow:hidden;flex-shrink:0;">
+                <div class="course-card__ribbon course-card__ribbon--live"><span>라이브강의</span></div>
+            </div>
+            <div style="position:relative;width:73px;height:73px;overflow:hidden;flex-shrink:0;">
+                <div class="course-card__ribbon course-card__ribbon--digital"><span>디지털강의</span></div>
+            </div>
+            <div style="position:relative;width:73px;height:73px;overflow:hidden;flex-shrink:0;">
+                <div class="course-card__ribbon course-card__ribbon--video"><span>화상강의</span></div>
+            </div>
+        </div>
+
+        <!-- 결제 상태 배지 (.badge-payment) -->
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
+            <span class="badge-payment badge-payment--complete">결제완료</span>
+            <span class="badge-payment badge-payment--cancel">결제취소</span>
+            <span class="badge-payment badge-payment--fail">결제실패</span>
+            <span class="badge-payment badge-payment--defer">결제유예</span>
+            <span class="badge-payment badge-payment--unpaid">미결제</span>
+            <span class="badge-payment badge-payment--expired">기간만료</span>
+            <span class="badge-payment badge-payment--card-cancel">카드사취소</span>
+            <span class="badge-payment badge-payment--link">영수증보기</span>
+        </div>
     </div>
 </div>
 

@@ -739,26 +739,28 @@ img { display: block; max-width: 100%; }
 .badge--video   { background: var(--color-green-bg);  border-color: var(--color-green);  color: var(--color-green); }
 .badge--meet    { background: var(--color-green-bg);  border-color: var(--color-green);  color: var(--color-green); width: 120px; }
 
-/* 상태 뱃지 (65px, 알약형) */
+/* 상태 뱃지 (55×25px, 알약형) */
 .badge-status {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding: 8px 15px;
+    width: 55px;
+    height: 25px;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: -0.24px;
+    letter-spacing: -0.2px;
     white-space: nowrap;
     border: none;
     color: #FFFFFF;
+    flex-shrink: 0;
 }
 
-.badge-status--live     { background: var(--color-red); }
-.badge-status--upcoming { background: var(--color-green); }
-.badge-status--ended    { background: #333333; }
-.badge-status--closed   { background: #333333; width: 65px; height: 30px; padding: 0; }
+.badge-status--live     { background: rgba(252, 87,  88,  0.60); }
+.badge-status--upcoming { background: rgba(49,  173, 96,  0.60); }
+.badge-status--ended    { background: rgba(51,  51,  51,  0.68); }
+.badge-status--closed   { background: rgba(51,  51,  51,  0.68); }
 
 /* 상태 뱃지 앞 동그라미 */
 .badge-status__dot {
@@ -778,14 +780,38 @@ img { display: block; max-width: 100%; }
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    width: 50px;
+    height: 25px;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
+    letter-spacing: -0.2px;
     color: #FFFFFF;
     background: var(--color-purple);
     white-space: nowrap;
     border: none;
+    flex-shrink: 0;
+}
+
+/* 상품 유형 텍스트 라벨 */
+.badge-type {
+    color: #BBBBBB;
+    font-family: var(--font-base);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+}
+
+/* 플랫폼 아이콘+텍스트 라벨 */
+.badge-platform {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #BBBBBB;
+    font-family: var(--font-base);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
 }
 
 
@@ -1117,9 +1143,24 @@ h2 {
 }
 
 .badge--free {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    color: #FFFFFF;
+    width: auto;
+    height: auto;
+    padding: 5px 8px;
+    border-radius: 10px;
+    border: 1px solid #FC5758;
+    background: #FFF6F6;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: -0.18px;
+    line-height: 130%;
+}
+.badge--free b {
+    background: linear-gradient(92deg, #7954C6, #FC5758);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-style: normal;
 }
 
 /* 카드 본문 */
@@ -1593,11 +1634,12 @@ h2 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 24px;
-    border-radius: 24px;
-    font-size: 12px;
-    font-weight: 500;
+    width: 40px;
+    height: 18px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: -0.18px;
     flex-shrink: 0;
 }
 
@@ -4041,22 +4083,23 @@ h2 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 4px 12px;
-    border-radius: 30px;
+    padding: 8px 15px;
+    border-radius: 10px;
     font-size: 12px;
     font-weight: 500;
-    letter-spacing: -0.24px;
+    letter-spacing: -0.48px;
     white-space: nowrap;
-    border: 1px solid;
+    border: none;
 }
 
-.badge-payment--complete { background: var(--color-green-bg);  border-color: var(--color-green); color: var(--color-green); }
-.badge-payment--cancel   { background: var(--color-gray-bg);   border-color: #DDDDDD;            color: #888888; }
-.badge-payment--fail     { background: var(--color-red-bg);    border-color: var(--color-red);   color: var(--color-red); }
-.badge-payment--defer    { background: #FFF9E6;                border-color: #E6A817;            color: #E6A817; }
-.badge-payment--unpaid   { background: var(--color-red-bg);    border-color: var(--color-red);   color: var(--color-red); }
-.badge-payment--expired  { background: #F5F5F5;                border-color: #CCCCCC;            color: #555555; }
-.badge-payment--link     { background: none; border: none; color: var(--color-primary); text-decoration: underline; cursor: pointer; }
+.badge-payment--complete    { background: #F8F5FF; color: #7954C6; }
+.badge-payment--cancel      { background: #F1F1F1; color: #888888; }
+.badge-payment--fail        { background: #FFEAEA; color: #FC5758; }
+.badge-payment--defer       { background: #FFF2CF; color: #FDBE1D; }
+.badge-payment--unpaid      { background: #FFEAD2; color: #EA9635; }
+.badge-payment--expired     { background: #F1F1F1; color: #888888; }
+.badge-payment--card-cancel { background: #F1F1F1; color: #888888; }
+.badge-payment--link        { background: none; color: #BBBBBB; text-decoration: underline; cursor: pointer; }
 
 
 /* =====================================================
@@ -4066,8 +4109,8 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 70px;
-    height: 70px;
+    width: 73px;
+    height: 73px;
     overflow: hidden;
     pointer-events: none;
     z-index: 1;
@@ -4076,24 +4119,24 @@ h2 {
 .course-card__ribbon span {
     display: block;
     position: absolute;
-    top: 14px;
-    left: -20px;
-    width: 82px;
+    top: 15px;
+    left: -21px;
+    width: 88px;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     color: #FFFFFF;
     padding: 4px 0;
     transform: rotate(-45deg);
-    letter-spacing: -0.2px;
+    letter-spacing: -0.24px;
     white-space: nowrap;
 }
 
-.course-card__ribbon--normal  span { background: var(--color-purple); }
-.course-card__ribbon--live    span { background: var(--color-red); }
-.course-card__ribbon--package span { background: var(--color-blue); }
-.course-card__ribbon--digital span { background: #555555; }
-.course-card__ribbon--video   span { background: var(--color-green); }
+.course-card__ribbon--normal  span { background: rgba(121, 84,  198, 0.6); }
+.course-card__ribbon--live    span { background: rgba(252, 87,  88,  0.6); }
+.course-card__ribbon--package span { background: rgba(43,  172, 244, 0.6); }
+.course-card__ribbon--digital span { background: rgba(51,  51,  51,  0.6); }
+.course-card__ribbon--video   span { background: rgba(49,  173, 96,  0.6); }
 
 
 /* =====================================================
