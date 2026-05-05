@@ -4626,7 +4626,14 @@ h2 {
 .goods-card__meta-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+}
+
+.goods-card__meta-key {
+    display: flex;
+    width: 100px;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
 }
 
 .goods-card__meta-icon {
@@ -4641,7 +4648,6 @@ h2 {
     color: #BBBBBB;
     letter-spacing: -0.65px;
     white-space: nowrap;
-    min-width: 65px;
 }
 
 .goods-card__meta-value {
