@@ -4054,7 +4054,7 @@ h2 {
     line-height: 150%;
     letter-spacing: -0.26px;
     outline: none;
-    min-height: 60px;
+    height: 35px;
     box-sizing: border-box;
     align-self: stretch;
 }
