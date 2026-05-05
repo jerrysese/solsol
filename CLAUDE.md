@@ -259,6 +259,16 @@ CSS 클래스: `.empty-state` / `.empty-state__icon` / `.empty-state__title` / `
 
 ---
 
+## 스타일가이드 확인 의무
+
+**퍼블리싱 작업 전 `/src/views/styleguide.html` 반드시 확인**
+
+- 모든 퍼블리싱 작업 시작 전에 `src/views/styleguide.html`을 확인한다.
+- 구현할 요소(버튼, 모달, 드롭다운, 배지, 빈 상태 등)가 스타일가이드에 정의되어 있으면 스타일가이드 CSS 클래스와 패턴을 그대로 사용한다.
+- 스타일가이드와 겹치는 요소를 별도 CSS로 중복 정의하지 않는다.
+
+---
+
 ## CSS 파일 구조
 - `css/base.css` — 전체 공통 스타일 (컴포넌트 별 섹션으로 구분)
 - Auth 페이지 섹션: `AUTH PAGE`, `AUTH AGREEMENT PAGE`, `AUTH AGREEMENT MODAL`
