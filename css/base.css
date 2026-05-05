@@ -4206,7 +4206,7 @@ h2 {
 .dropdown__panel {
     display: none;
     position: absolute;
-    top: calc(100% + 4px);
+    top: 100%;
     left: 0;
     min-width: 100%;
     background: #FFFFFF;
@@ -4218,9 +4218,18 @@ h2 {
     overflow: hidden;
 }
 
+.dropdown.open .dropdown__trigger {
+    border-color: var(--color-primary);
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+
 .dropdown.open .dropdown__panel {
     display: block;
     border-color: var(--color-primary);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    box-shadow: none;
 }
 
 .dropdown__item {
