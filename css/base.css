@@ -4177,10 +4177,11 @@ h2 {
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    width: 130px;
     height: 40px;
-    padding: 0 14px;
+    padding: 0 15px;
     border: 1px solid #EEEEEE;
-    border-radius: 5px;
+    border-radius: 4px;
     background: #FFFFFF;
     font-family: var(--font-base);
     font-size: 12px;
@@ -4210,23 +4211,23 @@ h2 {
     min-width: 100%;
     background: #FFFFFF;
     border: 1px solid #EEEEEE;
-    border-radius: 5px;
+    border-radius: 6px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 8px;
     z-index: 50;
     overflow: hidden;
-    max-height: 300px;
-    overflow-y: auto;
 }
 
 .dropdown.open .dropdown__panel {
     display: block;
+    border-color: var(--color-primary);
 }
 
 .dropdown__item {
     display: flex;
     align-items: center;
     height: 35px;
-    padding: 0 14px;
+    padding: 0 8px;
     font-size: 12px;
     font-weight: 500;
     color: #555555;
@@ -4246,24 +4247,39 @@ h2 {
     background: var(--color-primary-bg);
 }
 
-/* Context dropdown variant — 수정/삭제 등 단순 액션 메뉴 */
-.dropdown--ctx .dropdown__panel {
-    min-width: 120px;
+/* Context action panel — 수정/삭제 등 단순 액션 (standalone 표시용) */
+.dropdown--ctx-panel {
     width: 120px;
+    border: 1px solid #EEEEEE;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-.dropdown--ctx .dropdown__item {
+.dropdown--ctx-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
     height: 50px;
+    font-family: var(--font-base);
     font-size: 15px;
     font-weight: 500;
-    letter-spacing: -0.6px;
     color: #888888;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+    border-bottom: 1px solid #EEEEEE;
+    cursor: pointer;
+    transition: background 0.15s;
 }
 
-.dropdown--ctx .dropdown__item.active {
-    font-weight: 500;
-    background: #F8F5FF;
+.dropdown--ctx-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown--ctx-item.active {
     color: #7954C6;
+    background: #F8F5FF;
+    box-shadow: inset 0 0 0 1px #7954C6;
 }
 
 
