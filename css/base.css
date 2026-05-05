@@ -4271,8 +4271,13 @@ h2 {
     transition: background 0.15s;
 }
 
+.dropdown--ctx-item:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
 .dropdown--ctx-item:last-child {
     border-bottom: none;
+    border-radius: 0 0 5px 5px;
 }
 
 .dropdown--ctx-item.active {
