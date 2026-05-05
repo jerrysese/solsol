@@ -4345,19 +4345,28 @@ h2 {
     margin-left: 12px;
 }
 
-.left-sidebar__role {
-    display: inline-flex;
+.left-sidebar__user-top {
+    display: flex;
     align-items: center;
+    gap: 6px;
+}
+
+.left-sidebar__role {
+    display: flex;
+    width: 50px;
+    height: 24px;
+    padding: 5px;
+    flex-direction: column;
     justify-content: center;
-    height: 18px;
-    padding: 0 8px;
+    align-items: center;
     border-radius: 3px;
-    font-size: 10px;
-    font-weight: 700;
     background: #F7FBFF;
+    font-size: 9px;
+    font-weight: 700;
     color: #2BACF4;
-    align-self: flex-start;
-    margin-bottom: 2px;
+    letter-spacing: -0.18px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .left-sidebar__name {
@@ -4404,7 +4413,7 @@ h2 {
 .left-sidebar__memberships {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     align-self: stretch;
 }
 
@@ -4459,7 +4468,7 @@ h2 {
 .left-sidebar__stats {
     display: flex;
     align-self: stretch;
-    gap: 10px;
+    gap: 5px;
 }
 
 .left-sidebar__stat {
