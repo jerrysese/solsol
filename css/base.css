@@ -4524,13 +4524,14 @@ h2 {
 ===================================================== */
 .goods-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 337px);
     gap: 20px;
 }
 
 .goods-card {
     display: flex;
     flex-direction: column;
+    width: 337px;
     border: 1px solid #EEEEEE;
     border-radius: 10px;
     overflow: hidden;
@@ -4556,9 +4557,9 @@ h2 {
 .goods-card__thumb-title {
     font-size: 15px;
     font-weight: 500;
-    color: #888888;
+    color: #333333;
     line-height: 150%;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.6px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -4566,27 +4567,28 @@ h2 {
 }
 
 .goods-card__thumb-desc {
-    font-size: 12px;
-    font-weight: 400;
-    color: #BBBBBB;
+    font-size: 15px;
+    font-weight: 500;
+    color: #888888;
     line-height: 150%;
-    letter-spacing: -0.24px;
+    letter-spacing: -0.6px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    margin-top: 4px;
 }
 
-/* --- Info --- */
+/* --- Info (고정 높이 306px = padding 40px + content 266px) --- */
 .goods-card__info {
+    height: 306px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
     gap: 10px;
-    flex: 1 0 0;
     background: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    flex-shrink: 0;
 }
 
 .goods-card__type {
@@ -4601,7 +4603,7 @@ h2 {
     font-size: 18px;
     font-weight: 500;
     color: #333333;
-    letter-spacing: -0.36px;
+    letter-spacing: -0.72px;
     line-height: 150%;
     overflow: hidden;
     display: -webkit-box;
@@ -4610,12 +4612,14 @@ h2 {
     align-self: stretch;
 }
 
-/* --- Meta --- */
+/* --- Meta 영역 (고정 높이 109px, 상단 정렬) --- */
 .goods-card__meta {
+    height: 109px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     align-self: stretch;
+    overflow: hidden;
 }
 
 .goods-card__meta-row {
@@ -4633,88 +4637,51 @@ h2 {
 .goods-card__meta-label {
     font-size: 13px;
     font-weight: 500;
-    color: #888888;
-    letter-spacing: -0.26px;
+    color: #BBBBBB;
+    letter-spacing: -0.65px;
     white-space: nowrap;
-    min-width: 60px;
+    min-width: 65px;
 }
 
 .goods-card__meta-value {
     font-size: 13px;
     font-weight: 500;
-    color: #888888;
-    letter-spacing: -0.26px;
+    color: #555555;
+    letter-spacing: -0.65px;
 }
 
-/* Progress bar */
-.goods-card__progress {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* --- 진도율 바 --- */
+.goods-card__progress-track {
     flex: 1;
-}
-
-.goods-card__progress-bar {
-    flex: 1;
-    height: 6px;
-    background: #EEEEEE;
-    border-radius: 3px;
+    height: 20px;
+    border-radius: 100px;
+    background: #F8F5FF;
     overflow: hidden;
 }
 
 .goods-card__progress-fill {
     height: 100%;
-    background: var(--color-primary);
-    border-radius: 3px;
+    border-radius: 100px;
+    background: #7954C6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 8px;
+    min-width: 44px;
 }
 
-.goods-card__progress-badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3px 10px;
-    background: var(--color-primary);
-    border-radius: 20px;
-    font-size: 12px;
+.goods-card__progress-pct {
+    font-size: 11px;
     font-weight: 600;
     color: #FFFFFF;
-    letter-spacing: -0.24px;
+    letter-spacing: -0.22px;
     white-space: nowrap;
 }
 
-/* --- Button --- */
-.goods-card__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    height: 50px;
-    background: var(--color-primary);
-    border: none;
-    border-radius: 5px;
-    font-family: var(--font-base);
-    font-size: 17px;
-    font-weight: 500;
-    color: #FFFFFF;
-    letter-spacing: -1px;
-    cursor: pointer;
-    margin-top: auto;
-    flex-shrink: 0;
-}
-
-.goods-card__btn img {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    filter: brightness(0) invert(1);
-}
-
-@media (max-width: 1024px) {
-    .goods-list { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
     .goods-list { grid-template-columns: 1fr; }
+    .goods-card { width: 100%; }
+    .goods-card__info { height: auto; min-height: 306px; }
+    .goods-card__meta { height: auto; min-height: 109px; }
 }
 
