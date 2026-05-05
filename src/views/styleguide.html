@@ -438,9 +438,11 @@
 <div class="sg-section">
     <div class="sg-title">⑤ DROPDOWN</div>
 
+    <!-- 카테고리 드롭다운 -->
+    <div class="sg-subtitle">카테고리 드롭다운</div>
     <div class="sg-row" style="align-items:flex-start;gap:40px;">
         <div style="display:flex;flex-direction:column;gap:8px;">
-            <span class="sg-subtitle" style="margin:0 0 8px;">닫힌 상태</span>
+            <span class="sg-label">닫힌 상태</span>
             <div class="dropdown" id="dd1">
                 <button class="dropdown__trigger" type="button" onclick="toggleDropdown('dd1')">
                     전체 카테고리
@@ -448,16 +450,24 @@
                 </button>
                 <div class="dropdown__panel">
                     <div class="dropdown__item active">전체 카테고리</div>
-                    <div class="dropdown__item">일반강의</div>
-                    <div class="dropdown__item">라이브강의</div>
-                    <div class="dropdown__item">화상강의</div>
-                    <div class="dropdown__item">패키지상품</div>
-                    <div class="dropdown__item">디지털상품</div>
+                    <div class="dropdown__item">메뉴3</div>
+                    <div class="dropdown__item">메뉴4</div>
+                    <div class="dropdown__item">메뉴5</div>
+                    <div class="dropdown__item">메뉴6</div>
+                    <div class="dropdown__item">메뉴7</div>
+                    <div class="dropdown__item">메뉴8</div>
+                    <div class="dropdown__item">메뉴9</div>
+                    <div class="dropdown__item">메뉴10</div>
+                    <div class="dropdown__item">메뉴11</div>
+                    <div class="dropdown__item">메뉴12</div>
+                    <div class="dropdown__item">메뉴13</div>
+                    <div class="dropdown__item">메뉴14</div>
+                    <div class="dropdown__item">메뉴15</div>
                 </div>
             </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px;">
-            <span class="sg-subtitle" style="margin:0 0 8px;">열린 상태</span>
+            <span class="sg-label">열린 상태</span>
             <div class="dropdown open" id="dd2">
                 <button class="dropdown__trigger" type="button" onclick="toggleDropdown('dd2')">
                     전체 카테고리
@@ -465,11 +475,60 @@
                 </button>
                 <div class="dropdown__panel">
                     <div class="dropdown__item active">전체 카테고리</div>
-                    <div class="dropdown__item">일반강의</div>
-                    <div class="dropdown__item">라이브강의</div>
-                    <div class="dropdown__item">화상강의</div>
-                    <div class="dropdown__item">패키지상품</div>
-                    <div class="dropdown__item">디지털상품</div>
+                    <div class="dropdown__item">메뉴3</div>
+                    <div class="dropdown__item">메뉴4</div>
+                    <div class="dropdown__item">메뉴5</div>
+                    <div class="dropdown__item">메뉴6</div>
+                    <div class="dropdown__item">메뉴7</div>
+                    <div class="dropdown__item">메뉴8</div>
+                    <div class="dropdown__item">메뉴9</div>
+                    <div class="dropdown__item">메뉴10</div>
+                    <div class="dropdown__item">메뉴11</div>
+                    <div class="dropdown__item">메뉴12</div>
+                    <div class="dropdown__item">메뉴13</div>
+                    <div class="dropdown__item">메뉴14</div>
+                    <div class="dropdown__item">메뉴15</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 컨텍스트 드롭다운 (수정/삭제) -->
+    <div class="sg-subtitle" style="margin-top:32px;">컨텍스트 드롭다운 (댓글 내용 수정/삭제 시)</div>
+    <div class="sg-row" style="align-items:flex-start;gap:40px;">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+            <span class="sg-label">기본 상태</span>
+            <div class="dropdown dropdown--ctx open" id="dd3">
+                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('dd3')">
+                    <img src="../images/ico-chevron-down.svg" alt="">
+                </button>
+                <div class="dropdown__panel">
+                    <div class="dropdown__item">수정</div>
+                    <div class="dropdown__item">삭제</div>
+                </div>
+            </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+            <span class="sg-label">수정 활성</span>
+            <div class="dropdown dropdown--ctx open" id="dd4">
+                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('dd4')">
+                    <img src="../images/ico-chevron-down.svg" alt="">
+                </button>
+                <div class="dropdown__panel">
+                    <div class="dropdown__item active">수정</div>
+                    <div class="dropdown__item">삭제</div>
+                </div>
+            </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+            <span class="sg-label">삭제 활성</span>
+            <div class="dropdown dropdown--ctx open" id="dd5">
+                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('dd5')">
+                    <img src="../images/ico-chevron-down.svg" alt="">
+                </button>
+                <div class="dropdown__panel">
+                    <div class="dropdown__item">수정</div>
+                    <div class="dropdown__item active">삭제</div>
                 </div>
             </div>
         </div>
