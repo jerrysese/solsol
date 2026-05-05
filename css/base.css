@@ -4104,6 +4104,167 @@ h2 {
 
 
 /* =====================================================
+   POPUP MODAL — 팝업 모달
+===================================================== */
+.popup-modal {
+    width: 640px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-modal__header {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.popup-modal__title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.8px;
+    line-height: 150%;
+}
+
+.popup-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+.popup-modal__close img {
+    width: 15px;
+    height: 15px;
+}
+
+.popup-modal__body {
+    padding: 0 30px;
+}
+
+.popup-modal__content {
+    padding: 20px;
+    border-radius: 10px;
+    background: #F8F8F8;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    align-self: stretch;
+    height: 160px;
+    overflow-y: auto;
+}
+
+.popup-modal__text {
+    font-size: 13px;
+    font-weight: 400;
+    color: #555555;
+    letter-spacing: -0.26px;
+    line-height: 150%;
+    flex: 1 0 0;
+    margin: 0;
+}
+
+.popup-modal__footer {
+    padding: 20px 30px 30px;
+    display: flex;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.popup-modal__btn {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 5px;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    border: none;
+    cursor: pointer;
+    line-height: normal;
+}
+
+.popup-modal__btn--cancel {
+    background: #FFFFFF;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.popup-modal__btn img {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+}
+
+.popup-modal__btn--confirm img {
+    width: 14px;
+    height: 10px;
+}
+
+/* =====================================================
+   TOAST POPUP — 토스트 팝업
+===================================================== */
+.toast-popup {
+    display: inline-flex;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px dashed var(--color-primary);
+    background: var(--color-primary-bg);
+    align-self: stretch;
+}
+
+.toast-popup__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.toast-popup__text {
+    flex: 1 0 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-primary);
+    letter-spacing: -0.6px;
+    line-height: 150%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.toast-popup__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.toast-popup__close img {
+    width: 11px;
+    height: 11px;
+}
+
+
+/* =====================================================
    PAYMENT BADGE — 결제 상태 배지
 ===================================================== */
 .badge-payment {
