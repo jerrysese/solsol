@@ -3226,8 +3226,8 @@ h2 {
 }
 
 .community-post-role--teacher {
-    background: #FFF4E5;
-    color: #FF8C38;
+    background: #F8F5FF;
+    color: #7954C6;
 }
 
 .community-post-role--operator {
@@ -4265,8 +4265,22 @@ h2 {
     padding-top: 0;
 }
 
-/* 답글 입력 박스 / 댓글 수정 박스 */
-.community-detail-reply-input,
+/* 답글 입력 박스 */
+.community-detail-reply-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0 20px 30px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    margin: 20px 5px;
+    box-sizing: border-box;
+    align-self: stretch;
+}
+
+/* 댓글 수정 박스 */
 .community-detail-edit-box {
     display: flex;
     flex-direction: column;
