@@ -4562,16 +4562,18 @@ h2 {
 .goods-card__thumb {
     position: relative;
     height: 190px;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
+    padding-top: 45px; /* 20px 기본 + 25px badge 영역 */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background: #F2F2F2;
     border-radius: 10px 10px 0 0;
     flex-shrink: 0;
 }
 
 .goods-card__thumb-text {
-    margin-top: 44px;
+    /* TEXT 프레임(125px) 내 수직 중앙 정렬 — margin-top 제거 */
 }
 
 .goods-card__thumb-title {
