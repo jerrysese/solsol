@@ -3226,8 +3226,13 @@ h2 {
 }
 
 .community-post-role--teacher {
-    background: #F7FBFF;
-    color: #7954C6;
+    background: #FFF4E5;
+    color: #FF8C38;
+}
+
+.community-post-role--operator {
+    background: #FFF0F5;
+    color: #E91E8C;
 }
 
 .community-post-author {
