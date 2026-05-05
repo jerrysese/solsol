@@ -4469,6 +4469,7 @@ h2 {
     display: flex;
     align-self: stretch;
     gap: 5px;
+    margin-top: -5px;
 }
 
 .left-sidebar__stat {
