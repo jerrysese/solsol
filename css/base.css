@@ -4004,76 +4004,102 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 60px 40px;
-    gap: 16px;
-    text-align: center;
+    padding: 108px 0;
+    gap: 20px;
     width: 100%;
 }
 
 .empty-state__icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #F2F2F2;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background: #F2F2F7;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-bottom: 4px;
 }
 
 .empty-state__icon img {
-    width: 40px;
-    height: 40px;
-    opacity: 0.5;
+    max-width: 90px;
+    max-height: 90px;
+}
+
+/* free-icon-box-x.svg는 200×200 원이 SVG 내장 — 컨테이너 꽉 채움 */
+.empty-state__icon img[src*="free-icon-box-x"] {
+    width: 200px;
+    height: 200px;
+    max-width: none;
+    max-height: none;
 }
 
 .empty-state__title {
-    font-size: 17px;
+    font-size: 34px;
     font-weight: 700;
     color: #333333;
-    letter-spacing: -0.68px;
+    letter-spacing: -1.36px;
+    line-height: 150%;
+    text-align: center;
 }
 
 .empty-state__desc {
-    font-size: 13px;
+    font-size: 24px;
     font-weight: 400;
-    color: #888888;
-    letter-spacing: -0.26px;
-    line-height: 1.65;
+    color: #555555;
+    letter-spacing: -0.96px;
+    line-height: 150%;
+    text-align: center;
 }
 
 /* 인라인형 (아이콘 + 텍스트 가로 배치) */
 .empty-inline {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 20px 0;
+    gap: 20px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    background: #F8F8F8;
 }
 
 .empty-inline__icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #F2F2F2;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 25px;
 }
 
 .empty-inline__icon img {
-    width: 18px;
-    height: 18px;
-    opacity: 0.5;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.empty-inline__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.empty-inline__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #555555;
+    letter-spacing: -0.96px;
+    line-height: 150%;
 }
 
 .empty-inline__text {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
     color: #888888;
-    letter-spacing: -0.26px;
+    letter-spacing: -0.72px;
+    line-height: 150%;
 }
 
 
