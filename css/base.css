@@ -4540,6 +4540,7 @@ h2 {
     align-self: stretch;
     font-size: 13px;
     font-weight: 500;
+    line-height: 150%;
     color: #888888;
     letter-spacing: -0.52px;
 }
