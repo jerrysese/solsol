@@ -4159,8 +4159,7 @@ h2 {
     gap: 10px;
     align-items: flex-start;
     align-self: stretch;
-    height: 160px;
-    overflow-y: auto;
+    flex: 1 0 0;
 }
 
 .popup-modal__text {
@@ -4219,7 +4218,7 @@ h2 {
    TOAST POPUP — 토스트 팝업
 ===================================================== */
 .toast-popup {
-    display: inline-flex;
+    display: flex;
     padding: 20px;
     align-items: center;
     gap: 10px;
