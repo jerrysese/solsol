@@ -229,14 +229,14 @@
                                 </button>
                             </div>
                         </div>
-                        <!-- 수정 박스 (미디어 + textarea 포함, 버튼은 바깥) -->
+                        <!-- 수정 박스 (미디어 + 본문 포함, 버튼은 바깥) -->
                         <div class="community-detail-edit-box">
                             <div class="community-detail-comment-media">
                                 <div class="community-detail-comment-thumb">
                                     <img src="../../images/youtube_img.png" alt="">
                                 </div>
                             </div>
-                            <textarea class="community-detail-edit-textarea" rows="4">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다. 설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요. 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다.</textarea>
+                            <p class="community-detail-comment-body">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다. 설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요. 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다. 혼자 공부하는...<a href="#" class="community-detail-comment-more">전체보기</a></p>
                         </div>
                         <!-- 수정 액션 (박스 바깥) -->
                         <div class="community-detail-edit-actions">
@@ -272,19 +272,51 @@
                             </div>
                         </div>
                         <p class="community-detail-comment-body">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다. 설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요. 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다. 혼자 공부하는...<a href="#" class="community-detail-comment-more">전체보기</a></p>
-                        <!-- 답글 3개 토글 (열린 상태) -->
+                        <!-- 답글 3개 토글 (닫힌 상태 — ∧ = 닫힘) -->
                         <button type="button" class="community-detail-reply-toggle">
                             답글 3개
                             <img src="../../images/free-icon-reply-close.svg" alt="">
                         </button>
+                    </div>
+
+                    <!-- 댓글 3: David D. (강사) - 답글 3개 열림 -->
+                    <div class="community-detail-comment-item">
+                        <div class="community-detail-comment-header">
+                            <div class="community-detail-comment-user">
+                                <img src="../../images/free-icon-default-avatar.svg" alt="" class="community-post-avatar">
+                                <span class="community-post-role community-post-role--teacher">강사</span>
+                                <span class="community-post-author">David D.</span>
+                                <div class="community-detail-stars">
+                                    <img src="../../images/free-icon-reply-star.svg" alt="" class="community-detail-star">
+                                    <img src="../../images/free-icon-reply-star.svg" alt="" class="community-detail-star">
+                                    <img src="../../images/free-icon-reply-star.svg" alt="" class="community-detail-star">
+                                    <img src="../../images/free-icon-reply-star.svg" alt="" class="community-detail-star">
+                                    <img src="../../images/free-icon-reply-star.svg" alt="" class="community-detail-star community-detail-star--empty">
+                                </div>
+                                <span class="community-detail-comment-rating">4.7</span>
+                                <span class="community-post-time">방금 전</span>
+                            </div>
+                            <div class="community-detail-comment-btns">
+                                <button type="button" class="community-detail-comment-btn">답글</button>
+                                <button type="button" class="community-detail-comment-dots">
+                                    <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <p class="community-detail-comment-body">이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 중간중간 "이건 현업에서 이렇게 쓰입니다"라고 짚어주는 부분이 좋았고, 혼자 공부할 때 막혔던 포인트들이 정리되는 느낌이었어요. 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.<a href="#" class="community-detail-comment-more">전체보기</a></p>
+                        <!-- 답글 3개 토글 (열린 상태 — ∨ = 열림) -->
+                        <button type="button" class="community-detail-reply-toggle">
+                            답글 3개
+                            <img src="../../images/free-icon-reply-open.svg" alt="">
+                        </button>
                         <!-- 답글 목록 -->
                         <div class="community-detail-reply-list">
-                            <!-- 답글 입력 (David D.) -->
+                            <!-- 답글 3-1: Monzo (학습자) - 새 답글 입력 -->
                             <div class="community-detail-reply-input">
                                 <div class="community-detail-comment-input-header">
                                     <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
                                     <span class="community-post-role">학습자</span>
-                                    <span class="community-post-author">David D.</span>
+                                    <span class="community-post-author">Monzo</span>
                                 </div>
                                 <textarea class="community-detail-reply-textarea" placeholder="답글을 입력해주세요." rows="1"></textarea>
                                 <div class="community-detail-reply-actions">
@@ -297,7 +329,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- 답글 1: Ryan Inn (운영자) - 이미지 첨부 -->
+                            <!-- Ryan Inn (운영자) - 답글, 이미지 첨부 -->
                             <div class="community-detail-reply-item">
                                 <div class="community-detail-comment-header">
                                     <div class="community-detail-comment-user">
@@ -320,7 +352,7 @@
                                 </div>
                                 <p class="community-detail-comment-body">@David.D 이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 중간중간 "이건 현업에서 이렇게 쓰입니다"라고 짚어주는 부분이 좋았고, 혼자 공부할 때 막혔던 포인트들이 정리되는 느낌이었어요. 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.</p>
                             </div>
-                            <!-- 답글 2: Monzo (학습자) - 수정 중 -->
+                            <!-- 답글 3-2: Monzo (학습자) - Ryan Inn에 답글 -->
                             <div class="community-detail-reply-input">
                                 <div class="community-detail-comment-input-header">
                                     <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
@@ -338,31 +370,30 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- 댓글 4: Vishnu Gupta (강사) - 답글 더보기 (접힌 상태) -->
-                    <div class="community-detail-comment-item">
-                        <div class="community-detail-comment-header">
-                            <div class="community-detail-comment-user">
-                                <img src="../../images/free-icon-lecturer.svg" alt="" class="community-post-avatar">
-                                <span class="community-post-role community-post-role--teacher">강사</span>
-                                <span class="community-post-author">Vishnu Gupta</span>
-                                <span class="community-post-time">방금 전</span>
+                            <!-- Vishnu Gupta (강사) - 답글 -->
+                            <div class="community-detail-reply-item">
+                                <div class="community-detail-comment-header">
+                                    <div class="community-detail-comment-user">
+                                        <img src="../../images/free-icon-lecturer.svg" alt="" class="community-post-avatar">
+                                        <span class="community-post-role community-post-role--teacher">강사</span>
+                                        <span class="community-post-author">Vishnu Gupta</span>
+                                        <span class="community-post-time">방금 전</span>
+                                    </div>
+                                    <div class="community-detail-comment-btns">
+                                        <button type="button" class="community-detail-comment-btn">답글</button>
+                                        <button type="button" class="community-detail-comment-dots">
+                                            <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">@Ryan Inn 이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 중간중간 "이건 현업에서 이렇게 쓰입니다"라고 짚어주는 부분이 좋았고, 혼자 공부할 때 막혔던 포인트들이 정리되는 느낌이었어요. 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.</p>
                             </div>
-                            <div class="community-detail-comment-btns">
-                                <button type="button" class="community-detail-comment-btn">답글</button>
-                                <button type="button" class="community-detail-comment-dots">
-                                    <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                </button>
-                            </div>
+                            <!-- 답글 더보기 -->
+                            <button type="button" class="community-detail-reply-toggle">
+                                답글 더보기
+                                <img src="../../images/free-icon-reply-open.svg" alt="">
+                            </button>
                         </div>
-                        <p class="community-detail-comment-body">@Ryan Inn 이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 중간중간 "이건 현업에서 이렇게 쓰입니다"라고 짚어주는 부분이 좋았고, 혼자 공부할 때 막혔던 포인트들이 정리되는 느낌이었어요. 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.<a href="#" class="community-detail-comment-more">전체보기</a></p>
-                        <!-- 답글 더보기 토글 (접힌 상태) -->
-                        <button type="button" class="community-detail-reply-toggle">
-                            답글 더보기
-                            <img src="../../images/free-icon-reply-open.svg" alt="">
-                        </button>
                     </div>
 
                     <!-- 댓글 5: Ryan Inn (운영자) -->
