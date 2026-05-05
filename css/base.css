@@ -4045,28 +4045,32 @@ h2 {
 .community-detail-comment-textarea {
     width: 100%;
     border: none;
+    border-bottom: 1px solid #EEEEEE;
     background: transparent;
     resize: none;
     font-family: var(--font-base);
     font-size: 13px;
     font-weight: 400;
     color: #333333;
-    line-height: 150%;
-    letter-spacing: -0.26px;
+    line-height: 20px;
+    letter-spacing: -0.65px;
     outline: none;
     height: 35px;
-    box-sizing: border-box;
+    padding-bottom: 20px;
+    box-sizing: content-box;
     align-self: stretch;
 }
 
 .community-detail-comment-textarea::placeholder {
-    color: #BBBBBB;
+    color: #888888;
 }
 
 .community-detail-comment-actions {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
     align-self: stretch;
 }
 
@@ -4176,7 +4180,7 @@ h2 {
 .community-detail-comment-media {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .community-detail-comment-thumb {
