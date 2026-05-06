@@ -3586,7 +3586,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 30px;
+    padding: 30px 30px 100px 30px;
     min-height: 280px;
     align-self: stretch;
     border-left: 1px solid #EEEEEE;
