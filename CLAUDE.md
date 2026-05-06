@@ -1,23 +1,40 @@
 # solsol 프론트엔드 퍼블리싱 가이드
 
-## ⚠️ 절대 규칙 — 반드시 준수할 것 ⚠️
+## 스타일가이드 확인 의무
 
-**피그마 레이아웃 이미지(layout1.jpg, layout2.jpg ...) 숙지 의무**
+**퍼블리싱 작업 전 `/src/views/styleguide.html` 반드시 확인**
 
-- 퍼블리싱 작업 전 `layout1.jpg`, `layout2.jpg` 등으로 제공되는 피그마 캡처 이미지에 표시된 모든 수치(padding, gap, margin, width, height, border-radius 등)를 100% 숙지한 후 작업을 시작한다.
+- 모든 퍼블리싱 작업 시작 전에 `src/views/styleguide.html`을 확인한다.
+- 구현할 요소(버튼, 모달, 드롭다운, 배지, 빈 상태 등)가 스타일가이드에 정의되어 있으면 스타일가이드 CSS 클래스와 패턴을 그대로 사용한다.
+- 스타일가이드와 겹치는 요소를 별도 CSS로 중복 정의하지 않는다.
+
+---
+
+## CSS 파일 구조
+- `css/base.css` — 전체 공통 스타일 (컴포넌트 별 섹션으로 구분)
+- Auth 페이지 섹션: `AUTH PAGE`, `AUTH AGREEMENT PAGE`, `AUTH AGREEMENT MODAL`
+- 공통 컴포넌트 섹션: `EMPTY STATE`, `PAYMENT BADGE`, `COURSE CARD RIBBON`, `DROPDOWN`, `LEFT SIDEBAR`, `CONTEXT ACTIONS`
+
+---
+
+## 퍼블리싱 페이지마다 알려 주는 작업 디렉토리 안의 정보들 숙지 의무
+- 퍼블리싱 페이지마다 별도 작업 디렉토리를 알려 줄 예정.
+- 루트에는 전체 화면을 조감할 수 있는 캡쳐화면 `full_screen.jpg`이 있으니 확인 필수
+- `icon/` ->관련 이미지, svg 포맷 아이콘 디렉토리 확인
+- `layout and font/` -> 화면 레이아웃과 폰트, 스타일 등의 정보를 캡쳐한 이미지 파일
+  피그마 캡처 이미지에 표시된 모든 수치(padding, gap, margin, width, height, border-radius 등)를 100% 숙지한 후 작업을 시작한다.
 - 이미지에 명시된 수치를 임의로 바꾸거나 누락하는 것은 퍼블리싱 오류로 간주된다.
 - 수치가 불명확하거나 보이지 않을 경우 작업 전에 반드시 확인을 요청한다.
 
 ---
 
-**텍스트 내용, 항목 개수, 열 수를 절대로 임의로 변경하지 말 것!!!**
+## 텍스트 내용, 항목 개수, 열 수를 절대로 임의로 변경하지 말 것!!!
 
 - HTML 내 텍스트(라벨, 설명, 버튼명 등)는 디자인 원본(Figma/캡처)에 있는 내용 그대로 사용한다.
 - 리스트 항목 개수(예: 혜택 5개)를 임의로 줄이거나 늘리지 않는다.
 - 테이블·그리드·카드 등의 열/행 수를 임의로 변경하지 않는다.
 - 디자인 원본에 없는 텍스트를 추가하거나, 있는 텍스트를 삭제·교체하지 않는다.
 - 변경이 필요하다고 판단되더라도 반드시 먼저 사용자에게 확인을 구한다.
-- 이 규칙을 어기는 행위는 퍼블리싱 오류로 간주된다.
 
 ---
 
@@ -174,13 +191,14 @@ CSS 클래스: `.empty-state` / `.empty-state__icon` / `.empty-state__title` / `
 
 | 클래스 | 의미 |
 |--------|------|
-| `--complete` | 결제완료 (초록) |
-| `--cancel` | 결제취소 (회색) |
-| `--fail` | 결제실패 (빨강) |
-| `--defer` | 결제유예 (노랑) |
-| `--unpaid` | 미결제 (빨강) |
-| `--expired` | 기간만료 (어두운 회색) |
-| `--link` | 영수증보기 (링크 스타일) |
+| `--complete` | 결제완료 (보라 #7954C6) |
+| `--cancel` | 결제취소 (회색 #888) |
+| `--fail` | 결제실패 (빨강 #FC5758) |
+| `--defer` | 결제유예 (노랑 #FDBE1D) |
+| `--unpaid` | 미결제 (주황 #EA9635) |
+| `--expired` | 기간만료 (회색 #888) |
+| `--card-cancel` | 카드사취소 (회색 #888) |
+| `--link` | 영수증보기 (링크 스타일 #BBB) |
 
 ---
 
@@ -258,18 +276,3 @@ CSS 클래스: `.empty-state` / `.empty-state__icon` / `.empty-state__title` / `
 ```
 
 ---
-
-## 스타일가이드 확인 의무
-
-**퍼블리싱 작업 전 `/src/views/styleguide.html` 반드시 확인**
-
-- 모든 퍼블리싱 작업 시작 전에 `src/views/styleguide.html`을 확인한다.
-- 구현할 요소(버튼, 모달, 드롭다운, 배지, 빈 상태 등)가 스타일가이드에 정의되어 있으면 스타일가이드 CSS 클래스와 패턴을 그대로 사용한다.
-- 스타일가이드와 겹치는 요소를 별도 CSS로 중복 정의하지 않는다.
-
----
-
-## CSS 파일 구조
-- `css/base.css` — 전체 공통 스타일 (컴포넌트 별 섹션으로 구분)
-- Auth 페이지 섹션: `AUTH PAGE`, `AUTH AGREEMENT PAGE`, `AUTH AGREEMENT MODAL`
-- 공통 컴포넌트 섹션: `EMPTY STATE`, `PAYMENT BADGE`, `COURSE CARD RIBBON`, `DROPDOWN`, `LEFT SIDEBAR`, `CONTEXT ACTIONS`
