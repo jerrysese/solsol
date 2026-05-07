@@ -3313,6 +3313,7 @@ h2 {
 
 .community-post-title--pinned {
     display: flex;
+    align-items: center;
     -webkit-line-clamp: unset;
     overflow: visible;
     white-space: nowrap;
@@ -3324,7 +3325,6 @@ h2 {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    align-self: flex-start;
 }
 
 .community-post-body {
