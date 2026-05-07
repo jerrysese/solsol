@@ -3180,6 +3180,12 @@ h2 {
     flex-direction: column;
     gap: 20px;
     align-self: stretch;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.community-post-item:hover {
+    background-color: #F8F8F8;
 }
 
 /* 게시글 메타 */
@@ -3315,10 +3321,10 @@ h2 {
 }
 
 .community-post-pin {
-    width: 14px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
-    margin-top: 2px;
+    align-self: flex-start;
 }
 
 .community-post-body {
