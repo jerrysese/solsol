@@ -3235,6 +3235,11 @@ h2 {
     color: #E91E8C;
 }
 
+.community-post-role--admin {
+    background: #FFEDF9;
+    color: #EE53B5;
+}
+
 .community-post-author {
     font-size: 14px;
     font-weight: 700;
