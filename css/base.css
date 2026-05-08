@@ -2620,6 +2620,10 @@ h2 {
     background-image: url('../src/images/community-index-banner.png');
 }
 
+.page-banner--notice {
+    background-image: url('../src/images/notice-index-banner.png');
+}
+
 .community-content {
     max-width: 1440px;
     width: 100%;
@@ -3814,6 +3818,10 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
+}
+
+.community-detail-content .community-title {
+    margin-bottom: 30px;
 }
 
 /* 제목 행 */
