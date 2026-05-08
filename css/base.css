@@ -2624,6 +2624,28 @@ h2 {
     background-image: url('../src/images/notice-index-banner.png');
 }
 
+.page-banner--board {
+    background-image: url('../src/images/board-index-banner.png');
+}
+
+.community-board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.community-post-lock {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.community-post-title--locked {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
 .community-content {
     max-width: 1440px;
     width: 100%;
