@@ -3561,6 +3561,58 @@ h2 {
     box-sizing: border-box;
 }
 
+/* 비밀글 토글 */
+.write-secret-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.write-secret-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.write-secret-slider {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    background: #DDDDDD;
+    border-radius: 12px;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.write-secret-slider::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: left 0.2s;
+}
+
+.write-secret-toggle input[type="checkbox"]:checked + .write-secret-slider {
+    background: var(--color-primary);
+}
+
+.write-secret-toggle input[type="checkbox"]:checked + .write-secret-slider::after {
+    left: 23px;
+}
+
+.write-secret-text {
+    font-size: 15px;
+    color: #555555;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
 .write-title-input::placeholder {
     color: #333333;
     opacity: 0.5;
