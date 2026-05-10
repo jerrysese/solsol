@@ -1,5 +1,24 @@
 # solsol 프론트엔드 퍼블리싱 가이드
 
+## GitHub 배포 프로세스
+
+작업 완료 후 GitHub 업데이트 요청 시 아래 순서를 반드시 따른다. GitHub Pages는 `main` 브랜치 기준으로 서비스되며, 모든 설정은 이미 완료된 상태이므로 설정 관련 질문은 하지 않는다.
+
+```
+git add <파일>
+git commit -m "..."
+git push origin master
+git checkout main
+git merge master
+git push origin main
+git checkout master
+```
+
+- `master` 에만 푸시하면 Pages에 반영되지 않음 — `main` 머지·푸시까지 한 번에 처리
+- 웹 확인 주소: `https://jerrysese.github.io/solsol/`
+
+---
+
 ## 스타일가이드 확인 의무
 
 **퍼블리싱 작업 전 `/src/views/styleguide.html` 반드시 확인**
@@ -140,8 +159,8 @@ CSS 클래스: `.filter-search` / `.filter-search__input` / `.filter-search__btn
     <div class="empty-state__icon">
         <img src="../../images/ico-empty-box.svg" alt="">
     </div>
-    <p class="empty-state__title">아직 비어있어요</p>
-    <p class="empty-state__desc">조금만 기다려 주세요.<br>알찬 상품으로 채워질 예정이에요.</p>
+    <p class="empty-state__title">아직 비어 있어요</p>
+    <p class="empty-state__desc">조금만 기다려 주세요.<br>알찬 상품으로 채워질 예정이예요.</p>
 </div>
 ```
 
@@ -151,7 +170,7 @@ CSS 클래스: `.filter-search` / `.filter-search__input` / `.filter-search__btn
     <div class="empty-inline__icon">
         <img src="../../images/ico-empty.svg" alt="">
     </div>
-    <span class="empty-inline__text">구독중인 멤버십이 없어요</span>
+    <span class="empty-inline__text">구독 중인 멤버십이 없어요</span>
 </div>
 ```
 
