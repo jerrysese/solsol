@@ -5955,6 +5955,7 @@ h2 {
 .posting-item__thumb {
     width: 100px;
     height: 100px;
+    aspect-ratio: 1 / 1;
     border-radius: 6px;
     overflow: hidden;
     flex-shrink: 0;
