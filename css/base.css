@@ -5869,6 +5869,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    height: 40px;
 }
 
 .posting-item__category-title {
@@ -5905,8 +5906,10 @@ h2 {
 
 .posting-item__date {
     font-size: 13px;
+    font-weight: 500;
     color: #888888;
-    letter-spacing: -0.5px;
+    line-height: 150%;
+    letter-spacing: -0.52px;
 }
 
 .posting-item__stat {
@@ -5914,7 +5917,10 @@ h2 {
     align-items: center;
     gap: 4px;
     font-size: 13px;
+    font-weight: 500;
     color: #888888;
+    line-height: 150%;
+    letter-spacing: -0.52px;
 }
 
 .posting-item__stat img { width: 14px; height: 14px; }
@@ -5928,13 +5934,14 @@ h2 {
 
 .posting-item__body {
     flex: 1;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 500;
     color: #555555;
-    line-height: 1.7;
-    letter-spacing: -0.4px;
+    line-height: 150%;
+    letter-spacing: -0.52px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
 
