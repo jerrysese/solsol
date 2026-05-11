@@ -5942,10 +5942,10 @@ h2 {
 .posting-item__body {
     flex: 1;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 400;
     color: #555555;
     line-height: 150%;
-    letter-spacing: -0.52px;
+    letter-spacing: -0.26px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 5;
