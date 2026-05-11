@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png">
+    <title>내 게시글 - 게시판</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container">
+
+            <a href="#" class="header-logo">
+                <img src="../../../images/logo.svg" alt="로고">
+            </a>
+
+            <nav class="header-nav">
+                <a href="#" class="nav-item">회사소개</a>
+                <a href="#" class="nav-item">일반강의</a>
+                <a href="#" class="nav-item">라이브강의</a>
+                <a href="#" class="nav-item">화상강의</a>
+                <a href="#" class="nav-item">패키지 상품</a>
+                <a href="#" class="nav-item">디지털 상품</a>
+                <a href="#" class="nav-item">프리미엄 커뮤니티</a>
+                <a href="#" class="nav-item">멤버십 상품</a>
+                <a href="#" class="nav-item">공지사항</a>
+                <a href="#" class="nav-item">1:1문의</a>
+            </nav>
+
+            <div class="header-profile">
+                <button class="btn-bell" aria-label="알림">
+                    <img src="../../../images/ico-bell.svg" alt="알림" width="20" height="20">
+                    <span class="bell-dot"></span>
+                </button>
+                <div class="header-avatar-wrap">
+                    <div class="header-avatar"></div>
+                    <div class="profile-dropdown">
+                        <div class="profile-dropdown-user">
+                            <img src="../../../images/ico-google.svg" alt="Google" class="profile-social-icon">
+                            <span class="profile-username">홍길동</span>
+                            <img src="../../../images/arrow-more.svg" alt="" class="profile-arrow">
+                        </div>
+                        <hr class="profile-dropdown-divider">
+                        <ul class="profile-dropdown-menu">
+                            <li class="profile-menu-item">
+                                <img src="../../../images/ico-admin.svg" alt="">
+                                <span>관리자 페이지 바로가기</span>
+                            </li>
+                            <li class="profile-menu-item">
+                                <img src="../../../images/ico-bag.svg" alt="">
+                                <span>내 상품</span>
+                            </li>
+                            <li class="profile-menu-item">
+                                <img src="../../../images/ico-coupon-small.svg" alt="">
+                                <span>쿠폰 관리</span>
+                            </li>
+                            <li class="profile-menu-item">
+                                <img src="../../../images/ico-logout.svg" alt="">
+                                <span>로그아웃</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+        <div class="mypage-layout">
+
+            <!-- ===== 좌측 사이드바 ===== -->
+            <aside class="left-sidebar">
+                <!-- 프로필 -->
+                <div class="left-sidebar__profile">
+                    <div class="left-sidebar__avatar">
+                        <img src="../../../images/community-user-avatar.jpg" alt="">
+                    </div>
+                    <div class="left-sidebar__user">
+                        <div class="left-sidebar__user-top">
+                            <span class="left-sidebar__role">학습자</span>
+                            <span class="left-sidebar__name">Monzo</span>
+                        </div>
+                        <span class="left-sidebar__email">Monzo@example.com</span>
+                    </div>
+                    <button class="left-sidebar__logout" type="button">
+                        <img src="../../../images/ico-lm-logout.svg" alt="로그아웃">
+                    </button>
+                </div>
+
+                <hr class="left-sidebar__divider">
+
+                <!-- 멤버십 바 -->
+                <div class="left-sidebar__memberships">
+                    <a href="#" class="left-sidebar__mem-bar">
+                        <span class="left-sidebar__mem-name">멤버십</span>
+                        <span class="left-sidebar__mem-status">
+                            구독 전
+                            <img src="../../../images/ico-lm-arrow.svg" alt="">
+                        </span>
+                    </a>
+                    <a href="#" class="left-sidebar__mem-bar left-sidebar__mem-bar--community">
+                        <span class="left-sidebar__mem-name">프리미엄 커뮤니티</span>
+                        <span class="left-sidebar__mem-status">
+                            2개 구독중
+                            <img src="../../../images/ico-lm-arrow.svg" alt="">
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 통계 -->
+                <div class="left-sidebar__stats">
+                    <div class="left-sidebar__stat">
+                        <span class="left-sidebar__stat-label">내 상품</span>
+                        <span class="left-sidebar__stat-value">7</span>
+                    </div>
+                    <div class="left-sidebar__stat">
+                        <span class="left-sidebar__stat-badge">3</span>
+                        <span class="left-sidebar__stat-label">보유 쿠폰</span>
+                        <span class="left-sidebar__stat-value">1</span>
+                    </div>
+                </div>
+
+                <hr class="left-sidebar__divider">
+
+                <!-- 네비게이션 -->
+                <nav class="left-sidebar__nav">
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">상품 관리</span>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-my-goods.svg" alt="">내 상품
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-diploma.svg" alt="">수료증
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-wish.svg" alt="">찜하기
+                        </a>
+                    </div>
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">결제 관리</span>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-coupon.svg" alt="">쿠폰
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-receipt.svg" alt="">결제 내역
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-pay-info.svg" alt="">결제 정보
+                        </a>
+                    </div>
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">커뮤니티</span>
+                        <a href="#" class="left-sidebar__nav-item active">
+                            <img src="../../../images/ico-lm-pencil.svg" alt="">내 게시글
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-comment.svg" alt="">1:1 문의내역
+                        </a>
+                    </div>
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">설정</span>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-user-gear.svg" alt="">프로필
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- ===== 우측 콘텐츠 ===== -->
+            <div class="mypage-content">
+                <div class="mypage-inner">
+
+                    <h1 class="mypage-title">내 게시글</h1>
+
+                    <!-- 탭 -->
+                    <div class="posting-tabs">
+                        <button class="posting-tab" type="button">상품후기</button>
+                        <button class="posting-tab" type="button">프리미엄 커뮤니티</button>
+                        <button class="posting-tab active" type="button">게시판</button>
+                    </div>
+
+                    <!-- 필터 -->
+                    <div class="posting-filter">
+                        <div class="posting-filter-left">
+                            <div class="posting-filter-select-wrap">
+                                <select class="posting-filter-select">
+                                    <option>전체 게시판</option>
+                                    <option>자유게시판</option>
+                                </select>
+                                <img src="../../../images/ico-chevron-down.svg" alt="" class="posting-filter-select-arrow">
+                            </div>
+                            <div class="posting-filter-select-wrap">
+                                <select class="posting-filter-select">
+                                    <option>작성일 최신순</option>
+                                    <option>작성일 오래된순</option>
+                                    <option>좋아요순</option>
+                                    <option>조회수순</option>
+                                </select>
+                                <img src="../../../images/ico-chevron-down.svg" alt="" class="posting-filter-select-arrow">
+                            </div>
+                            <button class="posting-reset-btn" type="button">
+                                초기화
+                                <img src="../../../images/ico-reset.svg" alt="">
+                            </button>
+                        </div>
+                        <div class="posting-search">
+                            <input type="text" class="posting-search-input" placeholder="제목 및 내용 검색">
+                            <button class="posting-search-btn" type="button" aria-label="검색">
+                                <img src="../../../images/ico-search.svg" alt="검색">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 게시글 목록 -->
+                    <div class="posting-list">
+
+                        <!-- 게시글 1 -->
+                        <article class="posting-item">
+                            <div class="posting-item__head">
+                                <div class="posting-item__category-title">
+                                    <span class="posting-item__category">자유게시판</span>
+                                    <span class="posting-item__title-text">게시물 제목</span>
+                                </div>
+                                <div class="posting-item__meta">
+                                    <span class="posting-item__date">
+                                        <img src="../../../images/free-icon-clock-detail.svg" alt="" width="14" height="14">
+                                        2026.04.01
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-eye.svg" alt="">300
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-messages.svg" alt="">10
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="posting-item__body-wrap">
+                                <p class="posting-item__body">안녕하세요, 보다 나은 학습 환경을 제공해드리기 위해 서비스 업데이트 및 이용 관련 주요 안내사항을 전달드립니다.<br>먼저, 최근 업데이트를 통해 강의 수강 환경이 전반적으로 개선되었습니다. 영상 재생 안정성이 향상되었으며, 모바일 및 태블릿 환경에서도 보다 원활하게 강의를 수강하실 수 있도록 최적화 작업이 진행되었습니다. 또한 일부 강의에서는 학습 효율을 높이기 위해 강의 구성이 세분화되어, 짧은 시간 안에도 핵심 내용을 집중적으로 학습하실 수 있도록 개선되었습니다. 더불어, 회원님들의 학습 편의를 위해 자료 다운로드 기능이 확대되었습니다. 강의에 포함된 PDF, PPT 및 기타 학습 자료를 보다 쉽게 다운로드하실 수 있으며, 일부 콘텐츠는 업데이트를 통해 추가 자료가 지속적으로 제공될 예정입니다. 이를 통해 학습 내용을 복습하거나 실무에 바로 적용하실 수 있도록 지원하고자 합니다. 강의 이용과 관련하여 몇 가지 안내드립니다. 원활한 서비스 이용을 위해 최신 브라우저 사용을 권장드리며, 네트워크 환경에...</p>
+                            </div>
+                        </article>
+
+                        <!-- 게시글 2 -->
+                        <article class="posting-item">
+                            <div class="posting-item__head">
+                                <div class="posting-item__category-title">
+                                    <span class="posting-item__category">자유게시판</span>
+                                    <span class="posting-item__title-text">게시물 제목</span>
+                                </div>
+                                <div class="posting-item__meta">
+                                    <span class="posting-item__date">
+                                        <img src="../../../images/free-icon-clock-detail.svg" alt="" width="14" height="14">
+                                        2026.04.01
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-eye.svg" alt="">300
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-messages.svg" alt="">10
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="posting-item__body-wrap">
+                                <p class="posting-item__body">안녕하세요, 보다 나은 학습 환경을 제공해드리기 위해 서비스 업데이트 및 이용 관련 주요 안내사항을 전달드립니다.<br>먼저, 최근 업데이트를 통해 강의 수강 환경이 전반적으로 개선되었습니다. 영상 재생 안정성이 향상되었으며, 모바일 및 태블릿 환경에서도 보다 원활하게 강의를 수강하실 수 있도록 최적화 작업이 진행되었습니다. 또한 일부 강의에서는 학습 효율을 높이기 위해 강의 구성이 세분화되어, 짧은 시간 안에도 핵심 내용을 집중적으로 학습하실 수 있도록 개선되었습니다. 더불어, 회원님들의 학습 편의를 위해 자료 다운로드 기능이 확대되었습니다. 강의에 포함된 PDF, PPT 및 기타 학습 자료를 보다 쉽게 다운로드하실 수 있으며, 일부 콘텐츠는 업데이트를 통해 추가 자료가 지속적으로 제공될 예정입니다. 이를 통해 학습 내용을 복습하거나 실무에 바로 적용하실 수 있도록 지원하고자 합니다. 강의 이용과 관련하여 몇 가지 안내드립니다. 원활한 서비스 이용을 위해 최신 브라우저 사용을 권장드리며, 네트워크 환경에...</p>
+                            </div>
+                        </article>
+
+                        <!-- 게시글 3 (썸네일 있음) -->
+                        <article class="posting-item">
+                            <div class="posting-item__head">
+                                <div class="posting-item__category-title">
+                                    <span class="posting-item__category">자유게시판</span>
+                                    <span class="posting-item__title-text">게시물 제목</span>
+                                </div>
+                                <div class="posting-item__meta">
+                                    <span class="posting-item__date">
+                                        <img src="../../../images/free-icon-clock-detail.svg" alt="" width="14" height="14">
+                                        2026.04.01
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-eye.svg" alt="">300
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-messages.svg" alt="">10
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="posting-item__body-wrap">
+                                <p class="posting-item__body">안녕하세요, 보다 나은 학습 환경을 제공해드리기 위해 서비스 업데이트 및 이용 관련 주요 안내사항을 전달드립니다.<br>먼저, 최근 업데이트를 통해 강의 수강 환경이 전반적으로 개선되었습니다. 영상 재생 안정성이 향상되었으며, 모바일 및 태블릿 환경에서도 보다 원활하게 강의를 수강하실 수 있도록 최적화 작업이 진행되었습니다. 또한 일부 강의에서는 학습 효율을 높이기 위해 강의 구성이 세분화되어, 짧은 시간 안에도 핵심 내용을 집중적으로 학습하실 수 있도록 개선되었습니다. 더불어, 회원님들의 학습 편의를 위해 자료 다운로드 기능이 확대되었습니다. 강의에 포함된 PDF, PPT 및 기타 학습 자료를 보다 쉽게 다운로드하실 수 있으며, 일부 콘텐츠는 업데이트를 통해 추가 자료가 지속적으로 제공될 예정입니다. 이를 통해 학습 내용을 복습하거나 실무에 바로 적용하실 수 있도록 지원하고자 합니다. 강의 이용과 관련하여 몇 가지 안내드립니다. 원활한 서비스 이용을 위해 최신 브라우저 사용을 권장드리며, 네트워크 환경에...</p>
+                                <div class="posting-item__thumb">
+                                    <img src="../../../images/post-thumb1.png" alt="">
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 게시글 4 -->
+                        <article class="posting-item">
+                            <div class="posting-item__head">
+                                <div class="posting-item__category-title">
+                                    <span class="posting-item__category">자유게시판</span>
+                                    <span class="posting-item__title-text">게시물 제목</span>
+                                </div>
+                                <div class="posting-item__meta">
+                                    <span class="posting-item__date">
+                                        <img src="../../../images/free-icon-clock-detail.svg" alt="" width="14" height="14">
+                                        2026.04.01
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-eye.svg" alt="">300
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-messages.svg" alt="">10
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="posting-item__body-wrap">
+                                <p class="posting-item__body">안녕하세요, 보다 나은 학습 환경을 제공해드리기 위해 서비스 업데이트 및 이용 관련 주요 안내사항을 전달드립니다.<br>먼저, 최근 업데이트를 통해 강의 수강 환경이 전반적으로 개선되었습니다. 영상 재생 안정성이 향상되었으며, 모바일 및 태블릿 환경에서도 보다 원활하게 강의를 수강하실 수 있도록 최적화 작업이 진행되었습니다. 또한 일부 강의에서는 학습 효율을 높이기 위해 강의 구성이 세분화되어, 짧은 시간 안에도 핵심 내용을 집중적으로 학습하실 수 있도록 개선되었습니다. 더불어, 회원님들의 학습 편의를 위해 자료 다운로드 기능이 확대되었습니다. 강의에 포함된 PDF, PPT 및 기타 학습 자료를 보다 쉽게 다운로드하실 수 있으며, 일부 콘텐츠는 업데이트를 통해 추가 자료가 지속적으로 제공될 예정입니다. 이를 통해 학습 내용을 복습하거나 실무에 바로 적용하실 수 있도록 지원하고자 합니다. 강의 이용과 관련하여 몇 가지 안내드립니다. 원활한 서비스 이용을 위해 최신 브라우저 사용을 권장드리며, 네트워크 환경에...</p>
+                            </div>
+                        </article>
+
+                        <!-- 게시글 5 (썸네일 있음) -->
+                        <article class="posting-item">
+                            <div class="posting-item__head">
+                                <div class="posting-item__category-title">
+                                    <span class="posting-item__category">자유게시판</span>
+                                    <span class="posting-item__title-text">게시물 제목</span>
+                                </div>
+                                <div class="posting-item__meta">
+                                    <span class="posting-item__date">
+                                        <img src="../../../images/free-icon-clock-detail.svg" alt="" width="14" height="14">
+                                        2026.04.01
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-eye.svg" alt="">300
+                                    </span>
+                                    <span class="posting-item__stat">
+                                        <img src="../../../images/ico-messages.svg" alt="">10
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="posting-item__body-wrap">
+                                <p class="posting-item__body">안녕하세요, 보다 나은 학습 환경을 제공해드리기 위해 서비스 업데이트 및 이용 관련 주요 안내사항을 전달드립니다.<br>먼저, 최근 업데이트를 통해 강의 수강 환경이 전반적으로 개선되었습니다. 영상 재생 안정성이 향상되었으며, 모바일 및 태블릿 환경에서도 보다 원활하게 강의를 수강하실 수 있도록 최적화 작업이 진행되었습니다. 또한 일부 강의에서는 학습 효율을 높이기 위해 강의 구성이 세분화되어, 짧은 시간 안에도 핵심 내용을 집중적으로 학습하실 수 있도록 개선되었습니다. 더불어, 회원님들의 학습 편의를 위해 자료 다운로드 기능이 확대되었습니다. 강의에 포함된 PDF, PPT 및 기타 학습 자료를 보다 쉽게 다운로드하실 수 있으며, 일부 콘텐츠는 업데이트를 통해 추가 자료가 지속적으로 제공될 예정입니다. 이를 통해 학습 내용을 복습하거나 실무에 바로 적용하실 수 있도록 지원하고자 합니다. 강의 이용과 관련하여 몇 가지 안내드립니다. 원활한 서비스 이용을 위해 최신 브라우저 사용을 권장드리며, 네트워크 환경에...</p>
+                                <div class="posting-item__thumb">
+                                    <img src="../../../images/post-thumb2.png" alt="">
+                                </div>
+                            </div>
+                        </article>
+
+                    </div><!-- /posting-list -->
+
+                    <!-- 더보기 -->
+                    <button class="community-load-more-btn" type="button">
+                        더보기
+                        <img src="../../../images/ico-chevron-down.svg" alt="">
+                    </button>
+
+                </div><!-- /mypage-inner -->
+            </div><!-- /mypage-content -->
+
+        </div><!-- /mypage-layout -->
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="../../../images/logo-bottom.svg" alt="로고">
+                    </a>
+                    <div class="footer-terms">
+                        <a href="#" class="footer-terms-link">이용약관</a>
+                        <span class="footer-terms-sep">|</span>
+                        <a href="#" class="footer-terms-link">개인정보처리방침</a>
+                        <span class="footer-terms-sep">|</span>
+                        <a href="#" class="footer-terms-link">마케팅정보수신동의</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <img src="../../../images/ico-social-yt.svg" alt="YouTube">
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram">
+                        <img src="../../../images/ico-social-insta.svg" alt="Instagram">
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="X(Twitter)">
+                        <img src="../../../images/ico-social-x.svg" alt="X">
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <img src="../../../images/ico-social-fb.svg" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-info-row">
+                    <span class="footer-info-item">
+                        <strong>대표자</strong>
+                        <span>홍길동</span>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>사업자 등록번호</strong>
+                        <span>119-86-39050</span>
+                        <a href="#" class="footer-biz-confirm">사업자정보확인</a>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>통신판매업 신고번호</strong>
+                        <span>동작 제02-680-078호</span>
+                    </span>
+                </div>
+                <div class="footer-info-row">
+                    <span class="footer-info-item">
+                        <strong>주소</strong>
+                        <span>서울특별시 구로구 디지털로 288, 1701호</span>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>개인정보책임자</strong>
+                        <span>홍길동</span>
+                    </span>
+                </div>
+                <div class="footer-info-row">
+                    <span class="footer-info-item">
+                        <strong>이메일</strong>
+                        <span>malgn@malgnsoft.com</span>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>전화번호</strong>
+                        <span>02-834-3847</span>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>팩스</strong>
+                        <span>070-3482-7216</span>
+                    </span>
+                </div>
+            </div>
+
+            <p class="footer-notice">궁금하신점은 1:1문의를 이용해 주시거나 메일주세요.</p>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">Copyright © 맑은소프트. All Rights Reserved. Hosting by MALGNSOFT Corp.</p>
+                <p class="footer-disclaimer">회원 정보의 관리 및 보호에 대한 책임은 ㈜맑은소프트에 있으며, 상품의 내용·정보·거래에 관한 모든 책임은 해당 판매자에게 있습니다.</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
