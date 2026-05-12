@@ -62,7 +62,11 @@ var _commonScript = document.currentScript;
             toggleBtn.className = 'sidebar-mobile-toggle';
             toggleBtn.type = 'button';
             toggleBtn.innerHTML =
-                '<img src="' + iconSrc + '" alt="" class="sidebar-mobile-toggle__icon" style="transform:rotate(-90deg)">' +
+                '<span class="sidebar-mobile-toggle__bars">' +
+                '<span class="sidebar-mobile-toggle__bar"></span>' +
+                '<span class="sidebar-mobile-toggle__bar"></span>' +
+                '<span class="sidebar-mobile-toggle__bar"></span>' +
+                '</span>' +
                 '<span>내 메뉴</span>';
             mypageInner.insertBefore(toggleBtn, mypageInner.firstChild);
 

@@ -4774,28 +4774,36 @@ h2 {
     .sidebar-mobile-toggle {
         display: flex;
         align-items: center;
-        gap: 6px;
-        padding: 0;
-        background: none;
-        border: none;
+        gap: 8px;
+        width: 100%;
+        padding: 11px 16px;
+        background: #f8f8f8;
+        border: 1px solid #eeeeee;
+        border-radius: 8px;
         outline: none;
         font-size: 14px;
         font-weight: 500;
-        color: #555555;
+        color: #333333;
         letter-spacing: -0.56px;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
         margin-bottom: 16px;
+        box-sizing: border-box;
     }
 
-    .sidebar-mobile-toggle__icon {
-        width: 12px;
-        height: 8px;
-        transition: transform 0.2s ease;
+    .sidebar-mobile-toggle__bars {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        flex-shrink: 0;
     }
 
-    .sidebar-mobile-toggle.is-open .sidebar-mobile-toggle__icon {
-        transform: rotate(180deg);
+    .sidebar-mobile-toggle__bar {
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: #555555;
+        border-radius: 2px;
     }
 
     .mypage-layout {
