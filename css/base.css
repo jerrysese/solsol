@@ -6423,11 +6423,17 @@ h2 {
     flex-shrink: 0;
 }
 
+.inquiry-empty__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .inquiry-empty__title {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
-    color: #333333;
-    letter-spacing: -0.72px;
+    color: #323232;
+    letter-spacing: -0.96px;
     line-height: 150%;
 }
 
