@@ -37,17 +37,23 @@ var _commonScript = document.currentScript;
 
         if (siteHeader && headerProfile && headerNav && !document.querySelector('.header-hamburger')) {
 
-            // nav 아이템에 아이콘 삽입
+            // 모바일 드로어 전용 요소를 body에 생성 (PC nav와 완전히 분리)
+            // → site-header stacking context 바깥에 위치해 backdrop z-index 간섭 없음
+            var mobileDrawer = document.createElement('nav');
+            mobileDrawer.className = 'mobile-nav-drawer';
             headerNav.querySelectorAll('.nav-item').forEach(function (item) {
-                var text = item.textContent.trim();
+                var clone = item.cloneNode(true);
+                var text = clone.textContent.trim();
                 var icon = NAV_ICONS[text];
                 if (icon) {
                     var span = document.createElement('span');
                     span.className = 'nav-icon';
                     span.innerHTML = icon;
-                    item.insertBefore(span, item.firstChild);
+                    clone.insertBefore(span, clone.firstChild);
                 }
+                mobileDrawer.appendChild(clone);
             });
+            document.body.appendChild(mobileDrawer);
 
             var hamburger = document.createElement('button');
             hamburger.className = 'header-hamburger';
@@ -61,14 +67,14 @@ var _commonScript = document.currentScript;
 
             function openNav() {
                 siteHeader.classList.add('nav-open');
-                headerNav.classList.add('nav-visible');
+                mobileDrawer.classList.add('nav-visible');
                 showBackdrop();
                 hamburger.setAttribute('aria-label', '메뉴 닫기');
             }
 
             function closeNav() {
                 siteHeader.classList.remove('nav-open');
-                headerNav.classList.remove('nav-visible');
+                mobileDrawer.classList.remove('nav-visible');
                 hideBackdrop();
                 hamburger.setAttribute('aria-label', '메뉴 열기');
             }
