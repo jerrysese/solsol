@@ -4590,6 +4590,10 @@ h2 {
     /* Header */
     :root { --header-height: 60px; }
 
+    /* position:fixed로 전환 → iOS Safari에서 input focus 스크롤 시 header 위로 겹치는 현상 방지 */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; }
+    body { padding-top: 60px; }
+
     .container { padding: 0 16px; gap: 12px; }
 
     .header-nav { display: none; }
