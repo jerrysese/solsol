@@ -50,45 +50,33 @@ var _commonScript = document.currentScript;
         }
 
         // ── 2. 마이페이지 사이드바 좌측 드로어 ───────────────
-        var mypageLayout = document.querySelector('.mypage-layout');
         var sidebar = document.querySelector('.left-sidebar');
-        var mypageInner = document.querySelector('.mypage-inner');
 
-        if (mypageLayout && sidebar && mypageInner && !document.querySelector('.sidebar-mobile-toggle')) {
-            var iconSrc = BASE ? BASE + '/images/ico-chevron-down.svg' : '../images/ico-chevron-down.svg';
-
-            // 토글 버튼을 mypage-inner 최상단에 삽입
-            var toggleBtn = document.createElement('button');
-            toggleBtn.className = 'sidebar-mobile-toggle';
-            toggleBtn.type = 'button';
-            toggleBtn.innerHTML =
-                '<span class="sidebar-mobile-toggle__bars">' +
-                '<span class="sidebar-mobile-toggle__bar"></span>' +
-                '<span class="sidebar-mobile-toggle__bar"></span>' +
-                '<span class="sidebar-mobile-toggle__bar"></span>' +
-                '</span>' +
-                '<span>내 메뉴</span>';
-            mypageInner.insertBefore(toggleBtn, mypageInner.firstChild);
-
-            function openSidebar() {
-                sidebar.classList.add('sidebar-open');
-                toggleBtn.classList.add('is-open');
-            }
+        if (sidebar && !document.querySelector('.sidebar-close-btn')) {
 
             function closeSidebar() {
                 sidebar.classList.remove('sidebar-open');
-                toggleBtn.classList.remove('is-open');
             }
 
-            toggleBtn.addEventListener('click', function (e) {
+            // 사이드바 상단에 닫기 버튼 삽입
+            var closeBtn = document.createElement('button');
+            closeBtn.className = 'sidebar-close-btn';
+            closeBtn.type = 'button';
+            closeBtn.setAttribute('aria-label', '메뉴 닫기');
+            closeBtn.innerHTML = '✕';
+            sidebar.insertBefore(closeBtn, sidebar.firstChild);
+
+            closeBtn.addEventListener('click', function (e) {
                 e.stopPropagation();
-                sidebar.classList.contains('sidebar-open') ? closeSidebar() : openSidebar();
+                closeSidebar();
             });
 
+            // 사이드바 바깥 탭으로 닫기
             document.addEventListener('click', function (e) {
+                var toggleBtn = document.querySelector('.sidebar-mobile-toggle');
                 if (sidebar.classList.contains('sidebar-open') &&
                     !sidebar.contains(e.target) &&
-                    !toggleBtn.contains(e.target)) {
+                    (!toggleBtn || !toggleBtn.contains(e.target))) {
                     closeSidebar();
                 }
             });

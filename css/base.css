@@ -4843,12 +4843,30 @@ h2 {
         transition: transform 0.26s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         margin-bottom: 0;
         border-radius: 0;
-        padding: 20px;
+        padding: 16px;
         box-sizing: border-box;
     }
 
     .left-sidebar.sidebar-open {
         transform: translateX(0);
+    }
+
+    .sidebar-close-btn {
+        display: flex !important;
+        align-self: flex-end;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        color: #555555;
+        cursor: pointer;
+        margin-bottom: 8px;
+        flex-shrink: 0;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .mypage-content { width: 100%; }
@@ -5885,6 +5903,11 @@ h2 {
 
 /* 마이페이지 사이드바 모바일 토글 (모바일에서만 표시) */
 .sidebar-mobile-toggle {
+    display: none;
+}
+
+/* 사이드바 닫기 버튼 (JS 삽입) */
+.sidebar-close-btn {
     display: none;
 }
 
