@@ -6000,8 +6000,13 @@ h2 {
     letter-spacing: -1.7px;
 }
 
-/* 마이페이지 사이드바 모바일 토글 (모바일에서만 표시) */
+/* 마이페이지 사이드바 모바일 전용 요소 — PC에서 숨김 */
 .sidebar-mobile-toggle {
+    display: none;
+}
+
+/* JS가 주입하는 프로필 드롭다운 화살표 — 모바일 전용, PC에서 숨김 */
+.sidebar-profile-toggle {
     display: none;
 }
 
