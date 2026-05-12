@@ -19,6 +19,27 @@ git checkout master
 
 ---
 
+## 반응형 스타일 적용 의무
+
+PC 버전 퍼블리싱 시 모바일·태블릿 기본 반응형 스타일을 함께 적용한다. 별도 지시가 없어도 아래 기준을 기본으로 따른다.
+
+- **브레이크포인트**: 태블릿 `max-width: 1024px`, 모바일 `max-width: 768px`
+- **레이아웃**: 다단 → 1단 전환, 좌측 사이드바는 모바일에서 숨기거나 상단으로 이동
+- **컨테이너**: PC 고정 너비 → `width: 100%` + 좌우 padding으로 전환
+- **폰트**: PC 대비 1~2px 축소, 줄간격 유지
+- **버튼/입력**: 터치 영역 확보 (최소 height 44px)
+- **이미지/썸네일**: `max-width: 100%`, 고정 너비는 % 또는 vw로 전환
+- **테이블·그리드**: 열 수 축소 또는 스크롤 처리
+- CSS는 해당 페이지 스타일 하단에 `/* ===== RESPONSIVE ===== */` 주석 섹션으로 분리하여 작성한다. `base.css`에 공통 반응형이 있으면 중복 작성하지 않는다.
+
+### ⚠️ 절대 규칙: PC 디자인 보호
+
+- 모바일 디자인 적용 시 원본(PC 디자인)과 달라지는 부분이 있으면 **반드시 미디어 쿼리 안에서만 분기하여 처리**한다.
+- **절대로 PC 디자인 스타일을 모바일 기준에 맞춰 변경하지 않는다.**
+- 모바일 대응을 위해 PC 공통 CSS를 수정해야 한다고 판단될 경우, 반드시 먼저 사용자에게 확인을 구한다.
+
+---
+
 ## 스타일가이드 확인 의무
 
 **퍼블리싱 작업 전 `/src/views/styleguide.html` 반드시 확인**
@@ -260,6 +281,7 @@ CSS 클래스: `.empty-state` / `.empty-state__icon` / `.empty-state__title` / `
             <img src="../../images/ico-logout.svg" alt="로그아웃">
         </button>
     </div>
+    <div class="left-sidebar__divider"></div>
     <!-- 멤버십 바 -->
     <div class="left-sidebar__memberships">
         <a href="#" class="left-sidebar__mem-bar">
