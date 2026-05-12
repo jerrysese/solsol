@@ -152,6 +152,9 @@ img { display: block; max-width: 100%; }
     transition: color 0.18s ease;
 }
 
+/* 모바일 드로어용 아이콘 — PC에서는 숨김 */
+.nav-item .nav-icon { display: none; }
+
 .nav-item:hover,
 .nav-item.active {
     color: #000000;
