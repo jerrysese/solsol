@@ -4952,9 +4952,9 @@ h2 {
     .left-sidebar__nav-group-label { height: 32px; padding: 0 16px; }
     .left-sidebar__nav-item { height: 44px; }
 
-    /* 화살표 (JS 주입) */
+    /* 화살표 (JS 주입) — 모바일에서만 표시 */
     .sidebar-profile-toggle {
-        display: flex;
+        display: flex !important;
         align-items: center;
         margin-left: auto;
         padding: 6px;
