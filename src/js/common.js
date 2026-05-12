@@ -49,9 +49,6 @@ var _commonScript = document.currentScript;
                 }
             });
 
-            // site-header stacking context 바깥(body)으로 이동해 backdrop z-index 간섭 제거
-            document.body.appendChild(headerNav);
-
             var hamburger = document.createElement('button');
             hamburger.className = 'header-hamburger';
             hamburger.type = 'button';

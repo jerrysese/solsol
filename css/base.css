@@ -4807,8 +4807,9 @@ h2 {
         pointer-events: auto;
     }
 
-    /* 헤더를 백드롭 위에 유지 (nav drawer가 헤더 stacking context 안에 있어서 함께 올림) */
-    .site-header { z-index: 310; }
+    /* site-header stacking context 제거 → iOS Safari에서 fixed 자식이 root context에서 동작 */
+    /* backdrop(295) < nav-drawer(300)이므로 nav가 backdrop 위에 표시됨 */
+    .site-header { z-index: auto; }
 
     /* ── 햄버거 / 모바일 Nav 드로어 ── */
     .header-hamburger { display: flex; }
