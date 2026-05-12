@@ -41,31 +41,52 @@ var _commonScript = document.currentScript;
             });
 
             document.addEventListener('click', function (e) {
-                if (siteHeader.classList.contains('nav-open') && !headerNav.contains(e.target) && !hamburger.contains(e.target)) {
+                if (siteHeader.classList.contains('nav-open') &&
+                    !headerNav.contains(e.target) &&
+                    !hamburger.contains(e.target)) {
                     closeNav();
                 }
             });
         }
 
-        // ── 2. 마이페이지 사이드바 모바일 토글 ───────────────
+        // ── 2. 마이페이지 사이드바 좌측 드로어 ───────────────
         var mypageLayout = document.querySelector('.mypage-layout');
         var sidebar = document.querySelector('.left-sidebar');
+        var mypageInner = document.querySelector('.mypage-inner');
 
-        if (mypageLayout && sidebar && !document.querySelector('.sidebar-mobile-toggle')) {
+        if (mypageLayout && sidebar && mypageInner && !document.querySelector('.sidebar-mobile-toggle')) {
             var iconSrc = BASE ? BASE + '/images/ico-chevron-down.svg' : '../images/ico-chevron-down.svg';
 
+            // 토글 버튼을 mypage-inner 최상단에 삽입
             var toggleBtn = document.createElement('button');
             toggleBtn.className = 'sidebar-mobile-toggle';
             toggleBtn.type = 'button';
             toggleBtn.innerHTML =
-                '<span>내 메뉴</span>' +
-                '<img src="' + iconSrc + '" alt="" class="sidebar-mobile-toggle__icon">';
+                '<img src="' + iconSrc + '" alt="" class="sidebar-mobile-toggle__icon" style="transform:rotate(-90deg)">' +
+                '<span>내 메뉴</span>';
+            mypageInner.insertBefore(toggleBtn, mypageInner.firstChild);
 
-            mypageLayout.insertBefore(toggleBtn, sidebar);
+            function openSidebar() {
+                sidebar.classList.add('sidebar-open');
+                toggleBtn.classList.add('is-open');
+            }
 
-            toggleBtn.addEventListener('click', function () {
-                var isOpen = sidebar.classList.toggle('sidebar-open');
-                toggleBtn.classList.toggle('is-open', isOpen);
+            function closeSidebar() {
+                sidebar.classList.remove('sidebar-open');
+                toggleBtn.classList.remove('is-open');
+            }
+
+            toggleBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                sidebar.classList.contains('sidebar-open') ? closeSidebar() : openSidebar();
+            });
+
+            document.addEventListener('click', function (e) {
+                if (sidebar.classList.contains('sidebar-open') &&
+                    !sidebar.contains(e.target) &&
+                    !toggleBtn.contains(e.target)) {
+                    closeSidebar();
+                }
             });
         }
     });
