@@ -4742,9 +4742,66 @@ h2 {
 
     .posting-filter-left { flex-wrap: wrap; }
 
-    .posting-search { width: 100%; }
+    .posting-search {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
 
-    .posting-search-input { font-size: 13px; }
+    .posting-search-input {
+        font-size: 13px;
+        min-width: 0;
+        width: 0;
+    }
+
+    /* ── 내 게시글 리스트 헤더 모바일 ── */
+    .posting-item__head {
+        flex-direction: column;
+        height: auto;
+        gap: 6px;
+        align-items: flex-start;
+    }
+
+    .posting-item__category-title {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .posting-item__meta {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .posting-item__body-wrap {
+        gap: 16px;
+    }
+
+    .posting-item__thumb {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* ── 공통 드로어 백드롭 ── */
+    .drawer-backdrop {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 298;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.26s ease, visibility 0s linear 0.26s;
+        pointer-events: none;
+    }
+
+    .drawer-backdrop.active {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.26s ease, visibility 0s linear 0s;
+        pointer-events: auto;
+    }
 
     /* ── 햄버거 / 모바일 Nav 드로어 ── */
     .header-hamburger { display: flex; }
@@ -4757,8 +4814,8 @@ h2 {
         position: fixed;
         top: 60px;
         right: 0;
-        width: 70%;
-        max-width: 280px;
+        width: 60%;
+        max-width: 240px;
         height: calc(100vh - 60px);
         background: #ffffff;
         box-shadow: -4px 0 16px rgba(0, 0, 0, 0.10);
@@ -4766,6 +4823,8 @@ h2 {
         gap: 0;
         padding: 8px 0;
         overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
         transform: translateX(100%);
         transition: transform 0.26s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
@@ -4775,12 +4834,30 @@ h2 {
     }
 
     .nav-item {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 10px;
         padding: 13px 20px;
         font-size: 15px;
         border-bottom: 1px solid #f5f5f5;
         width: 100%;
         box-sizing: border-box;
+        transition: background 0.15s ease, color 0.15s ease;
+        color: #333333;
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+        background: var(--color-primary);
+        color: #ffffff;
+        font-weight: 500;
+    }
+
+    .nav-item .nav-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        opacity: 0.6;
     }
 
     /* ── 마이페이지 사이드바 모바일 ── */
@@ -4839,6 +4916,8 @@ h2 {
         box-shadow: 4px 0 16px rgba(0, 0, 0, 0.10);
         z-index: 300;
         overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
         transform: translateX(-100%);
         transition: transform 0.26s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         margin-bottom: 0;
