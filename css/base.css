@@ -6342,8 +6342,8 @@ h2 {
 }
 
 .inquiry-status-icon img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 .inquiry-status-info {
@@ -6389,6 +6389,7 @@ h2 {
     gap: 20px;
     flex: 1 0 0;
     align-self: stretch;
+    min-height: 479px;
     border-radius: 10px;
     background: #F8F8F8;
 }
@@ -6401,12 +6402,13 @@ h2 {
 
 .inquiry-empty__icon-wrap {
     display: flex;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    background: #EBEBEB;
+    border-radius: 100px;
+    background: #FFF;
     flex-shrink: 0;
 }
 
@@ -6473,8 +6475,8 @@ h2 {
     }
 
     .inquiry-empty__icon-wrap {
-        width: 64px;
-        height: 64px;
+        width: 80px;
+        height: 80px;
     }
 
     .inquiry-empty__title {
