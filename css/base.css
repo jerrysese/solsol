@@ -4734,6 +4734,9 @@ h2 {
 
     .community-write-row { margin-top: 0; }
 
+    .community-post-content { gap: 5px; }
+    .community-post-thumb { width: 72px; height: 72px; }
+
     /* ── 내 게시글 필터 ── */
     .posting-filter {
         flex-direction: column;
