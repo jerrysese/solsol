@@ -5967,7 +5967,7 @@ h2 {
     width: 100%;
     margin: 80px auto 150px;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 30px;
 }
 
