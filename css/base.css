@@ -4590,6 +4590,7 @@ h2 {
     .container { padding: 0 16px; gap: 12px; }
 
     .header-nav { display: none; }
+    .page-banner { display: none; }
 
     .header-logo { width: 110px; height: 36px; }
 
@@ -6248,6 +6249,51 @@ h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* ── 게시글 목록 모바일 재정의 (PC 스타일 cascade 순서 보정) ── */
+@media (max-width: 768px) {
+    .posting-item__head {
+        flex-direction: column !important;
+        height: auto !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+    }
+
+    .posting-item__category-title {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .posting-item__meta {
+        justify-content: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .posting-search {
+        min-width: 0 !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .posting-search-input {
+        min-width: 0 !important;
+        width: 0;
+        flex: 1;
+    }
+
+    .posting-item__body {
+        min-width: 0;
+    }
+
+    .posting-item__body-wrap {
+        gap: 12px !important;
+    }
+
+    .posting-item__thumb {
+        width: 72px !important;
+        height: 72px !important;
+    }
 }
 
 @media (max-width: 1150px) {
