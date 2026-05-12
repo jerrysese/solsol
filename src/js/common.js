@@ -49,6 +49,9 @@ var _commonScript = document.currentScript;
                 }
             });
 
+            // site-header stacking context 바깥(body)으로 이동해 backdrop z-index 간섭 제거
+            document.body.appendChild(headerNav);
+
             var hamburger = document.createElement('button');
             hamburger.className = 'header-hamburger';
             hamburger.type = 'button';
@@ -61,12 +64,14 @@ var _commonScript = document.currentScript;
 
             function openNav() {
                 siteHeader.classList.add('nav-open');
+                headerNav.classList.add('nav-visible');
                 showBackdrop();
                 hamburger.setAttribute('aria-label', '메뉴 닫기');
             }
 
             function closeNav() {
                 siteHeader.classList.remove('nav-open');
+                headerNav.classList.remove('nav-visible');
                 hideBackdrop();
                 hamburger.setAttribute('aria-label', '메뉴 열기');
             }

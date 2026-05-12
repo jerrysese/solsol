@@ -4789,7 +4789,7 @@ h2 {
         width: 100%;
         height: calc(100vh - 60px);
         background: rgba(0, 0, 0, 0.45);
-        z-index: 298;
+        z-index: 295;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.26s ease, visibility 0s linear 0.26s;
@@ -4802,6 +4802,9 @@ h2 {
         transition: opacity 0.26s ease, visibility 0s linear 0s;
         pointer-events: auto;
     }
+
+    /* 헤더를 백드롭 위에 유지 (nav drawer가 헤더 stacking context 안에 있어서 함께 올림) */
+    .site-header { z-index: 310; }
 
     /* ── 햄버거 / 모바일 Nav 드로어 ── */
     .header-hamburger { display: flex; }
@@ -4829,7 +4832,7 @@ h2 {
         transition: transform 0.26s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    .site-header.nav-open .header-nav {
+    .header-nav.nav-visible {
         transform: translateX(0);
     }
 
