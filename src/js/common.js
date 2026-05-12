@@ -97,18 +97,25 @@ var _commonScript = document.currentScript;
             }
         }
 
-        if (sidebar && !document.querySelector('.sidebar-close-btn')) {
-            var closeBtn = document.createElement('button');
-            closeBtn.className = 'sidebar-close-btn';
-            closeBtn.type = 'button';
-            closeBtn.setAttribute('aria-label', '메뉴 닫기');
-            closeBtn.innerHTML = '✕';
-            sidebar.insertBefore(closeBtn, sidebar.firstChild);
+        // 프로필 바 클릭 → 인라인 드롭다운 토글 (모바일)
+        if (sidebar && !sidebar.querySelector('.sidebar-profile-toggle')) {
+            var sidebarProfile = sidebar.querySelector('.left-sidebar__profile');
+            if (sidebarProfile) {
+                var chevron = document.createElement('span');
+                chevron.className = 'sidebar-profile-toggle';
+                chevron.innerHTML = '<svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5l5 5 5-5" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                sidebarProfile.appendChild(chevron);
 
-            closeBtn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                closeSidebar();
-            });
+                sidebarProfile.addEventListener('click', function () {
+                    sidebar.classList.toggle('sidebar-expanded');
+                });
+
+                // 로그아웃 버튼 클릭이 profile 토글로 전파되지 않도록
+                var logoutBtn = sidebar.querySelector('.left-sidebar__logout');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', function (e) { e.stopPropagation(); });
+                }
+            }
         }
 
         // 내 메뉴 버튼에 백드롭 연동

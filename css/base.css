@@ -4863,45 +4863,13 @@ h2 {
         opacity: 0.6;
     }
 
-    /* ── 마이페이지 사이드바 모바일 ── */
-    .sidebar-mobile-toggle {
-        display: flex !important;
-        align-items: center;
-        gap: 8px;
-        width: 100%;
-        padding: 11px 16px;
-        background: #f8f8f8;
-        border: 1px solid #eeeeee;
-        border-radius: 8px;
-        outline: none;
-        font-size: 14px;
-        font-weight: 500;
-        color: #333333;
-        letter-spacing: -0.56px;
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        margin-bottom: 16px;
-        box-sizing: border-box;
-    }
-
-    .sidebar-mobile-toggle__bars {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        flex-shrink: 0;
-    }
-
-    .sidebar-mobile-toggle__bar {
-        display: block;
-        width: 16px;
-        height: 2px;
-        background: #555555;
-        border-radius: 2px;
-    }
+    /* ── 마이페이지 사이드바 모바일 (인라인 드롭다운) ── */
+    .sidebar-mobile-toggle { display: none !important; }
+    .sidebar-close-btn { display: none !important; }
 
     .mypage-layout {
         flex-direction: column;
-        margin: 30px auto 60px;
+        margin: 20px auto 60px;
         padding: 0 16px;
         gap: 0;
     }
@@ -4909,46 +4877,77 @@ h2 {
     .left-sidebar {
         display: flex !important;
         flex-direction: column;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 75% !important;
-        max-width: 300px;
-        height: calc(100vh - 60px);
+        position: static !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        z-index: auto;
+        box-shadow: none;
+        border-radius: 12px;
+        border: 1px solid #eeeeee;
+        padding: 0;
+        margin-bottom: 20px;
+        overflow: hidden;
+        gap: 0;
+        transition: none;
         background: #ffffff;
-        box-shadow: 4px 0 16px rgba(0, 0, 0, 0.10);
-        z-index: 300;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        -webkit-overflow-scrolling: touch;
-        transform: translateX(-100%);
-        transition: transform 0.26s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        margin-bottom: 0;
-        border-radius: 0;
-        padding: 16px;
-        box-sizing: border-box;
     }
 
-    .left-sidebar.sidebar-open {
-        transform: translateX(0);
-    }
-
-    .sidebar-close-btn {
-        display: flex !important;
-        align-self: flex-end;
-        align-items: center;
-        justify-content: center;
-        width: 32px;
-        height: 32px;
-        background: none;
-        border: none;
-        outline: none;
-        font-size: 18px;
-        color: #555555;
+    /* 프로필 바 - 항상 표시, 클릭 가능 */
+    .left-sidebar__profile {
+        height: 56px;
+        padding: 0 14px;
         cursor: pointer;
-        margin-bottom: 8px;
-        flex-shrink: 0;
         -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .left-sidebar__avatar { width: 34px; height: 34px; }
+    .left-sidebar__email { display: none; }
+
+    /* 펼침 영역: 기본 숨김 */
+    .left-sidebar__divider,
+    .left-sidebar__memberships,
+    .left-sidebar__stats,
+    .left-sidebar__nav {
+        display: none !important;
+    }
+
+    /* 펼친 상태 */
+    .left-sidebar.sidebar-expanded .left-sidebar__divider {
+        display: block !important;
+    }
+    .left-sidebar.sidebar-expanded .left-sidebar__memberships {
+        display: flex !important;
+        padding: 10px 14px 6px;
+    }
+    .left-sidebar.sidebar-expanded .left-sidebar__stats {
+        display: flex !important;
+        padding: 0 14px 12px;
+        margin-top: 0;
+    }
+    .left-sidebar.sidebar-expanded .left-sidebar__nav {
+        display: flex !important;
+        border-top: 1px solid #eeeeee;
+        padding: 4px 0 6px;
+    }
+
+    .left-sidebar__nav-group-label { height: 32px; padding: 0 16px; }
+    .left-sidebar__nav-item { height: 44px; }
+
+    /* 화살표 (JS 주입) */
+    .sidebar-profile-toggle {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        padding: 6px;
+        flex-shrink: 0;
+        transition: transform 0.22s ease;
+    }
+    .left-sidebar.sidebar-expanded .sidebar-profile-toggle {
+        transform: rotate(180deg);
     }
 
     .mypage-content { width: 100%; }
