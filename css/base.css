@@ -193,28 +193,6 @@ img { display: block; max-width: 100%; }
     border: 1.5px solid #FFFFFF;
 }
 
-/* Nav 백드롭 (JS로 삽입, 모바일 드로어 배경) */
-.nav-backdrop {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 299;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.28s ease, visibility 0s linear 0.28s;
-    pointer-events: none;
-}
-
-.nav-backdrop.active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.28s ease, visibility 0s linear 0s;
-    pointer-events: auto;
-}
-
 /* 햄버거 버튼 (모바일에서만 표시) */
 .header-hamburger {
     display: none;
@@ -227,8 +205,10 @@ img { display: block; max-width: 100%; }
     padding: 6px;
     background: none;
     border: none;
+    outline: none;
     cursor: pointer;
     flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header-hamburger__bar {
@@ -4760,19 +4740,19 @@ h2 {
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 60px;
+        top: 0;
         right: 0;
         width: 70%;
         max-width: 280px;
-        height: calc(100vh - 60px);
+        height: 100vh;
         background: #ffffff;
-        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.12);
+        box-shadow: -4px 0 16px rgba(0, 0, 0, 0.10);
         z-index: 300;
         gap: 0;
-        padding: 8px 0;
+        padding: 70px 0 20px;
         overflow-y: auto;
         transform: translateX(100%);
-        transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: transform 0.26s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .site-header.nav-open .header-nav {
