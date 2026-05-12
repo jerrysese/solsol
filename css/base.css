@@ -4733,6 +4733,19 @@ h2 {
 
     .community-write-row { margin-top: 0; }
 
+    /* ── 내 게시글 필터 ── */
+    .posting-filter {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .posting-filter-left { flex-wrap: wrap; }
+
+    .posting-search { width: 100%; }
+
+    .posting-search-input { font-size: 13px; }
+
     /* ── 햄버거 / 모바일 Nav 드로어 ── */
     .header-hamburger { display: flex; }
 
@@ -4772,7 +4785,7 @@ h2 {
 
     /* ── 마이페이지 사이드바 모바일 ── */
     .sidebar-mobile-toggle {
-        display: flex;
+        display: flex !important;
         align-items: center;
         gap: 8px;
         width: 100%;
