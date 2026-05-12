@@ -5975,10 +5975,13 @@ h2 {
 .mypage-content {
     flex: 1 0 0;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .mypage-inner {
     display: flex;
+    flex: 1 0 0;
     padding: 30px;
     flex-direction: column;
     align-items: flex-start;
@@ -5986,7 +5989,6 @@ h2 {
     border-radius: 20px;
     background: #FFFFFF;
     border: 1px solid #EEEEEE;
-    align-self: stretch;
     box-sizing: border-box;
 }
 
