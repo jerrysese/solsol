@@ -87,7 +87,6 @@ html, body {
 body {
     font-family: var(--font-base);
     color: var(--color-text);
-    background: var(--color-bg);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -6862,9 +6861,14 @@ button.dropdown--ctx-item {
 .inquiry-submit-arrow {
     width: 10px;
     height: 9px;
-    transform: rotate(150deg);
+    transform: rotate(-90deg);
     flex-shrink: 0;
     aspect-ratio: 10 / 9;
+}
+
+/* 활성(보라) 상태: violet 화살표를 흰색으로 반전 */
+.btn--primary .inquiry-submit-arrow--violet {
+    filter: brightness(0) invert(1);
 }
 
 /* 비활성(회색) 상태 */
