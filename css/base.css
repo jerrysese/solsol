@@ -6859,16 +6859,10 @@ button.dropdown--ctx-item {
 
 /* 버튼 화살표 아이콘 */
 .inquiry-submit-arrow {
-    width: 10px;
-    height: 9px;
-    transform: rotate(-90deg);
+    width: 9px;
+    height: 8px;
+    transform: rotate(-60deg);
     flex-shrink: 0;
-    aspect-ratio: 10 / 9;
-}
-
-/* 활성(보라) 상태: violet 화살표를 흰색으로 반전 */
-.btn--primary .inquiry-submit-arrow--violet {
-    filter: brightness(0) invert(1);
 }
 
 /* 비활성(회색) 상태 */
