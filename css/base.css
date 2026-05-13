@@ -5426,9 +5426,10 @@ h2 {
 .dropdown--ctx-panel {
     width: 120px;
     background: #FFF;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #CCCCCC;
     border-radius: 6px;
     overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .dropdown--ctx-item {
@@ -6562,10 +6563,10 @@ button.dropdown--ctx-item {
     z-index: 10;
     width: 120px;
     background: #FFF;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #CCCCCC;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .inquiry-more.open .inquiry-more__panel {
