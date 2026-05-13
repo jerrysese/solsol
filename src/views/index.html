@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼블리싱 페이지 목록</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <style>
+        body {
+            background: #F5F5F5;
+            padding: 48px 40px;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            margin-bottom: 32px;
+        }
+
+        .page-header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #333333;
+            letter-spacing: -1.04px;
+            margin-bottom: 6px;
+        }
+
+        .page-header p {
+            font-size: 13px;
+            color: #AAAAAA;
+            letter-spacing: -0.26px;
+        }
+
+        .page-table-wrap {
+            background: #FFF;
+            border-radius: 12px;
+            border: 1px solid #EEEEEE;
+            overflow: hidden;
+        }
+
+        .page-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .page-table thead tr {
+            background: #7954C6;
+        }
+
+        .page-table thead th {
+            padding: 14px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #FFF;
+            letter-spacing: -0.26px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .page-table thead th:first-child {
+            text-align: center;
+            width: 52px;
+        }
+
+        .page-table tbody tr {
+            border-bottom: 1px solid #F0F0F0;
+            transition: background 0.12s;
+        }
+
+        .page-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .page-table tbody tr:hover {
+            background: #FAFAFA;
+        }
+
+        .page-table tbody td {
+            padding: 14px 20px;
+            font-size: 14px;
+            color: #333333;
+            letter-spacing: -0.28px;
+            vertical-align: middle;
+        }
+
+        .page-table tbody td:first-child {
+            text-align: center;
+            color: #AAAAAA;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .td-path {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            color: #555555;
+        }
+
+        .td-path .dir {
+            color: #AAAAAA;
+        }
+
+        .td-title {
+            font-size: 14px;
+            color: #333333;
+            font-weight: 500;
+        }
+
+        .td-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #7954C6;
+            text-decoration: none;
+            letter-spacing: 0;
+            padding: 4px 10px;
+            border: 1px solid #E0D6F7;
+            border-radius: 4px;
+            background: #FAF8FF;
+            transition: background 0.12s, border-color 0.12s;
+            white-space: nowrap;
+        }
+
+        .td-link a:hover {
+            background: #F0EBFF;
+            border-color: #7954C6;
+        }
+
+        .section-row td {
+            background: #F8F5FF;
+            padding: 8px 20px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #7954C6;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>퍼블리싱 페이지 목록</h1>
+        <p>solsol 프론트엔드 퍼블리싱 현황 — 총 28페이지</p>
+    </div>
+
+    <div class="page-table-wrap">
+        <table class="page-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>디렉토리 + 파일명</th>
+                    <th>페이지 타이틀</th>
+                    <th>GitHub 링크</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- 공통 -->
+                <tr class="section-row"><td colspan="4">공통</td></tr>
+                <tr>
+                    <td>1</td>
+                    <td class="td-path"><span class="dir">views/</span>home.html</td>
+                    <td class="td-title">Home</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/home.html" target="_blank">home.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="td-path"><span class="dir">views/</span>styleguide.html</td>
+                    <td class="td-title">공통 스타일 가이드</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/styleguide.html" target="_blank">styleguide.html ↗</a></td>
+                </tr>
+
+                <!-- 메인 -->
+                <tr class="section-row"><td colspan="4">메인</td></tr>
+                <tr>
+                    <td>3</td>
+                    <td class="td-path"><span class="dir">views/main/</span>index.html</td>
+                    <td class="td-title">서비스 이용 제한</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/main/index.html" target="_blank">index.html ↗</a></td>
+                </tr>
+
+                <!-- 인증 -->
+                <tr class="section-row"><td colspan="4">인증 (Auth)</td></tr>
+                <tr>
+                    <td>4</td>
+                    <td class="td-path"><span class="dir">views/auth/</span>login.html</td>
+                    <td class="td-title">로그인</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/auth/login.html" target="_blank">login.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="td-path"><span class="dir">views/auth/</span>login1.html</td>
+                    <td class="td-title">로그인 (ver.2)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/auth/login1.html" target="_blank">login1.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="td-path"><span class="dir">views/auth/</span>signup.html</td>
+                    <td class="td-title">회원가입</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/auth/signup.html" target="_blank">signup.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="td-path"><span class="dir">views/auth/</span>agreement.html</td>
+                    <td class="td-title">약관동의</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/auth/agreement.html" target="_blank">agreement.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td class="td-path"><span class="dir">views/auth/</span>agreement-modal.html</td>
+                    <td class="td-title">약관 상세 (모달)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/auth/agreement-modal.html" target="_blank">agreement-modal.html ↗</a></td>
+                </tr>
+
+                <!-- 강의 -->
+                <tr class="section-row"><td colspan="4">강의</td></tr>
+                <tr>
+                    <td>9</td>
+                    <td class="td-path"><span class="dir">views/course/</span>list.html</td>
+                    <td class="td-title">일반강의 목록</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/course/list.html" target="_blank">list.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td class="td-path"><span class="dir">views/course/</span>detail.html</td>
+                    <td class="td-title">강의 상세</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/course/detail.html" target="_blank">detail.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td class="td-path"><span class="dir">views/live/</span>list.html</td>
+                    <td class="td-title">라이브강의 목록</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/live/list.html" target="_blank">list.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td class="td-path"><span class="dir">views/meeting/</span>list.html</td>
+                    <td class="td-title">화상강의 목록</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/meeting/list.html" target="_blank">list.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td class="td-path"><span class="dir">views/digital/</span>list.html</td>
+                    <td class="td-title">디지털 상품 목록</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/digital/list.html" target="_blank">list.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td class="td-path"><span class="dir">views/package/</span>list.html</td>
+                    <td class="td-title">패키지 상품 목록</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/package/list.html" target="_blank">list.html ↗</a></td>
+                </tr>
+
+                <!-- 커뮤니티 -->
+                <tr class="section-row"><td colspan="4">프리미엄 커뮤니티</td></tr>
+                <tr>
+                    <td>15</td>
+                    <td class="td-path"><span class="dir">views/community/</span>index.html</td>
+                    <td class="td-title">프리미엄 커뮤니티 (홈)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/community/index.html" target="_blank">index.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td class="td-path"><span class="dir">views/community/</span>list.html</td>
+                    <td class="td-title">프리미엄 커뮤니티 (목록)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/community/list.html" target="_blank">list.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td class="td-path"><span class="dir">views/community/</span>detail.html</td>
+                    <td class="td-title">프리미엄 커뮤니티 (상세)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/community/detail.html" target="_blank">detail.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td class="td-path"><span class="dir">views/community/</span>add.html</td>
+                    <td class="td-title">글쓰기 — 프리미엄 커뮤니티</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/community/add.html" target="_blank">add.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td class="td-path"><span class="dir">views/community/</span>edit.html</td>
+                    <td class="td-title">글수정 — 프리미엄 커뮤니티</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/community/edit.html" target="_blank">edit.html ↗</a></td>
+                </tr>
+
+                <!-- 게시판 -->
+                <tr class="section-row"><td colspan="4">자유게시판</td></tr>
+                <tr>
+                    <td>20</td>
+                    <td class="td-path"><span class="dir">views/board/</span>list.html</td>
+                    <td class="td-title">자유게시판</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/board/list.html" target="_blank">list.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td class="td-path"><span class="dir">views/board/</span>add.html</td>
+                    <td class="td-title">글쓰기 — 자유게시판</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/board/add.html" target="_blank">add.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td class="td-path"><span class="dir">views/board/</span>edit.html</td>
+                    <td class="td-title">글수정 — 자유게시판</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/board/edit.html" target="_blank">edit.html ↗</a></td>
+                </tr>
+
+                <!-- 공지사항 -->
+                <tr class="section-row"><td colspan="4">공지사항</td></tr>
+                <tr>
+                    <td>23</td>
+                    <td class="td-path"><span class="dir">views/notice/</span>list.html</td>
+                    <td class="td-title">공지사항 (목록)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/notice/list.html" target="_blank">list.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td class="td-path"><span class="dir">views/notice/</span>detail.html</td>
+                    <td class="td-title">공지사항 (상세)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/notice/detail.html" target="_blank">detail.html ↗</a></td>
+                </tr>
+
+                <!-- 마이페이지 -->
+                <tr class="section-row"><td colspan="4">마이페이지</td></tr>
+                <tr>
+                    <td>25</td>
+                    <td class="td-path"><span class="dir">views/my/posting/</span>board.html</td>
+                    <td class="td-title">내 게시글 — 게시판</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/my/posting/board.html" target="_blank">board.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td class="td-path"><span class="dir">views/my/posting/</span>community.html</td>
+                    <td class="td-title">내 게시글 — 프리미엄 커뮤니티</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/my/posting/community.html" target="_blank">community.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td class="td-path"><span class="dir">views/my/inquiry/</span>index.html</td>
+                    <td class="td-title">1:1 문의내역 (목록)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/my/inquiry/index.html" target="_blank">index.html ↗</a></td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td class="td-path"><span class="dir">views/my/inquiry/</span>default.html</td>
+                    <td class="td-title">1:1 문의내역 (빈 상태)</td>
+                    <td class="td-link"><a href="https://jerrysese.github.io/solsol/src/views/my/inquiry/default.html" target="_blank">default.html ↗</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
