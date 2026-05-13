@@ -5432,6 +5432,12 @@ h2 {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
+/* 단독 삭제 variant — 1:1문의 등 삭제 단독 표시 시 */
+.dropdown--ctx-panel--solo {
+    background: #F8F5FF;
+    border-color: #7954C6;
+}
+
 .dropdown--ctx-item {
     display: flex;
     align-items: center;
@@ -6562,8 +6568,8 @@ button.dropdown--ctx-item {
     top: 0;
     z-index: 10;
     width: 120px;
-    background: #FFF;
-    border: 1px solid #CCCCCC;
+    background: #F8F5FF;
+    border: 1px solid #7954C6;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
