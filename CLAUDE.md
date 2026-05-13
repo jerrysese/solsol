@@ -14,25 +14,33 @@
 
 | # | 규칙 |
 |---|------|
-| 1 | Figma 캡쳐에 명시된 수치(px, gap, margin 등)를 100% 준수한다. 임의 변경 금지. |
+| 1 | Figma 캡쳐에 명시된 수치(px, gap, margin 등)를 100% 준수한다. 임의 변경 금지. 수치가 불명확하면 작업 전 사용자에게 확인한다. |
 | 2 | HTML 텍스트, 리스트 항목 수, 열/행 수를 Figma 원본 그대로 유지한다. |
 | 3 | `docs/patterns.md`에 있는 컴포넌트를 별도 CSS로 재정의하지 않는다. |
 | 4 | PC 스타일을 미디어쿼리 밖에서 수정하지 않는다. |
 | 5 | `icon/` 폴더 이미지는 반드시 `src/images/`에 복사 후 참조한다. |
-| 6 | 버튼 font-weight는 500 고정 (Figma에 600으로 표기되어도 500 적용). |
+| 6 | 모든 버튼 컴포넌트(`.btn`, `.btn-sm`, `.btn-wide`, `.btn-wish`, `.btn-share` 등 전체)의 font-weight는 500 고정 (Figma에 600으로 표기되어도 500 적용). |
 | 7 | STEP 3 QA 체크리스트를 통과하지 않으면 배포(STEP 4)로 진입하지 않는다. |
+
+---
+
+## 디렉토리·파일 탐색 규칙
+
+- 작업 디렉토리 탐색은 **사용자에게 묻지 않고 직접 수행**한다.
+- 아이콘·이미지·캡쳐 파일 목록 확인, 경로 파악, 파일 존재 여부 확인 모두 자율적으로 탐색한다.
+- 탐색 결과 파악 후 작업을 진행한다. 탐색 여부를 사용자에게 보고하거나 허락을 구하지 않는다.
 
 ---
 
 ## 퍼블리싱 파이프라인 요약
 
-세부 절차는 `docs/pipeline.md` 참조.
+세부 절차 및 배포 명령어는 `docs/pipeline.md` 참조.
 
 ```
 STEP 1  분석    Figma 수치 추출 + 컴포넌트 목록 확인 → 불명확 항목 사용자 확인
 STEP 2  구현    HTML/CSS 작성 + 반응형 CSS 작성
 STEP 3  QA      자체 검수 체크리스트 전 항목 통과 → 미통과 즉시 수정
-STEP 4  배포    git commit + push (master → main 순)
+STEP 4  배포    git commit + push → docs/pipeline.md STEP 4 명령어 참조
 ```
 
 ---
@@ -41,36 +49,9 @@ STEP 4  배포    git commit + push (master → main 순)
 
 - **브레이크포인트**: 태블릿 `max-width: 1024px` / 모바일 `max-width: 768px`
 - 반응형 CSS는 파일 하단 `/* ===== RESPONSIVE ===== */` 섹션에만 작성
-- `base.css`에 공통 반응형이 있으면 중복 작성하지 않는다
-- 모바일 전용 요소(예: 좌측 메뉴 열림 버튼, 햄버거 메뉴 등)는 PC에서 `display: none` 처리한다
+- `base.css`의 `/* ===== RESPONSIVE ===== */` 섹션에 이미 정의된 selector는 중복 작성하지 않는다
+- 모바일 전용 요소(예: 좌측 메뉴 열림 버튼, 햄버거 메뉴 등)는 PC 기본 스타일에서 `display: none` 처리한다
 - 별도 지시가 없어도 PC 퍼블리싱 완료 즉시 반응형 함께 작성
-
----
-
-## 작업 디렉토리 구조 (퍼블리싱마다 별도 디렉토리 제공)
-
-```
-full_screen.jpg          전체 화면 조감 — 반드시 확인
-icon/                    아이콘 파일 — src/images/ 복사 후 참조
-layout and font/         수치·폰트 캡쳐 이미지 — 수치 100% 추출
-```
-
----
-
-## GitHub 배포 명령어
-
-```bash
-git add <파일>
-git commit -m "..."
-git push origin master
-git checkout main
-git merge master
-git push origin main
-git checkout master
-```
-
-- GitHub Pages 서비스 브랜치: `main`
-- 웹 확인 주소: `https://jerrysese.github.io/solsol/`
 
 ---
 
