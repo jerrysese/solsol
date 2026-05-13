@@ -6861,7 +6861,6 @@ button.dropdown--ctx-item {
 .inquiry-submit-arrow {
     width: 9px;
     height: 8px;
-    transform: rotate(-60deg);
     flex-shrink: 0;
 }
 
