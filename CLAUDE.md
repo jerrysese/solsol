@@ -42,6 +42,7 @@ STEP 4  배포    git commit + push (master → main 순)
 - **브레이크포인트**: 태블릿 `max-width: 1024px` / 모바일 `max-width: 768px`
 - 반응형 CSS는 파일 하단 `/* ===== RESPONSIVE ===== */` 섹션에만 작성
 - `base.css`에 공통 반응형이 있으면 중복 작성하지 않는다
+- 모바일 전용 요소(예: 좌측 메뉴 열림 버튼, 햄버거 메뉴 등)는 PC에서 `display: none` 처리한다
 - 별도 지시가 없어도 PC 퍼블리싱 완료 즉시 반응형 함께 작성
 
 ---
