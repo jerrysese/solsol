@@ -5455,6 +5455,10 @@ h2 {
     border-radius: 0 0 5px 5px;
 }
 
+.dropdown--ctx-item:only-child {
+    border-radius: 5px;
+}
+
 .dropdown--ctx-item.active {
     color: #7954C6;
     background: #F8F5FF;
@@ -6522,6 +6526,7 @@ h2 {
 
 .inquiry-more {
     position: relative;
+    margin-left: auto;
 }
 
 .inquiry-more__trigger {
@@ -6541,16 +6546,12 @@ h2 {
     position: absolute;
     right: 0;
     top: calc(100% + 4px);
-    background: #FFF;
-    border: 1px solid #EEEEEE;
-    border-radius: 5px;
-    padding: 4px;
     z-index: 10;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .inquiry-more.open .inquiry-more__panel {
-    display: flex;
+    display: block;
 }
 
 .inquiry-item__title-row {
