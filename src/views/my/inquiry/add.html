@@ -9,6 +9,31 @@
     <link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png">
     <title>1:1 문의하기</title>
     <link rel="stylesheet" href="../../../../css/base.css">
+    <style>
+        /* 에디터 본문: gap 제거, 타이핑 영역 분리 */
+        .write-editor-body { gap: 0; }
+
+        .write-editor-area {
+            width: 100%;
+            min-height: 180px;
+            outline: none;
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.6;
+            letter-spacing: -0.3px;
+        }
+
+        /* 미리보기 버튼을 에디터 중앙에 절대 위치로 띄움 */
+        .write-editor-body .write-preview-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: auto;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
 
@@ -310,7 +335,8 @@
                         </div>
 
                         <!-- 에디터 본문 -->
-                        <div class="write-editor-body" id="inquiry-editor" contenteditable="true">
+                        <div class="write-editor-body">
+                            <div class="write-editor-area" id="inquiry-editor" contenteditable="true"></div>
                             <button class="write-preview-btn" type="button">
                                 <img src="../../../images/ico-preview.svg" alt="">
                                 미리보기
