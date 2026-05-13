@@ -5460,6 +5460,10 @@ h2 {
     border-radius: 5px;
 }
 
+.dropdown--ctx-item--delete {
+    color: #7954C6;
+}
+
 button.dropdown--ctx-item {
     -webkit-appearance: none;
     appearance: none;
@@ -6694,6 +6698,7 @@ button.dropdown--ctx-item {
 
     .inquiry-item__meta {
         gap: 8px;
+        flex-basis: 100%;
     }
 
     .inquiry-item__date,
