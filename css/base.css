@@ -6332,19 +6332,19 @@ h2 {
 
 .inquiry-status-row {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-self: stretch;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #EEEEEE;
+    background: #FFF;
 }
 
 .inquiry-status-card {
     display: flex;
-    padding: 30px;
     align-items: center;
     gap: 10px;
     flex: 1;
-    border-radius: 20px;
-    border: 1px solid #EEEEEE;
-    background: #FFF;
 }
 
 .inquiry-status-icon {
@@ -6583,20 +6583,20 @@ h2 {
     display: flex;
     align-items: center;
     gap: 4px;
-    color: #888888;
-    font-size: 15px;
+    color: #555555;
+    font-size: 13px;
     font-weight: 400;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.26px;
     line-height: 150%;
     white-space: nowrap;
 }
 
 .inquiry-item__body {
-    color: #888888;
-    font-size: 15px;
+    color: #555555;
+    font-size: 13px;
     font-weight: 400;
-    letter-spacing: -0.6px;
-    line-height: 150%;
+    letter-spacing: -0.65px;
+    line-height: 20px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -6607,11 +6607,11 @@ h2 {
 @media (max-width: 768px) {
     .inquiry-status-row {
         flex-direction: column;
-        gap: 10px;
+        gap: 16px;
+        padding: 20px;
     }
 
     .inquiry-status-card {
-        padding: 16px 20px;
         gap: 12px;
     }
 
