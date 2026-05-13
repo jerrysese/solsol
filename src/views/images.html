@@ -70,12 +70,22 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            border-radius: 4px;
+            padding: 6px;
+            background-color: #FFF;
+            background-image:
+                linear-gradient(45deg, #E0E0E0 25%, transparent 25%),
+                linear-gradient(-45deg, #E0E0E0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #E0E0E0 75%),
+                linear-gradient(-45deg, transparent 75%, #E0E0E0 75%);
+            background-size: 10px 10px;
+            background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
         }
         /* 어두운 배경 토글용 */
         .item.dark-bg .img-wrap {
             background: #444;
+            background-image: none;
             border-radius: 6px;
-            padding: 6px;
         }
         .name {
             font-size: 11px;
