@@ -6723,3 +6723,187 @@ button.dropdown--ctx-item {
     }
 }
 
+
+/* =====================================================
+   INQUIRY ADD FORM — 1:1 문의하기 폼
+===================================================== */
+
+.inquiry-add-form {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.inquiry-add-form__row {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    padding: 12px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.inquiry-add-form__row:first-child {
+    border-top: 1px solid #EEEEEE;
+}
+
+.inquiry-add-form__label {
+    width: 130px;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: -0.72px;
+    line-height: 150%;
+}
+
+.inquiry-add-form__field {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+}
+
+/* 라디오 그룹 */
+.inquiry-type-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 48px;
+}
+
+.inquiry-type-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: -0.6px;
+    user-select: none;
+}
+
+.inquiry-type-label input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #CCCCCC;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transition: border-color 0.15s;
+}
+
+.inquiry-type-label input[type="radio"]:checked {
+    border-color: #7954C6;
+}
+
+.inquiry-type-label input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7954C6;
+}
+
+/* 경로 텍스트 */
+.inquiry-add-form__path {
+    font-size: 15px;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+}
+
+/* 제목 인풋 */
+.inquiry-add-form__input {
+    flex: 1 0 0;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 8px;
+    border: 0.6px solid #EEEEEE;
+    background: #FFF;
+    font-family: var(--font-base);
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: -0.6px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.inquiry-add-form__input::placeholder {
+    color: #BBBBBB;
+    font-weight: 400;
+}
+
+/* 이메일 텍스트 */
+.inquiry-add-form__email {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: -0.6px;
+}
+
+/* 문의하기 버튼 행 */
+.inquiry-add-submit {
+    display: flex;
+    justify-content: flex-end;
+    align-self: stretch;
+}
+
+/* 버튼 화살표 아이콘 */
+.inquiry-submit-arrow {
+    width: 10px;
+    height: 9px;
+    transform: rotate(150deg);
+    flex-shrink: 0;
+    aspect-ratio: 10 / 9;
+}
+
+/* 비활성(회색) 상태 */
+.inquiry-submit-btn--inactive {
+    background: var(--btn-disabled) !important;
+    color: var(--btn-disabled-text) !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.inquiry-submit-arrow--gray { display: none; }
+.inquiry-submit-btn--inactive .inquiry-submit-arrow--violet { display: none; }
+.inquiry-submit-btn--inactive .inquiry-submit-arrow--gray { display: inline-block; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .inquiry-add-form__label {
+        width: 90px;
+        font-size: 15px;
+        letter-spacing: -0.6px;
+    }
+
+    .inquiry-type-group {
+        gap: 14px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 8px 0;
+    }
+
+    .inquiry-type-label {
+        font-size: 14px;
+    }
+
+    .inquiry-add-form__input {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .inquiry-add-form__path,
+    .inquiry-add-form__email {
+        font-size: 14px;
+    }
+}
