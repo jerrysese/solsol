@@ -132,41 +132,38 @@
         }
 
         .profile-form__input-wrap {
-            position: relative;
             display: flex;
             align-items: center;
-        }
-
-        .profile-form__input-icon {
-            position: absolute;
-            left: 14px;
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            pointer-events: none;
-        }
-
-        .profile-form__input {
-            width: 100%;
+            gap: 10px;
+            padding: 0 20px;
             height: 50px;
             border: 0.6px solid #EEEEEE;
             border-radius: 8px;
-            padding: 0 20px;
+            background: #F8F8F8;
+        }
+
+        .profile-form__input-wrap:focus-within {
+            border-color: #7954C6;
+        }
+
+        .profile-form__input-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .profile-form__input {
+            flex: 1;
+            min-width: 0;
+            border: none;
+            outline: none;
+            background: transparent;
             font-family: 'Pretendard', -apple-system, sans-serif;
             font-size: 18px;
             font-weight: 400;
             color: #333;
             letter-spacing: -0.72px;
-            background: #F8F8F8;
-            outline: none;
-        }
-
-        .profile-form__input:focus {
-            border-color: #7954C6;
-        }
-
-        .profile-form__input--icon {
-            padding-left: 44px;
         }
 
         .profile-form__input--readonly {
@@ -229,10 +226,10 @@
 
         .profile-sns-label {
             font-family: 'Pretendard', -apple-system, sans-serif;
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 500;
-            color: #888;
-            letter-spacing: -0.52px;
+            color: #BBBBBB;
+            letter-spacing: -0.6px;
             text-align: center;
         }
 
@@ -319,7 +316,8 @@
         .profile-submit {
             display: flex;
             justify-content: flex-end;
-            padding: 20px 0;
+            align-self: stretch;
+            padding: 20px 0 30px;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -558,7 +556,7 @@
                                 <span class="profile-form__label">이메일</span>
                                 <div class="profile-form__input-wrap">
                                     <img src="../../../images/ico-google.svg" alt="" class="profile-form__input-icon">
-                                    <input type="email" class="profile-form__input profile-form__input--icon profile-form__input--readonly" value="honggd@example.com" readonly>
+                                    <input type="email" class="profile-form__input profile-form__input--readonly" value="honggd@example.com" readonly>
                                 </div>
                                 <button class="btn--account-del" type="button">계정탈퇴</button>
                             </div>
