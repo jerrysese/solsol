@@ -21,6 +21,9 @@
 | 5 | `icon/` 폴더 이미지는 반드시 `src/images/`에 복사 후 참조한다. |
 | 6 | 모든 버튼 컴포넌트(`.btn`, `.btn-sm`, `.btn-wide`, `.btn-wish`, `.btn-share` 등 전체)의 font-weight는 500 고정 (Figma에 600으로 표기되어도 500 적용). |
 | 7 | STEP 3 QA 체크리스트를 통과하지 않으면 배포(STEP 4)로 진입하지 않는다. |
+| 8 | 새 페이지 추가 시 `/src/views/index.html` 의 해당 섹션에 카드 항목을 반드시 추가한다. |
+| 9 | 새 아이콘·이미지 추가 시 `/src/views/images.html` 의 해당 섹션에 항목을 반드시 추가한다. |
+| 10 | 새 버튼·UI 요소 추가 시 `/src/views/styleguide.html` 의 적절한 위치에 예시를 반드시 추가한다. |
 
 ---
 
