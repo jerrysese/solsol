@@ -45,6 +45,7 @@
     /* --- 텍스트/배경 --- */
     --color-text:           #333333;
     --color-bg:             #FFFFFF;
+    --color-input-text:     rgba(51, 51, 51, 0.5);
 }
 
 /* ==================== Typography ==================== */
@@ -6903,5 +6904,368 @@ button.dropdown--ctx-item {
     .inquiry-add-form__path,
     .inquiry-add-form__email {
         font-size: 14px;
+    }
+}
+
+
+/* =====================================================
+   PROFILE PAGE
+   ===================================================== */
+
+/* 섹션 공통 */
+.profile-section {
+    width: 100%;
+    margin-bottom: 50px;
+}
+.profile-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.profile-section__header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 20px;
+}
+
+.profile-section__title {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+
+.profile-section__subtitle {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: -0.52px;
+}
+
+/* ===== 아바타 영역 ===== */
+.profile-avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.profile-avatar-wrap {
+    position: relative;
+    width: 118px;
+    height: 118px;
+    flex-shrink: 0;
+}
+
+.profile-avatar-wrap > img {
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-camera-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #7954C6;
+    border: 5px solid #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.profile-setup-btn {
+    width: 180px;
+    height: 50px;
+    background: #7954C6;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #FFF;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: -0.4px;
+}
+
+/* ===== 입력 폼 ===== */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-form__row {
+    display: grid;
+    grid-template-columns: 60px 1fr 150px;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-form__row--no-btn {
+    grid-template-columns: 60px 1fr;
+}
+
+.profile-form__label {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: -0.72px;
+    white-space: nowrap;
+}
+
+.profile-form__input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
+    height: 50px;
+    border: 0.6px solid #EEEEEE;
+    border-radius: 8px;
+    background: #F8F8F8;
+}
+
+.profile-form__input-wrap:focus-within {
+    border-color: #7954C6;
+}
+
+.profile-form__input-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.profile-form__input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--color-input-text);
+    letter-spacing: -0.72px;
+}
+.profile-form__input::placeholder {
+    color: var(--color-input-text);
+}
+
+.profile-form__input--readonly {
+    color: #888;
+    pointer-events: none;
+}
+
+/* 계정탈퇴 비활성 버튼 */
+.btn--account-del {
+    width: 150px;
+    height: 50px;
+    background: #EEEEEE;
+    border: none;
+    border-radius: 5px;
+    color: #AAAAAA;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: default;
+    flex-shrink: 0;
+}
+
+/* ===== 연동된 SNS ===== */
+.profile-sns-list {
+    display: flex;
+    padding: 20px 0;
+}
+
+.profile-sns-item {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.profile-sns-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #F1F1F1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.profile-sns-icon--google   { background: #FFFFFF; border: 1px solid #DDDDDD; }
+.profile-sns-icon--kakao    { background: #FEF124; }
+.profile-sns-icon--naver    { background: #03C75A; }
+.profile-sns-icon--apple    { background: #000000; }
+.profile-sns-icon--facebook { background: #0866FF; }
+.profile-sns-img--off { filter: grayscale(1) opacity(0.4); }
+
+.profile-sns-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.profile-sns-icon--facebook img,
+.profile-sns-icon--facebook-off img {
+    width: 30px;
+    height: 30px;
+}
+
+.profile-sns-label {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+    text-align: center;
+}
+
+.profile-sns-label--primary {
+    color: #7954C6;
+    font-weight: 700;
+}
+
+.profile-sns-connected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.profile-sns-date {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: -0.52px;
+}
+
+.profile-sns-unlink {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: -0.52px;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* ===== 선택 정보 ===== */
+.profile-marketing {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.profile-marketing__check-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-marketing__checkbox {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: #7954C6;
+}
+
+.profile-marketing__title {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: -0.72px;
+    cursor: pointer;
+}
+
+.profile-marketing__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 28px;
+}
+
+.profile-marketing__desc p {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #888;
+    letter-spacing: -0.26px;
+    line-height: 1.5;
+}
+
+/* ===== 저장하기 버튼 영역 ===== */
+.profile-submit {
+    display: flex;
+    justify-content: flex-end;
+    align-self: stretch;
+    padding: 20px 0 30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .profile-form__row {
+        grid-template-columns: 56px 1fr 130px;
+        gap: 14px;
+    }
+    .profile-sns-list {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .profile-sns-item {
+        flex: 0 0 calc(33.333% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-avatar-row {
+        gap: 24px;
+    }
+    .profile-form__row {
+        grid-template-columns: 52px 1fr;
+        gap: 10px;
+    }
+    .profile-form__row .btn,
+    .profile-form__row .btn--account-del {
+        grid-column: 2;
+    }
+    .profile-sns-item {
+        flex: 0 0 calc(50% - 10px);
     }
 }
