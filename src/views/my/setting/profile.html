@@ -149,15 +149,15 @@
         .profile-form__input {
             width: 100%;
             height: 50px;
-            border: 1px solid #DDDDDD;
-            border-radius: 5px;
+            border: 0.6px solid #EEEEEE;
+            border-radius: 8px;
             padding: 0 20px;
             font-family: 'Pretendard', -apple-system, sans-serif;
             font-size: 18px;
             font-weight: 400;
             color: #333;
             letter-spacing: -0.72px;
-            background: #FFF;
+            background: #F8F8F8;
             outline: none;
         }
 
@@ -170,7 +170,6 @@
         }
 
         .profile-form__input--readonly {
-            background: #F8F8F8;
             color: #888;
             pointer-events: none;
         }
@@ -283,10 +282,12 @@
             gap: 10px;
         }
 
-        .profile-marketing__check-icon {
-            width: 18px;
-            height: 18px;
+        .profile-marketing__checkbox {
+            width: 20px;
+            height: 20px;
             flex-shrink: 0;
+            cursor: pointer;
+            accent-color: #7954C6;
         }
 
         .profile-marketing__title {
@@ -295,6 +296,7 @@
             font-weight: 500;
             color: #555;
             letter-spacing: -0.72px;
+            cursor: pointer;
         }
 
         .profile-marketing__desc {
@@ -534,7 +536,7 @@
                         <!-- 아바타 + 프로필 설정 버튼 -->
                         <div class="profile-avatar-row">
                             <div class="profile-avatar-wrap">
-                                <img src="../../../images/community-user-avatar.jpg" alt="프로필 이미지">
+                                <img src="../../../images/woman.png" alt="프로필 이미지">
                                 <button class="profile-camera-btn" type="button" aria-label="프로필 사진 변경">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.5 3.5L6.5 5H3C2.17 5 1.5 5.67 1.5 6.5V15.5C1.5 16.33 2.17 17 3 17H17C17.83 17 18.5 16.33 18.5 15.5V6.5C18.5 5.67 17.83 5 17 5H13.5L12.5 3.5H7.5Z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/>
@@ -665,8 +667,8 @@
 
                         <div class="profile-marketing">
                             <div class="profile-marketing__check-row">
-                                <img src="../../../images/ico-check.svg" alt="" class="profile-marketing__check-icon">
-                                <span class="profile-marketing__title">마케팅 정보 수신 동의 (선택)</span>
+                                <input type="checkbox" id="profile-marketing" class="profile-marketing__checkbox" checked>
+                                <label for="profile-marketing" class="profile-marketing__title">마케팅 정보 수신 동의 (선택)</label>
                             </div>
                             <div class="profile-marketing__desc">
                                 <p>이용약관의 변경이나 관계법령에 따라 회원님께 안내되어야 할 중요 고지사항은 메일 수신 동의와 상관없이 안내될 수 있습니다.</p>
