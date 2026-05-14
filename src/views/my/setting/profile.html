@@ -209,16 +209,17 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: #F8F8F8;
+            background: #F1F1F1;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
 
-        .profile-sns-icon--kakao   { background: #FEF124; }
-        .profile-sns-icon--naver   { background: #03C75A; }
-        .profile-sns-icon--apple   { background: #000000; }
+        .profile-sns-icon--google   { background: #FFFFFF; border: 1px solid #DDDDDD; }
+        .profile-sns-icon--kakao    { background: #FEF124; }
+        .profile-sns-icon--naver    { background: #03C75A; }
+        .profile-sns-icon--apple    { background: #000000; }
         .profile-sns-icon--facebook { background: #0866FF; }
         .profile-sns-img--off { filter: grayscale(1) opacity(0.4); }
 
@@ -226,6 +227,12 @@
             width: 25px;
             height: 25px;
             object-fit: contain;
+        }
+
+        .profile-sns-icon--facebook img,
+        .profile-sns-icon--facebook-off img {
+            width: 30px;
+            height: 30px;
         }
 
         .profile-sns-label {
@@ -615,9 +622,9 @@
                         <!-- 전부 연결된 상태 -->
                         <div class="profile-sns-list">
 
-                            <!-- 구글 (연결 — ico-google.svg, default bg) -->
+                            <!-- 구글 (연결 — ico-google.svg, #FFF + border bg) -->
                             <div class="profile-sns-item">
-                                <div class="profile-sns-icon">
+                                <div class="profile-sns-icon profile-sns-icon--google">
                                     <img src="../../../images/ico-google.svg" alt="Google">
                                 </div>
                                 <span class="profile-sns-label profile-sns-label--primary">대표계정</span>
@@ -706,7 +713,7 @@
 
                             <!-- 페이스북 (미연결 — ico-fb.svg + grayscale) -->
                             <div class="profile-sns-item">
-                                <div class="profile-sns-icon">
+                                <div class="profile-sns-icon profile-sns-icon--facebook-off">
                                     <img src="../../../images/ico-fb.svg" alt="Facebook" class="profile-sns-img--off">
                                 </div>
                                 <span class="profile-sns-label">연결하기</span>
