@@ -7,71 +7,48 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #F5F5F5;
             padding: 40px;
             color: #333;
         }
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #222;
-        }
-        .meta {
-            font-size: 13px;
-            color: #888;
-            margin-bottom: 32px;
-        }
-        .filter-bar {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 28px;
-            flex-wrap: wrap;
-        }
+        h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; color: #222; }
+        .meta { font-size: 13px; color: #888; margin-bottom: 32px; }
+        .filter-bar { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
         .filter-btn {
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid #DDD;
-            background: #FFF;
+            padding: 6px 14px; border-radius: 20px; border: 1px solid #DDD;
+            background: #FFF; font-size: 13px; cursor: pointer; color: #555; transition: all 0.15s;
+        }
+        .filter-btn.active, .filter-btn:hover { background: #7954C6; border-color: #7954C6; color: #FFF; }
+
+        .section-title {
+            font-size: 14px; font-weight: 700; color: #555;
+            margin: 32px 0 14px; padding-bottom: 8px;
+            border-bottom: 2px solid #7954C6;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .section-title span { font-size: 12px; font-weight: 400; color: #AAA; }
+        .dark-toggle {
+            margin-left: 8px; font-size: 11px; color: #AAA; cursor: pointer;
+            border: 1px solid #DDD; background: #FFF; border-radius: 12px; padding: 2px 10px;
+        }
+        .dark-toggle:hover { background: #444; color: #FFF; border-color: #444; }
+
+        .hidden { display: none !important; }
+
+        /* ===== 공통 이름 스타일 ===== */
+        .name {
+            font-family: 'Pretendard', -apple-system, sans-serif;
             font-size: 13px;
-            cursor: pointer;
-            color: #555;
-            transition: all 0.15s;
+            font-weight: 500;
+            color: #333;
+            word-break: break-all;
+            line-height: 1.4;
+            text-align: center;
         }
-        .filter-btn.active, .filter-btn:hover {
-            background: #7954C6;
-            border-color: #7954C6;
-            color: #FFF;
-        }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .grid.hidden { display: none; }
-        .item {
-            background: #FFF;
-            border: 1px solid #E8E8E8;
-            border-radius: 8px;
-            padding: 10px 14px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 12px;
-            min-width: 160px;
-        }
-        .item:hover {
-            border-color: #7954C6;
-            box-shadow: 0 2px 10px rgba(121,84,198,0.12);
-        }
-        .img-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            border-radius: 4px;
-            padding: 6px;
+
+        /* ===== 체커보드 배경 (흰색 SVG 가시성) ===== */
+        .checker {
             background-color: #FFF;
             background-image:
                 linear-gradient(45deg, #E0E0E0 25%, transparent 25%),
@@ -81,52 +58,135 @@
             background-size: 10px 10px;
             background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
         }
-        /* 어두운 배경 토글용 */
-        .item.dark-bg .img-wrap {
-            background: #444;
-            background-image: none;
-            border-radius: 6px;
-        }
-        .name {
-            font-size: 11px;
-            color: #888;
-            word-break: break-all;
-            line-height: 1.4;
-        }
-        img[src$=".jpg"] { max-width: 300px; }
-        .section-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: #555;
-            margin: 32px 0 14px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #7954C6;
+
+        /* ===== 로고 섹션 ===== */
+        .grid--logo {
             display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .item--logo {
+            background: #FFF;
+            border: 1px solid #E8E8E8;
+            border-radius: 8px;
+            padding: 20px 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .item--logo:hover { border-color: #7954C6; box-shadow: 0 2px 10px rgba(121,84,198,0.12); }
+        .item--logo.dark-bg { background: #444; }
+        .item--logo .logo-wrap { height: 50px; display: flex; align-items: center; justify-content: center; }
+        .item--logo .logo-wrap img { max-width: 220px; max-height: 50px; object-fit: contain; }
+
+        /* ===== ico / free 아이콘 섹션 ===== */
+        .grid--icon {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 10px;
+        }
+        .item--icon {
+            background: #FFF;
+            border: 1px solid #E8E8E8;
+            border-radius: 8px;
+            padding: 16px 10px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .item--icon:hover { border-color: #7954C6; box-shadow: 0 2px 10px rgba(121,84,198,0.12); }
+        .item--icon.dark-bg .icon-wrap { background: #444; background-image: none; }
+        .icon-wrap {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .icon-wrap img { max-width: 44px; max-height: 44px; object-fit: contain; }
+
+        /* ===== 썸네일/상품 이미지 섹션 ===== */
+        .grid--thumb {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .item--thumb {
+            background: #FFF;
+            border: 1px solid #E8E8E8;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .item--thumb:hover { border-color: #7954C6; box-shadow: 0 2px 10px rgba(121,84,198,0.12); }
+        .item--thumb.item--wide {
+            grid-column: 1 / -1;
+            max-width: 1000px;
+        }
+        .thumb-img-wrap {
+            background: #F0F0F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .thumb-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .item--wide .thumb-img-wrap img {
+            max-width: 1000px;
+            object-fit: contain;
+        }
+        .thumb-info {
+            padding: 10px 14px 12px;
+            border-top: 1px solid #F0F0F0;
+        }
+        .thumb-info .name { text-align: left; }
+        .thumb-info .dims {
+            font-size: 11px;
+            color: #AAAAAA;
+            margin-top: 3px;
+            font-weight: 400;
+        }
+
+        /* ===== 기타 섹션 (아바타/인물) ===== */
+        .grid--misc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .item--misc {
+            background: #FFF;
+            border: 1px solid #E8E8E8;
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 8px;
         }
-        .section-title span {
-            font-size: 12px;
-            font-weight: 400;
-            color: #AAA;
+        .item--misc:hover { border-color: #7954C6; box-shadow: 0 2px 10px rgba(121,84,198,0.12); }
+        .item--misc .misc-wrap img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
         }
-        .dark-toggle {
-            margin-left: 8px;
-            font-size: 11px;
-            color: #AAA;
-            cursor: pointer;
-            border: 1px solid #DDD;
-            background: #FFF;
-            border-radius: 12px;
-            padding: 2px 10px;
-        }
-        .dark-toggle:hover { background: #444; color: #FFF; border-color: #444; }
     </style>
 </head>
 <body>
 
 <h1>이미지 목록</h1>
-<p class="meta">src/images/ — 총 173개 파일 &nbsp;|&nbsp; <a href="index.html" style="color:#7954C6;">← 페이지 목록으로</a></p>
+<p class="meta">src/images/ &nbsp;|&nbsp; <a href="index.html" style="color:#7954C6;">← 페이지 목록으로</a></p>
 
 <div class="filter-bar">
     <button class="filter-btn active" onclick="filterSection('all', this)">전체</button>
@@ -139,247 +199,252 @@
 
 <!-- 로고 -->
 <div class="section-title" data-section="logo">로고 <span>2개</span></div>
-<div class="grid" data-section="logo">
-    <div class="item"><div class="img-wrap"><img src="../images/logo.svg" alt="logo.svg"></div><div class="name">logo.svg</div></div>
-    <div class="item dark-bg"><div class="img-wrap"><img src="../images/logo-bottom.svg" alt="logo-bottom.svg"></div><div class="name">logo-bottom.svg</div></div>
+<div class="grid--logo" data-section="logo">
+    <div class="item--logo">
+        <div class="logo-wrap"><img src="../images/logo.svg" alt="logo.svg"></div>
+        <div class="name">logo.svg</div>
+    </div>
+    <div class="item--logo dark-bg">
+        <div class="logo-wrap"><img src="../images/logo-bottom.svg" alt="logo-bottom.svg"></div>
+        <div class="name" style="color:#CCC;">logo-bottom.svg</div>
+    </div>
 </div>
 
 <!-- ico 아이콘 -->
 <div class="section-title" data-section="ico">ico 아이콘 <span>60개</span> <button class="dark-toggle" onclick="toggleDark('ico')">어두운 배경 토글</button></div>
-<div class="grid" data-section="ico">
-    <div class="item"><div class="img-wrap"><img src="../images/ico-admin.svg" alt=""></div><div class="name">ico-admin.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-apple.svg" alt=""></div><div class="name">ico-apple.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-attach.svg" alt=""></div><div class="name">ico-attach.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-bag.svg" alt=""></div><div class="name">ico-bag.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-bell.svg" alt=""></div><div class="name">ico-bell.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-benefit.svg" alt=""></div><div class="name">ico-benefit.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-calendar.svg" alt=""></div><div class="name">ico-calendar.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-certificate.svg" alt=""></div><div class="name">ico-certificate.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-check.svg" alt=""></div><div class="name">ico-check.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-chevron-down.svg" alt=""></div><div class="name">ico-chevron-down.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-clock.svg" alt=""></div><div class="name">ico-clock.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-community-calendar.svg" alt=""></div><div class="name">ico-community-calendar.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-community-credit.svg" alt=""></div><div class="name">ico-community-credit.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-community-queen.svg" alt=""></div><div class="name">ico-community-queen.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-community-search.svg" alt=""></div><div class="name">ico-community-search.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-coupon-small.svg" alt=""></div><div class="name">ico-coupon-small.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/Ico-credit-minus.svg" alt=""></div><div class="name">Ico-credit-minus.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/Ico-credit-plus.svg" alt=""></div><div class="name">Ico-credit-plus.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-download.svg" alt=""></div><div class="name">ico-download.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-eye.svg" alt=""></div><div class="name">ico-eye.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-fb.svg" alt=""></div><div class="name">ico-fb.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-file-remove.svg" alt=""></div><div class="name">ico-file-remove.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-form-calendar.svg" alt=""></div><div class="name">ico-form-calendar.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-google.svg" alt=""></div><div class="name">ico-google.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-google-meet.svg" alt=""></div><div class="name">ico-google-meet.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-heart.svg" alt=""></div><div class="name">ico-heart.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-hourglass.svg" alt=""></div><div class="name">ico-hourglass.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-input-warning.svg" alt=""></div><div class="name">ico-input-warning.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lecture.svg" alt=""></div><div class="name">ico-lecture.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lecture-play.svg" alt=""></div><div class="name">ico-lecture-play.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-live.svg" alt=""></div><div class="name">ico-live.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-arrow.svg" alt=""></div><div class="name">ico-lm-arrow.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-comment.svg" alt=""></div><div class="name">ico-lm-comment.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-coupon.svg" alt=""></div><div class="name">ico-lm-coupon.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-diploma.svg" alt=""></div><div class="name">ico-lm-diploma.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-logout.svg" alt=""></div><div class="name">ico-lm-logout.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-my-goods.svg" alt=""></div><div class="name">ico-lm-my-goods.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-pay-info.svg" alt=""></div><div class="name">ico-lm-pay-info.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-pencil.svg" alt=""></div><div class="name">ico-lm-pencil.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-receipt.svg" alt=""></div><div class="name">ico-lm-receipt.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-user-gear.svg" alt=""></div><div class="name">ico-lm-user-gear.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-lm-wish.svg" alt=""></div><div class="name">ico-lm-wish.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-logout.svg" alt=""></div><div class="name">ico-logout.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-logout-narrow.svg" alt=""></div><div class="name">ico-logout-narrow.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-man-teacher.svg" alt=""></div><div class="name">ico-man-teacher.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-membership.svg" alt=""></div><div class="name">ico-membership.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-messages.svg" alt=""></div><div class="name">ico-messages.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-naver.svg" alt=""></div><div class="name">ico-naver.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/icon-diamond.svg" alt=""></div><div class="name">icon-diamond.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-pay-info.svg" alt=""></div><div class="name">ico-pay-info.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-pay-list.svg" alt=""></div><div class="name">ico-pay-list.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-payment.svg" alt=""></div><div class="name">ico-payment.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-pencil.svg" alt=""></div><div class="name">ico-pencil.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-pencil-white.svg" alt=""></div><div class="name">ico-pencil-white.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-pin.svg" alt=""></div><div class="name">ico-pin.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-pin-notice.svg" alt=""></div><div class="name">ico-pin-notice.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-play.svg" alt=""></div><div class="name">ico-play.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-preview.svg" alt=""></div><div class="name">ico-preview.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-profile.svg" alt=""></div><div class="name">ico-profile.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-qna-list.svg" alt=""></div><div class="name">ico-qna-list.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-recent-nub.svg" alt=""></div><div class="name">ico-recent-nub.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-reply.svg" alt=""></div><div class="name">ico-reply.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-reset.svg" alt=""></div><div class="name">ico-reset.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-right-dot.svg" alt=""></div><div class="name">ico-right-dot.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-search.svg" alt=""></div><div class="name">ico-search.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-share.svg" alt=""></div><div class="name">ico-share.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-signup.svg" alt=""></div><div class="name">ico-signup.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-social-fb.svg" alt=""></div><div class="name">ico-social-fb.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-social-insta.svg" alt=""></div><div class="name">ico-social-insta.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-social-x.svg" alt=""></div><div class="name">ico-social-x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-social-yt.svg" alt=""></div><div class="name">ico-social-yt.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-star.svg" alt=""></div><div class="name">ico-star.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-subscribe.svg" alt=""></div><div class="name">ico-subscribe.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico-users.svg" alt=""></div><div class="name">ico-users.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/ico_kakao.svg" alt=""></div><div class="name">ico_kakao.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/x.svg" alt=""></div><div class="name">x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/dot.svg" alt=""></div><div class="name">dot.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/play.svg" alt=""></div><div class="name">play.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/arrow-dropdown.svg" alt=""></div><div class="name">arrow-dropdown.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/arrow-left.svg" alt=""></div><div class="name">arrow-left.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/arrow-more.svg" alt=""></div><div class="name">arrow-more.svg</div></div>
+<div class="grid--icon" data-section="ico">
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-admin.svg" alt=""></div><div class="name">ico-admin.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-apple.svg" alt=""></div><div class="name">ico-apple.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-attach.svg" alt=""></div><div class="name">ico-attach.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-bag.svg" alt=""></div><div class="name">ico-bag.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-bell.svg" alt=""></div><div class="name">ico-bell.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-benefit.svg" alt=""></div><div class="name">ico-benefit.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-calendar.svg" alt=""></div><div class="name">ico-calendar.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-certificate.svg" alt=""></div><div class="name">ico-certificate.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-check.svg" alt=""></div><div class="name">ico-check.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-chevron-down.svg" alt=""></div><div class="name">ico-chevron-down.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-clock.svg" alt=""></div><div class="name">ico-clock.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-community-calendar.svg" alt=""></div><div class="name">ico-community-calendar.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-community-credit.svg" alt=""></div><div class="name">ico-community-credit.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-community-queen.svg" alt=""></div><div class="name">ico-community-queen.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-community-search.svg" alt=""></div><div class="name">ico-community-search.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-coupon-small.svg" alt=""></div><div class="name">ico-coupon-small.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/Ico-credit-minus.svg" alt=""></div><div class="name">Ico-credit-minus.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/Ico-credit-plus.svg" alt=""></div><div class="name">Ico-credit-plus.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-download.svg" alt=""></div><div class="name">ico-download.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-eye.svg" alt=""></div><div class="name">ico-eye.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-fb.svg" alt=""></div><div class="name">ico-fb.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-file-remove.svg" alt=""></div><div class="name">ico-file-remove.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-form-calendar.svg" alt=""></div><div class="name">ico-form-calendar.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-google.svg" alt=""></div><div class="name">ico-google.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-google-meet.svg" alt=""></div><div class="name">ico-google-meet.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-heart.svg" alt=""></div><div class="name">ico-heart.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-hourglass.svg" alt=""></div><div class="name">ico-hourglass.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-input-warning.svg" alt=""></div><div class="name">ico-input-warning.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lecture.svg" alt=""></div><div class="name">ico-lecture.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lecture-play.svg" alt=""></div><div class="name">ico-lecture-play.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-live.svg" alt=""></div><div class="name">ico-live.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-arrow.svg" alt=""></div><div class="name">ico-lm-arrow.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-comment.svg" alt=""></div><div class="name">ico-lm-comment.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-coupon.svg" alt=""></div><div class="name">ico-lm-coupon.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-diploma.svg" alt=""></div><div class="name">ico-lm-diploma.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-logout.svg" alt=""></div><div class="name">ico-lm-logout.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-my-goods.svg" alt=""></div><div class="name">ico-lm-my-goods.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-pay-info.svg" alt=""></div><div class="name">ico-lm-pay-info.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-pencil.svg" alt=""></div><div class="name">ico-lm-pencil.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-receipt.svg" alt=""></div><div class="name">ico-lm-receipt.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-user-gear.svg" alt=""></div><div class="name">ico-lm-user-gear.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-lm-wish.svg" alt=""></div><div class="name">ico-lm-wish.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-logout.svg" alt=""></div><div class="name">ico-logout.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-logout-narrow.svg" alt=""></div><div class="name">ico-logout-narrow.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-man-teacher.svg" alt=""></div><div class="name">ico-man-teacher.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-membership.svg" alt=""></div><div class="name">ico-membership.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-messages.svg" alt=""></div><div class="name">ico-messages.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-naver.svg" alt=""></div><div class="name">ico-naver.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/icon-diamond.svg" alt=""></div><div class="name">icon-diamond.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-pay-info.svg" alt=""></div><div class="name">ico-pay-info.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-pay-list.svg" alt=""></div><div class="name">ico-pay-list.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-payment.svg" alt=""></div><div class="name">ico-payment.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-pencil.svg" alt=""></div><div class="name">ico-pencil.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-pencil-white.svg" alt=""></div><div class="name">ico-pencil-white.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-pin.svg" alt=""></div><div class="name">ico-pin.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-pin-notice.svg" alt=""></div><div class="name">ico-pin-notice.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-play.svg" alt=""></div><div class="name">ico-play.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-preview.svg" alt=""></div><div class="name">ico-preview.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-profile.svg" alt=""></div><div class="name">ico-profile.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-qna-list.svg" alt=""></div><div class="name">ico-qna-list.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-recent-nub.svg" alt=""></div><div class="name">ico-recent-nub.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-reply.svg" alt=""></div><div class="name">ico-reply.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-reset.svg" alt=""></div><div class="name">ico-reset.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-right-dot.svg" alt=""></div><div class="name">ico-right-dot.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-search.svg" alt=""></div><div class="name">ico-search.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-share.svg" alt=""></div><div class="name">ico-share.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-signup.svg" alt=""></div><div class="name">ico-signup.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-social-fb.svg" alt=""></div><div class="name">ico-social-fb.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-social-insta.svg" alt=""></div><div class="name">ico-social-insta.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-social-x.svg" alt=""></div><div class="name">ico-social-x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-social-yt.svg" alt=""></div><div class="name">ico-social-yt.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-star.svg" alt=""></div><div class="name">ico-star.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-subscribe.svg" alt=""></div><div class="name">ico-subscribe.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico-users.svg" alt=""></div><div class="name">ico-users.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/ico_kakao.svg" alt=""></div><div class="name">ico_kakao.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/x.svg" alt=""></div><div class="name">x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/dot.svg" alt=""></div><div class="name">dot.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/play.svg" alt=""></div><div class="name">play.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/arrow-dropdown.svg" alt=""></div><div class="name">arrow-dropdown.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/arrow-left.svg" alt=""></div><div class="name">arrow-left.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/arrow-more.svg" alt=""></div><div class="name">arrow-more.svg</div></div>
 </div>
 
 <!-- free 아이콘 -->
 <div class="section-title" data-section="free">free 아이콘 <span>74개</span> <button class="dark-toggle" onclick="toggleDark('free')">어두운 배경 토글</button></div>
-<div class="grid" data-section="free">
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-add-image.svg" alt=""></div><div class="name">free-icon-add-image.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-administrator.svg" alt=""></div><div class="name">free-icon-administrator.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-attaced-file.svg" alt=""></div><div class="name">free-icon-attaced-file.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-attaced-file-down.svg" alt=""></div><div class="name">free-icon-attaced-file-down.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-box-x.svg" alt=""></div><div class="name">free-icon-box-x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-box-x-small.svg" alt=""></div><div class="name">free-icon-box-x-small.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-buy.svg" alt=""></div><div class="name">free-icon-buy.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-cancel-button-x.svg" alt=""></div><div class="name">free-icon-cancel-button-x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-cart.svg" alt=""></div><div class="name">free-icon-cart.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-certificate.svg" alt=""></div><div class="name">free-icon-certificate.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-clock-detail.svg" alt=""></div><div class="name">free-icon-clock-detail.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-close.svg" alt=""></div><div class="name">free-icon-close.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-coupon.svg" alt=""></div><div class="name">free-icon-coupon.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-default-avatar.svg" alt=""></div><div class="name">free-icon-default-avatar.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-dots-vertical.svg" alt=""></div><div class="name">free-icon-dots-vertical.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-empty-box.svg" alt=""></div><div class="name">free-icon-empty-box.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-feedback-alt.svg" alt=""></div><div class="name">free-icon-feedback-alt.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-goods-calendar.svg" alt=""></div><div class="name">free-icon-goods-calendar.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-goods-download.svg" alt=""></div><div class="name">free-icon-goods-download.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-goods-package.svg" alt=""></div><div class="name">free-icon-goods-package.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-goods-process.svg" alt=""></div><div class="name">free-icon-goods-process.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-google-meet.svg" alt=""></div><div class="name">free-icon-google-meet.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-gray-check.svg" alt=""></div><div class="name">free-icon-gray-check.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-gray-x.svg" alt=""></div><div class="name">free-icon-gray-x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-lecturer.svg" alt=""></div><div class="name">free-icon-lecturer.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-left-gray-arrow.svg" alt=""></div><div class="name">free-icon-left-gray-arrow.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-left-violet-arrow.svg" alt=""></div><div class="name">free-icon-left-violet-arrow.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-left-white-arrow.svg" alt=""></div><div class="name">free-icon-left-white-arrow.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-lesson.svg" alt=""></div><div class="name">free-icon-lesson.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-live.svg" alt=""></div><div class="name">free-icon-live.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-lock.svg" alt=""></div><div class="name">free-icon-lock.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-member-list.svg" alt=""></div><div class="name">free-icon-member-list.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-memo-circle-check.svg" alt=""></div><div class="name">free-icon-memo-circle-check.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-modal-close-x.svg" alt=""></div><div class="name">free-icon-modal-close-x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-more_view.svg" alt=""></div><div class="name">free-icon-more_view.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-newsletter-subscribe.svg" alt=""></div><div class="name">free-icon-newsletter-subscribe.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-notice-avatar.svg" alt=""></div><div class="name">free-icon-notice-avatar.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-notice-pin.svg" alt=""></div><div class="name">free-icon-notice-pin.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-notice-pin-small.svg" alt=""></div><div class="name">free-icon-notice-pin-small.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-pencil.svg" alt=""></div><div class="name">free-icon-pencil.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-play.svg" alt=""></div><div class="name">free-icon-play.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-plus.svg" alt=""></div><div class="name">free-icon-plus.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-reply-close.svg" alt=""></div><div class="name">free-icon-reply-close.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-reply-dots-vertical.svg" alt=""></div><div class="name">free-icon-reply-dots-vertical.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-reply-open.svg" alt=""></div><div class="name">free-icon-reply-open.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-reply-star.svg" alt=""></div><div class="name">free-icon-reply-star.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-digital.svg" alt=""></div><div class="name">free-icon-ribbon-digital.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-digital-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-digital-edge-bottom.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-digital-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-digital-edge-top.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-live.svg" alt=""></div><div class="name">free-icon-ribbon-live.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-live-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-live-edge-bottom.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-live-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-live-edge-top.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-offline.svg" alt=""></div><div class="name">free-icon-ribbon-offline.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-offline-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-offline-edge-bottom.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-offline-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-offline-edge-top.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-package.svg" alt=""></div><div class="name">free-icon-ribbon-package.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-package-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-package-edge-bottom.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-package-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-package-edge-top.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-vod.svg" alt=""></div><div class="name">free-icon-ribbon-vod.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-vod-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-vod-edge-bottom.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ribbon-vod-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-vod-edge-top.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-right-arrow.svg" alt=""></div><div class="name">free-icon-right-arrow.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-schedule.svg" alt=""></div><div class="name">free-icon-schedule.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-search-glass.svg" alt=""></div><div class="name">free-icon-search-glass.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-signal-stream.svg" alt=""></div><div class="name">free-icon-signal-stream.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-slant-arrow.svg" alt=""></div><div class="name">free-icon-slant-arrow.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-small-pin.svg" alt=""></div><div class="name">free-icon-small-pin.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-speech-balloon.svg" alt=""></div><div class="name">free-icon-speech-balloon.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-speech-balloon2.svg" alt=""></div><div class="name">free-icon-speech-balloon2.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-speech-balloon3.svg" alt=""></div><div class="name">free-icon-speech-balloon3.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-star.svg" alt=""></div><div class="name">free-icon-star.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-ticket.svg" alt=""></div><div class="name">free-icon-ticket.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-toast-close-x.svg" alt=""></div><div class="name">free-icon-toast-close-x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-up-arrow.svg" alt=""></div><div class="name">free-icon-up-arrow.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-violet-bookmark.svg" alt=""></div><div class="name">free-icon-violet-bookmark.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-violet-copy.svg" alt=""></div><div class="name">free-icon-violet-copy.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-violet-download.svg" alt=""></div><div class="name">free-icon-violet-download.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-violet-heart.svg" alt=""></div><div class="name">free-icon-violet-heart.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-violet-share.svg" alt=""></div><div class="name">free-icon-violet-share.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-violet-x.svg" alt=""></div><div class="name">free-icon-violet-x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-white-bookmark.svg" alt=""></div><div class="name">free-icon-white-bookmark.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-whtie-check.svg" alt=""></div><div class="name">free-icon-whtie-check.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/free-icon-zoom.svg" alt=""></div><div class="name">free-icon-zoom.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/alert-ico-notice.svg" alt=""></div><div class="name">alert-ico-notice.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/alert-ico-notice-small.svg" alt=""></div><div class="name">alert-ico-notice-small.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/alert-ico-ok.svg" alt=""></div><div class="name">alert-ico-ok.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/btn-ico-ok.svg" alt=""></div><div class="name">btn-ico-ok.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/btn-ico-x.svg" alt=""></div><div class="name">btn-ico-x.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/notice-ico-coupon.svg" alt=""></div><div class="name">notice-ico-coupon.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/notice-ico-empty.svg" alt=""></div><div class="name">notice-ico-empty.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/notice-ico-nonotice.svg" alt=""></div><div class="name">notice-ico-nonotice.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/notice-ico-nopost.svg" alt=""></div><div class="name">notice-ico-nopost.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/notice-ico-notfound.svg" alt=""></div><div class="name">notice-ico-notfound.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/notice-ico-review.svg" alt=""></div><div class="name">notice-ico-review.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/picto-ai.svg" alt=""></div><div class="name">picto-ai.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/picto-fig.svg" alt=""></div><div class="name">picto-fig.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/picto-jpg.svg" alt=""></div><div class="name">picto-jpg.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/picto-mp4.svg" alt=""></div><div class="name">picto-mp4.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/picto-ppt.svg" alt=""></div><div class="name">picto-ppt.svg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/picto-zip.svg" alt=""></div><div class="name">picto-zip.svg</div></div>
+<div class="grid--icon" data-section="free">
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-add-image.svg" alt=""></div><div class="name">free-icon-add-image.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-administrator.svg" alt=""></div><div class="name">free-icon-administrator.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-attaced-file.svg" alt=""></div><div class="name">free-icon-attaced-file.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-attaced-file-down.svg" alt=""></div><div class="name">free-icon-attaced-file-down.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-box-x.svg" alt=""></div><div class="name">free-icon-box-x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-box-x-small.svg" alt=""></div><div class="name">free-icon-box-x-small.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-buy.svg" alt=""></div><div class="name">free-icon-buy.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-cancel-button-x.svg" alt=""></div><div class="name">free-icon-cancel-button-x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-cart.svg" alt=""></div><div class="name">free-icon-cart.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-certificate.svg" alt=""></div><div class="name">free-icon-certificate.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-clock-detail.svg" alt=""></div><div class="name">free-icon-clock-detail.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-close.svg" alt=""></div><div class="name">free-icon-close.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-coupon.svg" alt=""></div><div class="name">free-icon-coupon.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-default-avatar.svg" alt=""></div><div class="name">free-icon-default-avatar.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-dots-vertical.svg" alt=""></div><div class="name">free-icon-dots-vertical.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-empty-box.svg" alt=""></div><div class="name">free-icon-empty-box.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-feedback-alt.svg" alt=""></div><div class="name">free-icon-feedback-alt.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-goods-calendar.svg" alt=""></div><div class="name">free-icon-goods-calendar.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-goods-download.svg" alt=""></div><div class="name">free-icon-goods-download.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-goods-package.svg" alt=""></div><div class="name">free-icon-goods-package.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-goods-process.svg" alt=""></div><div class="name">free-icon-goods-process.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-google-meet.svg" alt=""></div><div class="name">free-icon-google-meet.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-gray-check.svg" alt=""></div><div class="name">free-icon-gray-check.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-gray-x.svg" alt=""></div><div class="name">free-icon-gray-x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-lecturer.svg" alt=""></div><div class="name">free-icon-lecturer.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-left-gray-arrow.svg" alt=""></div><div class="name">free-icon-left-gray-arrow.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-left-violet-arrow.svg" alt=""></div><div class="name">free-icon-left-violet-arrow.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-left-white-arrow.svg" alt=""></div><div class="name">free-icon-left-white-arrow.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-lesson.svg" alt=""></div><div class="name">free-icon-lesson.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-live.svg" alt=""></div><div class="name">free-icon-live.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-lock.svg" alt=""></div><div class="name">free-icon-lock.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-member-list.svg" alt=""></div><div class="name">free-icon-member-list.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-memo-circle-check.svg" alt=""></div><div class="name">free-icon-memo-circle-check.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-modal-close-x.svg" alt=""></div><div class="name">free-icon-modal-close-x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-more_view.svg" alt=""></div><div class="name">free-icon-more_view.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-newsletter-subscribe.svg" alt=""></div><div class="name">free-icon-newsletter-subscribe.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-notice-avatar.svg" alt=""></div><div class="name">free-icon-notice-avatar.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-notice-pin.svg" alt=""></div><div class="name">free-icon-notice-pin.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-notice-pin-small.svg" alt=""></div><div class="name">free-icon-notice-pin-small.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-pencil.svg" alt=""></div><div class="name">free-icon-pencil.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-play.svg" alt=""></div><div class="name">free-icon-play.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-plus.svg" alt=""></div><div class="name">free-icon-plus.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-reply-close.svg" alt=""></div><div class="name">free-icon-reply-close.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-reply-dots-vertical.svg" alt=""></div><div class="name">free-icon-reply-dots-vertical.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-reply-open.svg" alt=""></div><div class="name">free-icon-reply-open.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-reply-star.svg" alt=""></div><div class="name">free-icon-reply-star.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-digital.svg" alt=""></div><div class="name">free-icon-ribbon-digital.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-digital-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-digital-edge-bottom.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-digital-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-digital-edge-top.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-live.svg" alt=""></div><div class="name">free-icon-ribbon-live.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-live-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-live-edge-bottom.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-live-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-live-edge-top.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-offline.svg" alt=""></div><div class="name">free-icon-ribbon-offline.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-offline-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-offline-edge-bottom.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-offline-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-offline-edge-top.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-package.svg" alt=""></div><div class="name">free-icon-ribbon-package.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-package-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-package-edge-bottom.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-package-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-package-edge-top.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-vod.svg" alt=""></div><div class="name">free-icon-ribbon-vod.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-vod-edge-bottom.svg" alt=""></div><div class="name">free-icon-ribbon-vod-edge-bottom.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ribbon-vod-edge-top.svg" alt=""></div><div class="name">free-icon-ribbon-vod-edge-top.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-right-arrow.svg" alt=""></div><div class="name">free-icon-right-arrow.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-schedule.svg" alt=""></div><div class="name">free-icon-schedule.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-search-glass.svg" alt=""></div><div class="name">free-icon-search-glass.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-signal-stream.svg" alt=""></div><div class="name">free-icon-signal-stream.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-slant-arrow.svg" alt=""></div><div class="name">free-icon-slant-arrow.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-small-pin.svg" alt=""></div><div class="name">free-icon-small-pin.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-speech-balloon.svg" alt=""></div><div class="name">free-icon-speech-balloon.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-speech-balloon2.svg" alt=""></div><div class="name">free-icon-speech-balloon2.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-speech-balloon3.svg" alt=""></div><div class="name">free-icon-speech-balloon3.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-star.svg" alt=""></div><div class="name">free-icon-star.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-ticket.svg" alt=""></div><div class="name">free-icon-ticket.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-toast-close-x.svg" alt=""></div><div class="name">free-icon-toast-close-x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-up-arrow.svg" alt=""></div><div class="name">free-icon-up-arrow.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-violet-bookmark.svg" alt=""></div><div class="name">free-icon-violet-bookmark.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-violet-copy.svg" alt=""></div><div class="name">free-icon-violet-copy.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-violet-download.svg" alt=""></div><div class="name">free-icon-violet-download.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-violet-heart.svg" alt=""></div><div class="name">free-icon-violet-heart.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-violet-share.svg" alt=""></div><div class="name">free-icon-violet-share.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-violet-x.svg" alt=""></div><div class="name">free-icon-violet-x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-white-bookmark.svg" alt=""></div><div class="name">free-icon-white-bookmark.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-whtie-check.svg" alt=""></div><div class="name">free-icon-whtie-check.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/free-icon-zoom.svg" alt=""></div><div class="name">free-icon-zoom.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/alert-ico-notice.svg" alt=""></div><div class="name">alert-ico-notice.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/alert-ico-notice-small.svg" alt=""></div><div class="name">alert-ico-notice-small.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/alert-ico-ok.svg" alt=""></div><div class="name">alert-ico-ok.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/btn-ico-ok.svg" alt=""></div><div class="name">btn-ico-ok.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/btn-ico-x.svg" alt=""></div><div class="name">btn-ico-x.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/notice-ico-coupon.svg" alt=""></div><div class="name">notice-ico-coupon.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/notice-ico-empty.svg" alt=""></div><div class="name">notice-ico-empty.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/notice-ico-nonotice.svg" alt=""></div><div class="name">notice-ico-nonotice.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/notice-ico-nopost.svg" alt=""></div><div class="name">notice-ico-nopost.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/notice-ico-notfound.svg" alt=""></div><div class="name">notice-ico-notfound.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/notice-ico-review.svg" alt=""></div><div class="name">notice-ico-review.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/picto-ai.svg" alt=""></div><div class="name">picto-ai.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/picto-fig.svg" alt=""></div><div class="name">picto-fig.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/picto-jpg.svg" alt=""></div><div class="name">picto-jpg.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/picto-mp4.svg" alt=""></div><div class="name">picto-mp4.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/picto-ppt.svg" alt=""></div><div class="name">picto-ppt.svg</div></div>
+    <div class="item--icon"><div class="icon-wrap checker"><img src="../images/picto-zip.svg" alt=""></div><div class="name">picto-zip.svg</div></div>
 </div>
 
 <!-- 썸네일/상품 이미지 -->
-<div class="section-title" data-section="thumb">썸네일 / 상품 이미지 <span>25개</span></div>
-<div class="grid" data-section="thumb">
-    <div class="item"><div class="img-wrap"><img src="../images/thumb-course.jpg" alt=""></div><div class="name">thumb-course.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/thumb-digital.jpg" alt=""></div><div class="name">thumb-digital.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/thumb-live.jpg" alt=""></div><div class="name">thumb-live.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/thumb-live.png" alt=""></div><div class="name">thumb-live.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/thumb-meeting.jpg" alt=""></div><div class="name">thumb-meeting.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/thumb-package.jpg" alt=""></div><div class="name">thumb-package.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/top-img-course.png" alt=""></div><div class="name">top-img-course.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/top-img-digital.png" alt=""></div><div class="name">top-img-digital.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/top-img-live.png" alt=""></div><div class="name">top-img-live.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/top-img-meeting.png" alt=""></div><div class="name">top-img-meeting.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/top-img-package.png" alt=""></div><div class="name">top-img-package.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/product-img-course.png" alt=""></div><div class="name">product-img-course.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/post-thumb1.png" alt=""></div><div class="name">post-thumb1.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/post-thumb2.png" alt=""></div><div class="name">post-thumb2.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/post-thumb-original1.jpg" alt=""></div><div class="name">post-thumb-original1.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/post-thumb-original2.jpg" alt=""></div><div class="name">post-thumb-original2.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/community-card-thumb.png" alt=""></div><div class="name">community-card-thumb.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/community-edit-sample-img.png" alt=""></div><div class="name">community-edit-sample-img.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/board-index-banner.png" alt=""></div><div class="name">board-index-banner.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/community-index-banner.png" alt=""></div><div class="name">community-index-banner.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/notice-index-banner.png" alt=""></div><div class="name">notice-index-banner.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/restrict-illust.png.png" alt=""></div><div class="name">restrict-illust.png.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/youtube_img.png" alt=""></div><div class="name">youtube_img.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/reply_img.jpg" alt=""></div><div class="name">reply_img.jpg</div></div>
+<div class="section-title" data-section="thumb">썸네일 / 상품 이미지 <span>24개</span></div>
+<div class="grid--thumb" data-section="thumb">
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/thumb-course.jpg" alt=""></div><div class="thumb-info"><div class="name">thumb-course.jpg</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/thumb-digital.jpg" alt=""></div><div class="thumb-info"><div class="name">thumb-digital.jpg</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/thumb-live.jpg" alt=""></div><div class="thumb-info"><div class="name">thumb-live.jpg</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/thumb-live.png" alt=""></div><div class="thumb-info"><div class="name">thumb-live.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/thumb-meeting.jpg" alt=""></div><div class="thumb-info"><div class="name">thumb-meeting.jpg</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/thumb-package.jpg" alt=""></div><div class="thumb-info"><div class="name">thumb-package.jpg</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/top-img-course.png" alt=""></div><div class="thumb-info"><div class="name">top-img-course.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/top-img-digital.png" alt=""></div><div class="thumb-info"><div class="name">top-img-digital.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/top-img-live.png" alt=""></div><div class="thumb-info"><div class="name">top-img-live.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/top-img-meeting.png" alt=""></div><div class="thumb-info"><div class="name">top-img-meeting.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/top-img-package.png" alt=""></div><div class="thumb-info"><div class="name">top-img-package.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/product-img-course.png" alt=""></div><div class="thumb-info"><div class="name">product-img-course.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/post-thumb1.png" alt=""></div><div class="thumb-info"><div class="name">post-thumb1.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/post-thumb2.png" alt=""></div><div class="thumb-info"><div class="name">post-thumb2.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/post-thumb-original1.jpg" alt=""></div><div class="thumb-info"><div class="name">post-thumb-original1.jpg</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/post-thumb-original2.jpg" alt=""></div><div class="thumb-info"><div class="name">post-thumb-original2.jpg</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/community-card-thumb.png" alt=""></div><div class="thumb-info"><div class="name">community-card-thumb.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/community-edit-sample-img.png" alt=""></div><div class="thumb-info"><div class="name">community-edit-sample-img.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/board-index-banner.png" alt=""></div><div class="thumb-info"><div class="name">board-index-banner.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/community-index-banner.png" alt=""></div><div class="thumb-info"><div class="name">community-index-banner.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/notice-index-banner.png" alt=""></div><div class="thumb-info"><div class="name">notice-index-banner.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/restrict-illust.png.png" alt=""></div><div class="thumb-info"><div class="name">restrict-illust.png.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/youtube_img.png" alt=""></div><div class="thumb-info"><div class="name">youtube_img.png</div><div class="dims">-</div></div></div>
+    <div class="item--thumb"><div class="thumb-img-wrap"><img src="../images/reply_img.jpg" alt=""></div><div class="thumb-info"><div class="name">reply_img.jpg</div><div class="dims">-</div></div></div>
 </div>
 
 <!-- 기타 -->
 <div class="section-title" data-section="misc">기타 (아바타, 인물, 일러스트)</div>
-<div class="grid" data-section="misc">
-    <div class="item"><div class="img-wrap"><img src="../images/community-user-avatar.jpg" alt=""></div><div class="name">community-user-avatar.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/teacher.jpg" alt=""></div><div class="name">teacher.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/manager.jpg" alt=""></div><div class="name">manager.jpg</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/monzo.png" alt=""></div><div class="name">monzo.png</div></div>
-    <div class="item"><div class="img-wrap"><img src="../images/woman.png" alt=""></div><div class="name">woman.png</div></div>
+<div class="grid--misc" data-section="misc">
+    <div class="item--misc"><div class="misc-wrap"><img src="../images/community-user-avatar.jpg" alt=""></div><div class="name">community-user-avatar.jpg</div></div>
+    <div class="item--misc"><div class="misc-wrap"><img src="../images/teacher.jpg" alt=""></div><div class="name">teacher.jpg</div></div>
+    <div class="item--misc"><div class="misc-wrap"><img src="../images/manager.jpg" alt=""></div><div class="name">manager.jpg</div></div>
+    <div class="item--misc"><div class="misc-wrap"><img src="../images/monzo.png" alt=""></div><div class="name">monzo.png</div></div>
+    <div class="item--misc"><div class="misc-wrap"><img src="../images/woman.png" alt=""></div><div class="name">woman.png</div></div>
 </div>
 
 <script>
 function filterSection(type, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
-    var sections = document.querySelectorAll('[data-section]');
-    sections.forEach(function(el) {
+    document.querySelectorAll('[data-section]').forEach(function(el) {
         if (type === 'all') {
             el.classList.remove('hidden');
         } else {
@@ -387,12 +452,37 @@ function filterSection(type, btn) {
         }
     });
 }
+
 function toggleDark(section) {
-    var grid = document.querySelector('.grid[data-section="' + section + '"]');
-    grid.querySelectorAll('.item').forEach(function(item) {
+    var grid = document.querySelector('[data-section="' + section + '"].grid--icon');
+    if (!grid) return;
+    grid.querySelectorAll('.item--icon').forEach(function(item) {
         item.classList.toggle('dark-bg');
     });
 }
+
+window.addEventListener('load', function() {
+    document.querySelectorAll('.item--thumb').forEach(function(item) {
+        var img = item.querySelector('img');
+        var dimsEl = item.querySelector('.dims');
+        if (!img || !dimsEl) return;
+        function applyDims() {
+            var w = img.naturalWidth;
+            var h = img.naturalHeight;
+            if (w && h) {
+                dimsEl.textContent = w + ' × ' + h + 'px';
+                if (w > 1000) {
+                    item.classList.add('item--wide');
+                }
+            }
+        }
+        if (img.complete && img.naturalWidth) {
+            applyDims();
+        } else {
+            img.addEventListener('load', applyDims);
+        }
+    });
+});
 </script>
 </body>
 </html>
