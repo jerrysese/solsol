@@ -55,9 +55,10 @@
             background: #FFFFFF;
             border-radius: 10px;
             padding: 16px 20px;
-            display: flex;
+            display: grid;
+            grid-template-columns: 190px 1px 1fr;
+            column-gap: 16px;
             align-items: center;
-            gap: 16px;
             border: 1px solid #E8E2F5;
             transition: box-shadow 0.15s;
         }
@@ -70,19 +71,18 @@
             color: #2A1A5E;
             letter-spacing: -0.4px;
             white-space: nowrap;
-            flex-shrink: 0;
-            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .card-divider {
             width: 1px;
             height: 16px;
             background: #E0D8F2;
-            flex-shrink: 0;
         }
 
         .card-link {
-            font-size: 24px;
+            font-size: 23px;
             color: #1a56db;
             text-decoration: none;
             letter-spacing: 0;
