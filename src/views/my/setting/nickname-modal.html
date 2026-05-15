@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png">
+    <title>닉네임 변경 모달</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container">
+
+            <a href="#" class="header-logo">
+                <img src="../../../images/logo.svg" alt="로고">
+            </a>
+
+            <nav class="header-nav">
+                <a href="#" class="nav-item">회사소개</a>
+                <a href="#" class="nav-item">일반강의</a>
+                <a href="#" class="nav-item">라이브강의</a>
+                <a href="#" class="nav-item">화상강의</a>
+                <a href="#" class="nav-item">패키지 상품</a>
+                <a href="#" class="nav-item">디지털 상품</a>
+                <a href="#" class="nav-item">프리미엄 커뮤니티</a>
+                <a href="#" class="nav-item">멤버십 상품</a>
+                <a href="#" class="nav-item">공지사항</a>
+                <a href="#" class="nav-item">1:1문의</a>
+            </nav>
+
+            <div class="header-profile">
+                <button class="btn-bell" aria-label="알림">
+                    <img src="../../../images/ico-bell.svg" alt="알림" width="20" height="20">
+                    <span class="bell-dot"></span>
+                </button>
+                <div class="header-avatar-wrap">
+                    <div class="header-avatar"></div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+        <div class="mypage-layout">
+
+            <!-- ===== 좌측 사이드바 ===== -->
+            <aside class="left-sidebar">
+                <div class="left-sidebar__profile">
+                    <div class="left-sidebar__avatar">
+                        <img src="../../../images/community-user-avatar.jpg" alt="">
+                    </div>
+                    <div class="left-sidebar__user">
+                        <div class="left-sidebar__user-top">
+                            <span class="left-sidebar__role">학습자</span>
+                            <span class="left-sidebar__name">Monzo</span>
+                        </div>
+                        <span class="left-sidebar__email">Monzo@example.com</span>
+                    </div>
+                    <button class="left-sidebar__logout" type="button">
+                        <img src="../../../images/ico-lm-logout.svg" alt="로그아웃">
+                    </button>
+                </div>
+
+                <div class="left-sidebar__divider"></div>
+
+                <div class="left-sidebar__memberships">
+                    <a href="#" class="left-sidebar__mem-bar">
+                        <span class="left-sidebar__mem-name">멤버십</span>
+                        <span class="left-sidebar__mem-status">
+                            구독 전
+                            <img src="../../../images/ico-lm-arrow.svg" alt="">
+                        </span>
+                    </a>
+                    <a href="#" class="left-sidebar__mem-bar left-sidebar__mem-bar--community">
+                        <span class="left-sidebar__mem-name">프리미엄 커뮤니티</span>
+                        <span class="left-sidebar__mem-status">
+                            2개 구독중
+                            <img src="../../../images/ico-lm-arrow.svg" alt="">
+                        </span>
+                    </a>
+                </div>
+
+                <div class="left-sidebar__stats">
+                    <div class="left-sidebar__stat">
+                        <span class="left-sidebar__stat-label">내 상품</span>
+                        <span class="left-sidebar__stat-value">7</span>
+                    </div>
+                    <div class="left-sidebar__stat">
+                        <span class="left-sidebar__stat-label">보유 쿠폰 <span class="left-sidebar__stat-badge">3</span></span>
+                        <span class="left-sidebar__stat-value">1</span>
+                    </div>
+                </div>
+
+                <nav class="left-sidebar__nav">
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">설정</span>
+                        <a href="profile.html" class="left-sidebar__nav-item active">
+                            <img src="../../../images/ico-lm-my-goods.svg" alt="">프로필
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- ===== 콘텐츠 영역 ===== -->
+            <div class="mypage-content">
+
+                <!-- ===== 모달 데모 ===== -->
+                <div class="modal-demo-overlay">
+
+                    <!-- 모달 1: 입력 없음 (변경하기 버튼 비활성) -->
+                    <div class="popup-modal">
+                        <div class="popup-modal__header">
+                            <span class="popup-modal__title">닉네임 변경</span>
+                            <button class="popup-modal__close" type="button" aria-label="닫기">
+                                <img src="../../../images/free-icon-modal-close-x.svg" alt="">
+                            </button>
+                        </div>
+                        <div class="nickname-modal__body">
+                            <input type="text" class="nickname-modal__input" placeholder="닉네임 2글자 이상 입력">
+                            <button class="profile-modal__register-btn" type="button" disabled>
+                                변경하기
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 모달 2: 입력 있음 (변경하기 버튼 활성) -->
+                    <div class="popup-modal">
+                        <div class="popup-modal__header">
+                            <span class="popup-modal__title">닉네임 변경</span>
+                            <button class="popup-modal__close" type="button" aria-label="닫기">
+                                <img src="../../../images/free-icon-modal-close-x.svg" alt="">
+                            </button>
+                        </div>
+                        <div class="nickname-modal__body">
+                            <input type="text" class="nickname-modal__input" value="mo">
+                            <button class="profile-modal__register-btn profile-modal__register-btn--active" type="button">
+                                <img src="../../../images/ico-check.svg" alt="" style="width:14px;height:10px;flex-shrink:0;">변경하기
+                            </button>
+                        </div>
+                    </div>
+
+                </div><!-- /modal-demo-overlay -->
+
+            </div><!-- /mypage-content -->
+
+        </div><!-- /mypage-layout -->
+    </main>
+
+</body>
+</html>

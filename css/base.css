@@ -7359,3 +7359,36 @@ button.dropdown--ctx-item {
         width: 100%;
     }
 }
+
+
+/* =====================================================
+   NICKNAME MODAL
+   ===================================================== */
+
+.nickname-modal__body {
+    padding: 0 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.nickname-modal__input {
+    height: 50px;
+    padding: 0 20px;
+    align-self: stretch;
+    border-radius: 5px;
+    border: 1px solid #EEEEEE;
+    background: #FFFFFF;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    color: var(--color-text);
+    letter-spacing: -0.72px;
+    outline: none;
+}
+
+.nickname-modal__input::placeholder {
+    color: #BBBBBB;
+}
