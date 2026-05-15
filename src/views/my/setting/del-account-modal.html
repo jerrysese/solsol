@@ -163,12 +163,36 @@
 
                 </div><!-- /modal-demo-overlay -->
 
+                <!-- ===== 재확인 다이얼로그 — 정적 표시 ===== -->
+                <div class="modal-demo-overlay">
+                    <!-- 다이얼로그 카드를 오버레이 배경 위에 노출 -->
+                    <div style="display:flex; align-items:center; justify-content:center; width:100%;">
+                        <div class="confirm-dialog">
+                            <img class="confirm-dialog__icon" src="../../../images/free-icon-error-big-black.svg" alt="">
+                            <p class="confirm-dialog__text">계정을 정말 탈퇴하시겠어요?</p>
+                            <div class="confirm-dialog__footer">
+                                <button class="popup-modal__btn popup-modal__btn--cancel" type="button">취소</button>
+                                <button class="popup-modal__btn" type="button">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 완료 토스트 — 정적 표시 ===== -->
+                <div style="padding: 0 0 40px; width:100%;">
+                    <div class="toast-snack" style="position:static; border-radius:10px;">
+                        <img class="toast-snack__icon" src="../../../images/free-icon-error-small-white.svg" alt="">
+                        <span class="toast-snack__text">계정 탈퇴가 완료되었습니다</span>
+                        <button class="toast-snack__close" type="button" aria-label="닫기">✕</button>
+                    </div>
+                </div>
+
             </div><!-- /mypage-content -->
 
         </div><!-- /mypage-layout -->
     </main>
 
-    <!-- ===== 재확인 다이얼로그 ===== -->
+    <!-- ===== 재확인 다이얼로그 — 인터랙션 ===== -->
     <div class="confirm-dialog-overlay" id="confirmOverlay" style="display:none;">
         <div class="confirm-dialog">
             <img class="confirm-dialog__icon" src="../../../images/free-icon-error-big-black.svg" alt="">
@@ -180,7 +204,7 @@
         </div>
     </div>
 
-    <!-- ===== 완료 토스트 ===== -->
+    <!-- ===== 완료 토스트 — 인터랙션 ===== -->
     <div class="toast-snack" id="toastSnack" style="display:none;">
         <img class="toast-snack__icon" src="../../../images/free-icon-error-small-white.svg" alt="">
         <span class="toast-snack__text">계정 탈퇴가 완료되었습니다</span>
