@@ -169,7 +169,7 @@
 
 <script>
 (function () {
-    var selectedValue = '';
+    var selectedValue = null;
     var trigger = document.getElementById('selectTrigger');
     var panel = document.getElementById('selectPanel');
     var label = document.getElementById('selectLabel');
@@ -178,7 +178,7 @@
     var items = panel.querySelectorAll('.del-account-modal__select-item');
 
     function checkActivate() {
-        var filled = selectedValue !== '' && textarea.value.trim() !== '';
+        var filled = selectedValue !== null && textarea.value.trim() !== '';
         submitBtn.disabled = !filled;
         submitBtn.classList.toggle('profile-modal__register-btn--active', filled);
     }
