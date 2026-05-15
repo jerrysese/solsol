@@ -7335,7 +7335,8 @@ button.dropdown--ctx-item {
     font-family: 'Pretendard', -apple-system, sans-serif;
     font-size: 17px;
     font-weight: 500;
-    letter-spacing: -0.4px;
+    line-height: normal;
+    letter-spacing: -1px;
     border: none;
     cursor: default;
 }
