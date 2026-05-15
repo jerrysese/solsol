@@ -113,6 +113,7 @@
 
                 <div class="modal-demo-overlay">
 
+                    <!-- 탈퇴 입력 모달 -->
                     <div class="popup-modal">
                         <div class="popup-modal__header">
                             <span class="popup-modal__title">계정탈퇴</span>
@@ -167,6 +168,25 @@
         </div><!-- /mypage-layout -->
     </main>
 
+    <!-- ===== 재확인 다이얼로그 ===== -->
+    <div class="confirm-dialog-overlay" id="confirmOverlay" style="display:none;">
+        <div class="confirm-dialog">
+            <img class="confirm-dialog__icon" src="../../../images/free-icon-error-big-black.svg" alt="">
+            <p class="confirm-dialog__text">계정을 정말 탈퇴하시겠어요?</p>
+            <div class="confirm-dialog__footer">
+                <button class="popup-modal__btn popup-modal__btn--cancel" type="button" id="confirmCancel">취소</button>
+                <button class="popup-modal__btn" type="button" id="confirmOk">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 완료 토스트 ===== -->
+    <div class="toast-snack" id="toastSnack" style="display:none;">
+        <img class="toast-snack__icon" src="../../../images/free-icon-error-small-white.svg" alt="">
+        <span class="toast-snack__text">계정 탈퇴가 완료되었습니다</span>
+        <button class="toast-snack__close" type="button" id="toastClose" aria-label="닫기">✕</button>
+    </div>
+
 <script>
 (function () {
     var selectedValue = null;
@@ -176,6 +196,12 @@
     var textarea = document.getElementById('reasonTextarea');
     var submitBtn = document.getElementById('submitBtn');
     var items = panel.querySelectorAll('.del-account-modal__select-item');
+
+    var confirmOverlay = document.getElementById('confirmOverlay');
+    var confirmCancel = document.getElementById('confirmCancel');
+    var confirmOk = document.getElementById('confirmOk');
+    var toastSnack = document.getElementById('toastSnack');
+    var toastClose = document.getElementById('toastClose');
 
     function checkActivate() {
         var filled = selectedValue !== null && textarea.value.trim() !== '';
@@ -206,6 +232,34 @@
     document.addEventListener('click', function (e) {
         if (!document.getElementById('selectWrap').contains(e.target)) {
             panel.style.display = 'none';
+        }
+    });
+
+    /* 탈퇴하기 → 재확인 다이얼로그 */
+    submitBtn.addEventListener('click', function () {
+        confirmOverlay.style.display = 'flex';
+    });
+
+    /* 취소 → 다이얼로그 닫기 */
+    confirmCancel.addEventListener('click', function () {
+        confirmOverlay.style.display = 'none';
+    });
+
+    /* 확인 → 다이얼로그 닫기 + 토스트 표시 */
+    confirmOk.addEventListener('click', function () {
+        confirmOverlay.style.display = 'none';
+        toastSnack.style.display = 'flex';
+    });
+
+    /* 토스트 닫기 */
+    toastClose.addEventListener('click', function () {
+        toastSnack.style.display = 'none';
+    });
+
+    /* 오버레이 바깥 클릭으로 다이얼로그 닫기 */
+    confirmOverlay.addEventListener('click', function (e) {
+        if (e.target === confirmOverlay) {
+            confirmOverlay.style.display = 'none';
         }
     });
 }());

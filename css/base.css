@@ -7534,3 +7534,103 @@ button.dropdown--ctx-item {
 .del-account-modal__textarea::placeholder {
     color: #BBBBBB;
 }
+
+
+/* =====================================================
+   CONFIRM DIALOG — 재확인 다이얼로그
+   ===================================================== */
+
+.confirm-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.confirm-dialog {
+    width: 500px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 30px 30px;
+    gap: 20px;
+}
+
+.confirm-dialog__icon {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+}
+
+.confirm-dialog__text {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.72px;
+    line-height: 150%;
+    text-align: center;
+    margin: 0;
+}
+
+.confirm-dialog__footer {
+    display: flex;
+    gap: 10px;
+    align-self: stretch;
+}
+
+
+/* =====================================================
+   TOAST SNACK — 하단 토스트 (블루)
+   ===================================================== */
+
+.toast-snack {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 30px;
+    background: var(--color-blue);
+    z-index: 2000;
+}
+
+.toast-snack__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.toast-snack__text {
+    flex: 1 0 0;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+}
+
+.toast-snack__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+}
