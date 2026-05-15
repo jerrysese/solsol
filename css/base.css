@@ -7433,8 +7433,8 @@ button.dropdown--ctx-item {
 }
 
 .del-account-modal__warning-item img {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     flex-shrink: 0;
 }
 

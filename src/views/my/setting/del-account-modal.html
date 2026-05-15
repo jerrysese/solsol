@@ -111,10 +111,8 @@
             <!-- ===== 콘텐츠 영역 ===== -->
             <div class="mypage-content">
 
-                <!-- ===== 모달 데모 ===== -->
                 <div class="modal-demo-overlay">
 
-                    <!-- 모달 1: 미선택 + 텍스트 없음 (탈퇴하기 버튼 비활성) -->
                     <div class="popup-modal">
                         <div class="popup-modal__header">
                             <span class="popup-modal__title">계정탈퇴</span>
@@ -138,58 +136,25 @@
                                     <span>보유 중인 쿠폰 및 포인트는 소멸됩니다.</span>
                                 </li>
                             </ul>
-                            <div class="del-account-modal__select-wrap">
-                                <button class="del-account-modal__select-trigger" type="button">
-                                    탈퇴 사유 선택
-                                    <img src="../../../images/ico-chevron-down.svg" alt="">
-                                </button>
-                            </div>
-                            <textarea class="del-account-modal__textarea" placeholder="탈퇴 사유를 입력해 주세요."></textarea>
-                            <button class="profile-modal__register-btn" type="button" disabled>
-                                탈퇴하기
-                            </button>
-                        </div>
-                    </div>
 
-                    <!-- 모달 2: 선택됨 + 텍스트 있음 (탈퇴하기 버튼 활성) -->
-                    <div class="popup-modal">
-                        <div class="popup-modal__header">
-                            <span class="popup-modal__title">계정탈퇴</span>
-                            <button class="popup-modal__close" type="button" aria-label="닫기">
-                                <img src="../../../images/free-icon-modal-close-x.svg" alt="">
-                            </button>
-                        </div>
-                        <div class="del-account-modal__body">
-                            <p class="del-account-modal__warning-title">정말 탈퇴하시겠어요?</p>
-                            <ul class="del-account-modal__warning-list">
-                                <li class="del-account-modal__warning-item">
-                                    <img src="../../../images/free-icon-diamond-exclamation.svg" alt="">
-                                    <span>탈퇴 시 계정에 등록된 모든 정보가 삭제됩니다.</span>
-                                </li>
-                                <li class="del-account-modal__warning-item">
-                                    <img src="../../../images/free-icon-diamond-exclamation.svg" alt="">
-                                    <span>구매한 강의 및 디지털 상품은 환불되지 않습니다.</span>
-                                </li>
-                                <li class="del-account-modal__warning-item">
-                                    <img src="../../../images/free-icon-diamond-exclamation.svg" alt="">
-                                    <span>보유 중인 쿠폰 및 포인트는 소멸됩니다.</span>
-                                </li>
-                            </ul>
-                            <div class="del-account-modal__select-wrap">
-                                <button class="del-account-modal__select-trigger" type="button" style="color:#333333;">
-                                    원하는 강의 / 콘텐츠가 부족해서
+                            <!-- 커스텀 셀렉트 -->
+                            <div class="del-account-modal__select-wrap" id="selectWrap">
+                                <button class="del-account-modal__select-trigger" type="button" id="selectTrigger">
+                                    <span id="selectLabel">탈퇴 사유 선택</span>
                                     <img src="../../../images/ico-chevron-down.svg" alt="">
                                 </button>
-                                <div class="del-account-modal__select-panel">
-                                    <div class="del-account-modal__select-item del-account-modal__select-item--active">원하는 강의 / 콘텐츠가 부족해서</div>
-                                    <div class="del-account-modal__select-item">이용 빈도가 낮아서</div>
-                                    <div class="del-account-modal__select-item">다른 플랫폼을 이용하기 위해서</div>
-                                    <div class="del-account-modal__select-item">서비스 오류 또는 불편사항이 있어서</div>
-                                    <div class="del-account-modal__select-item">기타</div>
+                                <div class="del-account-modal__select-panel" id="selectPanel" style="display:none;">
+                                    <div class="del-account-modal__select-item" data-value="1">원하는 강의 / 콘텐츠가 부족해서</div>
+                                    <div class="del-account-modal__select-item" data-value="2">이용 빈도가 낮아서</div>
+                                    <div class="del-account-modal__select-item" data-value="3">다른 플랫폼을 이용하기 위해서</div>
+                                    <div class="del-account-modal__select-item" data-value="4">서비스 오류 또는 불편사항이 있어서</div>
+                                    <div class="del-account-modal__select-item" data-value="5">기타</div>
                                 </div>
                             </div>
-                            <textarea class="del-account-modal__textarea">원하는 강의 콘텐츠가 부족합니다.</textarea>
-                            <button class="profile-modal__register-btn profile-modal__register-btn--active" type="button">
+
+                            <textarea class="del-account-modal__textarea" id="reasonTextarea" placeholder="탈퇴 사유를 입력해 주세요."></textarea>
+
+                            <button class="profile-modal__register-btn" type="button" id="submitBtn" disabled>
                                 탈퇴하기
                             </button>
                         </div>
@@ -201,6 +166,50 @@
 
         </div><!-- /mypage-layout -->
     </main>
+
+<script>
+(function () {
+    var selectedValue = '';
+    var trigger = document.getElementById('selectTrigger');
+    var panel = document.getElementById('selectPanel');
+    var label = document.getElementById('selectLabel');
+    var textarea = document.getElementById('reasonTextarea');
+    var submitBtn = document.getElementById('submitBtn');
+    var items = panel.querySelectorAll('.del-account-modal__select-item');
+
+    function checkActivate() {
+        var filled = selectedValue !== '' && textarea.value.trim() !== '';
+        submitBtn.disabled = !filled;
+        submitBtn.classList.toggle('profile-modal__register-btn--active', filled);
+    }
+
+    trigger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isOpen = panel.style.display !== 'none';
+        panel.style.display = isOpen ? 'none' : 'block';
+    });
+
+    items.forEach(function (item) {
+        item.addEventListener('click', function () {
+            items.forEach(function (i) { i.classList.remove('del-account-modal__select-item--active'); });
+            item.classList.add('del-account-modal__select-item--active');
+            selectedValue = item.dataset.value;
+            label.textContent = item.textContent;
+            label.style.color = '#333333';
+            panel.style.display = 'none';
+            checkActivate();
+        });
+    });
+
+    textarea.addEventListener('input', checkActivate);
+
+    document.addEventListener('click', function (e) {
+        if (!document.getElementById('selectWrap').contains(e.target)) {
+            panel.style.display = 'none';
+        }
+    });
+}());
+</script>
 
 </body>
 </html>
