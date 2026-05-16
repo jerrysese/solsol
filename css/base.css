@@ -7790,6 +7790,9 @@ button.dropdown--ctx-item {
     align-items: flex-start;
     gap: 30px;
     width: 100%;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 /* ---- Left List ---- */
@@ -7798,9 +7801,7 @@ button.dropdown--ctx-item {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    border: 1px solid #EEEEEE;
-    border-radius: 10px;
-    overflow: hidden;
+    border-right: 1px solid #EEEEEE;
 }
 
 .mem-list__item {
