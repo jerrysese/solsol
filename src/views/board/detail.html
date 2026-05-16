@@ -161,7 +161,6 @@
 
             <!-- ===== 댓글 섹션 ===== -->
             <div class="board-detail-comments">
-                <h3 class="board-detail-comments-title">전체 <strong>28</strong></h3>
 
                 <!-- 댓글 입력 박스 -->
                 <div class="board-detail-comment-input">
@@ -180,6 +179,8 @@
                         <button class="board-detail-submit-btn" type="button">등록하기</button>
                     </div>
                 </div>
+
+                <h3 class="board-detail-comments-title">전체 <strong>28</strong></h3>
 
                 <!-- ───────────────────────────── -->
                 <!--  댓글 그룹 목록               -->
@@ -204,7 +205,7 @@
                                         </button>
                                         <!-- 내 댓글: 수정/삭제 -->
                                         <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                            <button class="dropdown--ctx-item" type="button">수정</button>
+                                            <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
                                             <button class="dropdown--ctx-item" type="button">삭제</button>
                                         </div>
                                     </div>
@@ -262,7 +263,7 @@
                                             </button>
                                             <!-- 내 답글: 수정/삭제 -->
                                             <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                                <button class="dropdown--ctx-item" type="button">수정</button>
+                                                <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
                                                 <button class="dropdown--ctx-item" type="button">삭제</button>
                                             </div>
                                         </div>
@@ -380,7 +381,7 @@
                                         </button>
                                         <!-- 내 댓글: 수정/삭제 -->
                                         <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                            <button class="dropdown--ctx-item" type="button">수정</button>
+                                            <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
                                             <button class="dropdown--ctx-item" type="button">삭제</button>
                                         </div>
                                     </div>
@@ -395,16 +396,18 @@
                             <!-- 원본 댓글 본문 (수정 모드에서도 노출) -->
                             <p class="community-detail-comment-body" id="comment3-body">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다. 설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요. 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다.</p>
                             <!-- 수정 박스 (이 그룹은 수정 모드를 보여주는 용도) -->
-                            <div class="board-detail-edit-box" id="comment3-edit">
-                                <textarea class="board-detail-edit-textarea" rows="4">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다.
+                            <div class="board-detail-edit-wrap" id="comment3-edit">
+                                <div class="board-detail-edit-box">
+                                    <textarea class="board-detail-edit-textarea" rows="4">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다.
 설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요. 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다.</textarea>
+                                </div>
                                 <div class="board-detail-edit-actions">
                                     <label class="board-detail-secret-toggle">
                                         <input type="checkbox">
                                         <span class="board-detail-toggle-track"></span>
                                         <span class="board-detail-secret-text">비밀글</span>
                                     </label>
-                                    <button type="button" class="board-detail-cancel-btn" data-edit-target="comment3-edit">취소</button>
+                                    <button type="button" class="board-detail-cancel-btn">취소</button>
                                     <button type="button" class="board-detail-save-btn board-detail-save-btn--active">수정하기</button>
                                 </div>
                             </div>
@@ -456,7 +459,7 @@
                                                 <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
                                             </button>
                                             <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                                <button class="dropdown--ctx-item" type="button">수정</button>
+                                                <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
                                                 <button class="dropdown--ctx-item" type="button">삭제</button>
                                             </div>
                                         </div>
@@ -565,7 +568,7 @@
                                                 <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
                                             </button>
                                             <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                                <button class="dropdown--ctx-item" type="button">수정</button>
+                                                <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
                                                 <button class="dropdown--ctx-item" type="button">삭제</button>
                                             </div>
                                         </div>
@@ -813,12 +816,14 @@
         document.querySelectorAll('.board-detail-comment-textarea').forEach(initTextarea);
 
         /* ─── 수정 textarea 활성화 ─── */
-        document.querySelectorAll('.board-detail-edit-textarea').forEach(function (ta) {
+        function initEditTextarea(ta) {
             ta.addEventListener('input', function () {
-                var btn = ta.closest('.board-detail-edit-box').querySelector('.board-detail-save-btn');
+                var wrap = ta.closest('.board-detail-edit-wrap');
+                var btn = wrap && wrap.querySelector('.board-detail-save-btn');
                 if (btn) btn.classList.toggle('board-detail-save-btn--active', !!ta.value.trim());
             });
-        });
+        }
+        document.querySelectorAll('.board-detail-edit-textarea').forEach(initEditTextarea);
 
         /* ─── 답글 목록 열기/닫기 ─── */
         function setReplyListOpen(group, open) {
@@ -891,6 +896,58 @@
             });
         });
 
+        /* ─── "수정" 버튼 클릭 → 수정 박스 활성화 ─── */
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-action="edit"]');
+            if (!btn) return;
+
+            closeAllDropdowns();
+
+            var commentEl = btn.closest('.board-detail-comment-item, .board-detail-reply-item');
+            if (!commentEl) return;
+
+            var bodyEl = commentEl.querySelector('.community-detail-comment-body');
+            var editWrap = commentEl.querySelector('.board-detail-edit-wrap');
+
+            if (!editWrap) {
+                editWrap = document.createElement('div');
+                editWrap.className = 'board-detail-edit-wrap';
+
+                var box = document.createElement('div');
+                box.className = 'board-detail-edit-box';
+                var ta = document.createElement('textarea');
+                ta.className = 'board-detail-edit-textarea';
+                ta.rows = 3;
+                ta.value = bodyEl ? bodyEl.textContent.trim() : '';
+                box.appendChild(ta);
+                editWrap.appendChild(box);
+
+                editWrap.insertAdjacentHTML('beforeend', [
+                    '<div class="board-detail-edit-actions">',
+                    '<label class="board-detail-secret-toggle">',
+                    '<input type="checkbox">',
+                    '<span class="board-detail-toggle-track"></span>',
+                    '<span class="board-detail-secret-text">비밀글</span>',
+                    '</label>',
+                    '<button type="button" class="board-detail-cancel-btn">취소</button>',
+                    '<button type="button" class="board-detail-save-btn board-detail-save-btn--active">수정하기</button>',
+                    '</div>'
+                ].join(''));
+
+                initEditTextarea(editWrap.querySelector('.board-detail-edit-textarea'));
+
+                if (bodyEl) {
+                    bodyEl.insertAdjacentElement('afterend', editWrap);
+                } else {
+                    commentEl.appendChild(editWrap);
+                }
+            } else {
+                var ta = editWrap.querySelector('.board-detail-edit-textarea');
+                if (ta && bodyEl) ta.value = bodyEl.textContent.trim();
+            }
+            editWrap.style.display = '';
+        });
+
         /* ─── 취소 버튼 ─── */
         document.addEventListener('click', function (e) {
             if (!e.target.classList.contains('board-detail-cancel-btn')) return;
@@ -908,10 +965,9 @@
             }
 
             /* 수정 박스 취소 */
-            var editTarget = e.target.dataset.editTarget;
-            if (editTarget) {
-                var box = document.getElementById(editTarget);
-                if (box) box.style.display = 'none';
+            var editWrap = e.target.closest('.board-detail-edit-wrap');
+            if (editWrap) {
+                editWrap.style.display = 'none';
             }
         });
 

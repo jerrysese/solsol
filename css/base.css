@@ -8527,10 +8527,6 @@ button.dropdown--ctx-item {
     flex-direction: column;
     gap: 15px;
     padding: 20px 20px 20px 60px;
-    border-top: 1px solid #EEEEEE;
-}
-.board-detail-reply-item:first-child {
-    border-top: none;
 }
 
 /* 답글 입력 박스 */
@@ -8550,10 +8546,12 @@ button.dropdown--ctx-item {
 }
 
 /* 댓글 수정 박스 */
-.board-detail-edit-box {
+.board-detail-edit-wrap {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+}
+.board-detail-edit-box {
     padding: 20px;
     background: #F8F8F8;
     border-radius: 5px;
