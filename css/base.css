@@ -4153,18 +4153,6 @@ h2 {
     height: 13px;
 }
 
-.notice-detail-download-link {
-    color: var(--color-primary);
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.notice-detail-download-link:hover {
-    text-decoration: underline;
-}
 
 /* 댓글 섹션 */
 .community-detail-comments {
