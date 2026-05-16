@@ -866,11 +866,9 @@
             btn.addEventListener('click', function () { /* 추가 답글 로드 */ });
         });
 
-        /* ─── "답글" 버튼 → 해당 그룹 입력창만 열기 (답글 목록 열기 없음) ─── */
+        /* ─── "답글" 버튼 → 클릭한 댓글/답글 바로 아래에 입력창 열기 ─── */
         document.querySelectorAll('.board-detail-reply-btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var group = btn.closest('.board-detail-comment-group');
-                if (!group) return;
 
                 /* 이미 열린 다른 입력창 닫기 */
                 document.querySelectorAll('.board-detail-reply-input.is-active').forEach(function (el) {
@@ -882,13 +880,22 @@
                     if (sb) sb.classList.remove('board-detail-submit-btn--active');
                 });
 
-                /* 입력창 표시 (group 직속 자식) */
-                var replyInput = group.querySelector(':scope > .board-detail-reply-input');
-                if (!replyInput) {
+                /* 클릭된 댓글/답글 항목 (reply-item 우선, 없으면 comment-item) */
+                var targetItem = btn.closest('.board-detail-reply-item') ||
+                                 btn.closest('.board-detail-comment-item');
+                if (!targetItem) return;
+
+                /* targetItem 바로 다음에 이미 reply-input이 있으면 재사용, 없으면 삽입 */
+                var next = targetItem.nextElementSibling;
+                var replyInput;
+                if (next && next.classList.contains('board-detail-reply-input')) {
+                    replyInput = next;
+                } else {
                     replyInput = createReplyInput();
-                    group.appendChild(replyInput);
                     initTextarea(replyInput.querySelector('.board-detail-comment-textarea'));
+                    targetItem.insertAdjacentElement('afterend', replyInput);
                 }
+
                 replyInput.style.display = '';
                 replyInput.classList.add('is-active');
                 var ta = replyInput.querySelector('.board-detail-comment-textarea');
