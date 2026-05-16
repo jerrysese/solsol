@@ -263,11 +263,12 @@
                     <!-- ===== 댓글 섹션 ===== -->
                     <div class="board-detail-comments">
 
-                        <h3 class="board-detail-comments-title">전체 <strong>10</strong></h3>
+                        <h3 class="inquiry-detail-comments-title">전체 <strong>10</strong></h3>
 
-                        <div class="inquiry-detail-comment-list">
+                        <!-- 전체 댓글 타래 (라운드 테두리) -->
+                        <div class="inquiry-detail-comment-thread">
 
-                            <!-- ━━ 관리자 댓글 1 (full-width, no indent, no 3-dot) ━━ -->
+                            <!-- ━━ 관리자 첫 댓글 (0depth, no 3-dot) ━━ -->
                             <div class="inquiry-detail-comment-item">
                                 <div class="board-detail-comment-header">
                                     <div class="board-detail-comment-user">
@@ -283,8 +284,8 @@
                                 <p class="community-detail-comment-body">안녕하세요. 문의해 주셔서 감사합니다. 상품 관련 문의에 대해 확인 후 빠르게 답변드리겠습니다.</p>
                             </div>
 
-                            <!-- ━━ 학습자 댓글 1 (60px 들여쓰기, WITH 수정/삭제 3-dot) ━━ -->
-                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--learner">
+                            <!-- ━━ 학습자 댓글 1 (1depth, WITH 수정/삭제 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
                                 <div class="board-detail-comment-header">
                                     <div class="board-detail-comment-user">
                                         <img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
@@ -305,11 +306,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="community-detail-comment-body">@Ryan Inn 감사합니다. 답변 기다리겠습니다.</p>
+                                <p class="community-detail-comment-body"><span class="inquiry-detail-mention">@Ryan Inn</span> 감사합니다. 답변 기다리겠습니다.</p>
                             </div>
 
-                            <!-- ━━ 관리자 댓글 2 (full-width, no indent, no 3-dot) ━━ -->
-                            <div class="inquiry-detail-comment-item">
+                            <!-- ━━ 관리자 댓글 2 (1depth, no 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
                                 <div class="board-detail-comment-header">
                                     <div class="board-detail-comment-user">
                                         <img src="../../../images/free-icon-administrator.svg" alt="" class="community-post-avatar">
@@ -324,8 +325,8 @@
                                 <p class="community-detail-comment-body">확인해보니 상품 관련 정보는 결제 내역에서 확인하실 수 있습니다. 추가로 궁금하신 사항이 있으시면 말씀해 주세요.</p>
                             </div>
 
-                            <!-- ━━ 학습자 댓글 2 — 수정 모드 오픈 (60px 들여쓰기) ━━ -->
-                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--learner">
+                            <!-- ━━ 학습자 댓글 2 — 수정 모드 오픈 (1depth) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
                                 <div class="board-detail-comment-header">
                                     <div class="board-detail-comment-user">
                                         <img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
@@ -346,7 +347,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="community-detail-comment-body" id="comment2-body">@Ryan Inn 결제 내역을 확인해보았는데 제가 찾고 있는 상품 정보가 없어요. 다시 한번 확인해 주시겠어요?</p>
+                                <p class="community-detail-comment-body" id="comment2-body"><span class="inquiry-detail-mention">@Ryan Inn</span> 결제 내역을 확인해보았는데 제가 찾고 있는 상품 정보가 없어요. 다시 한번 확인해 주시겠어요?</p>
                                 <!-- 수정 박스 (수정 버튼 클릭 시 표시) -->
                                 <div class="board-detail-edit-wrap" id="comment2-edit">
                                     <div class="board-detail-edit-box">
@@ -360,8 +361,8 @@
                                 </div>
                             </div>
 
-                            <!-- ━━ 관리자 댓글 3 (full-width, no indent, no 3-dot) ━━ -->
-                            <div class="inquiry-detail-comment-item">
+                            <!-- ━━ 관리자 댓글 3 (1depth, no 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
                                 <div class="board-detail-comment-header">
                                     <div class="board-detail-comment-user">
                                         <img src="../../../images/free-icon-administrator.svg" alt="" class="community-post-avatar">
@@ -376,8 +377,8 @@
                                 <p class="community-detail-comment-body">상품 정보를 다시 확인해보았습니다. 해당 상품은 결제 내역 &gt; 상세 항목에서 확인하실 수 있습니다. 이용에 불편을 드려 죄송합니다.</p>
                             </div>
 
-                            <!-- ━━ 학습자 댓글 3 (60px 들여쓰기, WITH 수정/삭제 3-dot) ━━ -->
-                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--learner">
+                            <!-- ━━ 학습자 댓글 3 (1depth, WITH 수정/삭제 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
                                 <div class="board-detail-comment-header">
                                     <div class="board-detail-comment-user">
                                         <img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
@@ -398,10 +399,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="community-detail-comment-body">@Ryan Inn 확인했습니다. 감사합니다!</p>
+                                <p class="community-detail-comment-body"><span class="inquiry-detail-mention">@Ryan Inn</span> 확인했습니다. 감사합니다!</p>
                             </div>
 
-                        </div><!-- /inquiry-detail-comment-list -->
+                        </div><!-- /inquiry-detail-comment-thread -->
 
                     </div><!-- /board-detail-comments -->
 
