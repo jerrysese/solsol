@@ -616,8 +616,21 @@
                 }
 
                 var ta = editWrap.querySelector('.board-detail-edit-textarea');
+                var saveBtn = editWrap.querySelector('.board-detail-save-btn');
                 ta.value = bodyText;
                 ta.focus();
+
+                function updateSaveBtn() {
+                    if (ta.value.trim()) {
+                        saveBtn.classList.add('board-detail-save-btn--active');
+                        saveBtn.disabled = false;
+                    } else {
+                        saveBtn.classList.remove('board-detail-save-btn--active');
+                        saveBtn.disabled = true;
+                    }
+                }
+                updateSaveBtn();
+                ta.addEventListener('input', updateSaveBtn);
 
                 editWrap.querySelector('.board-detail-cancel-btn').addEventListener('click', function() {
                     editWrap.remove();
