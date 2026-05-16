@@ -7799,6 +7799,8 @@ button.dropdown--ctx-item {
     display: flex;
     flex-direction: column;
     border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .mem-list__item {
@@ -7812,16 +7814,29 @@ button.dropdown--ctx-item {
     text-align: left;
     cursor: pointer;
     font-family: inherit;
+    position: relative;
 }
 
 .mem-list__item:last-child {
     border-bottom: none;
 }
 
+.mem-list__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: #BBB;
+}
+
 .mem-list__item--active {
     background: #F8F5FF;
-    padding-left: 27px;
-    border-left: 3px solid #7954C6;
+}
+
+.mem-list__item--active::before {
+    background: #7954C6;
 }
 
 .mem-list__title-row {
