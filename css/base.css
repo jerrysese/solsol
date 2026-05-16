@@ -5530,6 +5530,10 @@ button.dropdown--ctx-item {
     overflow: hidden;
 }
 
+.mypage-layout--stretch-sidebar .left-sidebar {
+    align-self: stretch;
+}
+
 /* 프로필 영역 */
 .left-sidebar__profile {
     display: flex;
