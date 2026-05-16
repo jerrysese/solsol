@@ -8895,10 +8895,6 @@ button.dropdown--ctx-item {
 }
 
 /* ===== CARD INFO (마이페이지 - 결제정보) ===== */
-body:has(.card-info-empty-wrap) {
-    background: #FFFFFF;
-}
-
 .card-info-empty-wrap {
     flex: 1;
     display: flex;
