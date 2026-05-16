@@ -5522,16 +5522,12 @@ button.dropdown--ctx-item {
     padding: 20px;
     flex-direction: column;
     align-items: flex-start;
-    align-self: flex-start;
+    align-self: stretch;
     gap: 10px;
     border-radius: 20px;
     background: #FFFFFF;
     border: 1px solid #EEEEEE;
     overflow: hidden;
-}
-
-.mypage-layout--stretch-sidebar .left-sidebar {
-    align-self: stretch;
 }
 
 /* 프로필 영역 */
