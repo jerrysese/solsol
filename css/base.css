@@ -8887,21 +8887,11 @@ button.dropdown--ctx-item {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 16px 20px;
-    border-bottom: 1px solid #F2F2F2;
-}
-
-.review-comment-item:last-child {
-    border-bottom: none;
+    padding: 16px 20px 16px 50px;
 }
 
 .review-comment-list .board-detail-reply-input {
-    padding: 16px 20px;
-    border-bottom: 1px solid #F2F2F2;
-}
-
-.review-comment-list .board-detail-reply-input:last-child {
-    border-bottom: none;
+    padding: 16px 20px 16px 50px;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -8924,6 +8914,6 @@ button.dropdown--ctx-item {
     .inquiry-detail-comment-item--reply { padding-left: 20px; }
     .inquiry-detail-reply-input { padding-left: 20px; }
     .review-posting-head { gap: 8px; }
-    .review-comment-item { padding: 14px 16px; }
-    .review-comment-list .board-detail-reply-input { padding: 14px 16px; }
+    .review-comment-item { padding: 14px 16px 14px 46px; }
+    .review-comment-list .board-detail-reply-input { padding: 14px 16px 14px 46px; }
 }
