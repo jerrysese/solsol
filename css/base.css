@@ -8894,6 +8894,70 @@ button.dropdown--ctx-item {
     padding: 16px 20px 16px 50px;
 }
 
+/* ===== CARD INFO (마이페이지 - 결제정보) ===== */
+.card-info-empty-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.card-info-empty {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.card-info-icon {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.card-info-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-info-empty-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #555555;
+    letter-spacing: -0.96px;
+    line-height: 150%;
+}
+
+.card-info-empty-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.56px;
+    line-height: 150%;
+}
+
+.card-register-btn {
+    display: flex;
+    width: 400px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    font-family: var(--font-base);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .board-detail-reply-item { padding-left: 40px; }
@@ -8916,4 +8980,10 @@ button.dropdown--ctx-item {
     .review-posting-head { gap: 8px; }
     .review-comment-item { padding: 14px 16px 14px 46px; }
     .review-comment-list .board-detail-reply-input { padding: 14px 16px 14px 46px; }
+    .card-info-empty { gap: 20px; }
+    .card-register-btn { width: 100%; max-width: 400px; }
+}
+@media (max-width: 768px) {
+    .card-info-empty { flex-direction: column; text-align: center; gap: 16px; }
+    .card-register-btn { width: 100%; }
 }
