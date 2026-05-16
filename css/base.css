@@ -8266,7 +8266,6 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid #EEEEEE;
     font-size: 15px;
     font-weight: 500;
     color: #555;
@@ -8279,7 +8278,7 @@ button.dropdown--ctx-item {
     align-items: center;
     gap: 8px;
     margin-top: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 0;
 }
 
 .inquiry-detail-comments-title {
