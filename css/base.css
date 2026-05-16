@@ -7696,11 +7696,12 @@ button.dropdown--ctx-item {
 }
 
 .faq-item__chevron {
-    width: 12px;
-    height: 8px;
+    width: 11px;
+    height: 6px;
     flex-shrink: 0;
-    transform: rotate(180deg);
-    transition: transform 0.2s ease;
+}
+.faq-item__chevron--open {
+    display: none;
 }
 
 .faq-item__answer {
@@ -7742,8 +7743,11 @@ button.dropdown--ctx-item {
     color: #7954C6;
 }
 
-.faq-item--open .faq-item__chevron {
-    transform: rotate(0deg);
+.faq-item--open .faq-item__chevron--closed {
+    display: none;
+}
+.faq-item--open .faq-item__chevron--open {
+    display: block;
 }
 
 .faq-item--open .faq-item__answer {
