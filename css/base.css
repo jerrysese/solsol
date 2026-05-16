@@ -4085,8 +4085,8 @@ h2 {
 .community-detail-attachment-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 450px;
+    gap: 10px;
+    width: 100%;
 }
 
 .community-detail-attachment-item {
@@ -4094,9 +4094,9 @@ h2 {
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
-    padding: 10px 20px;
+    padding: 0 20px;
     background: #F8F8F8;
-    min-height: 45px;
+    height: 50px;
     box-sizing: border-box;
 }
 
@@ -4122,6 +4122,19 @@ h2 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.community-detail-attachment-download {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7954C6;
+    letter-spacing: -0.48px;
+    line-height: 150%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .community-detail-attachment-btn {
