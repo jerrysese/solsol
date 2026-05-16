@@ -8033,6 +8033,9 @@ button.dropdown--ctx-item {
     color: #7954C6;
     letter-spacing: -0.96px;
     line-height: 150%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EEEEEE;
+    align-self: stretch;
 }
 
 .mem-benefit__list {
