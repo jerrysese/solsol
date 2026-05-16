@@ -1,5 +1,15 @@
 var _commonScript = document.currentScript;
 
+window.toggleDropdown = function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var isOpen = el.classList.contains('open');
+    document.querySelectorAll('.dropdown.open').forEach(function(d) {
+        if (d !== el) d.classList.remove('open');
+    });
+    if (isOpen) { el.classList.remove('open'); } else { el.classList.add('open'); }
+};
+
 (function () {
     var BASE = '';
     if (_commonScript) {
@@ -21,6 +31,37 @@ var _commonScript = document.currentScript;
     };
 
     document.addEventListener('DOMContentLoaded', function () {
+
+        // ── 커스텀 드롭다운 클릭 외부 닫기 + 항목 선택 ───────
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown.open').forEach(function(d) {
+                    d.classList.remove('open');
+                });
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            var item = e.target.closest('.dropdown__item');
+            if (!item) return;
+            var panel = item.closest('.dropdown__panel');
+            if (!panel) return;
+            var dd = panel.closest('.dropdown');
+            if (!dd) return;
+            panel.querySelectorAll('.dropdown__item').forEach(function(i) { i.classList.remove('active'); });
+            item.classList.add('active');
+            var trigger = dd.querySelector('.dropdown__trigger');
+            if (trigger) {
+                var nodes = trigger.childNodes;
+                for (var i = 0; i < nodes.length; i++) {
+                    if (nodes[i].nodeType === 3 && nodes[i].textContent.trim()) {
+                        nodes[i].textContent = item.textContent.trim();
+                        break;
+                    }
+                }
+            }
+            dd.classList.remove('open');
+        });
 
         // ── 공통 백드롭 ───────────────────────────────────
         var backdrop = document.createElement('div');

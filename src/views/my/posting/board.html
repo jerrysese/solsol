@@ -196,21 +196,21 @@
                     <!-- 필터 -->
                     <div class="posting-filter">
                         <div class="posting-filter-left">
-                            <div class="posting-filter-select-wrap">
-                                <select class="posting-filter-select">
-                                    <option>전체 게시판</option>
-                                    <option>자유게시판</option>
-                                </select>
-                                <img src="../../../images/ico-chevron-down.svg" alt="" class="posting-filter-select-arrow">
+                            <div class="dropdown dropdown--fit" id="boardProductDd">
+                                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('boardProductDd')">전체 게시판<img src="../../../images/ico-chevron-down.svg" alt=""></button>
+                                <div class="dropdown__panel">
+                                    <div class="dropdown__item active">전체 게시판</div>
+                                    <div class="dropdown__item">자유게시판</div>
+                                </div>
                             </div>
-                            <div class="posting-filter-select-wrap">
-                                <select class="posting-filter-select">
-                                    <option>작성일 최신순</option>
-                                    <option>작성일 오래된순</option>
-                                    <option>좋아요순</option>
-                                    <option>조회수순</option>
-                                </select>
-                                <img src="../../../images/ico-chevron-down.svg" alt="" class="posting-filter-select-arrow">
+                            <div class="dropdown dropdown--fit" id="boardSortDd">
+                                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('boardSortDd')">작성일 최신순<img src="../../../images/ico-chevron-down.svg" alt=""></button>
+                                <div class="dropdown__panel">
+                                    <div class="dropdown__item active">작성일 최신순</div>
+                                    <div class="dropdown__item">작성일 오래된순</div>
+                                    <div class="dropdown__item">좋아요순</div>
+                                    <div class="dropdown__item">조회수순</div>
+                                </div>
                             </div>
                             <button class="posting-reset-btn" type="button">
                                 초기화

@@ -5433,6 +5433,8 @@ h2 {
     background: var(--color-primary-bg);
 }
 
+.dropdown--fit .dropdown__trigger { width: auto; min-width: 0; }
+
 /* Context action panel — 수정/삭제 등 단순 액션 (standalone 표시용) */
 .dropdown--ctx-panel {
     width: 120px;

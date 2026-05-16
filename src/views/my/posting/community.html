@@ -196,22 +196,22 @@
                     <!-- 필터 -->
                     <div class="posting-filter">
                         <div class="posting-filter-left">
-                            <div class="posting-filter-select-wrap">
-                                <select class="posting-filter-select">
-                                    <option>전체 상품</option>
-                                    <option>리액트 2기 소통방</option>
-                                    <option>ChatGPT 활용 클래스</option>
-                                </select>
-                                <img src="../../../images/ico-chevron-down.svg" alt="" class="posting-filter-select-arrow">
+                            <div class="dropdown dropdown--fit" id="communityProductDd">
+                                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('communityProductDd')">전체 상품<img src="../../../images/ico-chevron-down.svg" alt=""></button>
+                                <div class="dropdown__panel">
+                                    <div class="dropdown__item active">전체 상품</div>
+                                    <div class="dropdown__item">리액트 2기 소통방</div>
+                                    <div class="dropdown__item">ChatGPT 활용 클래스</div>
+                                </div>
                             </div>
-                            <div class="posting-filter-select-wrap">
-                                <select class="posting-filter-select">
-                                    <option>작성일 최신순</option>
-                                    <option>작성일 오래된순</option>
-                                    <option>좋아요순</option>
-                                    <option>조회수순</option>
-                                </select>
-                                <img src="../../../images/ico-chevron-down.svg" alt="" class="posting-filter-select-arrow">
+                            <div class="dropdown dropdown--fit" id="communitySortDd">
+                                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('communitySortDd')">작성일 최신순<img src="../../../images/ico-chevron-down.svg" alt=""></button>
+                                <div class="dropdown__panel">
+                                    <div class="dropdown__item active">작성일 최신순</div>
+                                    <div class="dropdown__item">작성일 오래된순</div>
+                                    <div class="dropdown__item">좋아요순</div>
+                                    <div class="dropdown__item">조회수순</div>
+                                </div>
                             </div>
                             <button class="posting-reset-btn" type="button">
                                 초기화
