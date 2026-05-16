@@ -193,7 +193,7 @@
                             </div>
                             <p class="community-detail-comment-body">이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 중간중간 "이건 현업에서 이렇게 쓰입니다"라고 짚어주는 부분이 좋았고, 혼자 공부할 때 막혔던 포인트들이 정리되는 느낌이었어요. 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.</p>
                             <button type="button" class="board-detail-reply-toggle">
-                                답글 3개
+                                답글 4개
                                 <img src="../../images/free-icon-reply-open.svg" alt="">
                             </button>
                         </div>
@@ -277,6 +277,36 @@
                                 <p class="community-detail-comment-body">기초부터 차근차근 설명해줘서 정말 도움이 많이 됐습니다. 감사해요!</p>
                             </div>
 
+                            <!-- 답글 4: 내 답글 → 이미지 첨부 + 수정/삭제 -->
+                            <div class="board-detail-reply-item">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                        <span class="community-post-role">학습자</span>
+                                        <span class="community-post-author">닉네임</span>
+                                        <span class="community-post-time">10분 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel">
+                                                <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
+                                                <button class="dropdown--ctx-item" type="button">삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="community-detail-comment-media">
+                                    <div class="community-detail-comment-thumb">
+                                        <img src="../../images/post-thumb1.png" alt="">
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">저도 이 강의 정말 좋았어요! 실제로 바로 써먹을 수 있는 내용들이 많아서 만족스러웠습니다.</p>
+                            </div>
+
                             <!-- 답글 더보기/숨기기 -->
                             <div class="board-detail-reply-footer">
                                 <button type="button" class="board-detail-reply-more-btn">
@@ -303,37 +333,6 @@
                             <div class="board-detail-reply-actions">
                                 <button type="button" class="board-detail-cancel-btn">취소</button>
                                 <button type="button" class="board-detail-submit-btn">등록하기</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ━━ 그룹 2: 비밀 댓글 (타인 글 → 신고) ━━ -->
-                    <div class="board-detail-comment-group">
-                        <div class="board-detail-comment-item">
-                            <div class="board-detail-comment-header">
-                                <div class="board-detail-comment-user">
-                                    <img src="../../images/free-icon-default-avatar.svg" alt="" class="community-post-avatar">
-                                    <span class="community-post-role">학습자</span>
-                                    <span class="community-post-author">홍길동</span>
-                                    <span class="community-post-time">2시간 전</span>
-                                </div>
-                                <div class="board-detail-comment-btns">
-                                    <button type="button" class="board-detail-reply-btn">답글</button>
-                                    <div class="board-detail-comment-more">
-                                        <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
-                                            <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                        </button>
-                                        <!-- 타인 댓글: 신고 단독 -->
-                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
-                                            <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 비밀 댓글 표시 -->
-                            <div class="board-detail-secret-msg">
-                                <img src="../../images/free-icon-lock.svg" alt="">
-                                <span>해당 내용은 작성자와 운영자만 볼 수 있습니다.</span>
                             </div>
                         </div>
                     </div>
