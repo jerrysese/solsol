@@ -8953,10 +8953,10 @@ body:has(.mypage-inner--gray) {
 }
 
 .card-info-empty-desc {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     color: #888888;
-    letter-spacing: -0.56px;
+    letter-spacing: -0.72px;
     line-height: 150%;
 }
 
