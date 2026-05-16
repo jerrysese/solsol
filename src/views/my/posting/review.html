@@ -882,18 +882,13 @@
             });
         });
 
-        /* ─── 후기 헤드 "답글" 버튼 → 댓글 섹션 열기 + 입력창 상단 삽입 ─── */
+        /* ─── 후기 헤드 "답글" 버튼 → 입력창만 삽입 (댓글 섹션 열지 않음) ─── */
         document.querySelectorAll('.review-head-reply-btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 var box = btn.closest('.review-posting-box');
                 if (!box) return;
-                var section = box.querySelector('.review-posting-comment-section');
-                var toggle  = box.querySelector('.review-comment-toggle');
-                var list    = box.querySelector('.review-comment-list');
-                if (!section || !list) return;
-
-                section.style.display = '';
-                if (toggle) toggle.classList.add('open');
+                var postingItem = box.querySelector('.review-posting-item');
+                if (!postingItem) return;
 
                 document.querySelectorAll('.board-detail-reply-input.is-active').forEach(function (el) {
                     el.classList.remove('is-active');
@@ -902,12 +897,15 @@
                     if (ta) { ta.value = ''; ta.style.height = ''; }
                 });
 
-                var existing = list.querySelector('.review-top-reply');
-                if (!existing) {
+                var next = postingItem.nextElementSibling;
+                var existing;
+                if (next && next.classList.contains('board-detail-reply-input') && next.classList.contains('review-top-reply')) {
+                    existing = next;
+                } else {
                     existing = createReplyInput();
                     existing.classList.add('review-top-reply');
                     initTextarea(existing.querySelector('.board-detail-comment-textarea'));
-                    list.insertAdjacentElement('afterbegin', existing);
+                    postingItem.insertAdjacentElement('afterend', existing);
                 }
                 existing.style.display = '';
                 existing.classList.add('is-active');
