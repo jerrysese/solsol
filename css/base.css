@@ -5506,6 +5506,10 @@ button.dropdown--ctx-item {
     color: #7954C6;
 }
 
+.dropdown--ctx-panel--solo .dropdown--ctx-item {
+    color: var(--color-primary);
+}
+
 
 /* =====================================================
    LEFT SIDEBAR — 좌측 프로필/네비게이션 메뉴
@@ -8214,7 +8218,7 @@ button.dropdown--ctx-item {
     white-space: nowrap;
 }
 
-/* 본문 3-dot 팝업 (수정/신고 | 삭제 2열 그리드) */
+/* 본문/댓글 3-dot 팝업 (수정/삭제 세로 or 신고 단독) */
 .board-detail-more {
     position: relative;
     flex-shrink: 0;
@@ -8236,22 +8240,22 @@ button.dropdown--ctx-item {
     right: 0;
     top: calc(100% + 4px);
     z-index: 20;
+    width: 120px;
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    width: 160px;
 }
 .board-detail-more.open .board-detail-more__panel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: block;
 }
 .board-detail-more__item {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 50px;
+    width: 100%;
     font-family: var(--font-base);
     font-size: 15px;
     font-weight: 500;
@@ -8261,17 +8265,11 @@ button.dropdown--ctx-item {
     background: none;
     border: none;
     border-bottom: 1px solid #EEEEEE;
-    border-right: 1px solid #EEEEEE;
     cursor: pointer;
     transition: background 0.15s, color 0.15s;
 }
-.board-detail-more__item:nth-child(2) {
-    border-right: none;
-}
-.board-detail-more__item:nth-child(3) {
-    grid-column: 1 / -1;
+.board-detail-more__item:last-child {
     border-bottom: none;
-    border-right: none;
 }
 .board-detail-more__item:hover {
     background: #F8F5FF;
@@ -8620,15 +8618,47 @@ button.dropdown--ctx-item {
     color: #FFFFFF;
 }
 
+/* 답글 더보기/숨기기 */
+.board-detail-reply-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 20px 14px 60px;
+    border-top: 1px solid #EEEEEE;
+}
+.board-detail-reply-more-btn,
+.board-detail-reply-hide-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-base);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-primary);
+    padding: 0;
+    letter-spacing: -0.26px;
+    line-height: 20px;
+}
+.board-detail-reply-more-btn img,
+.board-detail-reply-hide-btn img {
+    width: 12px;
+    height: 12px;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .board-detail-reply-item { padding-left: 40px; }
     .board-detail-reply-input { padding-left: 40px; }
+    .board-detail-reply-footer { padding-left: 40px; }
 }
 @media (max-width: 768px) {
     .board-detail-reply-item { padding-left: 20px; }
     .board-detail-reply-input { padding-left: 20px; }
-    .board-detail-more__panel { width: 140px; }
+    .board-detail-reply-footer { padding-left: 20px; }
+    .board-detail-more__panel { width: 120px; }
     .board-detail-more__item { font-size: 14px; height: 44px; }
     .board-detail-comment-textarea { height: 30px; }
 }

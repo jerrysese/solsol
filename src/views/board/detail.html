@@ -78,7 +78,7 @@
 
             <h1 class="community-title">자유게시판</h1>
 
-            <!-- 제목 행 -->
+            <!-- 제목 행 — 내 글이므로 수정/삭제 -->
             <div class="community-detail-title-row">
                 <div class="community-detail-title-left">
                     <div class="board-detail-secret-badge">
@@ -87,14 +87,12 @@
                     </div>
                     <h2 class="community-detail-title">자유게시판 제목</h2>
                 </div>
-                <!-- 3-dot 팝업 메뉴 -->
                 <div class="board-detail-more" id="postMore">
                     <button class="board-detail-more__trigger" type="button" aria-label="메뉴">
                         <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
                     </button>
                     <div class="board-detail-more__panel">
                         <button class="board-detail-more__item" type="button">수정</button>
-                        <button class="board-detail-more__item" type="button">신고</button>
                         <button class="board-detail-more__item" type="button">삭제</button>
                     </div>
                 </div>
@@ -104,7 +102,7 @@
             <div class="community-detail-author-row">
                 <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
                 <span class="community-post-role">학습자</span>
-                <span class="community-post-author">Monzo</span>
+                <span class="community-post-author">닉네임</span>
                 <img src="../../images/free-icon-clock-detail.svg" alt="" class="community-detail-meta-icon">
                 <span class="community-detail-meta">2026.04.01</span>
                 <img src="../../images/ico-eye.svg" alt="" class="community-detail-meta-icon">
@@ -183,10 +181,12 @@
                     </div>
                 </div>
 
-                <!-- 댓글 그룹 목록 -->
+                <!-- ───────────────────────────── -->
+                <!--  댓글 그룹 목록               -->
+                <!-- ───────────────────────────── -->
                 <div class="board-detail-comment-groups">
 
-                    <!-- ── 댓글 그룹 1: 일반 댓글 (답글 3개 닫힘) ── -->
+                    <!-- ━━ 그룹 1: 내 댓글 (수정/삭제), 답글 3개 ━━ -->
                     <div class="board-detail-comment-group">
                         <div class="board-detail-comment-item">
                             <div class="board-detail-comment-header">
@@ -202,6 +202,7 @@
                                         <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
                                             <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
                                         </button>
+                                        <!-- 내 댓글: 수정/삭제 -->
                                         <div class="board-detail-comment-more__panel dropdown--ctx-panel">
                                             <button class="dropdown--ctx-item" type="button">수정</button>
                                             <button class="dropdown--ctx-item" type="button">삭제</button>
@@ -215,124 +216,99 @@
                                 <img src="../../images/free-icon-reply-open.svg" alt="">
                             </button>
                         </div>
-                    </div>
 
-                    <!-- ── 댓글 그룹 2: 비밀 댓글 ── -->
-                    <div class="board-detail-comment-group">
-                        <div class="board-detail-comment-item">
-                            <div class="board-detail-comment-header">
-                                <div class="board-detail-comment-user">
-                                    <img src="../../images/free-icon-default-avatar.svg" alt="" class="community-post-avatar">
-                                    <span class="community-post-role">학습자</span>
-                                    <span class="community-post-author">닉네임</span>
-                                    <span class="community-post-time">2시간 전</span>
-                                </div>
-                                <div class="board-detail-comment-btns">
-                                    <button type="button" class="board-detail-reply-btn">답글</button>
-                                    <div class="board-detail-comment-more">
-                                        <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
-                                            <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                        </button>
-                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                            <button class="dropdown--ctx-item" type="button">수정</button>
-                                            <button class="dropdown--ctx-item" type="button">삭제</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 비밀 댓글 표시 -->
-                            <div class="board-detail-secret-msg">
-                                <img src="../../images/free-icon-lock.svg" alt="">
-                                <span>해당 내용은 작성자와 운영자만 볼 수 있습니다.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ── 댓글 그룹 3: 수정 모드 (이미지 포함) ── -->
-                    <div class="board-detail-comment-group">
-                        <div class="board-detail-comment-item">
-                            <div class="board-detail-comment-header">
-                                <div class="board-detail-comment-user">
-                                    <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
-                                    <span class="community-post-role">학습자</span>
-                                    <span class="community-post-author">닉네임</span>
-                                    <span class="community-post-time">1시간 전</span>
-                                </div>
-                                <div class="board-detail-comment-btns">
-                                    <button type="button" class="board-detail-reply-btn">답글</button>
-                                    <div class="board-detail-comment-more">
-                                        <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
-                                            <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                        </button>
-                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                            <button class="dropdown--ctx-item" type="button">수정</button>
-                                            <button class="dropdown--ctx-item" type="button">삭제</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 수정 박스 -->
-                            <div class="board-detail-edit-box">
-                                <div class="community-detail-comment-media">
-                                    <div class="community-detail-comment-thumb">
-                                        <img src="../../images/youtube_img.png" alt="">
-                                    </div>
-                                </div>
-                                <textarea class="board-detail-edit-textarea" rows="4">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다.
-설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요. 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다.</textarea>
-                                <div class="board-detail-edit-actions">
-                                    <label class="board-detail-secret-toggle">
-                                        <input type="checkbox">
-                                        <span class="board-detail-toggle-track"></span>
-                                        <span class="board-detail-secret-text">비밀글</span>
-                                    </label>
-                                    <button type="button" class="board-detail-cancel-btn">취소</button>
-                                    <button type="button" class="board-detail-save-btn board-detail-save-btn--active">수정하기</button>
-                                </div>
-                            </div>
-                            <!-- 답글 토글 -->
-                            <button type="button" class="board-detail-reply-toggle">
-                                답글 3개
-                                <img src="../../images/free-icon-reply-open.svg" alt="">
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- ── 댓글 그룹 4: 답글 목록 열림 + 답글 쓰기 모드 ── -->
-                    <div class="board-detail-comment-group">
-                        <div class="board-detail-comment-item">
-                            <div class="board-detail-comment-header">
-                                <div class="board-detail-comment-user">
-                                    <img src="../../images/free-icon-default-avatar.svg" alt="" class="community-post-avatar">
-                                    <span class="community-post-role community-post-role--teacher">강사</span>
-                                    <span class="community-post-author">Vishnu Gupta</span>
-                                    <span class="community-post-time">방금 전</span>
-                                </div>
-                                <div class="board-detail-comment-btns">
-                                    <button type="button" class="board-detail-reply-btn">답글</button>
-                                    <div class="board-detail-comment-more">
-                                        <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
-                                            <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                        </button>
-                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                            <button class="dropdown--ctx-item" type="button">수정</button>
-                                            <button class="dropdown--ctx-item" type="button">삭제</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="community-detail-comment-body">이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 중간중간 "이건 현업에서 이렇게 쓰입니다"라고 짚어주는 부분이 좋았고, 혼자 공부할 때 막혔던 포인트들이 정리되는 느낌이었어요. 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.</p>
-                            <!-- 답글 토글 (열린 상태) -->
-                            <button type="button" class="board-detail-reply-toggle">
-                                답글 3개
-                                <img src="../../images/free-icon-reply-close.svg" alt="">
-                            </button>
-                        </div>
-
-                        <!-- 답글 목록 (열린 상태) -->
+                        <!-- 답글 목록 (JS로 초기 숨김) -->
                         <div class="board-detail-reply-list">
 
-                            <!-- 답글 쓰기 입력 박스 -->
+                            <!-- 답글 1: 운영자 → 신고 -->
+                            <div class="board-detail-reply-item">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../images/free-icon-administrator.svg" alt="" class="community-post-avatar">
+                                        <span class="community-post-role community-post-role--operator">운영자</span>
+                                        <span class="community-post-author">Ryan Inn</span>
+                                        <span class="community-post-time">방금 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <!-- 타인 댓글: 신고 단독 -->
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
+                                                <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">@닉네임 이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요.</p>
+                            </div>
+
+                            <!-- 답글 2: 내 답글 → 수정/삭제 -->
+                            <div class="board-detail-reply-item">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                        <span class="community-post-role">학습자</span>
+                                        <span class="community-post-author">닉네임</span>
+                                        <span class="community-post-time">방금 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <!-- 내 답글: 수정/삭제 -->
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel">
+                                                <button class="dropdown--ctx-item" type="button">수정</button>
+                                                <button class="dropdown--ctx-item" type="button">삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">@Ryan Inn 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다.</p>
+                            </div>
+
+                            <!-- 답글 3: 타인 → 신고 -->
+                            <div class="board-detail-reply-item">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../images/free-icon-default-avatar.svg" alt="" class="community-post-avatar">
+                                        <span class="community-post-role">학습자</span>
+                                        <span class="community-post-author">홍길동</span>
+                                        <span class="community-post-time">30분 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <!-- 타인 답글: 신고 단독 -->
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
+                                                <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">기초부터 차근차근 설명해줘서 정말 도움이 많이 됐습니다. 감사해요!</p>
+                            </div>
+
+                            <!-- 답글 더보기/숨기기 -->
+                            <div class="board-detail-reply-footer">
+                                <button type="button" class="board-detail-reply-more-btn">
+                                    답글 더보기
+                                    <img src="../../images/free-icon-reply-open.svg" alt="">
+                                </button>
+                                <button type="button" class="board-detail-reply-hide-btn">
+                                    답글 숨기기
+                                    <img src="../../images/free-icon-reply-close.svg" alt="">
+                                </button>
+                            </div>
+
+                            <!-- 답글 입력 박스 (JS로 초기 숨김, "답글" 클릭 시 표시) -->
                             <div class="board-detail-reply-input">
                                 <div class="board-detail-comment-input-header">
                                     <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
@@ -351,13 +327,102 @@
                                 </div>
                             </div>
 
-                            <!-- 답글 아이템 1 -->
+                        </div>
+                    </div>
+
+                    <!-- ━━ 그룹 2: 비밀 댓글 (타인 글 → 신고) ━━ -->
+                    <div class="board-detail-comment-group">
+                        <div class="board-detail-comment-item">
+                            <div class="board-detail-comment-header">
+                                <div class="board-detail-comment-user">
+                                    <img src="../../images/free-icon-default-avatar.svg" alt="" class="community-post-avatar">
+                                    <span class="community-post-role">학습자</span>
+                                    <span class="community-post-author">홍길동</span>
+                                    <span class="community-post-time">2시간 전</span>
+                                </div>
+                                <div class="board-detail-comment-btns">
+                                    <button type="button" class="board-detail-reply-btn">답글</button>
+                                    <div class="board-detail-comment-more">
+                                        <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                            <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                        </button>
+                                        <!-- 타인 댓글: 신고 단독 -->
+                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
+                                            <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 비밀 댓글 표시 -->
+                            <div class="board-detail-secret-msg">
+                                <img src="../../images/free-icon-lock.svg" alt="">
+                                <span>해당 내용은 작성자와 운영자만 볼 수 있습니다.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ━━ 그룹 3: 내 댓글 수정 모드 ━━ -->
+                    <div class="board-detail-comment-group">
+                        <div class="board-detail-comment-item">
+                            <div class="board-detail-comment-header">
+                                <div class="board-detail-comment-user">
+                                    <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                    <span class="community-post-role">학습자</span>
+                                    <span class="community-post-author">닉네임</span>
+                                    <span class="community-post-time">1시간 전</span>
+                                </div>
+                                <div class="board-detail-comment-btns">
+                                    <button type="button" class="board-detail-reply-btn">답글</button>
+                                    <div class="board-detail-comment-more">
+                                        <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                            <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                        </button>
+                                        <!-- 내 댓글: 수정/삭제 -->
+                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel">
+                                            <button class="dropdown--ctx-item" type="button">수정</button>
+                                            <button class="dropdown--ctx-item" type="button">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 이미지 첨부 미리보기 -->
+                            <div class="community-detail-comment-media">
+                                <div class="community-detail-comment-thumb">
+                                    <img src="../../images/youtube_img.png" alt="">
+                                </div>
+                            </div>
+                            <!-- 원본 댓글 본문 (수정 모드에서도 노출) -->
+                            <p class="community-detail-comment-body" id="comment3-body">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다. 설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요. 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다.</p>
+                            <!-- 수정 박스 (이 그룹은 수정 모드를 보여주는 용도) -->
+                            <div class="board-detail-edit-box" id="comment3-edit">
+                                <textarea class="board-detail-edit-textarea" rows="4">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다.
+설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요. 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다.</textarea>
+                                <div class="board-detail-edit-actions">
+                                    <label class="board-detail-secret-toggle">
+                                        <input type="checkbox">
+                                        <span class="board-detail-toggle-track"></span>
+                                        <span class="board-detail-secret-text">비밀글</span>
+                                    </label>
+                                    <button type="button" class="board-detail-cancel-btn" data-edit-target="comment3-edit">취소</button>
+                                    <button type="button" class="board-detail-save-btn board-detail-save-btn--active">수정하기</button>
+                                </div>
+                            </div>
+                            <!-- 답글 토글 -->
+                            <button type="button" class="board-detail-reply-toggle">
+                                답글 2개
+                                <img src="../../images/free-icon-reply-open.svg" alt="">
+                            </button>
+                        </div>
+
+                        <!-- 답글 목록 (JS로 초기 숨김) -->
+                        <div class="board-detail-reply-list">
+                            <!-- 답글 1: 운영자 → 신고 -->
                             <div class="board-detail-reply-item">
                                 <div class="board-detail-comment-header">
                                     <div class="board-detail-comment-user">
-                                        <img src="../../images/free-icon-administrator.svg" alt="" class="community-post-avatar">
-                                        <span class="community-post-role community-post-role--operator">운영자</span>
-                                        <span class="community-post-author">Ryan Inn</span>
+                                        <img src="../../images/free-icon-lecturer.svg" alt="" class="community-post-avatar">
+                                        <span class="community-post-role community-post-role--teacher">강사</span>
+                                        <span class="community-post-author">Vishnu Gupta</span>
                                         <span class="community-post-time">방금 전</span>
                                     </div>
                                     <div class="board-detail-comment-btns">
@@ -366,17 +431,15 @@
                                             <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
                                                 <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
                                             </button>
-                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                                <button class="dropdown--ctx-item" type="button">수정</button>
-                                                <button class="dropdown--ctx-item" type="button">삭제</button>
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
+                                                <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="community-detail-comment-body">@Vishnu Gupta 이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.</p>
+                                <p class="community-detail-comment-body">@닉네임 기초부터 차근차근 설명해줘서 정말 좋았습니다. 감사해요!</p>
                             </div>
-
-                            <!-- 답글 아이템 2 -->
+                            <!-- 답글 2: 내 답글 → 수정/삭제 -->
                             <div class="board-detail-reply-item">
                                 <div class="board-detail-comment-header">
                                     <div class="board-detail-comment-user">
@@ -398,20 +461,155 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="community-detail-comment-body">@Ryan Inn 중요한 개념은 반복해서 설명해주고, 앞에서 배운 내용을 뒤에서 다시 연결해주는 구조라 자연스럽게 복습이 되는 느낌이었습니다.</p>
+                                <p class="community-detail-comment-body">@Vishnu Gupta 감사합니다!</p>
                             </div>
-
+                            <!-- 숨기기 -->
+                            <div class="board-detail-reply-footer">
+                                <button type="button" class="board-detail-reply-hide-btn">
+                                    답글 숨기기
+                                    <img src="../../images/free-icon-reply-close.svg" alt="">
+                                </button>
+                            </div>
+                            <!-- 답글 입력 박스 -->
+                            <div class="board-detail-reply-input">
+                                <div class="board-detail-comment-input-header">
+                                    <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                    <span class="community-post-role">학습자</span>
+                                    <span class="community-post-author">닉네임</span>
+                                </div>
+                                <textarea class="board-detail-comment-textarea" placeholder="답글을 입력해 주세요." rows="1"></textarea>
+                                <div class="board-detail-reply-actions">
+                                    <label class="board-detail-secret-toggle">
+                                        <input type="checkbox">
+                                        <span class="board-detail-toggle-track"></span>
+                                        <span class="board-detail-secret-text">비밀글</span>
+                                    </label>
+                                    <button type="button" class="board-detail-cancel-btn">취소</button>
+                                    <button type="button" class="board-detail-submit-btn">등록하기</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- ── 댓글 그룹 5: 일반 댓글 ── -->
+                    <!-- ━━ 그룹 4: 타인 댓글 (신고), 답글 2개 ━━ -->
+                    <div class="board-detail-comment-group">
+                        <div class="board-detail-comment-item">
+                            <div class="board-detail-comment-header">
+                                <div class="board-detail-comment-user">
+                                    <img src="../../images/free-icon-default-avatar.svg" alt="" class="community-post-avatar">
+                                    <span class="community-post-role community-post-role--teacher">강사</span>
+                                    <span class="community-post-author">Vishnu Gupta</span>
+                                    <span class="community-post-time">방금 전</span>
+                                </div>
+                                <div class="board-detail-comment-btns">
+                                    <button type="button" class="board-detail-reply-btn">답글</button>
+                                    <div class="board-detail-comment-more">
+                                        <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                            <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                        </button>
+                                        <!-- 타인 댓글: 신고 단독 -->
+                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
+                                            <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="community-detail-comment-body">이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 중간중간 "이건 현업에서 이렇게 쓰입니다"라고 짚어주는 부분이 좋았고, 혼자 공부할 때 막혔던 포인트들이 정리되는 느낌이었어요.</p>
+                            <button type="button" class="board-detail-reply-toggle">
+                                답글 2개
+                                <img src="../../images/free-icon-reply-open.svg" alt="">
+                            </button>
+                        </div>
+
+                        <!-- 답글 목록 (JS로 초기 숨김) -->
+                        <div class="board-detail-reply-list">
+                            <!-- 답글 1: 운영자 → 신고 -->
+                            <div class="board-detail-reply-item">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../images/free-icon-administrator.svg" alt="" class="community-post-avatar">
+                                        <span class="community-post-role community-post-role--operator">운영자</span>
+                                        <span class="community-post-author">Ryan Inn</span>
+                                        <span class="community-post-time">방금 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
+                                                <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">@Vishnu Gupta 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.</p>
+                            </div>
+                            <!-- 답글 2: 내 답글 → 수정/삭제 -->
+                            <div class="board-detail-reply-item">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                        <span class="community-post-role">학습자</span>
+                                        <span class="community-post-author">닉네임</span>
+                                        <span class="community-post-time">방금 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel">
+                                                <button class="dropdown--ctx-item" type="button">수정</button>
+                                                <button class="dropdown--ctx-item" type="button">삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">@Ryan Inn 감사합니다!</p>
+                            </div>
+                            <!-- 더보기/숨기기 -->
+                            <div class="board-detail-reply-footer">
+                                <button type="button" class="board-detail-reply-more-btn">
+                                    답글 더보기
+                                    <img src="../../images/free-icon-reply-open.svg" alt="">
+                                </button>
+                                <button type="button" class="board-detail-reply-hide-btn">
+                                    답글 숨기기
+                                    <img src="../../images/free-icon-reply-close.svg" alt="">
+                                </button>
+                            </div>
+                            <!-- 답글 입력 박스 -->
+                            <div class="board-detail-reply-input">
+                                <div class="board-detail-comment-input-header">
+                                    <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                    <span class="community-post-role">학습자</span>
+                                    <span class="community-post-author">닉네임</span>
+                                </div>
+                                <textarea class="board-detail-comment-textarea" placeholder="답글을 입력해 주세요." rows="1"></textarea>
+                                <div class="board-detail-reply-actions">
+                                    <label class="board-detail-secret-toggle">
+                                        <input type="checkbox">
+                                        <span class="board-detail-toggle-track"></span>
+                                        <span class="board-detail-secret-text">비밀글</span>
+                                    </label>
+                                    <button type="button" class="board-detail-cancel-btn">취소</button>
+                                    <button type="button" class="board-detail-submit-btn">등록하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ━━ 그룹 5: 타인 댓글 (신고), 답글 없음 ━━ -->
                     <div class="board-detail-comment-group">
                         <div class="board-detail-comment-item">
                             <div class="board-detail-comment-header">
                                 <div class="board-detail-comment-user">
                                     <img src="../../images/free-icon-default-avatar.svg" alt="" class="community-post-avatar">
                                     <span class="community-post-role">학습자</span>
-                                    <span class="community-post-author">닉네임</span>
+                                    <span class="community-post-author">홍길동</span>
                                     <span class="community-post-time">3시간 전</span>
                                 </div>
                                 <div class="board-detail-comment-btns">
@@ -420,14 +618,34 @@
                                         <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
                                             <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
                                         </button>
-                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                            <button class="dropdown--ctx-item" type="button">수정</button>
-                                            <button class="dropdown--ctx-item" type="button">삭제</button>
+                                        <!-- 타인 댓글: 신고 단독 -->
+                                        <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
+                                            <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <p class="community-detail-comment-body">강의 분량이 너무 길면 중간에 흐름이 끊길까봐 걱정됐는데, 한 강의당 길이가 적당해서 퇴근 후에 듣기 좋았습니다. 설명 속도도 너무 빠르지 않아서 배속을 하지 않아도 충분히 이해하면서 따라갈 수 있었어요.</p>
+                        </div>
+                        <!-- 답글 목록 (답글 버튼 클릭 시 입력창만 열림) -->
+                        <div class="board-detail-reply-list">
+                            <div class="board-detail-reply-input">
+                                <div class="board-detail-comment-input-header">
+                                    <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                    <span class="community-post-role">학습자</span>
+                                    <span class="community-post-author">닉네임</span>
+                                </div>
+                                <textarea class="board-detail-comment-textarea" placeholder="답글을 입력해 주세요." rows="1"></textarea>
+                                <div class="board-detail-reply-actions">
+                                    <label class="board-detail-secret-toggle">
+                                        <input type="checkbox">
+                                        <span class="board-detail-toggle-track"></span>
+                                        <span class="board-detail-secret-text">비밀글</span>
+                                    </label>
+                                    <button type="button" class="board-detail-cancel-btn">취소</button>
+                                    <button type="button" class="board-detail-submit-btn">등록하기</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -527,81 +745,201 @@
     <script src="../../js/common.js"></script>
     <script>
     (function () {
-        // 본문 3-dot 토글
-        var postMore = document.getElementById('postMore');
-        if (postMore) {
-            postMore.querySelector('.board-detail-more__trigger').addEventListener('click', function (e) {
-                e.stopPropagation();
-                postMore.classList.toggle('open');
+
+        /* ─── 드롭다운 공통 닫기 ─── */
+        function closeAllDropdowns() {
+            document.querySelectorAll('.board-detail-more.open, .board-detail-comment-more.open').forEach(function (el) {
+                el.classList.remove('open');
             });
         }
+        document.addEventListener('click', closeAllDropdowns);
 
-        // 댓글 3-dot 토글
-        document.querySelectorAll('.board-detail-comment-more').forEach(function (wrap) {
-            wrap.querySelector('.board-detail-comment-more__trigger').addEventListener('click', function (e) {
+        /* ─── 본문 3-dot ─── */
+        document.querySelectorAll('.board-detail-more').forEach(function (wrap) {
+            var trigger = wrap.querySelector('.board-detail-more__trigger');
+            if (!trigger) return;
+            trigger.addEventListener('click', function (e) {
                 e.stopPropagation();
                 var isOpen = wrap.classList.contains('open');
-                document.querySelectorAll('.board-detail-comment-more.open, .board-detail-more.open').forEach(function (el) {
-                    el.classList.remove('open');
-                });
+                closeAllDropdowns();
                 if (!isOpen) wrap.classList.add('open');
             });
         });
 
-        // 클릭 외부 닫기
-        document.addEventListener('click', function () {
-            document.querySelectorAll('.board-detail-more.open, .board-detail-comment-more.open').forEach(function (el) {
-                el.classList.remove('open');
+        /* ─── 댓글 3-dot ─── */
+        document.querySelectorAll('.board-detail-comment-more').forEach(function (wrap) {
+            var trigger = wrap.querySelector('.board-detail-comment-more__trigger');
+            if (!trigger) return;
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var isOpen = wrap.classList.contains('open');
+                closeAllDropdowns();
+                if (!isOpen) wrap.classList.add('open');
             });
         });
 
-        // 댓글 textarea 자동 높이 확장 + 등록하기 버튼 활성화
-        document.querySelectorAll('.board-detail-comment-textarea').forEach(function (ta) {
-            var btn = ta.closest('.board-detail-comment-input, .board-detail-reply-input')
-                        .querySelector('.board-detail-submit-btn');
-            function sync() {
+        /* ─── textarea 자동 높이 + 등록하기 활성화 ─── */
+        function initTextarea(ta) {
+            ta.addEventListener('input', function () {
                 ta.style.height = 'auto';
                 ta.style.height = ta.scrollHeight + 'px';
-                if (btn) {
-                    if (ta.value.trim()) {
-                        btn.classList.add('board-detail-submit-btn--active');
-                    } else {
-                        btn.classList.remove('board-detail-submit-btn--active');
-                    }
+                var container = ta.closest('.board-detail-comment-input, .board-detail-reply-input');
+                if (!container) return;
+                var btn = container.querySelector('.board-detail-submit-btn');
+                if (btn) btn.classList.toggle('board-detail-submit-btn--active', !!ta.value.trim());
+            });
+        }
+        document.querySelectorAll('.board-detail-comment-textarea').forEach(initTextarea);
+
+        /* ─── 수정 textarea 활성화 ─── */
+        document.querySelectorAll('.board-detail-edit-textarea').forEach(function (ta) {
+            ta.addEventListener('input', function () {
+                var btn = ta.closest('.board-detail-edit-box').querySelector('.board-detail-save-btn');
+                if (btn) btn.classList.toggle('board-detail-save-btn--active', !!ta.value.trim());
+            });
+        });
+
+        /* ─── 답글 목록 열기/닫기 ─── */
+        function setReplyListOpen(group, open) {
+            var replyList = group.querySelector(':scope > .board-detail-reply-list');
+            if (!replyList) return;
+            var toggleBtn = group.querySelector(':scope > .board-detail-comment-item > .board-detail-reply-toggle');
+            replyList.style.display = open ? '' : 'none';
+            replyList.dataset.open = open ? 'true' : 'false';
+            if (toggleBtn) {
+                var img = toggleBtn.querySelector('img');
+                if (img) {
+                    img.src = open
+                        ? img.src.replace('reply-open', 'reply-close')
+                        : img.src.replace('reply-close', 'reply-open');
                 }
             }
-            ta.addEventListener('input', sync);
-        });
+        }
 
-        // 수정 textarea 활성화
-        document.querySelectorAll('.board-detail-edit-textarea').forEach(function (ta) {
-            var btn = ta.closest('.board-detail-edit-box').querySelector('.board-detail-save-btn');
-            ta.addEventListener('input', function () {
-                if (ta.value.trim()) {
-                    btn.classList.add('board-detail-save-btn--active');
-                } else {
-                    btn.classList.remove('board-detail-save-btn--active');
-                }
-            });
-        });
-
-        // 답글 토글 (open/close)
         document.querySelectorAll('.board-detail-reply-toggle').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var group = btn.closest('.board-detail-comment-item');
-                var replyList = group.closest('.board-detail-comment-group').querySelector('.board-detail-reply-list');
+                var group = btn.closest('.board-detail-comment-group');
+                if (!group) return;
+                var replyList = group.querySelector(':scope > .board-detail-reply-list');
                 if (!replyList) return;
-                var img = btn.querySelector('img');
-                var isOpen = replyList.style.display !== 'none' && replyList.style.display !== '';
-                if (isOpen) {
-                    replyList.style.display = 'none';
-                    if (img) img.src = img.src.replace('reply-close', 'reply-open');
-                } else {
-                    replyList.style.display = '';
-                    if (img) img.src = img.src.replace('reply-open', 'reply-close');
-                }
+                var isOpen = replyList.dataset.open === 'true';
+                setReplyListOpen(group, !isOpen);
             });
         });
+
+        /* ─── 답글 숨기기 버튼 ─── */
+        document.querySelectorAll('.board-detail-reply-hide-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var group = btn.closest('.board-detail-comment-group');
+                if (group) setReplyListOpen(group, false);
+            });
+        });
+
+        /* ─── 답글 더보기 버튼 (데모: no-op) ─── */
+        document.querySelectorAll('.board-detail-reply-more-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () { /* 추가 답글 로드 */ });
+        });
+
+        /* ─── "답글" 버튼 → 입력창 열기 ─── */
+        document.querySelectorAll('.board-detail-reply-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var group = btn.closest('.board-detail-comment-group');
+                if (!group) return;
+
+                /* 이미 열린 다른 입력창 닫기 */
+                document.querySelectorAll('.board-detail-reply-input.is-active').forEach(function (el) {
+                    el.classList.remove('is-active');
+                    el.style.display = 'none';
+                    var ta = el.querySelector('.board-detail-comment-textarea');
+                    if (ta) { ta.value = ''; ta.style.height = ''; }
+                    var sb = el.querySelector('.board-detail-submit-btn');
+                    if (sb) sb.classList.remove('board-detail-submit-btn--active');
+                });
+
+                /* 답글 목록이 없으면 생성 */
+                var replyList = group.querySelector(':scope > .board-detail-reply-list');
+                if (!replyList) {
+                    replyList = document.createElement('div');
+                    replyList.className = 'board-detail-reply-list';
+                    replyList.dataset.open = 'false';
+                    replyList.style.display = 'none';
+                    group.appendChild(replyList);
+                }
+
+                /* 답글 목록 열기 */
+                setReplyListOpen(group, true);
+
+                /* 입력창 표시 */
+                var replyInput = group.querySelector(':scope > .board-detail-reply-list > .board-detail-reply-input');
+                if (!replyInput) {
+                    replyInput = createReplyInput();
+                    replyList.appendChild(replyInput);
+                    initTextarea(replyInput.querySelector('.board-detail-comment-textarea'));
+                }
+                replyInput.style.display = '';
+                replyInput.classList.add('is-active');
+                var ta = replyInput.querySelector('.board-detail-comment-textarea');
+                if (ta) { ta.focus(); }
+            });
+        });
+
+        /* ─── 취소 버튼 ─── */
+        document.addEventListener('click', function (e) {
+            if (!e.target.classList.contains('board-detail-cancel-btn')) return;
+
+            /* 답글 입력창 취소 */
+            var replyInput = e.target.closest('.board-detail-reply-input');
+            if (replyInput) {
+                replyInput.classList.remove('is-active');
+                replyInput.style.display = 'none';
+                var ta = replyInput.querySelector('.board-detail-comment-textarea');
+                if (ta) { ta.value = ''; ta.style.height = ''; }
+                var sb = replyInput.querySelector('.board-detail-submit-btn');
+                if (sb) sb.classList.remove('board-detail-submit-btn--active');
+                return;
+            }
+
+            /* 수정 박스 취소 */
+            var editTarget = e.target.dataset.editTarget;
+            if (editTarget) {
+                var box = document.getElementById(editTarget);
+                if (box) box.style.display = 'none';
+            }
+        });
+
+        /* ─── 답글 입력창 템플릿 생성 ─── */
+        function createReplyInput() {
+            var div = document.createElement('div');
+            div.className = 'board-detail-reply-input';
+            div.innerHTML = [
+                '<div class="board-detail-comment-input-header">',
+                '  <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">',
+                '  <span class="community-post-role">학습자</span>',
+                '  <span class="community-post-author">닉네임</span>',
+                '</div>',
+                '<textarea class="board-detail-comment-textarea" placeholder="답글을 입력해 주세요." rows="1"></textarea>',
+                '<div class="board-detail-reply-actions">',
+                '  <label class="board-detail-secret-toggle">',
+                '    <input type="checkbox">',
+                '    <span class="board-detail-toggle-track"></span>',
+                '    <span class="board-detail-secret-text">비밀글</span>',
+                '  </label>',
+                '  <button type="button" class="board-detail-cancel-btn">취소</button>',
+                '  <button type="button" class="board-detail-submit-btn">등록하기</button>',
+                '</div>'
+            ].join('');
+            return div;
+        }
+
+        /* ─── 초기화: 모든 답글 목록 및 입력창 숨기기 ─── */
+        document.querySelectorAll('.board-detail-reply-list').forEach(function (el) {
+            el.style.display = 'none';
+            el.dataset.open = 'false';
+        });
+        document.querySelectorAll('.board-detail-reply-input').forEach(function (el) {
+            el.style.display = 'none';
+        });
+
     }());
     </script>
 
