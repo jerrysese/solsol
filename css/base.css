@@ -8985,10 +8985,18 @@ button.dropdown--ctx-item {
     padding: 20px;
     align-items: center;
     gap: 50px;
-    align-self: stretch;
+    width: 100%;
     border-radius: 10px;
     border: 1px solid #EEEEEE;
     box-sizing: border-box;
+}
+
+.card-list-item__left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1 0 0;
+    min-width: 0;
 }
 
 .card-list-item__thumb {
@@ -9046,42 +9054,6 @@ button.dropdown--ctx-item {
     flex-shrink: 0;
 }
 
-.card-list-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    height: 40px;
-    border-radius: 5px;
-    font-family: var(--font-base);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.56px;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.card-list-btn--primary {
-    width: 130px;
-    background: var(--color-primary);
-    color: #FFFFFF;
-    border: none;
-}
-
-.card-list-btn--outline {
-    width: 130px;
-    background: #FFFFFF;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-}
-
-.card-list-btn--delete {
-    width: 90px;
-    background: #FFFFFF;
-    color: #888888;
-    border: 1px solid #EEEEEE;
-}
-
 .card-add-btn {
     display: flex;
     width: 100%;
@@ -9110,6 +9082,7 @@ button.dropdown--ctx-item {
     .inquiry-detail-reply-input { padding-left: 40px; }
     .review-comment-list .board-detail-reply-input { padding: 14px 16px; }
     .card-list-item { gap: 24px; }
+    .card-list-item__left { gap: 16px; }
     .card-list-item__thumb { width: 160px; height: 94px; }
 }
 @media (max-width: 768px) {
@@ -9128,10 +9101,9 @@ button.dropdown--ctx-item {
     .card-info-empty { gap: 20px; }
     .card-register-btn { width: 100%; max-width: 400px; }
     .card-list-item { flex-direction: column; align-items: flex-start; gap: 16px; padding: 16px; }
+    .card-list-item__left { width: 100%; }
     .card-list-item__thumb { width: 100%; height: auto; aspect-ratio: 200 / 117; }
     .card-list-item__actions { width: 100%; justify-content: flex-end; }
-    .card-list-btn--outline,
-    .card-list-btn--primary { width: 120px; }
 }
 @media (max-width: 768px) {
     .card-info-empty { flex-direction: column; text-align: center; gap: 16px; }
