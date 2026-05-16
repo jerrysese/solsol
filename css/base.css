@@ -4248,6 +4248,11 @@ h2 {
     height: 20px;
 }
 
+.board-detail-comment-actions .community-detail-add-image-btn,
+.board-detail-edit-actions .community-detail-add-image-btn {
+    margin-right: auto;
+}
+
 .community-detail-submit-btn {
     display: flex;
     width: 70px;
