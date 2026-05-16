@@ -8803,54 +8803,48 @@ button.dropdown--ctx-item {
     padding: 20px;
 }
 
-.review-posting-product-row {
+.review-posting-head {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
-.review-posting-thumb {
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    object-fit: cover;
+.review-posting-head .posting-item__category-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.review-head-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     flex-shrink: 0;
 }
 
-.review-posting-product-info {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.review-posting-product-type {
-    font-size: 12px;
-    font-weight: 400;
+.review-head-reply-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-base);
+    font-size: 13px;
+    font-weight: 500;
     color: #888888;
-    letter-spacing: -0.48px;
-    line-height: 150%;
+    padding: 4px 6px;
+    letter-spacing: -0.52px;
+    line-height: normal;
 }
 
-.review-posting-product-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: #333333;
-    letter-spacing: -0.6px;
-    line-height: 150%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.review-head-reply-btn:hover {
+    color: var(--color-primary);
 }
 
-.review-posting-author-row {
+.review-posting-star-row {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 12px;
-    flex-wrap: wrap;
 }
 
 .review-comment-toggle {
@@ -8882,14 +8876,6 @@ button.dropdown--ctx-item {
 
 .review-posting-comment-section {
     border-top: 1px solid #EEEEEE;
-}
-
-.review-posting-comment-input {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 16px 20px;
-    border-bottom: 1px solid #F2F2F2;
 }
 
 .review-comment-list {
@@ -8937,8 +8923,7 @@ button.dropdown--ctx-item {
     .inquiry-detail-title-row { flex-wrap: wrap; }
     .inquiry-detail-comment-item--reply { padding-left: 20px; }
     .inquiry-detail-reply-input { padding-left: 20px; }
-    .review-posting-product-row { flex-wrap: nowrap; }
+    .review-posting-head { gap: 8px; }
     .review-comment-item { padding: 14px 16px; }
-    .review-posting-comment-input { padding: 14px 16px; }
     .review-comment-list .board-detail-reply-input { padding: 14px 16px; }
 }
