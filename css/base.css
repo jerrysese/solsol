@@ -7659,6 +7659,42 @@ button.dropdown--ctx-item {
     height: 24px;
 }
 
+/* 정적 표시용 (디자인 페이지·스타일가이드) */
+.toast-snack--static {
+    position: relative;
+    border-radius: 10px;
+}
+
+/* 토스트 알림 데모 섹션 */
+.toast-snack-demo {
+    padding: 60px 0 80px;
+    border-top: 1px solid #EEEEEE;
+    margin-top: 60px;
+}
+.toast-snack-demo__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    letter-spacing: -0.72px;
+    margin-bottom: 30px;
+}
+.toast-snack-demo__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.toast-snack-demo__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.toast-snack-demo__label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.48px;
+}
+
 
 /* =====================================================
    FAQ PAGE
