@@ -8977,7 +8977,8 @@ button.dropdown--ctx-item {
 .card-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 30px;
+    width: 100%;
 }
 
 .card-list-item {
