@@ -32,6 +32,19 @@ window.toggleDropdown = function(id) {
 
     document.addEventListener('DOMContentLoaded', function () {
 
+        // ── .dropdown--fit 트리거 너비를 가장 긴 항목 기준으로 고정 ───
+        document.querySelectorAll('.dropdown--fit').forEach(function(dd) {
+            var trigger = dd.querySelector('.dropdown__trigger');
+            var panel = dd.querySelector('.dropdown__panel');
+            if (!trigger || !panel) return;
+            panel.style.visibility = 'hidden';
+            panel.style.display = 'block';
+            var w = panel.offsetWidth;
+            panel.style.display = '';
+            panel.style.visibility = '';
+            if (w > 0) trigger.style.minWidth = w + 'px';
+        });
+
         // ── 커스텀 드롭다운 클릭 외부 닫기 + 항목 선택 ───────
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.dropdown')) {
