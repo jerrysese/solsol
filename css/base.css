@@ -4249,7 +4249,8 @@ h2 {
 }
 
 .board-detail-comment-actions .community-detail-add-image-btn,
-.board-detail-edit-actions .community-detail-add-image-btn {
+.board-detail-edit-actions .community-detail-add-image-btn,
+.board-detail-reply-actions .community-detail-add-image-btn {
     margin-right: auto;
 }
 
