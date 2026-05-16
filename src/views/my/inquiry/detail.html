@@ -353,18 +353,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="community-detail-comment-body" id="comment2-body"><span class="inquiry-detail-mention">@Ryan Inn</span> 결제 내역을 확인해보았는데 제가 찾고 있는 상품 정보가 없어요. 다시 한번 확인해 주시겠어요?</p>
-                                <!-- 수정 박스 (수정 버튼 클릭 시 표시) -->
-                                <div class="board-detail-edit-wrap" id="comment2-edit">
-                                    <div class="board-detail-edit-box">
-                                        <textarea class="board-detail-edit-textarea" rows="4">@Ryan Inn 결제 내역을 확인해보았는데 제가 찾고 있는 상품 정보가 없어요. 다시 한번 확인해 주시겠어요?</textarea>
-                                    </div>
-                                    <div class="board-detail-edit-actions">
-                                        <button type="button" class="board-detail-cancel-btn">취소</button>
-                                        <button type="button" class="board-detail-save-btn board-detail-save-btn--active">수정하기</button>
-                                        <button type="button" class="board-detail-save-btn" disabled>수정하기</button>
-                                    </div>
-                                </div>
+                                <p class="community-detail-comment-body"><span class="inquiry-detail-mention">@Ryan Inn</span> 결제 내역을 확인해보았는데 제가 찾고 있는 상품 정보가 없어요. 다시 한번 확인해 주시겠어요?</p>
                             </div>
 
                             <!-- ━━ 관리자 댓글 3 (1depth, no 3-dot) ━━ -->
@@ -586,22 +575,53 @@
             });
         });
 
-        // 수정 버튼 클릭 → 해당 댓글의 edit wrap 표시
+        // 수정 버튼 클릭 → edit wrap 동적 생성 (토글)
         document.querySelectorAll('[data-action="edit"]').forEach(function(btn) {
             btn.addEventListener('click', function() {
                 var commentItem = btn.closest('.inquiry-detail-comment-item');
                 if (!commentItem) return;
-                var editWrap = commentItem.querySelector('.board-detail-edit-wrap');
-                if (editWrap) {
-                    editWrap.style.display = editWrap.style.display === 'flex' ? 'none' : 'flex';
-                }
-            });
-        });
 
-        // 취소 버튼 → edit wrap 닫기
-        document.querySelectorAll('.board-detail-edit-wrap .board-detail-cancel-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                btn.closest('.board-detail-edit-wrap').style.display = 'none';
+                // 드롭다운 닫기
+                var more = btn.closest('.board-detail-comment-more');
+                if (more) {
+                    more.classList.remove('open');
+                    var panel = more.querySelector('.board-detail-comment-more__panel');
+                    if (panel) panel.style.cssText = '';
+                }
+
+                // 이미 열려 있으면 닫기
+                var existing = commentItem.querySelector('.board-detail-edit-wrap');
+                if (existing) { existing.remove(); return; }
+
+                // 현재 댓글 본문 텍스트 추출
+                var bodyEl = commentItem.querySelector('.community-detail-comment-body');
+                var bodyText = bodyEl ? bodyEl.innerText.trim() : '';
+
+                // edit wrap 생성
+                var editWrap = document.createElement('div');
+                editWrap.className = 'board-detail-edit-wrap';
+                editWrap.innerHTML =
+                    '<div class="board-detail-edit-box">' +
+                        '<textarea class="board-detail-edit-textarea" rows="4"></textarea>' +
+                    '</div>' +
+                    '<div class="board-detail-edit-actions">' +
+                        '<button type="button" class="board-detail-cancel-btn">취소</button>' +
+                        '<button type="button" class="board-detail-save-btn board-detail-save-btn--active">수정하기</button>' +
+                    '</div>';
+
+                if (bodyEl) {
+                    bodyEl.insertAdjacentElement('afterend', editWrap);
+                } else {
+                    commentItem.appendChild(editWrap);
+                }
+
+                var ta = editWrap.querySelector('.board-detail-edit-textarea');
+                ta.value = bodyText;
+                ta.focus();
+
+                editWrap.querySelector('.board-detail-cancel-btn').addEventListener('click', function() {
+                    editWrap.remove();
+                });
             });
         });
     </script>
