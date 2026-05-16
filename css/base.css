@@ -8899,6 +8899,10 @@ button.dropdown--ctx-item {
     background: #F8F8F8;
 }
 
+body:has(.mypage-inner--gray) {
+    background: #FFFFFF;
+}
+
 .card-info-empty-wrap {
     flex: 1;
     display: flex;
