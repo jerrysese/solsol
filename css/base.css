@@ -8231,6 +8231,81 @@ button.dropdown--ctx-item {
 
 
 /* =====================================================
+   INQUIRY DETAIL — 1:1 문의내역 상세페이지
+===================================================== */
+
+.inquiry-detail-post {
+    border-bottom: 1px solid #F2F2F2;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+}
+
+.inquiry-detail-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.inquiry-detail-title-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.inquiry-detail-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inquiry-detail-title-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.inquiry-detail-author-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.inquiry-detail-comment-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.inquiry-detail-comment-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.inquiry-detail-comment-item:last-child {
+    border-bottom: none;
+}
+
+.inquiry-detail-comment-item--learner {
+    padding-left: 60px;
+}
+
+.inquiry-detail-reply-input {
+    padding: 20px 0 20px 60px;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+
+/* =====================================================
    BOARD DETAIL PAGE — 자유게시판 상세페이지
 ===================================================== */
 
@@ -8687,6 +8762,8 @@ button.dropdown--ctx-item {
     .board-detail-reply-item { padding-left: 40px; }
     .board-detail-reply-input { padding-left: 40px; }
     .board-detail-reply-footer { padding-left: 40px; }
+    .inquiry-detail-comment-item--learner { padding-left: 40px; }
+    .inquiry-detail-reply-input { padding-left: 40px; }
 }
 @media (max-width: 768px) {
     .board-detail-reply-item { padding-left: 20px; }
@@ -8695,4 +8772,7 @@ button.dropdown--ctx-item {
     .board-detail-more__panel { width: 120px; }
     .board-detail-more__item { font-size: 14px; height: 44px; }
     .board-detail-comment-textarea { height: 30px; }
+    .inquiry-detail-title-row { flex-wrap: wrap; }
+    .inquiry-detail-comment-item--learner { padding-left: 20px; }
+    .inquiry-detail-reply-input { padding-left: 20px; }
 }
