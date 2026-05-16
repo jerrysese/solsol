@@ -4253,6 +4253,14 @@ h2 {
     margin-right: auto;
 }
 
+.comment-mention {
+    color: #7954C6;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.26px;
+}
+
 .community-detail-submit-btn {
     display: flex;
     width: 70px;
