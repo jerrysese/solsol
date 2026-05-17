@@ -8969,6 +8969,32 @@ button.dropdown--ctx-item {
     line-height: 150%;
 }
 
+.coupon-section-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.3px;
+}
+
+.coupon-empty-box {
+    display: flex;
+    padding: 50px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #F8F8F8;
+}
+
+.coupon-empty-box .card-info-icon img {
+    width: 40px;
+    height: 40px;
+    transform: rotate(-90deg);
+}
+
 .card-register-btn {
     display: flex;
     width: 400px;
