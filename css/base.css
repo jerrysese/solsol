@@ -9022,11 +9022,17 @@ button.dropdown--ctx-item {
 
 .coupon-card__body {
     flex: 1;
-    padding: 22px 24px;
+    padding: 10px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+.coupon-card__info {
     display: flex;
     flex-direction: column;
     gap: 3px;
-    min-width: 0;
 }
 
 .coupon-card__date {
@@ -9039,7 +9045,6 @@ button.dropdown--ctx-item {
     font-size: 14px;
     color: #333333;
     font-weight: 500;
-    margin-top: 6px;
 }
 
 .coupon-card__discount {
@@ -9047,7 +9052,6 @@ button.dropdown--ctx-item {
     font-weight: 700;
     color: var(--color-primary);
     line-height: 1.3;
-    margin: 8px 0 6px;
     white-space: nowrap;
 }
 
