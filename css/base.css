@@ -9663,7 +9663,7 @@ button.dropdown--ctx-item {
 .bookmark-card__meta {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 
 .bookmark-card__meta-row {
