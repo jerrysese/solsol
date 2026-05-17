@@ -528,9 +528,9 @@
                 if (!isOpen) {
                     var rect = btn.getBoundingClientRect();
                     panel.style.position = 'fixed';
-                    panel.style.top = (rect.bottom + 4) + 'px';
-                    panel.style.right = (window.innerWidth - rect.right) + 'px';
-                    panel.style.left = 'auto';
+                    panel.style.top = rect.top + 'px';
+                    panel.style.left = (rect.right + 2) + 'px';
+                    panel.style.right = 'auto';
                     more.classList.add('open');
                 }
             });

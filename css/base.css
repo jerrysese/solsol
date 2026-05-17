@@ -6607,7 +6607,7 @@ button.dropdown--ctx-item {
 .inquiry-more__panel {
     display: none;
     position: absolute;
-    left: calc(100% + 4px);
+    left: calc(100% + 2px);
     top: 0;
     z-index: 10;
     width: 120px;
@@ -8392,8 +8392,8 @@ button.dropdown--ctx-item {
 .board-detail-more__panel {
     display: none;
     position: absolute;
-    right: 0;
-    top: calc(100% + 4px);
+    left: calc(100% + 2px);
+    top: 0;
     z-index: 20;
     width: 120px;
     background: #FFFFFF;
@@ -8449,7 +8449,7 @@ button.dropdown--ctx-item {
 .board-detail-comment-more__panel {
     display: none;
     position: absolute;
-    left: calc(100% + 4px);
+    left: calc(100% + 2px);
     top: 0;
     z-index: 10;
 }
