@@ -9596,11 +9596,11 @@ button.dropdown--ctx-item {
 }
 
 .bookmark-card__title {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
-    color: #BBBBBB;
+    color: #888888;
     line-height: 150%;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.72px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -9626,10 +9626,10 @@ button.dropdown--ctx-item {
 .bookmark-card__info--package { border-top-color: #2BACF4; }
 
 .bookmark-card__type {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     color: #BBBBBB;
-    letter-spacing: -0.26px;
+    letter-spacing: -0.6px;
     line-height: 150%;
     display: flex;
     align-items: center;
