@@ -9566,7 +9566,9 @@ button.dropdown--ctx-item {
 .bookmark-card__thumb-top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    height: 25px;
+    flex-shrink: 0;
     align-self: stretch;
 }
 
@@ -9604,19 +9606,27 @@ button.dropdown--ctx-item {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
     background: #FFFFFF;
+    border-top: 3px solid #EEEEEE;
 }
 
+.bookmark-card__info--normal  { border-top-color: #7954C6; }
+.bookmark-card__info--live    { border-top-color: #FC5758; }
+.bookmark-card__info--video   { border-top-color: #31AD60; }
+.bookmark-card__info--digital { border-top-color: #555555; }
+.bookmark-card__info--package { border-top-color: #2BACF4; }
+
 .bookmark-card__type {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
     color: #BBBBBB;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.26px;
     line-height: 150%;
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-bottom: 10px;
 }
 
 .bookmark-card__type-icon {
@@ -9640,7 +9650,7 @@ button.dropdown--ctx-item {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    margin-bottom: 15px;
+    align-self: stretch;
 }
 
 .bookmark-card__meta {
@@ -9673,8 +9683,8 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-top: auto;
-    padding-top: 20px;
+    align-self: stretch;
+    flex: 1 0 0;
 }
 
 .bookmark-card__price-col {
@@ -9698,10 +9708,10 @@ button.dropdown--ctx-item {
 }
 
 .bookmark-card__original-price {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     color: #BBBBBB;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.42px;
     text-decoration: line-through;
 }
 
@@ -9715,11 +9725,11 @@ button.dropdown--ctx-item {
 }
 
 .bookmark-card__final-price {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 700;
-    color: #333333;
-    letter-spacing: -0.88px;
-    line-height: 130%;
+    color: #7954C6;
+    letter-spacing: -0.84px;
+    line-height: 150%;
 }
 
 .bookmark-card__price-note {
@@ -9755,7 +9765,7 @@ button.dropdown--ctx-item {
 @media (max-width: 768px) {
     .bookmark-list { grid-template-columns: 1fr; }
     .bookmark-card__thumb { height: 130px; }
-    .bookmark-card__final-price { font-size: 18px; }
+    .bookmark-card__final-price { font-size: 17px; }
 }
 
 /* ===== RESPONSIVE ===== */
