@@ -8970,10 +8970,11 @@ button.dropdown--ctx-item {
 }
 
 .coupon-section-title {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
-    color: #333333;
-    letter-spacing: -0.3px;
+    color: #555555;
+    line-height: 150%;
+    letter-spacing: -0.8px;
 }
 
 .coupon-empty-box {
@@ -8993,6 +8994,8 @@ button.dropdown--ctx-item {
     width: 40px;
     height: 40px;
     transform: rotate(-90deg);
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
 }
 
 .card-register-btn {
