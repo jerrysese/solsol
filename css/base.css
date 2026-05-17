@@ -9001,6 +9001,119 @@ button.dropdown--ctx-item {
     aspect-ratio: 1/1;
 }
 
+/* ===== COUPON CARD (마이페이지 - 쿠폰 목록) ===== */
+.coupon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.coupon-card {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    background: #FFFFFF;
+    position: relative;
+    overflow: visible;
+}
+
+.coupon-card__body {
+    flex: 1;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.coupon-card__date {
+    font-size: 11px;
+    color: #AAAAAA;
+    line-height: 1.5;
+}
+
+.coupon-card__name {
+    font-size: 13px;
+    color: #333333;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.coupon-card__discount {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin: 6px 0 4px;
+    white-space: nowrap;
+}
+
+.coupon-card__min {
+    font-size: 11px;
+    color: #AAAAAA;
+}
+
+.coupon-card__notch {
+    position: relative;
+    width: 0;
+    border-left: 1px dashed #DDDDDD;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.coupon-card__notch::before,
+.coupon-card__notch::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #F8F8F8;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.coupon-card__notch::before { top: -9px; }
+.coupon-card__notch::after { bottom: -9px; }
+
+.coupon-card__action {
+    width: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 12px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.coupon-card__dl-icon {
+    width: 16px;
+    height: 16px;
+    filter: invert(33%) sepia(70%) saturate(600%) hue-rotate(240deg) brightness(90%);
+}
+
+.coupon-card__action-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.coupon-card--received .coupon-card__dl-icon {
+    filter: none;
+    opacity: 0.5;
+}
+
+.coupon-card--received .coupon-card__action-label {
+    color: #AAAAAA;
+    cursor: default;
+}
+
 .card-register-btn {
     display: flex;
     width: 400px;
@@ -9156,4 +9269,12 @@ button.dropdown--ctx-item {
 @media (max-width: 768px) {
     .card-info-empty { flex-direction: column; text-align: center; gap: 16px; }
     .card-register-btn { width: 100%; }
+}
+@media (max-width: 1024px) {
+    .coupon-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .coupon-grid { grid-template-columns: 1fr; }
+    .coupon-card__discount { font-size: 18px; }
+    .coupon-section-title { font-size: 16px; }
 }
