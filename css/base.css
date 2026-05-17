@@ -9658,6 +9658,7 @@ button.dropdown--ctx-item {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     align-self: stretch;
+    margin-top: -10px;
 }
 
 .bookmark-card__meta {
