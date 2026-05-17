@@ -5499,9 +5499,6 @@ h2 {
     color: #888888;
 }
 
-.dropdown--ctx-item--cancel { color: #FC5758; }
-.dropdown--ctx-panel--solo .dropdown--ctx-item--cancel { color: #FC5758; }
-
 button.dropdown--ctx-item {
     -webkit-appearance: none;
     appearance: none;
@@ -9326,8 +9323,8 @@ button.dropdown--ctx-item {
 }
 
 .payment-list__col--order  { width: 150px; flex-shrink: 0; }
-.payment-list__col--product { flex: 1; justify-content: flex-start; padding-left: 20px; }
-.payment-list__col--status { width: 120px; flex-shrink: 0; }
+.payment-list__col--product { width: 450px; flex-shrink: 0; justify-content: center; }
+.payment-list__col--status { width: 150px; flex-shrink: 0; }
 .payment-list__col--date   { width: 150px; flex-shrink: 0; }
 .payment-list__col--amount { width: 150px; flex-shrink: 0; }
 .payment-list__col--ctx    { width: 40px; flex-shrink: 0; }
@@ -9356,7 +9353,8 @@ button.dropdown--ctx-item {
 }
 
 .payment-list__product {
-    flex: 1;
+    width: 450px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -9413,7 +9411,7 @@ button.dropdown--ctx-item {
 }
 
 .payment-list__status {
-    width: 120px;
+    width: 150px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -9485,7 +9483,7 @@ button.dropdown--ctx-item {
 .payment-more .dropdown--ctx-panel {
     display: none;
     position: absolute;
-    right: calc(100% + 4px);
+    left: calc(100% + 4px);
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;

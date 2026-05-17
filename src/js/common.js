@@ -52,6 +52,11 @@ window.toggleDropdown = function(id) {
                     d.classList.remove('open');
                 });
             }
+            if (!e.target.closest('.payment-more')) {
+                document.querySelectorAll('.payment-more.open').forEach(function(m) {
+                    m.classList.remove('open');
+                });
+            }
         });
 
         document.addEventListener('click', function(e) {
