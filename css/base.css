@@ -9357,7 +9357,7 @@ button.dropdown--ctx-item {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding: 10px 20px 10px 0;
     min-width: 0;
     align-self: stretch;
@@ -9367,6 +9367,7 @@ button.dropdown--ctx-item {
     width: 141px;
     height: 80px;
     flex-shrink: 0;
+    position: relative;
     overflow: hidden;
     border-radius: 4px;
     background: #F8F8F8;
@@ -9379,6 +9380,38 @@ button.dropdown--ctx-item {
 }
 
 .payment-list__thumb--membership { border-radius: 8px; }
+
+.payment-list__thumb-text {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    color: #888888;
+    text-overflow: ellipsis;
+    font-family: Pretendard;
+    font-size: 7px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.28px;
+    padding: 6px 8px;
+    align-self: stretch;
+}
+
+.payment-list__thumb-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.48px;
+    white-space: nowrap;
+}
 
 .payment-list__product-info {
     flex: 1;
