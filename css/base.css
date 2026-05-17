@@ -9797,7 +9797,7 @@ button.dropdown--ctx-item {
 .cert-card__thumb {
     position: relative;
     overflow: hidden;
-    min-height: 190px;
+    min-height: 165px;
     padding: 20px;
     display: flex;
     flex-direction: column;
