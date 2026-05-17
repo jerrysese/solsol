@@ -8990,10 +8990,13 @@ button.dropdown--ctx-item {
     background: #F8F8F8;
 }
 
+.coupon-empty-box .card-info-empty {
+    justify-content: center;
+}
+
 .coupon-empty-box .card-info-icon img {
     width: 40px;
     height: 40px;
-    transform: rotate(-90deg);
     flex-shrink: 0;
     aspect-ratio: 1/1;
 }
