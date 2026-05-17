@@ -9743,7 +9743,7 @@ button.dropdown--ctx-item {
 .bookmark-card__final-row {
     display: flex;
     align-items: flex-end;
-    gap: 4px;
+    gap: 6px;
 }
 
 .bookmark-card__price-note {
