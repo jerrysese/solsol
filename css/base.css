@@ -9013,9 +9013,9 @@ button.dropdown--ctx-item {
 .coupon-card {
     display: flex;
     align-items: stretch;
-    border: 1px solid #E5E5E5;
-    border-radius: 10px;
-    background: #FFFFFF;
+    background-image: url('../src/images/coupon-bg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     position: relative;
     overflow: visible;
 }
@@ -9057,31 +9057,12 @@ button.dropdown--ctx-item {
 }
 
 .coupon-card__notch {
-    position: relative;
     width: 0;
-    border-left: 1px dashed #DDDDDD;
     flex-shrink: 0;
-    align-self: stretch;
 }
-
-.coupon-card__notch::before,
-.coupon-card__notch::after {
-    content: '';
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background: #F8F8F8;
-    border-radius: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-}
-
-.coupon-card__notch::before { top: -9px; }
-.coupon-card__notch::after { bottom: -9px; }
 
 .coupon-card__action {
-    width: 80px;
+    width: 24%;
     display: flex;
     flex-direction: column;
     align-items: center;
