@@ -9560,7 +9560,6 @@ button.dropdown--ctx-item {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     gap: 20px;
     background: url('../src/images/bookmark-card-bg.png') center / cover no-repeat;
 }
@@ -9572,6 +9571,12 @@ button.dropdown--ctx-item {
     height: 25px;
     flex-shrink: 0;
     align-self: stretch;
+}
+
+.bookmark-card__thumb-body {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
 }
 
 .bookmark-card__heart {
