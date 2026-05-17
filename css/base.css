@@ -9523,7 +9523,7 @@ button.dropdown--ctx-item {
 .payment-more .dropdown--ctx-panel {
     display: none;
     position: absolute;
-    left: calc(100% + 4px);
+    left: calc(100% + 2px);
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
