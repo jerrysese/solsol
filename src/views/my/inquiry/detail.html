@@ -501,6 +501,12 @@
         if (postMore) {
             postMore.querySelector('.board-detail-more__trigger').addEventListener('click', function(e) {
                 e.stopPropagation();
+                var isOpen = postMore.classList.contains('open');
+                document.querySelectorAll('.board-detail-comment-more.open').forEach(function(el) {
+                    el.classList.remove('open');
+                    var p = el.querySelector('.board-detail-comment-more__panel');
+                    if (p) p.style.cssText = '';
+                });
                 postMore.classList.toggle('open');
             });
         }
