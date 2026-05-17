@@ -9663,13 +9663,16 @@ button.dropdown--ctx-item {
 .bookmark-card__meta {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 15px;
 }
 
 .bookmark-card__meta-row {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+.bookmark-card__meta-text + .bookmark-card__meta-icon {
+    margin-left: 10px;
 }
 
 .bookmark-card__meta-icon {
