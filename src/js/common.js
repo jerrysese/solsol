@@ -1,5 +1,13 @@
 var _commonScript = document.currentScript;
 
+window.togglePaymentMore = function(el) {
+    var cur = el.closest('.payment-more');
+    document.querySelectorAll('.payment-more.open').forEach(function(m) {
+        if (m !== cur) m.classList.remove('open');
+    });
+    cur.classList.toggle('open');
+};
+
 window.toggleDropdown = function(id) {
     var el = document.getElementById(id);
     if (!el) return;
