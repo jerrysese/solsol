@@ -9699,7 +9699,8 @@ button.dropdown--ctx-item {
     align-items: flex-end;
     justify-content: space-between;
     align-self: stretch;
-    flex: 1 0 0;
+    margin-top: auto;
+    min-height: 68px;
 }
 
 .bookmark-card__price-col {
