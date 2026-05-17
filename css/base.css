@@ -9229,12 +9229,14 @@ button.dropdown--ctx-item {
 /* 상단 서머리 */
 .payment-summary {
     display: flex;
+    width: 100%;
     padding: 30px;
     align-items: center;
     border-radius: 20px;
     border: 1px solid #EEEEEE;
     background: #FFFFFF;
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .payment-summary__item {
