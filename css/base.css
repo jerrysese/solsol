@@ -9872,6 +9872,8 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: center;
     gap: 5px;
+    margin-top: 5px;
+    align-self: stretch;
 }
 
 .cert-card__date-icon {
@@ -9894,7 +9896,7 @@ button.dropdown--ctx-item {
     color: #555555;
     letter-spacing: -0.65px;
     line-height: 150%;
-    margin-left: 50px;
+    margin-left: auto;
 }
 
 .cert-card__btn {
