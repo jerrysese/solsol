@@ -5499,6 +5499,9 @@ h2 {
     color: #888888;
 }
 
+.dropdown--ctx-item--cancel { color: #FC5758; }
+.dropdown--ctx-panel--solo .dropdown--ctx-item--cancel { color: #FC5758; }
+
 button.dropdown--ctx-item {
     -webkit-appearance: none;
     appearance: none;
@@ -9228,7 +9231,6 @@ button.dropdown--ctx-item {
     display: flex;
     padding: 30px;
     align-items: center;
-    gap: 10px;
     border-radius: 20px;
     border: 1px solid #EEEEEE;
     background: #FFFFFF;
@@ -9240,11 +9242,14 @@ button.dropdown--ctx-item {
     align-items: center;
     gap: 20px;
     flex: 1;
+    padding: 0 20px;
 }
+
+.payment-summary__item:first-child { padding-left: 0; }
+.payment-summary__item:last-child  { padding-right: 0; }
 
 .payment-summary__item + .payment-summary__item {
     border-left: 1px solid #EEEEEE;
-    padding-left: 30px;
 }
 
 .payment-summary__icon-box {
@@ -9296,80 +9301,6 @@ button.dropdown--ctx-item {
     letter-spacing: -0.96px;
     line-height: 150%;
 }
-
-/* 필터 바 */
-.payment-filter {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-.payment-filter__left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.payment-filter__reset {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    height: 40px;
-    padding: 0 12px;
-    border: 1px solid #EEEEEE;
-    border-radius: 4px;
-    background: #FFFFFF;
-    font-family: var(--font-base);
-    font-size: 12px;
-    font-weight: 500;
-    color: #555555;
-    letter-spacing: -0.48px;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.payment-filter__reset img { width: 14px; height: 14px; }
-
-.payment-filter__search {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    border: 1px solid #EEEEEE;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.payment-filter__search input {
-    flex: 1;
-    height: 100%;
-    border: none;
-    padding: 0 12px;
-    font-family: var(--font-base);
-    font-size: 12px;
-    color: #333333;
-    background: none;
-    outline: none;
-    letter-spacing: -0.48px;
-    min-width: 200px;
-}
-
-.payment-filter__search input::placeholder { color: #BBBBBB; }
-
-.payment-filter__search-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-.payment-filter__search-btn img { width: 16px; height: 16px; }
 
 /* 리스트 */
 .payment-list { width: 100%; }
@@ -9524,26 +9455,41 @@ button.dropdown--ctx-item {
     line-height: 150%;
 }
 
-.payment-list__ctx {
+/* 3점 컨텍스트 더보기 */
+.payment-more {
     width: 40px;
     flex-shrink: 0;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     align-self: stretch;
 }
 
-.payment-list__ctx-btn {
-    width: 32px !important;
-    height: 32px !important;
-    min-width: 0 !important;
-    padding: 0 !important;
-    justify-content: center !important;
-    border: none !important;
-    background: none !important;
+.payment-more__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
-.payment-list__ctx-btn img { width: 18px; height: 18px; }
+.payment-more__trigger img { width: 18px; height: 18px; }
+
+.payment-more .dropdown--ctx-panel {
+    display: none;
+    position: absolute;
+    right: calc(100% + 4px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.payment-more.open .dropdown--ctx-panel { display: block; }
 
 
 /* ===== RESPONSIVE ===== */
@@ -9592,10 +9538,8 @@ button.dropdown--ctx-item {
 }
 @media (max-width: 1024px) {
     .payment-summary { flex-direction: column; align-items: stretch; }
-    .payment-summary__item + .payment-summary__item { border-left: none; border-top: 1px solid #EEEEEE; padding-left: 0; padding-top: 20px; }
-    .payment-filter { flex-direction: column; align-items: flex-start; }
-    .payment-filter__search { width: 100%; }
-    .payment-filter__search input { min-width: 0; flex: 1; }
+    .payment-summary__item { padding: 0; }
+    .payment-summary__item + .payment-summary__item { border-left: none; border-top: 1px solid #EEEEEE; padding-top: 20px; }
     .payment-list__col--date { display: none; }
     .payment-list__date { display: none; }
     .payment-list__col--order { width: 110px; }
@@ -9619,9 +9563,8 @@ button.dropdown--ctx-item {
     .payment-list__status { width: 100%; align-self: auto; align-items: flex-start; }
     .payment-list__date { display: flex; width: 100%; justify-content: flex-start; padding: 0; font-size: 12px; color: #AAAAAA; }
     .payment-list__amount { width: 100%; align-self: auto; align-items: flex-start; }
-    .payment-list__ctx { width: 100%; justify-content: flex-end; align-self: auto; }
+    .payment-more { width: 100%; justify-content: flex-end; align-self: auto; }
     .payment-summary__label { font-size: 15px; }
     .payment-summary__value { font-size: 20px; }
     .payment-summary__count { font-size: 20px; }
-    .payment-filter__left { flex-wrap: wrap; }
 }

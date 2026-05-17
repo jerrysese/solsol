@@ -214,13 +214,10 @@
                     </div>
 
                     <!-- 필터 바 -->
-                    <div class="payment-filter">
-                        <div class="payment-filter__left">
-                            <div class="dropdown">
-                                <button class="dropdown__trigger" type="button">
-                                    전체 상품
-                                    <img src="../../../images/ico-chevron-down.svg" alt="">
-                                </button>
+                    <div class="posting-filter">
+                        <div class="posting-filter-left">
+                            <div class="dropdown dropdown--fit" id="paymentProductDd">
+                                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('paymentProductDd')">전체 상품<img src="../../../images/ico-chevron-down.svg" alt=""></button>
                                 <div class="dropdown__panel">
                                     <div class="dropdown__item active">전체 상품</div>
                                     <div class="dropdown__item">일반강의</div>
@@ -231,35 +228,33 @@
                                     <div class="dropdown__item">멤버십상품</div>
                                 </div>
                             </div>
-                            <div class="dropdown">
-                                <button class="dropdown__trigger" type="button">
-                                    전체 결제상태
-                                    <img src="../../../images/ico-chevron-down.svg" alt="">
-                                </button>
+                            <div class="dropdown dropdown--fit" id="paymentStatusDd">
+                                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('paymentStatusDd')">전체 결제상태<img src="../../../images/ico-chevron-down.svg" alt=""></button>
                                 <div class="dropdown__panel">
                                     <div class="dropdown__item active">전체 결제상태</div>
                                     <div class="dropdown__item">결제완료</div>
                                     <div class="dropdown__item">결제취소</div>
+                                    <div class="dropdown__item">결제실패</div>
+                                    <div class="dropdown__item">결제유예</div>
+                                    <div class="dropdown__item">미결제</div>
+                                    <div class="dropdown__item">기간만료</div>
                                 </div>
                             </div>
-                            <div class="dropdown">
-                                <button class="dropdown__trigger" type="button">
-                                    결제일 최신순
-                                    <img src="../../../images/ico-chevron-down.svg" alt="">
-                                </button>
+                            <div class="dropdown dropdown--fit" id="paymentSortDd">
+                                <button class="dropdown__trigger" type="button" onclick="toggleDropdown('paymentSortDd')">결제일 최신순<img src="../../../images/ico-chevron-down.svg" alt=""></button>
                                 <div class="dropdown__panel">
                                     <div class="dropdown__item active">결제일 최신순</div>
                                     <div class="dropdown__item">결제일 오래된순</div>
                                 </div>
                             </div>
-                            <button class="payment-filter__reset" type="button">
-                                <img src="../../../images/ico-reset.svg" alt="">
+                            <button class="posting-reset-btn" type="button">
                                 초기화
+                                <img src="../../../images/ico-reset.svg" alt="">
                             </button>
                         </div>
-                        <div class="payment-filter__search">
-                            <input type="text" placeholder="상품명 검색">
-                            <button class="payment-filter__search-btn" type="button">
+                        <div class="posting-search">
+                            <input type="text" class="posting-search-input" placeholder="상품명 검색">
+                            <button class="posting-search-btn" type="button" aria-label="검색">
                                 <img src="../../../images/ico-search.svg" alt="검색">
                             </button>
                         </div>
@@ -275,10 +270,10 @@
                             <div class="payment-list__col payment-list__col--status">결제상태</div>
                             <div class="payment-list__col payment-list__col--date">결제일시</div>
                             <div class="payment-list__col payment-list__col--amount">결제금액</div>
-                            <div class="payment-list__col payment-list__col--ctx"></div>
+                            <div class="payment-list__col" style="width:40px;flex-shrink:0;"></div>
                         </div>
 
-                        <!-- 행 1 : 일반강의 / 결제완료 -->
+                        <!-- 행 1 : 일반강의 / 결제완료 / 문의하기+취소하기 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -293,25 +288,23 @@
                             <div class="payment-list__status">
                                 <span class="badge-payment badge-payment--complete">결제완료</span>
                             </div>
-                            <div class="payment-list__date">129381203821</div>
+                            <div class="payment-list__date">2000.00.00 00:00:00</div>
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
                                 <a href="#" class="badge-payment badge-payment--link">영수증보기</a>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                        <button class="dropdown--ctx-item" type="button">취소하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item" type="button">문의하기</button>
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 2 : 라이브강의 / 결제완료 -->
+                        <!-- 행 2 : 라이브강의 / 결제완료 / 취소하기 단독 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -326,25 +319,22 @@
                             <div class="payment-list__status">
                                 <span class="badge-payment badge-payment--complete">결제완료</span>
                             </div>
-                            <div class="payment-list__date">129381203821</div>
+                            <div class="payment-list__date">2000.00.00 00:00:00</div>
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
                                 <a href="#" class="badge-payment badge-payment--link">영수증보기</a>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                        <button class="dropdown--ctx-item" type="button">취소하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 3 : 화상강의 / 결제취소 -->
+                        <!-- 행 3 : 화상강의 / 결제취소 / 문의하기+취소하기 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -363,19 +353,18 @@
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item" type="button">문의하기</button>
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 4 : 디지털상품 / 결제완료 -->
+                        <!-- 행 4 : 디지털상품 / 결제유예 / 문의하기+취소하기 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -388,27 +377,24 @@
                                 </div>
                             </div>
                             <div class="payment-list__status">
-                                <span class="badge-payment badge-payment--complete">결제완료</span>
+                                <span class="badge-payment badge-payment--defer">결제유예</span>
                             </div>
-                            <div class="payment-list__date">129381203821</div>
+                            <div class="payment-list__date">2000.00.00 00:00:00</div>
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
-                                <a href="#" class="badge-payment badge-payment--link">영수증보기</a>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                        <button class="dropdown--ctx-item" type="button">취소하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item" type="button">문의하기</button>
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 5 : 패키지상품 / 결제완료 -->
+                        <!-- 행 5 : 패키지상품 / 결제완료 / 취소하기 단독 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -423,25 +409,22 @@
                             <div class="payment-list__status">
                                 <span class="badge-payment badge-payment--complete">결제완료</span>
                             </div>
-                            <div class="payment-list__date">129381203821</div>
+                            <div class="payment-list__date">2000.00.00 00:00:00</div>
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
                                 <a href="#" class="badge-payment badge-payment--link">영수증보기</a>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                        <button class="dropdown--ctx-item" type="button">취소하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 6 : 멤버십상품 / 결제취소 (black bg) -->
+                        <!-- 행 6 : 멤버십상품 / 결제실패 / 문의하기+취소하기 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -454,25 +437,24 @@
                                 </div>
                             </div>
                             <div class="payment-list__status">
-                                <span class="badge-payment badge-payment--cancel">결제취소</span>
+                                <span class="badge-payment badge-payment--fail">결제실패</span>
                             </div>
                             <div class="payment-list__date">2000.00.00 00:00:00</div>
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item" type="button">문의하기</button>
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 7 : 화상강의 / 결제취소 -->
+                        <!-- 행 7 : 화상강의 / 미결제 / 문의하기+취소하기 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -485,25 +467,24 @@
                                 </div>
                             </div>
                             <div class="payment-list__status">
-                                <span class="badge-payment badge-payment--cancel">결제취소</span>
+                                <span class="badge-payment badge-payment--unpaid">미결제</span>
                             </div>
                             <div class="payment-list__date">2000.00.00 00:00:00</div>
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item" type="button">문의하기</button>
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 8 : 디지털상품 / 결제완료 -->
+                        <!-- 행 8 : 디지털상품 / 기간만료 / 문의하기+취소하기 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -516,27 +497,24 @@
                                 </div>
                             </div>
                             <div class="payment-list__status">
-                                <span class="badge-payment badge-payment--complete">결제완료</span>
+                                <span class="badge-payment badge-payment--expired">기간만료</span>
                             </div>
-                            <div class="payment-list__date">129381203821</div>
+                            <div class="payment-list__date">2000.00.00 00:00:00</div>
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
-                                <a href="#" class="badge-payment badge-payment--link">영수증보기</a>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                        <button class="dropdown--ctx-item" type="button">취소하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item" type="button">문의하기</button>
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 9 : 패키지상품 / 결제완료 -->
+                        <!-- 행 9 : 패키지상품 / 결제완료 / 취소하기 단독 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -551,25 +529,22 @@
                             <div class="payment-list__status">
                                 <span class="badge-payment badge-payment--complete">결제완료</span>
                             </div>
-                            <div class="payment-list__date">129381203821</div>
+                            <div class="payment-list__date">2000.00.00 00:00:00</div>
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
                                 <a href="#" class="badge-payment badge-payment--link">영수증보기</a>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                        <button class="dropdown--ctx-item" type="button">취소하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 행 10 : 멤버십상품 / 결제취소 (gray bg) -->
+                        <!-- 행 10 : 멤버십상품 / 결제취소 / 문의하기+취소하기 -->
                         <div class="payment-list__row">
                             <div class="payment-list__order-no">129381203821</div>
                             <div class="payment-list__product">
@@ -588,14 +563,13 @@
                             <div class="payment-list__amount">
                                 <span class="payment-list__price">100,000원</span>
                             </div>
-                            <div class="payment-list__ctx">
-                                <div class="dropdown dropdown--fit">
-                                    <button class="dropdown__trigger payment-list__ctx-btn" type="button">
-                                        <img src="../../../images/free-icon-dots-vertical.svg" alt="">
-                                    </button>
-                                    <div class="dropdown--ctx-panel">
-                                        <button class="dropdown--ctx-item" type="button">문의하기</button>
-                                    </div>
+                            <div class="payment-more">
+                                <button class="payment-more__trigger" type="button" onclick="this.closest('.payment-more').classList.toggle('open')">
+                                    <img src="../../../images/free-icon-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="dropdown--ctx-panel">
+                                    <button class="dropdown--ctx-item" type="button">문의하기</button>
+                                    <button class="dropdown--ctx-item dropdown--ctx-item--cancel" type="button">취소하기</button>
                                 </div>
                             </div>
                         </div>
