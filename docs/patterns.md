@@ -1,7 +1,8 @@
 # 컴포넌트 패턴 레퍼런스
 
 > HTML 코드 스니펫은 `src/views/styleguide.html` 참조.  
-> 이 파일은 브라우저에서 시각으로 확인할 수 없는 정보만 수록한다.
+> 이 파일은 브라우저에서 시각으로 확인할 수 없는 정보만 수록한다.  
+> **styleguide에 담기 애매한 레이아웃·동작 규칙도 여기에 추가한다.**
 
 ---
 
@@ -123,3 +124,36 @@
 | `alert-ico-notice-small.svg` | `.toast-popup` 아이콘 |
 | `ico-lm-logout.svg` | 사이드바 로그아웃 버튼 |
 | `ico-lm-arrow.svg` | 사이드바 멤버십 오른쪽 화살표 |
+
+---
+
+## 레이아웃·동작 규칙
+
+### 마이페이지 배경색
+
+```css
+/* body 기본 배경은 #FFFFFF */
+/* .mypage-layout을 포함한 페이지만 body가 #F8F8F8(회색)으로 자동 전환 */
+body:has(.mypage-layout) { background: #F8F8F8; }
+```
+
+- 마이페이지 **이외** 모든 페이지의 body는 white(`#FFFFFF`) 유지 (CLAUDE.md 규칙 12)
+- `background` 속성을 직접 쓸 필요 없이 `.mypage-layout` 클래스가 있으면 자동 적용됨
+
+### 마이페이지 레이아웃 구조
+
+```
+.mypage-layout          ← max-width 1440px, display flex, align-items stretch, gap 30px
+  .left-sidebar         ← 고정 너비 280px, 사이드바 높이는 콘텐츠 높이에 자동 맞춤
+  .mypage-content       ← flex: 1 0 0, 나머지 너비 자동 채움
+```
+
+- `align-items: stretch` 덕분에 `.left-sidebar`가 `.mypage-content` 높이에 자동으로 맞춰짐 — 별도 `height` 지정 불필요
+- 사이드바에 높이를 고정값으로 지정하면 레이아웃 깨짐
+
+### 반응형 (마이페이지)
+
+| 브레이크포인트 | `.mypage-layout` 변화 |
+|----------------|----------------------|
+| `max-width: 1024px` | `flex-direction: column`, 사이드바가 상단에 full-width로 배치 |
+| `max-width: 768px` | 사이드바 `.sidebar-mobile-toggle`로 열고 닫는 오버레이 방식으로 전환 |
