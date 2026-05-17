@@ -9873,6 +9873,7 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: center;
     gap: 5px;
+    height: 20px;
     margin-top: 5px;
     align-self: stretch;
 }
