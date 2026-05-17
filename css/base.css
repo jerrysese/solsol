@@ -5503,7 +5503,7 @@ button.dropdown--ctx-item {
     -webkit-appearance: none;
     appearance: none;
     border: none;
-    border-bottom: 1px solid #EEEEEE;
+    border-bottom: 1px solid #DDDDDD;
     background: none;
     width: 100%;
 }
