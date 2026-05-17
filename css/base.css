@@ -9596,11 +9596,11 @@ button.dropdown--ctx-item {
 }
 
 .bookmark-card__title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
-    color: #888888;
+    color: #BBBBBB;
     line-height: 150%;
-    letter-spacing: -0.72px;
+    letter-spacing: -0.6px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
