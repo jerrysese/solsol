@@ -9532,6 +9532,232 @@ button.dropdown--ctx-item {
 .payment-more.open .dropdown--ctx-panel { display: block; }
 
 
+/* ============================================================
+   BOOKMARK LIST
+   ============================================================ */
+
+.bookmark-list {
+    display: grid;
+    grid-template-columns: repeat(3, 336px);
+    gap: 20px;
+}
+
+.bookmark-card {
+    display: flex;
+    flex-direction: column;
+    width: 336px;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #FFFFFF;
+}
+
+.bookmark-card__thumb {
+    position: relative;
+    height: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    background: url('../src/images/bookmark-card-bg.png') center / cover no-repeat;
+}
+
+.bookmark-card__thumb-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.bookmark-card__heart {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.bookmark-card__heart img {
+    width: 15px;
+    height: 13px;
+    display: block;
+}
+
+.bookmark-card__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #888888;
+    line-height: 150%;
+    letter-spacing: -0.72px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.bookmark-card__info {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+}
+
+.bookmark-card__type {
+    font-size: 15px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.bookmark-card__type-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.bookmark-card__type-sep {
+    color: #DDDDDD;
+}
+
+.bookmark-card__desc {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
+}
+
+.bookmark-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bookmark-card__meta-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.bookmark-card__meta-icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.bookmark-card__meta-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #555555;
+    letter-spacing: -0.48px;
+    line-height: 150%;
+}
+
+.bookmark-card__price-area {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.bookmark-card__price-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bookmark-card__discount-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
+.bookmark-card__discount-rate {
+    font-size: 15px;
+    font-weight: 700;
+    color: #FC5758;
+    letter-spacing: -0.6px;
+}
+
+.bookmark-card__original-price {
+    font-size: 15px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.6px;
+    text-decoration: line-through;
+}
+
+.bookmark-card__comparison {
+    font-size: 12px;
+    font-weight: 500;
+    color: #888888;
+    letter-spacing: -0.48px;
+    line-height: 150%;
+    margin-bottom: 2px;
+}
+
+.bookmark-card__final-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.88px;
+    line-height: 130%;
+}
+
+.bookmark-card__price-note {
+    font-size: 12px;
+    font-weight: 500;
+    color: #888888;
+    letter-spacing: -0.48px;
+    line-height: 150%;
+    margin-top: 2px;
+}
+
+.bookmark-card__membership {
+    display: flex;
+    padding: 5px 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #FC5758;
+    background: #FFF6F6;
+    font-size: 11px;
+    font-weight: 500;
+    color: #FC5758;
+    white-space: nowrap;
+    letter-spacing: -0.44px;
+    flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .bookmark-list { grid-template-columns: repeat(2, 1fr); }
+    .bookmark-card { width: 100%; }
+}
+@media (max-width: 768px) {
+    .bookmark-list { grid-template-columns: 1fr; }
+    .bookmark-card__thumb { height: 130px; }
+    .bookmark-card__final-price { font-size: 18px; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .board-detail-reply-item { padding-left: 40px; }
