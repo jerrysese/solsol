@@ -9007,6 +9007,7 @@ button.dropdown--ctx-item {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .coupon-card {
@@ -9021,37 +9022,37 @@ button.dropdown--ctx-item {
 
 .coupon-card__body {
     flex: 1;
-    padding: 16px 20px;
+    padding: 22px 24px;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
     min-width: 0;
 }
 
 .coupon-card__date {
-    font-size: 11px;
+    font-size: 12px;
     color: #AAAAAA;
     line-height: 1.5;
 }
 
 .coupon-card__name {
-    font-size: 13px;
+    font-size: 14px;
     color: #333333;
     font-weight: 500;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .coupon-card__discount {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
     color: var(--color-primary);
     line-height: 1.3;
-    margin: 6px 0 4px;
+    margin: 8px 0 6px;
     white-space: nowrap;
 }
 
 .coupon-card__min {
-    font-size: 11px;
+    font-size: 12px;
     color: #AAAAAA;
 }
 
@@ -9080,13 +9081,13 @@ button.dropdown--ctx-item {
 .coupon-card__notch::after { bottom: -9px; }
 
 .coupon-card__action {
-    width: 72px;
+    width: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 16px 12px;
+    gap: 8px;
+    padding: 22px 14px;
     flex-shrink: 0;
     cursor: pointer;
 }
