@@ -9797,7 +9797,7 @@ button.dropdown--ctx-item {
 .cert-card__thumb {
     position: relative;
     overflow: hidden;
-    min-height: 165px;
+    min-height: 190px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -9805,6 +9805,13 @@ button.dropdown--ctx-item {
     gap: 4px;
     background: url('../src/images/bookmark-card-bg.png') center / cover no-repeat;
     box-sizing: border-box;
+}
+
+.cert-card__thumb::after {
+    content: '';
+    display: block;
+    height: 24px;
+    flex-shrink: 0;
 }
 
 .cert-card__thumb-title {
