@@ -9560,7 +9560,6 @@ button.dropdown--ctx-item {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     background: url('../src/images/bookmark-card-bg.png') center / cover no-repeat;
 }
 
