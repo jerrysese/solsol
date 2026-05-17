@@ -821,6 +821,8 @@ img { display: block; max-width: 100%; }
 .badge-status--upcoming .badge-status__dot { background: #009C3B; }
 .badge-status--ended .badge-status__dot    { background: #111111; }
 
+.badge-status img { width: 8px; height: 8px; flex-shrink: 0; }
+
 /* 필드형 텍스트 뱃지 (알약형, 보라 배경) */
 .badge-tag {
     display: inline-flex;
@@ -9554,7 +9556,7 @@ button.dropdown--ctx-item {
 
 .bookmark-card__thumb {
     position: relative;
-    height: 150px;
+    min-height: 195px;
     padding: 10px;
     display: flex;
     flex-direction: column;
