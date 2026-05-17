@@ -9890,6 +9890,7 @@ button.dropdown--ctx-item {
     color: #BBBBBB;
     letter-spacing: -0.65px;
     line-height: 150%;
+    min-width: 83px;
 }
 
 .cert-card__date-value {
@@ -9898,7 +9899,7 @@ button.dropdown--ctx-item {
     color: #555555;
     letter-spacing: -0.65px;
     line-height: 150%;
-    margin-left: auto;
+    width: 64px;
 }
 
 .cert-card__btn {
