@@ -9642,7 +9642,12 @@ button.dropdown--ctx-item {
 }
 
 .bookmark-card__type-sep {
-    color: #DDDDDD;
+    display: block;
+    width: 1px;
+    height: 20px;
+    background-color: #DDDDDD;
+    flex-shrink: 0;
+    margin: 0 9px;
 }
 
 .bookmark-card__desc {
