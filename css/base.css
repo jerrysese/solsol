@@ -9012,7 +9012,7 @@ button.dropdown--ctx-item {
 
 .coupon-card {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 65% 35%;
     background-image: url('../src/images/coupon-bg.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
