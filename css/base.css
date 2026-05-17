@@ -8969,14 +8969,6 @@ button.dropdown--ctx-item {
     line-height: 150%;
 }
 
-.certificate-empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-}
-
 .card-register-btn {
     display: flex;
     width: 400px;
