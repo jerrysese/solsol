@@ -10076,3 +10076,119 @@ button.dropdown--ctx-item {
 @media (max-width: 768px) {
     .community-card__thumb-label { font-size: 18px; }
 }
+
+/* =====================================================
+   MEMBERSHIP CANCEL MODAL — 구독 취소 모달
+===================================================== */
+
+.cancel-sub-modal__body {
+    padding: 0 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #EEEEEE;
+}
+
+.cancel-sub-modal__info-box {
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cancel-sub-modal__info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cancel-sub-modal__info-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #888888;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+}
+
+.cancel-sub-modal__info-label--lg {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555555;
+    letter-spacing: -0.72px;
+    line-height: 150%;
+}
+
+.cancel-sub-modal__info-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: #888888;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+}
+
+.cancel-sub-modal__info-value--date {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.72px;
+    line-height: 150%;
+}
+
+.cancel-sub-modal__text-box {
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cancel-sub-modal__desc {
+    font-size: 15px;
+    font-weight: 500;
+    color: #888888;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+}
+
+.cancel-sub-modal__question {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555555;
+    letter-spacing: -0.72px;
+    line-height: 150%;
+}
+
+.cancel-sub-modal__btn {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    font-family: var(--font-base);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.cancel-sub-modal__btn:hover {
+    opacity: 0.9;
+}
+
+.cancel-sub-modal__btn img {
+    width: 15px;
+    height: 15px;
+    filter: brightness(0) invert(1);
+}
