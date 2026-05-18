@@ -10038,6 +10038,11 @@ button.dropdown--ctx-item {
     width: 100%;
 }
 
+/* mypage-inner의 align-items:flex-start 상쇄 — 카드 전체 너비 확보 */
+.mypage-content .community-list {
+    width: 100%;
+}
+
 /* 마이페이지 컨텍스트 — community-card 치수 조정 */
 .mypage-content .community-card {
     flex: 1 1 auto;
