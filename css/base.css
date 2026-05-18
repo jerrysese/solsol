@@ -10106,10 +10106,10 @@ button.dropdown--ctx-item {
 }
 
 .cancel-sub-modal__info-label {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
-    color: #888888;
-    letter-spacing: -0.6px;
+    color: #555555;
+    letter-spacing: -0.72px;
     line-height: 150%;
 }
 
