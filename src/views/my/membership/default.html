@@ -78,7 +78,6 @@
 
             <!-- ===== 좌측 사이드바 ===== -->
             <aside class="left-sidebar">
-                <!-- 프로필 -->
                 <div class="left-sidebar__profile">
                     <div class="left-sidebar__avatar">
                         <img src="../../../images/community-user-avatar.jpg" alt="">
@@ -97,7 +96,6 @@
 
                 <div class="left-sidebar__divider"></div>
 
-                <!-- 멤버십 바 -->
                 <div class="left-sidebar__memberships">
                     <a href="#" class="left-sidebar__mem-bar active">
                         <span class="left-sidebar__mem-name">멤버십</span>
@@ -115,7 +113,6 @@
                     </a>
                 </div>
 
-                <!-- 통계 -->
                 <div class="left-sidebar__stats">
                     <div class="left-sidebar__stat">
                         <span class="left-sidebar__stat-label">내 상품</span>
@@ -127,7 +124,6 @@
                     </div>
                 </div>
 
-                <!-- 네비게이션 -->
                 <nav class="left-sidebar__nav">
                     <div class="left-sidebar__nav-group">
                         <span class="left-sidebar__nav-group-label">상품 관리</span>
@@ -186,13 +182,17 @@
 
                     <h1 class="mypage-title">구독관리</h1>
 
-                    <!-- 구독 상품 없음 -->
-                    <div class="empty-state">
-                        <div class="empty-state__icon">
-                            <img src="../../../images/free-icon-box-x.svg" alt="">
+                    <!-- 구독 중인 상품 -->
+                    <p class="coupon-section-title">구독 중인 상품</p>
+                    <div class="coupon-empty-box">
+                        <div class="empty-inline">
+                            <div class="empty-inline__icon">
+                                <img src="../../../images/free-icon-box-x-small.svg" alt="">
+                            </div>
+                            <div class="empty-inline__body">
+                                <span class="empty-inline__title">구독중인 멤버십이 없어요</span>
+                            </div>
                         </div>
-                        <p class="empty-state__title">구독 중인 상품이 없어요</p>
-                        <p class="empty-state__desc">멤버십 상품을 구독하고<br>다양한 혜택을 누려보세요.</p>
                     </div>
 
                 </div><!-- /mypage-inner -->
@@ -289,5 +289,6 @@
     </footer>
 
     <script src="../../../js/common.js"></script>
+
 </body>
 </html>
