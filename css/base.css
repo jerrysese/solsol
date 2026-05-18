@@ -2895,9 +2895,10 @@ h2 {
 
 .community-sub-value {
     font-size: 13px;
-    font-weight: 500;
-    color: #333333;
-    letter-spacing: -0.52px;
+    font-weight: 700;
+    color: #BBBBBB;
+    letter-spacing: -0.26px;
+    line-height: 150%;
     flex-shrink: 0;
 }
 
@@ -2906,7 +2907,7 @@ h2 {
 }
 
 .community-sub-value--alert {
-    color: #E74C3C;
+    color: #FC5758;
 }
 
 /* 오른쪽 컬럼 래퍼 */
