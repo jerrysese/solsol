@@ -10093,6 +10093,7 @@ button.dropdown--ctx-item {
     border: 1px solid #EEEEEE;
     border-radius: 5px;
     padding: 20px;
+    background: #F8F8F8;
     display: flex;
     flex-direction: column;
     gap: 10px;
