@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png">
+    <title>1:1 문의내역 상세</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container">
+
+            <a href="#" class="header-logo">
+                <img src="../../../images/logo.svg" alt="로고">
+            </a>
+
+            <nav class="header-nav">
+                <a href="#" class="nav-item">회사소개</a>
+                <a href="#" class="nav-item">일반강의</a>
+                <a href="#" class="nav-item">라이브강의</a>
+                <a href="#" class="nav-item">화상강의</a>
+                <a href="#" class="nav-item">패키지 상품</a>
+                <a href="#" class="nav-item">디지털 상품</a>
+                <a href="#" class="nav-item">프리미엄 커뮤니티</a>
+                <a href="#" class="nav-item">멤버십 상품</a>
+                <a href="#" class="nav-item">공지사항</a>
+                <a href="#" class="nav-item">1:1문의</a>
+            </nav>
+
+            <div class="header-profile">
+                <button class="btn-bell" aria-label="알림">
+                    <img src="../../../images/ico-bell.svg" alt="알림" width="20" height="20">
+                    <span class="bell-dot"></span>
+                </button>
+                <div class="header-avatar-wrap">
+                    <div class="header-avatar"></div>
+                    <div class="profile-dropdown">
+                        <div class="profile-dropdown-user">
+                            <img src="../../../images/ico-google.svg" alt="Google" class="profile-social-icon">
+                            <span class="profile-username">홍길동</span>
+                            <img src="../../../images/arrow-more.svg" alt="" class="profile-arrow">
+                        </div>
+                        <hr class="profile-dropdown-divider">
+                        <ul class="profile-dropdown-menu">
+                            <li class="profile-menu-item">
+                                <img src="../../../images/ico-admin.svg" alt="">
+                                <span>관리자 페이지 바로가기</span>
+                            </li>
+                            <li class="profile-menu-item">
+                                <img src="../../../images/ico-bag.svg" alt="">
+                                <span>내 상품</span>
+                            </li>
+                            <li class="profile-menu-item">
+                                <img src="../../../images/ico-coupon-small.svg" alt="">
+                                <span>쿠폰 관리</span>
+                            </li>
+                            <li class="profile-menu-item">
+                                <img src="../../../images/ico-logout.svg" alt="">
+                                <span>로그아웃</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+        <div class="mypage-layout">
+
+            <!-- ===== 좌측 사이드바 ===== -->
+            <aside class="left-sidebar">
+                <div class="left-sidebar__profile">
+                    <div class="left-sidebar__avatar">
+                        <img src="../../../images/community-user-avatar.jpg" alt="">
+                    </div>
+                    <div class="left-sidebar__user">
+                        <div class="left-sidebar__user-top">
+                            <span class="left-sidebar__role">학습자</span>
+                            <span class="left-sidebar__name">Monzo</span>
+                        </div>
+                        <span class="left-sidebar__email">Monzo@example.com</span>
+                    </div>
+                    <button class="left-sidebar__logout" type="button">
+                        <img src="../../../images/ico-lm-logout.svg" alt="로그아웃">
+                    </button>
+                </div>
+
+                <div class="left-sidebar__divider"></div>
+
+                <div class="left-sidebar__memberships">
+                    <a href="#" class="left-sidebar__mem-bar">
+                        <span class="left-sidebar__mem-name">멤버십</span>
+                        <span class="left-sidebar__mem-status">
+                            구독 전
+                            <img src="../../../images/ico-lm-arrow.svg" alt="">
+                        </span>
+                    </a>
+                    <a href="#" class="left-sidebar__mem-bar left-sidebar__mem-bar--community">
+                        <span class="left-sidebar__mem-name">프리미엄 커뮤니티</span>
+                        <span class="left-sidebar__mem-status">
+                            2개 구독중
+                            <img src="../../../images/ico-lm-arrow.svg" alt="">
+                        </span>
+                    </a>
+                </div>
+
+                <div class="left-sidebar__stats">
+                    <div class="left-sidebar__stat">
+                        <span class="left-sidebar__stat-label">내 상품</span>
+                        <span class="left-sidebar__stat-value">7</span>
+                    </div>
+                    <div class="left-sidebar__stat">
+                        <span class="left-sidebar__stat-label">보유 쿠폰 <span class="left-sidebar__stat-badge">3</span></span>
+                        <span class="left-sidebar__stat-value">1</span>
+                    </div>
+                </div>
+
+                <nav class="left-sidebar__nav">
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">상품 관리</span>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-my-goods.svg" alt="">내 상품
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-diploma.svg" alt="">수료증
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-wish.svg" alt="">찜하기
+                        </a>
+                    </div>
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">결제 관리</span>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-coupon.svg" alt="">쿠폰
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-receipt.svg" alt="">결제 내역
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-pay-info.svg" alt="">결제 정보
+                        </a>
+                    </div>
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">커뮤니티</span>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-pencil.svg" alt="">내 게시글
+                        </a>
+                        <a href="#" class="left-sidebar__nav-item active">
+                            <img src="../../../images/ico-lm-comment.svg" alt="">1:1 문의내역
+                        </a>
+                    </div>
+                    <div class="left-sidebar__nav-group">
+                        <span class="left-sidebar__nav-group-label">설정</span>
+                        <a href="#" class="left-sidebar__nav-item">
+                            <img src="../../../images/ico-lm-user-gear.svg" alt="">프로필
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- ===== 우측 콘텐츠 ===== -->
+            <div class="mypage-content">
+                <div class="mypage-inner">
+
+                    <button class="sidebar-mobile-toggle" type="button">
+                        <span class="sidebar-mobile-toggle__bars">
+                            <span class="sidebar-mobile-toggle__bar"></span>
+                            <span class="sidebar-mobile-toggle__bar"></span>
+                            <span class="sidebar-mobile-toggle__bar"></span>
+                        </span>
+                        <span>내 메뉴</span>
+                    </button>
+
+                    <h1 class="mypage-title">1:1 문의내역</h1>
+
+                    <!-- ===== 게시글 ===== -->
+                    <div class="inquiry-detail-post">
+
+                        <!-- 제목 행 (border-top/bottom, padding 20px, gap 20px) -->
+                        <div class="inquiry-detail-title-row">
+                            <span class="inquiry-item__badge inquiry-item__badge--pending">답변대기</span>
+                            <span class="posting-item__category">상품</span>
+                            <h2 class="inquiry-detail-title">1:1문의 제목</h2>
+                            <div class="board-detail-more" id="postMore">
+                                <button class="board-detail-more__trigger" type="button" aria-label="메뉴">
+                                    <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                </button>
+                                <div class="board-detail-more__panel">
+                                    <button class="board-detail-more__item" type="button">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 작성자 행 -->
+                        <div class="inquiry-detail-author-row">
+                            <img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                            <span class="review-badge review-badge--learner">학습자</span>
+                            <span class="community-post-author">Monzo</span>
+                            <img src="../../../images/free-icon-clock-detail.svg" alt="" class="community-detail-meta-icon">
+                            <span class="community-detail-meta">2026.04.01</span>
+                            <img src="../../../images/ico-messages.svg" alt="" class="community-detail-meta-icon">
+                            <span class="community-detail-meta">10</span>
+                        </div>
+
+                        <!-- 신고하기/결제내역 관련 정보 행 -->
+                        <div class="inquiry-detail-info-row">
+                            신고하기 또는 결제내역 &gt; 문의하기 했을 경우 관련 정보 노출 영역
+                        </div>
+
+                        <!-- 본문 -->
+                        <div class="community-detail-body">
+                            <p class="community-detail-body-text">
+                                안녕하세요,<br>
+                                &nbsp;보다 나은 학습 환경을 제공해드리기 위해 서비스 업데이트 및 이용 관련 주요 안내사항을 전달드립니다.<br>
+                                <br>
+                                먼저, 최근 업데이트를 통해 강의 수강 환경이 전반적으로 개선되었습니다. 영상 재생 안정성이 향상되었으며, 모바일 및 태블릿 환경에서도 보다 원활하게 강의를 수강하실 수 있도록 최적화 작업이 진행되었습니다.<br>
+                                또한 일부 강의에서는 학습 효율을 높이기 위해 강의 구성이 세분화되어, 짧은 시간 안에도 핵심 내용을 집중적으로 학습하실 수 있도록 개선되었습니다.<br>
+                                <br>
+                                더불어, 회원님들의 학습 편의를 위해 자료 다운로드 기능이 확대되었습니다.<br>
+                                강의에 포함된 PDF, PPT 및 기타 학습 자료를 보다 쉽게 다운로드하실 수 있으며, 일부 콘텐츠는 업데이트를 통해 추가 자료가 지속적으로 제공될 예정입니다.<br>
+                                이를 통해 학습 내용을 복습하거나 실무에 바로 적용하실 수 있도록 지원하고자 합니다.<br>
+                                강의 이용과 관련하여 몇 가지 안내드립니다. 원활한 서비스 이용을 위해 최신 브라우저 사용을 권장드리며, 네트워크 환경에 따라 영상 재생 속도에 차이가 발생할 수 있습니다.<br>
+                                또한 계정 공유 및 비정상적인 이용이 확인될 경우 서비스 이용이 제한될 수 있으니 이 점 유의 부탁드립니다.<br>
+                                앞으로도 더 좋은 콘텐츠와 안정적인 서비스 제공을 위해 지속적으로 개선해 나가겠습니다. 이용 중 불편사항이나 문의사항이 있으실 경우 고객센터를 통해 언제든지 문의해주시면 빠르게 도움드리겠습니다.<br>
+                                <br>
+                                감사합니다.
+                            </p>
+                        </div>
+
+                        <!-- 첨부파일 -->
+                        <div class="community-detail-attachments">
+                            <h3 class="community-detail-attachments-title">첨부파일</h3>
+                            <div class="community-detail-attachment-list">
+                                <div class="community-detail-attachment-item">
+                                    <div class="community-detail-attachment-file">
+                                        <img src="../../../images/free-icon-attaced-file.svg" alt="">
+                                        <span class="community-detail-attachment-name">image.jpg</span>
+                                    </div>
+                                    <a href="#" class="community-detail-attachment-download">다운로드</a>
+                                </div>
+                                <div class="community-detail-attachment-item">
+                                    <div class="community-detail-attachment-file">
+                                        <img src="../../../images/free-icon-attaced-file.svg" alt="">
+                                        <span class="community-detail-attachment-name">document.pdf</span>
+                                    </div>
+                                    <a href="#" class="community-detail-attachment-download">다운로드</a>
+                                </div>
+                                <div class="community-detail-attachment-item">
+                                    <div class="community-detail-attachment-file">
+                                        <img src="../../../images/free-icon-attaced-file.svg" alt="">
+                                        <span class="community-detail-attachment-name">slide.pptx</span>
+                                    </div>
+                                    <a href="#" class="community-detail-attachment-download">다운로드</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /inquiry-detail-post -->
+
+                    <!-- ===== 댓글 섹션 ===== -->
+                    <div class="board-detail-comments">
+
+                        <h3 class="inquiry-detail-comments-title">전체 (<strong>10</strong>)</h3>
+
+                        <!-- 전체 댓글 타래 (라운드 테두리) -->
+                        <div class="inquiry-detail-comment-thread">
+
+                            <!-- ━━ 관리자 첫 댓글 (0depth, no 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../../images/free-icon-administrator.svg" alt="" class="community-post-avatar">
+                                        <span class="review-badge review-badge--admin">관리자</span>
+                                        <span class="community-post-author">Ryan Inn</span>
+                                        <span class="community-post-time">1시간 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">안녕하세요. 문의해 주셔서 감사합니다. 상품 관련 문의에 대해 확인 후 빠르게 답변드리겠습니다.</p>
+                            </div>
+
+                            <!-- ━━ 학습자 댓글 1 (1depth, WITH 수정/삭제 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                        <span class="review-badge review-badge--learner">학습자</span>
+                                        <span class="community-post-author">Monzo</span>
+                                        <span class="community-post-time">방금 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel">
+                                                <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
+                                                <button class="dropdown--ctx-item" type="button">삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body"><span class="inquiry-detail-mention">@Ryan Inn</span> 감사합니다. 답변 기다리겠습니다.</p>
+                            </div>
+
+                            <!-- ━━ 관리자 댓글 2 (1depth, no 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../../images/free-icon-administrator.svg" alt="" class="community-post-avatar">
+                                        <span class="review-badge review-badge--admin">관리자</span>
+                                        <span class="community-post-author">Ryan Inn</span>
+                                        <span class="community-post-time">30분 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">확인해보니 상품 관련 정보는 결제 내역에서 확인하실 수 있습니다. 추가로 궁금하신 사항이 있으시면 말씀해 주세요.</p>
+                            </div>
+
+                            <!-- ━━ 학습자 댓글 2 — 수정 모드 오픈 (1depth) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                        <span class="review-badge review-badge--learner">학습자</span>
+                                        <span class="community-post-author">Monzo</span>
+                                        <span class="community-post-time">방금 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel">
+                                                <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
+                                                <button class="dropdown--ctx-item" type="button">삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body"><span class="inquiry-detail-mention">@Ryan Inn</span> 결제 내역을 확인해보았는데 제가 찾고 있는 상품 정보가 없어요. 다시 한번 확인해 주시겠어요?</p>
+                            </div>
+
+                            <!-- ━━ 관리자 댓글 3 (1depth, no 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../../images/free-icon-administrator.svg" alt="" class="community-post-avatar">
+                                        <span class="review-badge review-badge--admin">관리자</span>
+                                        <span class="community-post-author">Ryan Inn</span>
+                                        <span class="community-post-time">10분 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body">상품 정보를 다시 확인해보았습니다. 해당 상품은 결제 내역 &gt; 상세 항목에서 확인하실 수 있습니다. 이용에 불편을 드려 죄송합니다.</p>
+                            </div>
+
+                            <!-- ━━ 학습자 댓글 3 (1depth, WITH 수정/삭제 3-dot) ━━ -->
+                            <div class="inquiry-detail-comment-item inquiry-detail-comment-item--reply">
+                                <div class="board-detail-comment-header">
+                                    <div class="board-detail-comment-user">
+                                        <img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
+                                        <span class="review-badge review-badge--learner">학습자</span>
+                                        <span class="community-post-author">Monzo</span>
+                                        <span class="community-post-time">방금 전</span>
+                                    </div>
+                                    <div class="board-detail-comment-btns">
+                                        <button type="button" class="board-detail-reply-btn">답글</button>
+                                        <div class="board-detail-comment-more">
+                                            <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
+                                                <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                            </button>
+                                            <div class="board-detail-comment-more__panel dropdown--ctx-panel">
+                                                <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
+                                                <button class="dropdown--ctx-item" type="button">삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="community-detail-comment-body"><span class="inquiry-detail-mention">@Ryan Inn</span> 확인했습니다. 감사합니다!</p>
+                            </div>
+
+                        </div><!-- /inquiry-detail-comment-thread -->
+
+                    </div><!-- /board-detail-comments -->
+
+                </div><!-- /mypage-inner -->
+            </div><!-- /mypage-content -->
+
+        </div><!-- /mypage-layout -->
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="../../../images/logo-bottom.svg" alt="로고">
+                    </a>
+                    <div class="footer-terms">
+                        <a href="#" class="footer-terms-link">이용약관</a>
+                        <span class="footer-terms-sep">|</span>
+                        <a href="#" class="footer-terms-link">개인정보처리방침</a>
+                        <span class="footer-terms-sep">|</span>
+                        <a href="#" class="footer-terms-link">마케팅정보수신동의</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <img src="../../../images/ico-social-yt.svg" alt="YouTube">
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram">
+                        <img src="../../../images/ico-social-insta.svg" alt="Instagram">
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="X(Twitter)">
+                        <img src="../../../images/ico-social-x.svg" alt="X">
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <img src="../../../images/ico-social-fb.svg" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-info-row">
+                    <span class="footer-info-item">
+                        <strong>대표자</strong>
+                        <span>홍길동</span>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>사업자 등록번호</strong>
+                        <span>119-86-39050</span>
+                        <a href="#" class="footer-biz-confirm">사업자정보확인</a>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>통신판매업 신고번호</strong>
+                        <span>동작 제02-680-078호</span>
+                    </span>
+                </div>
+                <div class="footer-info-row">
+                    <span class="footer-info-item">
+                        <strong>주소</strong>
+                        <span>서울특별시 구로구 디지털로 288, 1701호</span>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>개인정보책임자</strong>
+                        <span>홍길동</span>
+                    </span>
+                </div>
+                <div class="footer-info-row">
+                    <span class="footer-info-item">
+                        <strong>이메일</strong>
+                        <span>malgn@malgnsoft.com</span>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>전화번호</strong>
+                        <span>02-834-3847</span>
+                    </span>
+                    <span class="footer-info-item">
+                        <strong>팩스</strong>
+                        <span>070-3482-7216</span>
+                    </span>
+                </div>
+            </div>
+
+            <p class="footer-notice">궁금하신점은 1:1문의를 이용해 주시거나 메일주세요.</p>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">Copyright © 맑은소프트. All Rights Reserved. Hosting by MALGNSOFT Corp.</p>
+                <p class="footer-disclaimer">회원 정보의 관리 및 보호에 대한 책임은 ㈜맑은소프트에 있으며, 상품의 내용·정보·거래에 관한 모든 책임은 해당 판매자에게 있습니다.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../../../js/common.js"></script>
+    <script>
+        // 본문 3-dot
+        var postMore = document.getElementById('postMore');
+        if (postMore) {
+            postMore.querySelector('.board-detail-more__trigger').addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = postMore.classList.contains('open');
+                document.querySelectorAll('.board-detail-comment-more.open').forEach(function(el) {
+                    el.classList.remove('open');
+                    var p = el.querySelector('.board-detail-comment-more__panel');
+                    if (p) p.style.cssText = '';
+                });
+                postMore.classList.toggle('open');
+            });
+        }
+
+        // 댓글 3-dot (position:fixed로 overflow 탈출)
+        document.querySelectorAll('.board-detail-comment-more__trigger').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var more = btn.closest('.board-detail-comment-more');
+                var panel = more.querySelector('.board-detail-comment-more__panel');
+                var isOpen = more.classList.contains('open');
+
+                document.querySelectorAll('.board-detail-comment-more.open').forEach(function(el) {
+                    el.classList.remove('open');
+                    el.querySelector('.board-detail-comment-more__panel').style.cssText = '';
+                });
+                if (postMore) postMore.classList.remove('open');
+
+                if (!isOpen) {
+                    var rect = btn.getBoundingClientRect();
+                    panel.style.position = 'fixed';
+                    panel.style.top = rect.top + 'px';
+                    panel.style.left = (rect.right + 2) + 'px';
+                    panel.style.right = 'auto';
+                    more.classList.add('open');
+                }
+            });
+        });
+
+        // 전체 클릭 시 모든 드롭다운 닫기
+        document.addEventListener('click', function() {
+            if (postMore) postMore.classList.remove('open');
+            document.querySelectorAll('.board-detail-comment-more.open').forEach(function(el) {
+                el.classList.remove('open');
+                el.querySelector('.board-detail-comment-more__panel').style.cssText = '';
+            });
+        });
+
+        // 답글 버튼 클릭 → 해당 댓글 바로 아래 인라인 답글 입력 박스 삽입
+        document.querySelectorAll('.board-detail-reply-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var commentItem = btn.closest('.inquiry-detail-comment-item');
+                if (!commentItem) return;
+
+                // 기존 인라인 reply input 제거
+                var existing = document.querySelector('.inquiry-detail-reply-input.is-inline');
+                if (existing) existing.remove();
+
+                var authorName = '';
+                var authorEl = commentItem.querySelector('.community-post-author');
+                if (authorEl) authorName = authorEl.textContent.trim();
+
+                var input = document.createElement('div');
+                input.className = 'inquiry-detail-reply-input is-inline';
+                input.innerHTML =
+                    '<div class="board-detail-comment-input-header">' +
+                        '<img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">' +
+                        '<span class="review-badge review-badge--learner">학습자</span>' +
+                        '<span class="community-post-author">Monzo</span>' +
+                    '</div>' +
+                    '<textarea class="board-detail-comment-textarea" placeholder="@' + authorName + ' 답글을 입력해주세요." rows="1"></textarea>' +
+                    '<div class="board-detail-reply-actions">' +
+                        '<button type="button" class="board-detail-cancel-btn reply-cancel-inline">취소</button>' +
+                        '<button type="button" class="board-detail-submit-btn board-detail-submit-btn--active">등록하기</button>' +
+                    '</div>';
+
+                commentItem.insertAdjacentElement('afterend', input);
+                input.querySelector('.reply-cancel-inline').addEventListener('click', function() {
+                    input.remove();
+                });
+                input.querySelector('.board-detail-comment-textarea').focus();
+            });
+        });
+
+        // 수정 버튼 클릭 → edit wrap 동적 생성 (토글)
+        document.querySelectorAll('[data-action="edit"]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var commentItem = btn.closest('.inquiry-detail-comment-item');
+                if (!commentItem) return;
+
+                // 드롭다운 닫기
+                var more = btn.closest('.board-detail-comment-more');
+                if (more) {
+                    more.classList.remove('open');
+                    var panel = more.querySelector('.board-detail-comment-more__panel');
+                    if (panel) panel.style.cssText = '';
+                }
+
+                // 이미 열려 있으면 닫기
+                var existing = commentItem.querySelector('.board-detail-edit-wrap');
+                if (existing) { existing.remove(); return; }
+
+                // 현재 댓글 본문 텍스트 추출
+                var bodyEl = commentItem.querySelector('.community-detail-comment-body');
+                var bodyText = bodyEl ? bodyEl.innerText.trim() : '';
+
+                // edit wrap 생성
+                var editWrap = document.createElement('div');
+                editWrap.className = 'board-detail-edit-wrap';
+                editWrap.innerHTML =
+                    '<div class="board-detail-edit-box">' +
+                        '<textarea class="board-detail-edit-textarea" rows="4"></textarea>' +
+                    '</div>' +
+                    '<div class="board-detail-edit-actions">' +
+                        '<button type="button" class="board-detail-cancel-btn">취소</button>' +
+                        '<button type="button" class="board-detail-save-btn board-detail-save-btn--active">수정하기</button>' +
+                    '</div>';
+
+                if (bodyEl) {
+                    bodyEl.insertAdjacentElement('afterend', editWrap);
+                } else {
+                    commentItem.appendChild(editWrap);
+                }
+
+                var ta = editWrap.querySelector('.board-detail-edit-textarea');
+                var saveBtn = editWrap.querySelector('.board-detail-save-btn');
+                ta.value = bodyText;
+                ta.focus();
+
+                function updateSaveBtn() {
+                    if (ta.value.trim()) {
+                        saveBtn.classList.add('board-detail-save-btn--active');
+                        saveBtn.disabled = false;
+                    } else {
+                        saveBtn.classList.remove('board-detail-save-btn--active');
+                        saveBtn.disabled = true;
+                    }
+                }
+                updateSaveBtn();
+                ta.addEventListener('input', updateSaveBtn);
+
+                editWrap.querySelector('.board-detail-cancel-btn').addEventListener('click', function() {
+                    editWrap.remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

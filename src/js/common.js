@@ -1,5 +1,23 @@
 var _commonScript = document.currentScript;
 
+window.togglePaymentMore = function(el) {
+    var cur = el.closest('.payment-more');
+    document.querySelectorAll('.payment-more.open').forEach(function(m) {
+        if (m !== cur) m.classList.remove('open');
+    });
+    cur.classList.toggle('open');
+};
+
+window.toggleDropdown = function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var isOpen = el.classList.contains('open');
+    document.querySelectorAll('.dropdown.open').forEach(function(d) {
+        if (d !== el) d.classList.remove('open');
+    });
+    if (isOpen) { el.classList.remove('open'); } else { el.classList.add('open'); }
+};
+
 (function () {
     var BASE = '';
     if (_commonScript) {
@@ -21,6 +39,55 @@ var _commonScript = document.currentScript;
     };
 
     document.addEventListener('DOMContentLoaded', function () {
+
+        // ── .dropdown--fit 트리거 너비를 가장 긴 항목 기준으로 고정 ───
+        document.querySelectorAll('.dropdown--fit').forEach(function(dd) {
+            var trigger = dd.querySelector('.dropdown__trigger');
+            var panel = dd.querySelector('.dropdown__panel');
+            if (!trigger || !panel) return;
+            panel.style.visibility = 'hidden';
+            panel.style.display = 'block';
+            var w = panel.offsetWidth;
+            panel.style.display = '';
+            panel.style.visibility = '';
+            if (w > 0) trigger.style.minWidth = w + 'px';
+        });
+
+        // ── 커스텀 드롭다운 클릭 외부 닫기 + 항목 선택 ───────
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown.open').forEach(function(d) {
+                    d.classList.remove('open');
+                });
+            }
+            if (!e.target.closest('.payment-more')) {
+                document.querySelectorAll('.payment-more.open').forEach(function(m) {
+                    m.classList.remove('open');
+                });
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            var item = e.target.closest('.dropdown__item');
+            if (!item) return;
+            var panel = item.closest('.dropdown__panel');
+            if (!panel) return;
+            var dd = panel.closest('.dropdown');
+            if (!dd) return;
+            panel.querySelectorAll('.dropdown__item').forEach(function(i) { i.classList.remove('active'); });
+            item.classList.add('active');
+            var trigger = dd.querySelector('.dropdown__trigger');
+            if (trigger) {
+                var nodes = trigger.childNodes;
+                for (var i = 0; i < nodes.length; i++) {
+                    if (nodes[i].nodeType === 3 && nodes[i].textContent.trim()) {
+                        nodes[i].textContent = item.textContent.trim();
+                        break;
+                    }
+                }
+            }
+            dd.classList.remove('open');
+        });
 
         // ── 공통 백드롭 ───────────────────────────────────
         var backdrop = document.createElement('div');
