@@ -183,7 +183,7 @@
                     <h1 class="mypage-title">구독 관리</h1>
 
                     <!-- ===== 멤버십 섹션 ===== -->
-                    <p class="coupon-section-title">멤버십</p>
+                    <p class="coupon-section-title coupon-section-title--bordered">멤버십</p>
                     <div class="community-list">
 
                         <div class="membership-item-wrap">
@@ -192,7 +192,7 @@
                                 <!-- 왼쪽: 썸네일 + 구독 정보 -->
                                 <div class="community-card__left">
                                     <div class="community-card__thumb">
-                                        <img src="../../../images/membership-black-bg.png" alt="멤버십 썸네일">
+                                        <img src="../../../images/membership-thumb.png" alt="멤버십 썸네일">
                                         <p class="community-card__thumb-label">멤버십</p>
                                     </div>
                                     <div class="community-sub-info">
@@ -240,9 +240,15 @@
                                     <div class="community-card__right">
                                         <div class="membership-card__name-row">
                                             <h2 class="community-card__name">커피한잔주세요</h2>
-                                            <button class="membership-card__more-btn" type="button" aria-label="더보기">
-                                                <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                            </button>
+                                            <div class="board-detail-more membership-card-more" id="cardMore1">
+                                                <button class="board-detail-more__trigger" type="button" aria-label="더보기">
+                                                    <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                                </button>
+                                                <div class="board-detail-more__panel dropdown--ctx-panel">
+                                                    <button class="dropdown--ctx-item" type="button">상품 더보기</button>
+                                                    <button class="dropdown--ctx-item membership-ctx-cancel" type="button">구독 취소</button>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="community-card__title-row">
                                             <span class="community-card__price">₩ 5,000 / 월</span>
@@ -296,19 +302,12 @@
                                 </div><!-- /community-card__right-col -->
 
                             </div><!-- /community-card -->
-
-                            <!-- 액션 버튼 (카드 외부 우측) -->
-                            <div class="membership-card__actions">
-                                <button class="membership-action-more" type="button">상품 더보기</button>
-                                <button class="membership-action-cancel" type="button">구독 취소</button>
-                            </div>
-
                         </div><!-- /membership-item-wrap -->
 
                     </div><!-- /community-list (멤버십) -->
 
                     <!-- ===== 프리미엄 커뮤니티 섹션 ===== -->
-                    <p class="coupon-section-title">프리미엄 커뮤니티</p>
+                    <p class="coupon-section-title coupon-section-title--bordered">프리미엄 커뮤니티</p>
                     <div class="community-list">
 
                         <!-- 카드 1: 리액트 2기 소통방 (5개 구독 정보) -->
@@ -318,7 +317,7 @@
                                 <!-- 왼쪽: 썸네일 + 바로가기 + 구독 정보 -->
                                 <div class="community-card__left">
                                     <div class="community-card__thumb">
-                                        <img src="../../../images/community-card-thumb.png" alt="커뮤니티 썸네일">
+                                        <img src="../../../images/premium-community-thumb.png" alt="커뮤니티 썸네일">
                                         <p class="community-card__thumb-label">프리미엄 커뮤니티</p>
                                     </div>
                                     <button class="community-btn--goto" type="button">
@@ -371,9 +370,15 @@
                                         <span class="community-card__category">일반강의</span>
                                         <div class="membership-card__name-row">
                                             <h2 class="community-card__name">리액트 2기 소통방</h2>
-                                            <button class="membership-card__more-btn" type="button" aria-label="더보기">
-                                                <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                            </button>
+                                            <div class="board-detail-more membership-card-more" id="cardMore2">
+                                                <button class="board-detail-more__trigger" type="button" aria-label="더보기">
+                                                    <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                                </button>
+                                                <div class="board-detail-more__panel dropdown--ctx-panel">
+                                                    <button class="dropdown--ctx-item" type="button">상품 더보기</button>
+                                                    <button class="dropdown--ctx-item membership-ctx-cancel" type="button">구독 취소</button>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="community-card__title-row">
                                             <span class="community-card__price">₩ 5,000 / 월</span>
@@ -409,13 +414,6 @@
                                 </div><!-- /community-card__right-col -->
 
                             </div><!-- /community-card -->
-
-                            <!-- 액션 버튼 (카드 외부 우측) -->
-                            <div class="membership-card__actions">
-                                <button class="membership-action-more" type="button">상품 더보기</button>
-                                <button class="membership-action-cancel" type="button">구독 취소</button>
-                            </div>
-
                         </div><!-- /membership-item-wrap -->
 
                         <!-- 카드 2: 피그마 커뮤니티 3기 (3개 구독 정보) -->
@@ -425,7 +423,7 @@
                                 <!-- 왼쪽: 썸네일 + 바로가기 + 구독 정보 -->
                                 <div class="community-card__left">
                                     <div class="community-card__thumb">
-                                        <img src="../../../images/community-card-thumb.png" alt="커뮤니티 썸네일">
+                                        <img src="../../../images/premium-community-thumb.png" alt="커뮤니티 썸네일">
                                         <p class="community-card__thumb-label">프리미엄 커뮤니티</p>
                                     </div>
                                     <button class="community-btn--goto" type="button">
@@ -464,9 +462,15 @@
                                         <span class="community-card__category">일반강의</span>
                                         <div class="membership-card__name-row">
                                             <h2 class="community-card__name">피그마 커뮤니티 3기</h2>
-                                            <button class="membership-card__more-btn" type="button" aria-label="더보기">
-                                                <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                            </button>
+                                            <div class="board-detail-more membership-card-more" id="cardMore3">
+                                                <button class="board-detail-more__trigger" type="button" aria-label="더보기">
+                                                    <img src="../../../images/free-icon-reply-dots-vertical.svg" alt="">
+                                                </button>
+                                                <div class="board-detail-more__panel dropdown--ctx-panel">
+                                                    <button class="dropdown--ctx-item" type="button">상품 더보기</button>
+                                                    <button class="dropdown--ctx-item membership-ctx-cancel" type="button">구독 취소</button>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="community-card__title-row">
                                             <span class="community-card__price">₩ 5,000 / 월</span>
@@ -502,13 +506,6 @@
                                 </div><!-- /community-card__right-col -->
 
                             </div><!-- /community-card -->
-
-                            <!-- 액션 버튼 (카드 외부 우측) -->
-                            <div class="membership-card__actions">
-                                <button class="membership-action-more" type="button">상품 더보기</button>
-                                <button class="membership-action-cancel" type="button">구독 취소</button>
-                            </div>
-
                         </div><!-- /membership-item-wrap -->
 
                     </div><!-- /community-list (프리미엄 커뮤니티) -->
@@ -607,6 +604,47 @@
     </footer>
 
     <script src="../../../js/common.js"></script>
+    <script>
+    (function () {
+
+        function closeAllCardMore() {
+            document.querySelectorAll('.membership-card-more.open').forEach(function (el) {
+                el.classList.remove('open');
+                var panel = el.querySelector('.board-detail-more__panel');
+                if (panel) {
+                    panel.style.position = '';
+                    panel.style.top = '';
+                    panel.style.left = '';
+                    panel.style.right = '';
+                    panel.style.zIndex = '';
+                }
+            });
+        }
+        document.addEventListener('click', closeAllCardMore);
+        window.addEventListener('scroll', closeAllCardMore, true);
+
+        document.querySelectorAll('.membership-card-more').forEach(function (wrap) {
+            var trigger = wrap.querySelector('.board-detail-more__trigger');
+            var panel   = wrap.querySelector('.board-detail-more__panel');
+            if (!trigger || !panel) return;
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var isOpen = wrap.classList.contains('open');
+                closeAllCardMore();
+                if (!isOpen) {
+                    var rect = trigger.getBoundingClientRect();
+                    panel.style.position = 'fixed';
+                    panel.style.top      = (rect.bottom + 4) + 'px';
+                    panel.style.right    = 'auto';
+                    panel.style.left     = (rect.right - 120) + 'px';
+                    panel.style.zIndex   = '200';
+                    wrap.classList.add('open');
+                }
+            });
+        });
+
+    }());
+    </script>
 
 </body>
 </html>

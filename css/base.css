@@ -10004,11 +10004,15 @@ button.dropdown--ctx-item {
    MEMBERSHIP LIST — 마이페이지 구독관리 목록
 ===================================================== */
 
-/* 카드 + 액션버튼 래퍼 */
+/* 섹션 타이틀 (border-bottom 라인 포함) */
+.coupon-section-title--bordered {
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+/* 카드 래퍼 */
 .membership-item-wrap {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
     width: 100%;
 }
 
@@ -10034,67 +10038,20 @@ button.dropdown--ctx-item {
     width: 100%;
 }
 
-/* 더보기(⋮) 버튼 */
-.membership-card__more-btn {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    flex-shrink: 0;
-}
-
-.membership-card__more-btn img {
-    width: 16px;
-    height: auto;
-}
-
-/* 카드 외부 우측 액션 버튼 영역 */
-.membership-card__actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    flex-shrink: 0;
-    padding-top: 20px;
-}
-
-/* 상품 더보기 링크 버튼 */
-.membership-action-more {
-    font-size: 13px;
-    font-weight: 400;
-    color: #888888;
-    text-decoration: underline;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: var(--font-base);
-    white-space: nowrap;
-    letter-spacing: -0.26px;
-}
-
-/* 구독 취소 버튼 */
-.membership-action-cancel {
-    width: 90px;
-    height: 40px;
-    border: 1px solid var(--color-primary);
-    border-radius: 5px;
+/* 구독 취소 드롭다운 아이템 (primary 색상) */
+.membership-ctx-cancel {
     color: var(--color-primary);
-    font-size: 14px;
-    font-weight: 500;
-    background: none;
-    cursor: pointer;
-    font-family: var(--font-base);
-    letter-spacing: -0.56px;
+}
+.membership-ctx-cancel:hover {
+    background: #F8F5FF;
+    color: var(--color-primary);
+    box-shadow: inset 0 0 0 1px var(--color-primary);
 }
 
 /* 마이페이지 컨텍스트 — community-card 치수 조정 */
 .mypage-content .community-card {
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
     padding: 20px;
     gap: 30px;
 }
@@ -10107,6 +10064,7 @@ button.dropdown--ctx-item {
 }
 .mypage-content .community-card__right {
     padding: 30px;
+    border-radius: 10px;
 }
 .mypage-content .community-card__right-col {
     gap: 30px;
@@ -10116,10 +10074,7 @@ button.dropdown--ctx-item {
 @media (max-width: 1024px) {
     .mypage-content .community-card { flex-direction: column; gap: 20px; }
     .mypage-content .community-card__left { flex: none; width: 100%; }
-    .membership-item-wrap { flex-direction: column; }
-    .membership-card__actions { flex-direction: row; padding-top: 0; width: 100%; justify-content: flex-end; }
 }
 @media (max-width: 768px) {
     .community-card__thumb-label { font-size: 18px; }
-    .membership-action-cancel { width: 80px; height: 36px; font-size: 13px; }
 }
