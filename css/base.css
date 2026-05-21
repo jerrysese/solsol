@@ -9741,7 +9741,7 @@ button.dropdown--ctx-item {
 .course-list-page {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 80px 40px 100px;
+    padding: 80px 0 100px;
     box-sizing: border-box;
 }
 
