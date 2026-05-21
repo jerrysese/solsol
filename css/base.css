@@ -10958,7 +10958,7 @@ button.dropdown--ctx-item {
     height: 50px;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     border-radius: 5px;
     background: var(--btn-primary);
     color: #FFFFFF;
