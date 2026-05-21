@@ -11234,6 +11234,113 @@ button.dropdown--ctx-item {
     margin: 0;
 }
 
+/* ===== COUPON SELECTION MODAL ===== */
+.coupon-modal-page {
+    width: 100%;
+    background: #EBEBEB;
+}
+
+.coupon-modal-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 0 150px;
+}
+
+.popup-modal--coupon .popup-modal__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.coupon-no-select {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 0 20px;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #888888;
+    cursor: pointer;
+    background: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.coupon-no-select--selected {
+    border-color: #7954C6;
+    color: #7954C6;
+    font-weight: 500;
+}
+
+.coupon-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px 20px;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.coupon-item__expires {
+    font-size: 13px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.26px;
+    line-height: 150%;
+}
+
+.coupon-item__name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+}
+
+.coupon-item__discount {
+    font-size: 18px;
+    font-weight: 700;
+    color: #7954C6;
+    letter-spacing: -0.72px;
+    line-height: 150%;
+}
+
+.coupon-item__min {
+    font-size: 13px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.26px;
+    line-height: 150%;
+}
+
+.coupon-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 40px 0;
+}
+
+.coupon-empty__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.coupon-empty__text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+}
+
 /* ===== RESPONSIVE — PAYMENT ===== */
 @media (max-width: 1024px) {
     .payment-layout { flex-direction: column; gap: 30px; padding: 40px 24px; }
@@ -11241,6 +11348,8 @@ button.dropdown--ctx-item {
     .payment-product__thumb--membership,
     .payment-product__thumb--community { width: 260px; height: 160px; }
     .payment-success-wrap { padding: 60px 40px 100px; gap: 50px; }
+    .coupon-modal-wrap { padding: 60px 40px 100px; }
+    .popup-modal--coupon { width: 100%; max-width: 640px; }
 }
 @media (max-width: 768px) {
     .payment-layout { padding: 24px 16px; gap: 20px; }
@@ -11255,4 +11364,7 @@ button.dropdown--ctx-item {
     .payment-success-label { min-width: 80px; font-size: 15px; }
     .payment-success-value { font-size: 15px; }
     .payment-success-btns { flex-direction: column; }
+    .coupon-modal-wrap { padding: 40px 20px 80px; gap: 40px; }
+    .coupon-item__name { font-size: 14px; }
+    .coupon-item__discount { font-size: 16px; }
 }
