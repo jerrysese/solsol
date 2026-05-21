@@ -5214,6 +5214,33 @@ h2 {
     border: 1px solid var(--color-primary);
 }
 
+/* =====================================================
+   PACKAGE PRODUCT LIST MODAL
+===================================================== */
+.package-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.popup-modal--package-list {
+    width: 1110px;
+    max-width: 100%;
+    max-height: calc(100vh - 48px);
+}
+
+.popup-modal--package-list .popup-modal__body {
+    padding: 0 30px 30px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
 .popup-modal__btn img {
     width: 11px;
     height: 11px;
