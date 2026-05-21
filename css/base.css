@@ -9736,7 +9736,7 @@ button.dropdown--ctx-item {
 
 /* ===== COURSE LIST PAGE ===== */
 .course-list-banner { width: 100%; }
-.course-list-banner img { width: 100%; height: auto; display: block; }
+.course-list-banner img { width: 100%; height: 200px; object-fit: cover; display: block; }
 
 .course-list-page {
     max-width: 1440px;
