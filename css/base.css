@@ -9926,7 +9926,6 @@ button.dropdown--ctx-item {
     align-items: flex-start;
     justify-content: space-between;
     align-self: stretch;
-    margin-top: auto;
     min-height: 68px;
 }
 
