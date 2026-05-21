@@ -11190,6 +11190,7 @@ button.dropdown--ctx-item {
     display: flex;
     gap: 20px;
     width: 800px;
+    margin-top: -50px;
 }
 
 .payment-success-btns .btn-full {
