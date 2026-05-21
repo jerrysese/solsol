@@ -9734,6 +9734,34 @@ button.dropdown--ctx-item {
    BOOKMARK LIST
    ============================================================ */
 
+/* ===== COURSE LIST PAGE ===== */
+.course-list-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 60px 100px 100px;
+    box-sizing: border-box;
+}
+
+.course-list-page__title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -1.5px;
+    margin: 0 0 30px;
+}
+
+.course-card-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.course-card-list .bookmark-card {
+    width: 100%;
+}
+
+/* ===== BOOKMARK LIST ===== */
 .bookmark-list {
     display: grid;
     grid-template-columns: repeat(3, 336px);
@@ -9961,10 +9989,15 @@ button.dropdown--ctx-item {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
+    .course-list-page { padding: 40px 40px 80px; }
+    .course-card-list { grid-template-columns: repeat(2, 1fr); }
     .bookmark-list { grid-template-columns: repeat(2, 1fr); }
     .bookmark-card { width: 100%; }
 }
 @media (max-width: 768px) {
+    .course-list-page { padding: 30px 20px 60px; }
+    .course-list-page__title { font-size: 22px; letter-spacing: -1.1px; }
+    .course-card-list { grid-template-columns: 1fr; }
     .bookmark-list { grid-template-columns: 1fr; }
     .bookmark-card__thumb { height: 130px; }
     .bookmark-card__final-price { font-size: 17px; }
