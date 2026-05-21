@@ -11206,6 +11206,32 @@ button.dropdown--ctx-item {
 
 .btn-full--outline:hover { opacity: 0.88; }
 
+.payment-success-value--fail {
+    font-weight: 700;
+    color: #FC5758;
+}
+
+.payment-fail-notice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 800px;
+    padding-top: 10px;
+    margin-top: -50px;
+}
+
+.payment-fail-notice__text {
+    font-size: 13px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.26px;
+    line-height: 150%;
+    text-align: center;
+    margin: 0;
+}
+
 /* ===== RESPONSIVE — PAYMENT ===== */
 @media (max-width: 1024px) {
     .payment-layout { flex-direction: column; gap: 30px; padding: 40px 24px; }
