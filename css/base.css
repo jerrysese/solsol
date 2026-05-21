@@ -10618,10 +10618,10 @@ button.dropdown--ctx-item {
 }
 
 .payment-block__title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     color: #333333;
-    letter-spacing: -0.8px;
+    letter-spacing: -0.96px;
     line-height: 150%;
     padding-bottom: 20px;
     border-bottom: 1px solid #EEEEEE;
@@ -10637,6 +10637,7 @@ button.dropdown--ctx-item {
 
 .payment-product__thumb {
     width: 325px;
+    height: 218px;
     flex-shrink: 0;
     padding: 10px;
     display: flex;
@@ -10648,7 +10649,6 @@ button.dropdown--ctx-item {
     overflow: hidden;
     border-radius: 5px;
     background: url('../src/images/bookmark-card-bg.png') center / cover no-repeat;
-    min-height: 198px;
     box-sizing: border-box;
 }
 
@@ -10706,11 +10706,13 @@ button.dropdown--ctx-item {
 }
 
 .payment-product__name {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #333333;
-    letter-spacing: -0.72px;
+    letter-spacing: -0.8px;
     line-height: 150%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin: 0;
 }
 
@@ -10725,10 +10727,10 @@ button.dropdown--ctx-item {
 
 /* --- 멤버십/커뮤니티 상품명 + 정보 rows --- */
 .payment-product__sub-name {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     color: #333333;
-    letter-spacing: -0.8px;
+    letter-spacing: -0.72px;
     line-height: 150%;
     margin: 0;
 }
