@@ -9896,7 +9896,6 @@ button.dropdown--ctx-item {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-top: auto;
 }
 
 .bookmark-card__meta-row {
@@ -9924,9 +9923,10 @@ button.dropdown--ctx-item {
 
 .bookmark-card__price-area {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-between;
     align-self: stretch;
+    margin-top: auto;
     min-height: 68px;
 }
 
