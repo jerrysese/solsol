@@ -9937,20 +9937,20 @@ button.dropdown--ctx-item {
 
 .bookmark-card__price-area {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: space-between;
     align-self: stretch;
+    margin-top: auto;
     min-height: 68px;
 }
 .bookmark-card__info--package .bookmark-card__price-area {
-    align-items: flex-end;
     min-height: 91px;
 }
 
 .bookmark-card__price-col {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 .bookmark-card__discount-row {
