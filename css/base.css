@@ -10823,20 +10823,20 @@ button.dropdown--ctx-item {
 }
 
 .payment-applied-coupon__label {
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 500;
-    color: #555555;
-    letter-spacing: -0.52px;
+    color: #333333;
+    letter-spacing: -0.72px;
     line-height: 150%;
     flex-shrink: 0;
     margin-right: 10px;
 }
 
 .payment-applied-coupon__name {
-    font-size: 13px;
-    font-weight: 500;
-    color: #555555;
-    letter-spacing: -0.52px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.6px;
     line-height: 150%;
     flex: 1;
     overflow: hidden;
@@ -10845,10 +10845,10 @@ button.dropdown--ctx-item {
 }
 
 .payment-applied-coupon__price {
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 700;
     color: #7954C6;
-    letter-spacing: -0.52px;
+    letter-spacing: -0.72px;
     line-height: 150%;
     flex-shrink: 0;
 }
