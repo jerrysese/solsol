@@ -9923,9 +9923,13 @@ button.dropdown--ctx-item {
 
 .bookmark-card__price-area {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-between;
     align-self: stretch;
+    min-height: 68px;
+}
+.bookmark-card__info--package .bookmark-card__price-area {
+    align-items: flex-end;
     min-height: 91px;
 }
 
