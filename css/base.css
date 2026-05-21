@@ -11111,6 +11111,7 @@ button.dropdown--ctx-item {
 /* ===== PAYMENT SUCCESS ===== */
 .payment-success-page {
     width: 100%;
+    background: #F8F8F8;
 }
 
 .payment-success-wrap {
