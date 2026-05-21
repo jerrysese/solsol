@@ -5253,6 +5253,172 @@ h2 {
 }
 
 /* =====================================================
+   DIGITAL PRODUCT LIST MODAL
+===================================================== */
+.digital-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.popup-modal--digital-list {
+    width: 980px;
+    max-width: 100%;
+    max-height: 700px;
+}
+
+.digital-list-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 30px 10px;
+    align-self: stretch;
+}
+
+.digital-list-top__count {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555555;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+}
+
+.digital-list-top__count strong {
+    font-weight: 700;
+    color: #555555;
+}
+
+.btn-select-dl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 35px;
+    padding: 0 14px;
+    background: var(--btn-primary);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.52px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-select-dl img {
+    width: 12px;
+    height: 14px;
+    flex-shrink: 0;
+    filter: brightness(0) invert(1);
+}
+
+.btn-select-dl:hover { opacity: 0.88; }
+
+.popup-modal--digital-list .popup-modal__body {
+    padding: 0 30px 30px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+.digital-list {
+    border-top: 1px solid #EEEEEE;
+}
+
+.digital-list__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    padding: 0 0 0 10px;
+    border-bottom: 1px solid #EEEEEE;
+    box-sizing: border-box;
+}
+
+.digital-list__checkbox {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: var(--btn-primary);
+    cursor: pointer;
+}
+
+.digital-list__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.digital-list__filename {
+    flex: 1 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.52px;
+    line-height: 150%;
+}
+
+.digital-list__row--gray .digital-list__filename { color: #BBBBBB; }
+.digital-list__row--active .digital-list__filename { color: #333333; }
+
+.digital-list__select-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.52px;
+    line-height: 150%;
+}
+
+.digital-list__count {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.52px;
+    line-height: 150%;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.digital-list__count-num { color: #333333; }
+.digital-list__count-total { color: #888888; }
+
+.digital-list__row--gray .digital-list__count-num,
+.digital-list__row--gray .digital-list__count-total { color: #BBBBBB; }
+
+.btn-dl--gray {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #BBBBBB;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.52px;
+    flex-shrink: 0;
+    cursor: default;
+}
+
+.btn-dl--gray img {
+    width: 12px;
+    height: 14px;
+    flex-shrink: 0;
+    opacity: 0.45;
+}
+
+/* =====================================================
    TOAST POPUP — 토스트 팝업
 ===================================================== */
 .toast-popup {
