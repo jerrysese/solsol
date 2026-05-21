@@ -700,6 +700,8 @@ img { display: block; max-width: 100%; }
 .btn-more:hover { background: #F8F8F8; }
 .btn-more img { width: 12px; height: auto; }
 
+.load-more-wrap { width: 100%; }
+
 /* =====================================================
    프로필 업데이트 버튼 (180×50px)
 ===================================================== */
