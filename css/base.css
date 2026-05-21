@@ -9735,10 +9735,13 @@ button.dropdown--ctx-item {
    ============================================================ */
 
 /* ===== COURSE LIST PAGE ===== */
+.course-list-banner { width: 100%; }
+.course-list-banner img { width: 100%; height: auto; display: block; }
+
 .course-list-page {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 60px 40px 100px;
+    padding: 80px 40px 100px;
     box-sizing: border-box;
 }
 
