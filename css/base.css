@@ -11234,6 +11234,34 @@ button.dropdown--ctx-item {
     margin: 0;
 }
 
+/* ===== AGREE MODAL ===== */
+.agree-modal-page {
+    width: 100%;
+    background: #EBEBEB;
+}
+
+.agree-modal-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0 150px;
+}
+
+.popup-modal--agree {
+    width: 640px;
+}
+
+.popup-modal--agree .popup-modal__body {
+    padding-bottom: 0;
+}
+
+.popup-modal--agree .popup-modal__content {
+    min-height: 420px;
+    max-height: 420px;
+    overflow-y: auto;
+    align-items: flex-start;
+}
+
 /* ===== COUPON SELECTION MODAL ===== */
 .coupon-modal-page {
     width: 100%;
@@ -11348,6 +11376,8 @@ button.dropdown--ctx-item {
     .payment-product__thumb--membership,
     .payment-product__thumb--community { width: 260px; height: 160px; }
     .payment-success-wrap { padding: 60px 40px 100px; gap: 50px; }
+    .agree-modal-wrap { padding: 60px 40px 100px; }
+    .popup-modal--agree { width: 100%; max-width: 640px; }
     .coupon-modal-wrap { padding: 60px 40px 100px; }
     .popup-modal--coupon { width: 100%; max-width: 640px; }
 }
@@ -11364,6 +11394,8 @@ button.dropdown--ctx-item {
     .payment-success-label { min-width: 80px; font-size: 15px; }
     .payment-success-value { font-size: 15px; }
     .payment-success-btns { flex-direction: column; }
+    .agree-modal-wrap { padding: 40px 20px 80px; }
+    .popup-modal--agree .popup-modal__content { min-height: 300px; max-height: 300px; }
     .coupon-modal-wrap { padding: 40px 20px 80px; gap: 40px; }
     .coupon-item__name { font-size: 14px; }
     .coupon-item__discount { font-size: 16px; }
