@@ -11108,12 +11108,107 @@ button.dropdown--ctx-item {
     flex-shrink: 0;
 }
 
+/* ===== PAYMENT SUCCESS ===== */
+.payment-success-page {
+    width: 100%;
+}
+
+.payment-success-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding: 80px 320px 150px;
+    box-sizing: border-box;
+}
+
+.payment-success-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.payment-success-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.payment-success-title {
+    font-size: 34px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -1.7px;
+    line-height: 150%;
+    text-align: center;
+    margin: 0;
+}
+
+.payment-success-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    padding: 50px;
+    border-radius: 10px;
+    background: #F8F8F8;
+    box-sizing: border-box;
+}
+
+.payment-success-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.payment-success-label {
+    min-width: 100px;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.72px;
+    line-height: 150%;
+}
+
+.payment-success-value {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.72px;
+    line-height: 150%;
+}
+
+.payment-success-value--order {
+    font-weight: 700;
+    color: #7954C6;
+}
+
+.payment-success-btns {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.payment-success-btns .btn-full {
+    flex: 1 0 0;
+    width: auto;
+}
+
+.btn-full--outline {
+    background: #FFFFFF;
+    color: #7954C6;
+    border: 1px solid #7954C6;
+}
+
+.btn-full--outline:hover { opacity: 0.88; }
+
 /* ===== RESPONSIVE — PAYMENT ===== */
 @media (max-width: 1024px) {
     .payment-layout { flex-direction: column; gap: 30px; padding: 40px 24px; }
     .payment-right { width: 100%; position: static; }
     .payment-product__thumb--membership,
     .payment-product__thumb--community { width: 260px; height: 160px; }
+    .payment-success-wrap { padding: 60px 40px 100px; gap: 50px; }
 }
 @media (max-width: 768px) {
     .payment-layout { padding: 24px 16px; gap: 20px; }
@@ -11122,4 +11217,10 @@ button.dropdown--ctx-item {
     .payment-product__thumb--membership,
     .payment-product__thumb--community { width: 100%; }
     .payment-card-img { width: 120px; height: 75px; }
+    .payment-success-wrap { padding: 40px 20px 80px; gap: 40px; }
+    .payment-success-title { font-size: 24px; letter-spacing: -1.2px; }
+    .payment-success-info { padding: 30px 20px; gap: 20px; }
+    .payment-success-label { min-width: 80px; font-size: 15px; }
+    .payment-success-value { font-size: 15px; }
+    .payment-success-btns { flex-direction: column; }
 }
