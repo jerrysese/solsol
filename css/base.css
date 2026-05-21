@@ -5300,9 +5300,9 @@ h2 {
     gap: 8px;
     height: 35px;
     padding: 0 14px;
-    background: var(--btn-primary);
-    color: #FFFFFF;
-    border: none;
+    background: #FFFFFF;
+    color: var(--btn-primary);
+    border: 1px solid var(--btn-primary);
     border-radius: 5px;
     font-size: 13px;
     font-weight: 500;
@@ -5315,10 +5315,9 @@ h2 {
     width: 12px;
     height: 14px;
     flex-shrink: 0;
-    filter: brightness(0) invert(1);
 }
 
-.btn-select-dl:hover { opacity: 0.88; }
+.btn-select-dl:hover { background: var(--color-primary-bg); }
 
 .popup-modal--digital-list .popup-modal__body {
     padding: 0 30px 30px;
@@ -5350,8 +5349,9 @@ h2 {
 }
 
 .digital-list__icon {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    aspect-ratio: 1/1;
     flex-shrink: 0;
 }
 
