@@ -11090,6 +11090,10 @@ button.dropdown--ctx-item {
     cursor: pointer;
 }
 
+.payment-agree-item + .payment-agree-item {
+    margin-top: -10px;
+}
+
 .payment-agree-item__text {
     font-size: 13px;
     font-weight: 500;
