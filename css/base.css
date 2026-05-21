@@ -5231,7 +5231,7 @@ h2 {
 .popup-modal--package-list {
     width: 1110px;
     max-width: 100%;
-    max-height: calc(100vh - 48px);
+    max-height: 700px;
 }
 
 .popup-modal--package-list .popup-modal__body {
