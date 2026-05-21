@@ -11099,10 +11099,9 @@ button.dropdown--ctx-item {
 }
 
 .payment-agree-item__arrow {
-    width: 10px;
-    height: 5px;
+    width: 6px;
+    height: 10px;
     flex-shrink: 0;
-    transform: rotate(-90deg);
 }
 
 /* ===== RESPONSIVE — PAYMENT ===== */
