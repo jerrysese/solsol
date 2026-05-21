@@ -9738,7 +9738,7 @@ button.dropdown--ctx-item {
 .course-list-page {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 60px 100px 100px;
+    padding: 60px 40px 100px;
     box-sizing: border-box;
 }
 
@@ -9989,7 +9989,7 @@ button.dropdown--ctx-item {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .course-list-page { padding: 40px 40px 80px; }
+    .course-list-page { padding: 40px 24px 80px; }
     .course-card-list { grid-template-columns: repeat(2, 1fr); }
     .bookmark-list { grid-template-columns: repeat(2, 1fr); }
     .bookmark-card { width: 100%; }
