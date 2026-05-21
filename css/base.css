@@ -9932,7 +9932,7 @@ button.dropdown--ctx-item {
 .bookmark-card__price-col {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .bookmark-card__discount-row {
