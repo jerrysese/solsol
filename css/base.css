@@ -11453,3 +11453,704 @@ button.dropdown--ctx-item {
     .coupon-item__name { font-size: 14px; }
     .coupon-item__discount { font-size: 16px; }
 }
+
+/* =====================================================
+   COURSE DETAIL PAGE
+   ===================================================== */
+
+.course-detail-wrap {
+    display: flex;
+    gap: 50px;
+    max-width: 1440px;
+    margin: 80px auto 0;
+    padding: 0 30px 100px;
+    align-items: flex-start;
+}
+
+/* 좌측 컬럼 */
+.course-detail-left {
+    width: 890px;
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+/* 플레이어 썸네일 */
+.course-detail-player {
+    width: 890px;
+    height: 503px;
+    border-radius: 10px;
+    background: url('../src/images/player-thum.png') center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.course-detail-player-text {
+    margin-top: auto;
+    align-self: stretch;
+}
+
+.course-detail-player-title,
+.course-detail-player-desc {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.72px;
+    color: #888888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 탭 네비게이션 */
+.course-detail-tab-nav {
+    display: flex;
+    border-bottom: 1px solid #EEEEEE;
+    margin-top: 0;
+}
+
+.course-detail-tab-btn {
+    flex: 1;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 500;
+    color: #BBBBBB;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    letter-spacing: -0.68px;
+    transition: color 0.15s;
+}
+
+.course-detail-tab-btn.is-active {
+    color: #7954C6;
+    font-weight: 700;
+    border-bottom-color: #7954C6;
+}
+
+/* 탭 콘텐츠 */
+.course-detail-tab-content {
+    display: none;
+}
+
+.course-detail-tab-content.is-active {
+    display: block;
+}
+
+/* 탭 공통 섹션 타이틀 */
+.course-detail-section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.88px;
+    margin-bottom: 20px;
+}
+
+/* ─── 상품소개 탭 ─── */
+.course-detail-intro {
+    padding: 50px 20px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 170%;
+    letter-spacing: -0.6px;
+}
+
+.course-detail-intro h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.72px;
+    margin: 30px 0 8px;
+}
+
+.course-detail-intro h2:first-child {
+    margin-top: 0;
+}
+
+.course-detail-intro p {
+    margin-bottom: 10px;
+}
+
+/* ─── 커리큘럼 탭 ─── */
+.course-detail-curriculum-wrap {
+    padding: 50px 0 20px;
+}
+
+.course-detail-curriculum-header {
+    display: flex;
+    width: 890px;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.course-detail-curriculum-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.8px;
+}
+
+.course-detail-curriculum-total {
+    font-size: 14px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.56px;
+}
+
+.course-detail-curriculum-time {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FC5758;
+    letter-spacing: -0.56px;
+}
+
+.course-detail-curriculum-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.course-detail-ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555555;
+    background: none;
+    border: none;
+    cursor: pointer;
+    letter-spacing: -0.56px;
+}
+
+.course-detail-ctrl-btn img {
+    width: 14px;
+    height: 14px;
+}
+
+/* 챕터 목록 */
+.course-detail-chapters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px 20px;
+}
+
+.course-detail-chapter {
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.course-detail-chapter-header {
+    display: flex;
+    height: 50px;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    background: #F8F5FF;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.course-detail-chapter.is-collapsed .course-detail-chapter-header {
+    border-radius: 10px;
+}
+
+.course-detail-chapter.is-collapsed .course-detail-lessons {
+    display: none;
+}
+
+.course-detail-chapter-arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.course-detail-chapter.is-collapsed .course-detail-chapter-arrow {
+    transform: rotate(-90deg);
+}
+
+.course-detail-chapter-name {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.6px;
+}
+
+.course-detail-chapter-meta {
+    font-size: 13px;
+    font-weight: 500;
+    color: #888888;
+    letter-spacing: -0.52px;
+    white-space: nowrap;
+}
+
+/* 강의 항목 */
+.course-detail-lesson {
+    display: flex;
+    height: 50px;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #EEEEEE;
+    background: #FFFFFF;
+}
+
+.course-detail-lesson:last-child {
+    border-bottom: none;
+}
+
+.course-detail-lesson-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.course-detail-lesson-num {
+    font-size: 14px;
+    color: #888888;
+    letter-spacing: -0.56px;
+    min-width: 22px;
+}
+
+.course-detail-lesson-ico {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.course-detail-lesson-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.course-detail-lesson-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.course-detail-lesson-preview {
+    font-size: 13px;
+    font-weight: 500;
+    color: #7954C6;
+    letter-spacing: -0.52px;
+    text-decoration: none;
+}
+
+.course-detail-lesson-preview:hover {
+    text-decoration: underline;
+}
+
+.course-detail-lesson-time {
+    font-size: 13px;
+    font-weight: 500;
+    color: #888888;
+    letter-spacing: -0.52px;
+}
+
+/* ─── 상품후기 / 문의하기 탭 ─── */
+.course-detail-review-wrap {
+    padding: 30px 20px 50px;
+}
+
+.course-detail-star-input {
+    display: flex;
+    gap: 2px;
+    margin-left: 4px;
+}
+
+.course-detail-star-empty {
+    width: 18px;
+    height: 18px;
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.course-detail-review-stars {
+    display: flex;
+    gap: 2px;
+    margin-left: 4px;
+}
+
+.course-detail-review-stars img {
+    width: 16px;
+    height: 16px;
+}
+
+.course-detail-star-dim {
+    opacity: 0.2;
+}
+
+.course-detail-review-score {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.52px;
+    margin-left: 2px;
+}
+
+/* ─── 우측 구매 박스 ─── */
+.course-detail-buy-box {
+    width: 440px;
+    flex-shrink: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 20px;
+    border: 1px solid #EEEEEE;
+    align-self: flex-start;
+    position: sticky;
+    top: 20px;
+}
+
+/* 타입 + 공개 버튼 행 */
+.course-detail-type-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course-detail-type-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.6px;
+}
+
+.course-detail-visibility-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.course-detail-visibility-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 50px;
+    border: 1px solid #DDDDDD;
+    background: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555555;
+    cursor: pointer;
+    letter-spacing: -0.52px;
+}
+
+.course-detail-visibility-btn img {
+    width: 14px;
+    height: 14px;
+}
+
+/* 제목 + 별점 + 가격 */
+.course-detail-product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-detail-product-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333333;
+    line-height: 150%;
+    letter-spacing: -0.88px;
+    margin-bottom: 20px;
+}
+
+.course-detail-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.course-detail-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.course-detail-star-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.course-detail-rating-score {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.56px;
+}
+
+.course-detail-rating-count {
+    font-size: 14px;
+    font-weight: 400;
+    color: #BBBBBB;
+    letter-spacing: -0.56px;
+}
+
+.course-detail-discount-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.course-detail-discount-rate {
+    font-size: 18px;
+    font-weight: 700;
+    color: #7954C6;
+    letter-spacing: -0.72px;
+}
+
+.course-detail-original-price {
+    font-size: 14px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.56px;
+    text-decoration: line-through;
+}
+
+.course-detail-final-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.course-detail-final-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -1.12px;
+}
+
+/* 버튼 그룹 */
+.course-detail-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.course-detail-btn-group .btn-wide {
+    width: 100%;
+}
+
+.course-detail-btn-row {
+    display: flex;
+    gap: 10px;
+}
+
+.course-detail-btn-row .btn-wish,
+.course-detail-btn-row .btn-share {
+    flex: 1;
+    width: auto;
+}
+
+.btn-wish--active {
+    background: var(--color-primary);
+    color: #FFFFFF;
+    border-color: var(--color-primary);
+}
+
+.btn-wish--active:hover {
+    background: var(--color-primary);
+    opacity: 0.88;
+}
+
+/* 상품 정보 테이블 */
+.course-detail-info-table {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.course-detail-info-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.course-detail-info-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 95px;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888888;
+    letter-spacing: -0.52px;
+}
+
+.course-detail-info-label img {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.course-detail-info-value {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.52px;
+    line-height: 160%;
+}
+
+/* 쿠폰 섹션 */
+.course-detail-coupon-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -10px;
+}
+
+.course-detail-coupon-note {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #888888;
+    letter-spacing: -0.48px;
+}
+
+.course-detail-coupon-note img {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.course-detail-coupon-box {
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    display: flex;
+    overflow: hidden;
+}
+
+.course-detail-coupon-left {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    min-width: 0;
+}
+
+.course-detail-coupon-date {
+    font-size: 11px;
+    color: #888888;
+    letter-spacing: -0.44px;
+}
+
+.course-detail-coupon-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.course-detail-coupon-minimum {
+    font-size: 11px;
+    color: #888888;
+    letter-spacing: -0.44px;
+}
+
+.course-detail-coupon-amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #7954C6;
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.course-detail-coupon-download {
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: none;
+    border-left: 1px solid #EEEEEE;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.course-detail-coupon-download img {
+    width: 22px;
+    height: 22px;
+}
+
+.course-detail-coupon-download span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #7954C6;
+    letter-spacing: -0.52px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .course-detail-wrap { gap: 30px; padding: 0 20px 80px; margin-top: 60px; }
+    .course-detail-left { width: 100%; }
+    .course-detail-player { width: 100%; height: auto; aspect-ratio: 16/9; }
+    .course-detail-buy-box { width: 360px; padding: 24px; }
+    .course-detail-curriculum-header { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .course-detail-wrap { flex-direction: column; gap: 0; padding: 0 16px 60px; margin-top: 40px; }
+    .course-detail-left { width: 100%; }
+    .course-detail-player { width: 100%; height: auto; aspect-ratio: 16/9; }
+    .course-detail-tab-btn { font-size: 14px; height: 52px; }
+    .course-detail-intro { padding: 30px 12px; }
+    .course-detail-curriculum-header { width: 100%; flex-wrap: wrap; height: auto; gap: 8px; }
+    .course-detail-chapters { padding: 0 0 20px; }
+    .course-detail-curriculum-wrap { padding: 30px 0 20px; }
+    .course-detail-buy-box { width: 100%; position: static; margin-top: 30px; padding: 20px; }
+    .course-detail-product-title { font-size: 18px; }
+    .course-detail-final-price { font-size: 22px; }
+    .course-detail-coupon-box { height: auto; min-height: 120px; }
+    .course-detail-coupon-amount { font-size: 16px; padding: 15px 8px; }
+    .course-detail-review-wrap { padding: 20px 0 40px; }
+}
+}
