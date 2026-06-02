@@ -11460,10 +11460,10 @@ button.dropdown--ctx-item {
 
 .course-detail-wrap {
     display: flex;
-    gap: 50px;
+    gap: 10px;
     max-width: 1440px;
     margin: 80px auto 0;
-    padding: 0 30px 100px;
+    padding: 0 20px 100px;
     align-items: flex-start;
 }
 
@@ -11483,13 +11483,13 @@ button.dropdown--ctx-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     box-sizing: border-box;
     flex-shrink: 0;
 }
 
 .course-detail-player-text {
-    margin-top: auto;
     align-self: stretch;
 }
 
@@ -11510,6 +11510,10 @@ button.dropdown--ctx-item {
     display: flex;
     border-bottom: 1px solid #EEEEEE;
     margin-top: 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #FFFFFF;
 }
 
 .course-detail-tab-btn {
@@ -11535,12 +11539,8 @@ button.dropdown--ctx-item {
     border-bottom-color: #7954C6;
 }
 
-/* 탭 콘텐츠 */
-.course-detail-tab-content {
-    display: none;
-}
-
-.course-detail-tab-content.is-active {
+/* 섹션 (항상 표시) */
+.course-detail-section {
     display: block;
 }
 
@@ -11786,9 +11786,8 @@ button.dropdown--ctx-item {
 }
 
 .course-detail-star-empty {
-    width: 18px;
-    height: 18px;
-    opacity: 0.2;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
 }
 
@@ -11817,7 +11816,7 @@ button.dropdown--ctx-item {
 
 /* ─── 우측 구매 박스 ─── */
 .course-detail-buy-box {
-    width: 440px;
+    width: 500px;
     flex-shrink: 0;
     padding: 30px;
     box-sizing: border-box;
@@ -11828,7 +11827,7 @@ button.dropdown--ctx-item {
     border: 1px solid #EEEEEE;
     align-self: flex-start;
     position: sticky;
-    top: 20px;
+    top: 68px;
 }
 
 /* 타입 + 공개 버튼 행 */
@@ -11853,9 +11852,10 @@ button.dropdown--ctx-item {
 .course-detail-visibility-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
-    height: 32px;
-    padding: 0 12px;
+    width: 100px;
+    height: 35px;
     border-radius: 50px;
     border: 1px solid #DDDDDD;
     background: #FFFFFF;
@@ -11871,6 +11871,18 @@ button.dropdown--ctx-item {
     height: 14px;
 }
 
+.course-detail-visibility-btn--open {
+    border-color: #FC5758;
+    background: #FFF6F6;
+    color: #FC5758;
+}
+
+.course-detail-visibility-btn--private {
+    border-color: #BBBBBB;
+    background: #F8F8F8;
+    color: #888888;
+}
+
 /* 제목 + 별점 + 가격 */
 .course-detail-product-info {
     display: flex;
@@ -11878,18 +11890,18 @@ button.dropdown--ctx-item {
 }
 
 .course-detail-product-title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     color: #333333;
     line-height: 150%;
-    letter-spacing: -0.88px;
+    letter-spacing: -0.8px;
     margin-bottom: 20px;
 }
 
 .course-detail-rating-row {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
@@ -11899,8 +11911,8 @@ button.dropdown--ctx-item {
 }
 
 .course-detail-star-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
 }
 
 .course-detail-rating-score {
@@ -12130,10 +12142,10 @@ button.dropdown--ctx-item {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .course-detail-wrap { gap: 30px; padding: 0 20px 80px; margin-top: 60px; }
+    .course-detail-wrap { gap: 20px; padding: 0 20px 80px; margin-top: 60px; }
     .course-detail-left { width: 100%; }
     .course-detail-player { width: 100%; height: auto; aspect-ratio: 16/9; }
-    .course-detail-buy-box { width: 360px; padding: 24px; }
+    .course-detail-buy-box { width: 420px; padding: 24px; }
     .course-detail-curriculum-header { width: 100%; }
 }
 

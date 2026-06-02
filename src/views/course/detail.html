@@ -83,18 +83,18 @@
                     </div>
                 </div>
 
-                <!-- 탭 네비게이션 -->
-                <nav class="course-detail-tab-nav">
-                    <button class="course-detail-tab-btn is-active" data-tab="intro">상품소개</button>
-                    <button class="course-detail-tab-btn" data-tab="curriculum">커리큘럼</button>
-                    <button class="course-detail-tab-btn" data-tab="review">상품후기 (29)</button>
-                    <button class="course-detail-tab-btn" data-tab="qna">문의하기</button>
+                <!-- 탭 네비게이션 (sticky) -->
+                <nav class="course-detail-tab-nav" id="course-tab-nav">
+                    <button class="course-detail-tab-btn is-active" data-target="tab-intro">상품소개</button>
+                    <button class="course-detail-tab-btn" data-target="tab-curriculum">커리큘럼</button>
+                    <button class="course-detail-tab-btn" data-target="tab-review">상품후기 (29)</button>
+                    <a class="course-detail-tab-btn" href="../my/inquiry/index.html" target="_blank">문의하기</a>
                 </nav>
 
                 <!-- ==============================
-                     탭: 상품소개
+                     섹션: 상품소개
                      ============================== -->
-                <div class="course-detail-tab-content is-active" id="tab-intro">
+                <section id="tab-intro" class="course-detail-section">
                     <div class="course-detail-intro">
                         <h2>🚀 대세는 구글 제미나이 완전 정복</h2>
                         <p>입문자도 전문가처럼 쓰는 멀티모달 올인원<br>
@@ -114,12 +114,12 @@
                         <p>이제 검색하는 시대는 끝.<br>
                         AI와 함께 일하는 시대, 제미나이로 한 단계 앞서가세요.</p>
                     </div>
-                </div>
+                </section>
 
                 <!-- ==============================
-                     탭: 커리큘럼
+                     섹션: 커리큘럼
                      ============================== -->
-                <div class="course-detail-tab-content" id="tab-curriculum">
+                <section id="tab-curriculum" class="course-detail-section">
                     <div class="course-detail-curriculum-wrap">
                         <div class="course-detail-curriculum-header">
                             <div class="course-detail-curriculum-title">
@@ -128,8 +128,8 @@
                                 <span class="course-detail-curriculum-time">04:20:11</span>
                             </div>
                             <div class="course-detail-curriculum-controls">
-                                <button class="course-detail-ctrl-btn" type="button">모두 펼치기 <img src="../../images/ico-chevron-down.svg" alt=""></button>
-                                <button class="course-detail-ctrl-btn" type="button">모두 접기 <img src="../../images/arrow-dropdown.svg" alt=""></button>
+                                <button class="course-detail-ctrl-btn" id="expand-all" type="button">모두 펼치기 <img src="../../images/ico-chevron-down.svg" alt=""></button>
+                                <button class="course-detail-ctrl-btn" id="collapse-all" type="button">모두 접기 <img src="../../images/arrow-dropdown.svg" alt=""></button>
                             </div>
                         </div>
 
@@ -298,12 +298,12 @@
 
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- ==============================
-                     탭: 상품후기
+                     섹션: 상품후기
                      ============================== -->
-                <div class="course-detail-tab-content" id="tab-review">
+                <section id="tab-review" class="course-detail-section">
                     <div class="board-detail-comments course-detail-review-wrap">
 
                         <h2 class="course-detail-section-title">상품후기 (29)</h2>
@@ -315,11 +315,11 @@
                                 <span class="community-post-role">학습자</span>
                                 <span class="community-post-author">Monzo</span>
                                 <div class="course-detail-star-input">
-                                    <img src="../../images/free-icon-reply-star.svg" alt="★" class="course-detail-star-empty">
-                                    <img src="../../images/free-icon-reply-star.svg" alt="★" class="course-detail-star-empty">
-                                    <img src="../../images/free-icon-reply-star.svg" alt="★" class="course-detail-star-empty">
-                                    <img src="../../images/free-icon-reply-star.svg" alt="★" class="course-detail-star-empty">
-                                    <img src="../../images/free-icon-reply-star.svg" alt="★" class="course-detail-star-empty">
+                                    <img src="../../images/free-icon-star-gray.svg" alt="★" class="course-detail-star-empty">
+                                    <img src="../../images/free-icon-star-gray.svg" alt="★" class="course-detail-star-empty">
+                                    <img src="../../images/free-icon-star-gray.svg" alt="★" class="course-detail-star-empty">
+                                    <img src="../../images/free-icon-star-gray.svg" alt="★" class="course-detail-star-empty">
+                                    <img src="../../images/free-icon-star-gray.svg" alt="★" class="course-detail-star-empty">
                                 </div>
                             </div>
                             <textarea class="board-detail-comment-textarea" placeholder="다른 학습자에게 도움이 될 수 있도록 수강 후기를 남겨주세요." rows="1"></textarea>
@@ -339,11 +339,11 @@
                                             <span class="community-post-role">학습자</span>
                                             <span class="community-post-author">Monzo</span>
                                             <div class="course-detail-review-stars">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-dim">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-gray.svg" alt="">
                                             </div>
                                             <span class="course-detail-review-score">4.7</span>
                                             <span class="community-post-time">1시간 전</span>
@@ -420,11 +420,11 @@
                                             <span class="community-post-role">학습자</span>
                                             <span class="community-post-author">Monzo</span>
                                             <div class="course-detail-review-stars">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-dim">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-gray.svg" alt="">
                                             </div>
                                             <span class="course-detail-review-score">4.7</span>
                                             <span class="community-post-time">1시간 전</span>
@@ -501,7 +501,7 @@
                                 </div>
                             </div>
 
-                            <!-- 후기 3: 강사 후기 (신고), 답글 3개 -->
+                            <!-- 후기 3: 강사 후기 (신고), 답글 -->
                             <div class="board-detail-comment-group">
                                 <div class="board-detail-comment-item">
                                     <div class="board-detail-comment-header">
@@ -510,11 +510,11 @@
                                             <span class="community-post-role community-post-role--teacher">강사</span>
                                             <span class="community-post-author">Vishnu Gupta</span>
                                             <div class="course-detail-review-stars">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-dim">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-gray.svg" alt="">
                                             </div>
                                             <span class="course-detail-review-score">4.7</span>
                                             <span class="community-post-time">1시간 전</span>
@@ -595,11 +595,11 @@
                                             <span class="community-post-role">학습자</span>
                                             <span class="community-post-author">Ryan Inn</span>
                                             <div class="course-detail-review-stars">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="">
-                                                <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-dim">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-yellow.svg" alt="">
+                                                <img src="../../images/free-icon-star-gray.svg" alt="">
                                             </div>
                                             <span class="course-detail-review-score">4.7</span>
                                             <span class="community-post-time">1시간 전</span>
@@ -640,111 +640,7 @@
                         </button>
 
                     </div>
-                </div>
-
-                <!-- ==============================
-                     탭: 문의하기
-                     ============================== -->
-                <div class="course-detail-tab-content" id="tab-qna">
-                    <div class="board-detail-comments course-detail-review-wrap">
-
-                        <h2 class="course-detail-section-title">문의하기</h2>
-
-                        <div class="board-detail-comment-input">
-                            <div class="board-detail-comment-input-header">
-                                <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
-                                <span class="community-post-role">학습자</span>
-                                <span class="community-post-author">닉네임</span>
-                            </div>
-                            <textarea class="board-detail-comment-textarea" placeholder="댓글을 입력해 주세요." rows="1"></textarea>
-                            <div class="board-detail-comment-actions">
-                                <button class="board-detail-submit-btn" type="button">등록하기</button>
-                            </div>
-                        </div>
-
-                        <h3 class="board-detail-comments-title">전체 (29)</h3>
-
-                        <div class="board-detail-comment-groups">
-                            <div class="board-detail-comment-group">
-                                <div class="board-detail-comment-item">
-                                    <div class="board-detail-comment-header">
-                                        <div class="board-detail-comment-user">
-                                            <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
-                                            <span class="community-post-role">학습자</span>
-                                            <span class="community-post-author">Monzo</span>
-                                            <span class="community-post-time">1시간 전</span>
-                                        </div>
-                                        <div class="board-detail-comment-btns">
-                                            <button type="button" class="board-detail-reply-btn">답글</button>
-                                            <div class="board-detail-comment-more">
-                                                <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
-                                                    <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                                </button>
-                                                <div class="board-detail-comment-more__panel dropdown--ctx-panel">
-                                                    <button class="dropdown--ctx-item" type="button" data-action="edit">수정</button>
-                                                    <button class="dropdown--ctx-item" type="button">삭제</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="community-detail-comment-body">이론 설명만 있는 강의일까봐 걱정됐는데, 실제 사례 위주로 설명해줘서 이해가 훨씬 쉬웠어요. 중간중간 "이건 현업에서 이렇게 쓰입니다"라고 짚어주는 부분이 좋았고, 혼자 공부할 때 막혔던 포인트들이 정리되는 느낌이었어요. 기초부터 차근차근 듣고 싶은 분들한테 추천하고 싶어요.</p>
-                                    <button type="button" class="board-detail-reply-toggle">
-                                        답글 3개
-                                        <img src="../../images/free-icon-reply-open.svg" alt="">
-                                    </button>
-                                </div>
-                                <div class="board-detail-reply-list">
-                                    <div class="board-detail-reply-item">
-                                        <div class="board-detail-comment-header">
-                                            <div class="board-detail-comment-user">
-                                                <img src="../../images/free-icon-lecturer.svg" alt="" class="community-post-avatar">
-                                                <span class="community-post-role community-post-role--teacher">강사</span>
-                                                <span class="community-post-author">Vishnu Gupta</span>
-                                                <span class="community-post-time">방금 전</span>
-                                            </div>
-                                            <div class="board-detail-comment-btns">
-                                                <button type="button" class="board-detail-reply-btn">답글</button>
-                                                <div class="board-detail-comment-more">
-                                                    <button class="board-detail-comment-more__trigger" type="button" aria-label="더보기">
-                                                        <img src="../../images/free-icon-reply-dots-vertical.svg" alt="">
-                                                    </button>
-                                                    <div class="board-detail-comment-more__panel dropdown--ctx-panel dropdown--ctx-panel--solo">
-                                                        <button class="dropdown--ctx-item dropdown--ctx-item--delete" type="button">신고</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="community-detail-comment-body"><span class="comment-mention">@Monzo</span> 답글 내용입니다. 강의 관련 질문 감사합니다.</p>
-                                    </div>
-                                    <div class="board-detail-reply-footer">
-                                        <button type="button" class="board-detail-reply-hide-btn">
-                                            답글 숨기기
-                                            <img src="../../images/free-icon-reply-close.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="board-detail-reply-input">
-                                    <div class="board-detail-comment-input-header">
-                                        <img src="../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
-                                        <span class="community-post-role">학습자</span>
-                                        <span class="community-post-author">닉네임</span>
-                                    </div>
-                                    <textarea class="board-detail-comment-textarea" placeholder="답글을 입력해 주세요." rows="1"></textarea>
-                                    <div class="board-detail-reply-actions">
-                                        <button type="button" class="board-detail-cancel-btn">취소</button>
-                                        <button type="button" class="board-detail-submit-btn">등록하기</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="community-load-more-btn" type="button">
-                            더보기
-                            <img src="../../images/ico-chevron-down.svg" alt="">
-                        </button>
-
-                    </div>
-                </div>
+                </section>
 
             </div><!-- /course-detail-left -->
 
@@ -755,11 +651,11 @@
                 <div class="course-detail-type-row">
                     <span class="course-detail-type-label">일반강의</span>
                     <div class="course-detail-visibility-btns">
-                        <button class="course-detail-visibility-btn" type="button">
+                        <button class="course-detail-visibility-btn course-detail-visibility-btn--open" type="button">
                             <img src="../../images/icon-diamond.svg" alt="">
                             일부공개
                         </button>
-                        <button class="course-detail-visibility-btn" type="button">
+                        <button class="course-detail-visibility-btn course-detail-visibility-btn--private" type="button">
                             <img src="../../images/free-icon-lock.svg" alt="">
                             비공개
                         </button>
@@ -771,11 +667,11 @@
                     <h1 class="course-detail-product-title">대세는 구글 제미나이 완전 정복 - 입문자도 전문가처럼 쓰는 멀티모달 올인원 대세는 구글 제미나이 완전 정복</h1>
                     <div class="course-detail-rating-row">
                         <div class="course-detail-stars">
-                            <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-icon">
-                            <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-icon">
-                            <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-icon">
-                            <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-icon">
-                            <img src="../../images/free-icon-reply-star.svg" alt="" class="course-detail-star-icon course-detail-star-dim">
+                            <img src="../../images/free-icon-star-yellow.svg" alt="" class="course-detail-star-icon">
+                            <img src="../../images/free-icon-star-yellow.svg" alt="" class="course-detail-star-icon">
+                            <img src="../../images/free-icon-star-yellow.svg" alt="" class="course-detail-star-icon">
+                            <img src="../../images/free-icon-star-yellow.svg" alt="" class="course-detail-star-icon">
+                            <img src="../../images/free-icon-star-gray.svg" alt="" class="course-detail-star-icon">
                         </div>
                         <span class="course-detail-rating-score">4.7</span>
                         <span class="course-detail-rating-count">(465)</span>
@@ -810,7 +706,7 @@
                     <button class="btn-wide" type="button" disabled>아직 모집기간이 아닙니다</button>
                     <div class="course-detail-btn-row">
                         <button class="btn-wish btn-wish--active" type="button">
-                            <img src="../../images/free-icon-violet-heart.svg" alt="">
+                            <img src="../../images/free-icon-heart-violet.svg" alt="">
                             찜하기
                         </button>
                         <button class="btn-share" type="button">
@@ -820,7 +716,7 @@
                     </div>
                     <div class="course-detail-btn-row">
                         <button class="btn-wish" type="button">
-                            <img src="../../images/ico-heart.svg" alt="">
+                            <img src="../../images/free-icon-heart-empty-violet.svg" alt="">
                             찜하기
                         </button>
                         <button class="btn-share" type="button">
@@ -953,37 +849,77 @@
     <script>
     (function () {
 
-        /* ─── 탭 전환 ─── */
-        document.querySelectorAll('.course-detail-tab-btn').forEach(function (btn) {
+        /* ─── 탭 → 해당 섹션으로 스크롤 ─── */
+        var tabNav = document.getElementById('course-tab-nav');
+        var tabBtns = document.querySelectorAll('.course-detail-tab-btn[data-target]');
+        var sections = ['tab-intro', 'tab-curriculum', 'tab-review'];
+
+        function getNavOffset() {
+            var header = document.querySelector('.site-header');
+            var nav = tabNav;
+            return (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0) + 8;
+        }
+
+        tabBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
-                document.querySelectorAll('.course-detail-tab-btn').forEach(function (b) { b.classList.remove('is-active'); });
-                document.querySelectorAll('.course-detail-tab-content').forEach(function (c) { c.classList.remove('is-active'); });
-                btn.classList.add('is-active');
-                var content = document.getElementById('tab-' + btn.dataset.tab);
-                if (content) content.classList.add('is-active');
+                var target = document.getElementById(btn.dataset.target);
+                if (!target) return;
+                var offset = getNavOffset();
+                var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
             });
         });
 
-        /* ─── 커리큘럼 챕터 접기/펼치기 ─── */
+        /* ─── 스크롤 시 활성 탭 업데이트 (IntersectionObserver) ─── */
+        function setActiveTab(id) {
+            tabBtns.forEach(function (btn) {
+                btn.classList.toggle('is-active', btn.dataset.target === id);
+            });
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) setActiveTab(entry.target.id);
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        sections.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        /* ─── 커리큘럼 모두 펼치기 / 모두 접기 ─── */
+        document.getElementById('expand-all').addEventListener('click', function () {
+            document.querySelectorAll('.course-detail-chapter').forEach(function (ch) {
+                ch.classList.remove('is-collapsed');
+            });
+        });
+
+        document.getElementById('collapse-all').addEventListener('click', function () {
+            document.querySelectorAll('.course-detail-chapter').forEach(function (ch) {
+                ch.classList.add('is-collapsed');
+            });
+        });
+
+        /* ─── 커리큘럼 챕터 개별 접기/펼치기 ─── */
         document.querySelectorAll('.course-detail-chapter-header').forEach(function (header) {
             header.addEventListener('click', function () {
-                var chapter = header.closest('.course-detail-chapter');
-                if (chapter) chapter.classList.toggle('is-collapsed');
+                header.closest('.course-detail-chapter').classList.toggle('is-collapsed');
             });
         });
 
-        /* ─── 드롭다운 공통 닫기 + fixed 위치 초기화 ─── */
+        /* ─── 드롭다운 공통 닫기 ─── */
         function closeAllDropdowns() {
-            document.querySelectorAll('.board-detail-more.open, .board-detail-comment-more.open').forEach(function (el) {
+            document.querySelectorAll('.board-detail-comment-more.open').forEach(function (el) {
                 el.classList.remove('open');
                 var panel = el.querySelector('.board-detail-comment-more__panel');
-                if (panel) { panel.style.position = ''; panel.style.top = ''; panel.style.right = ''; panel.style.left = ''; panel.style.zIndex = ''; }
+                if (panel) { panel.style.position = ''; panel.style.top = ''; panel.style.left = ''; panel.style.zIndex = ''; }
             });
         }
         document.addEventListener('click', closeAllDropdowns);
         window.addEventListener('scroll', closeAllDropdowns, true);
 
-        /* ─── 댓글·답글 3-dot ─── */
+        /* ─── 댓글 3-dot (fixed 위치) ─── */
         document.querySelectorAll('.board-detail-comment-more').forEach(function (wrap) {
             var trigger = wrap.querySelector('.board-detail-comment-more__trigger');
             var panel   = wrap.querySelector('.board-detail-comment-more__panel');
@@ -997,7 +933,6 @@
                     panel.style.position = 'fixed';
                     panel.style.top      = rect.top + 'px';
                     panel.style.left     = (rect.right + 2) + 'px';
-                    panel.style.right    = 'auto';
                     panel.style.zIndex   = '200';
                     wrap.classList.add('open');
                 }
@@ -1017,7 +952,6 @@
         }
         document.querySelectorAll('.board-detail-comment-textarea').forEach(initTextarea);
 
-        /* ─── 수정 textarea 활성화 ─── */
         document.querySelectorAll('.board-detail-edit-textarea').forEach(function (ta) {
             ta.addEventListener('input', function () {
                 var wrap = ta.closest('.board-detail-edit-wrap');
@@ -1035,9 +969,10 @@
             replyList.dataset.open = open ? 'true' : 'false';
             if (toggleBtn) {
                 var img = toggleBtn.querySelector('img');
-                if (img) { img.src = open ? img.src.replace('reply-open', 'reply-close') : img.src.replace('reply-close', 'reply-open'); }
+                if (img) img.src = open ? img.src.replace('reply-open', 'reply-close') : img.src.replace('reply-close', 'reply-open');
             }
         }
+
         document.querySelectorAll('.board-detail-reply-toggle').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 var group = btn.closest('.board-detail-comment-group');
@@ -1048,7 +983,6 @@
             });
         });
 
-        /* ─── 답글 숨기기 ─── */
         document.querySelectorAll('.board-detail-reply-hide-btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 var group = btn.closest('.board-detail-comment-group');
