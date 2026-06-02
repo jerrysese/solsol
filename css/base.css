@@ -11986,16 +11986,6 @@ button.dropdown--ctx-item {
     width: auto;
 }
 
-.btn-wish--active {
-    background: var(--color-primary);
-    color: #FFFFFF;
-    border-color: var(--color-primary);
-}
-
-.btn-wish--active:hover {
-    background: var(--color-primary);
-    opacity: 0.88;
-}
 
 /* 상품 정보 테이블 */
 .course-detail-info-table {
