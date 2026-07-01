@@ -12156,3 +12156,626 @@ button.dropdown--ctx-item {
     .course-detail-review-wrap { padding: 20px 0 40px; }
 }
 }
+
+/* ==============================
+   MYCOURSE DASHBOARD (마이페이지 - 일반강의실 대시보드)
+   ============================== */
+.mycourse-dashboard {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 50px;
+    min-height: 100vh;
+    background: #F8F8F8;
+}
+
+.mycourse-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ── 상단 박스 ── */
+.mycourse-topbox {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+    padding: 30px;
+    border-radius: 30px;
+    background: #FFFFFF;
+}
+
+.mycourse-topbox-thumb {
+    width: 340px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #F1F1F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.mycourse-topbox-thumb p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.6px;
+    color: #6A697C;
+    text-align: center;
+}
+
+.mycourse-topbox-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mycourse-topbox-category {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6A697C;
+    letter-spacing: -0.26px;
+}
+
+.mycourse-topbox-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: -0.8px;
+    color: #333333;
+}
+
+.mycourse-topbox .course-detail-info-table {
+    margin-top: 4px;
+}
+
+/* ── 통계 박스 3종 ── */
+.mycourse-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.mycourse-statbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 260px;
+    padding: 30px;
+    border-radius: 30px;
+    background: #FFFFFF;
+}
+
+.mycourse-statbox--progress {
+    flex: 1 0 0;
+    min-width: 260px;
+    justify-content: space-between;
+}
+
+.mycourse-statbox--time {
+    flex: 1 0 0;
+    justify-content: center;
+    gap: 70px;
+}
+
+.mycourse-statbox--cert {
+    width: 377px;
+    flex-shrink: 0;
+    justify-content: center;
+    gap: 30px;
+}
+
+.mycourse-statbox-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: -0.96px;
+    color: #333333;
+    text-align: center;
+}
+
+.mycourse-statbox--time .mycourse-statbox-title,
+.mycourse-statbox--cert .mycourse-statbox-title {
+    align-self: stretch;
+}
+
+/* 진도율 게이지 */
+.mycourse-gauge {
+    position: relative;
+    width: 200px;
+    margin-top: 4px;
+}
+
+.mycourse-gauge-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.mycourse-gauge-track,
+.mycourse-gauge-value {
+    fill: none;
+    stroke-width: 20;
+    stroke-linecap: round;
+}
+
+.mycourse-gauge-track {
+    stroke: #F8F5FF;
+}
+
+.mycourse-gauge-value {
+    stroke: #7954C6;
+    stroke-dasharray: 62.2 282.7;
+}
+
+.mycourse-gauge-percent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1.36px;
+    color: #333333;
+}
+
+.mycourse-gauge-percent span {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.96px;
+}
+
+.mycourse-gauge-legend {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.mycourse-gauge-legend-item {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.26px;
+    color: #333333;
+}
+
+.mycourse-gauge-legend-item b {
+    font-weight: 700;
+}
+
+.mycourse-gauge-legend-item .is-total {
+    color: #7954C6;
+}
+
+.mycourse-gauge-legend-item .is-done {
+    color: #31AD60;
+}
+
+/* 총 학습 시간 */
+.mycourse-time-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 51px;
+    letter-spacing: -1.36px;
+    color: #333333;
+}
+
+.mycourse-time-value img {
+    width: 30px;
+    height: 30px;
+}
+
+/* 수료 */
+.mycourse-cert-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 40px;
+    border-radius: 10px;
+    background: #F0F0F0;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+    color: #BBBBBB;
+}
+
+/* ── 상품후기 박스 ── */
+.mycourse-review {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 30px;
+    background: #FFFFFF;
+}
+
+.mycourse-review-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.mycourse-review-header .course-detail-section-title {
+    margin-bottom: 0;
+}
+
+.mycourse-review-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #7954C6;
+    background: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    color: #7954C6;
+    cursor: pointer;
+}
+
+.mycourse-review-more img {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(52%) saturate(1000%) hue-rotate(230deg) brightness(90%) contrast(90%);
+}
+
+.mycourse-review-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.mycourse-review-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.mycourse-review-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mycourse-review-write {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 10px;
+    background: #7954C6;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.mycourse-review-write img {
+    width: 18px;
+    height: 18px;
+}
+
+.mycourse-review-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 56px;
+    border: 1px solid #FFC107;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.64px;
+    color: #333333;
+}
+
+.mycourse-review-rating img {
+    width: 18px;
+    height: 18px;
+}
+
+/* ── 우측 리스트 박스 ── */
+.mycourse-side {
+    position: relative;
+    width: 600px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+    border-radius: 30px;
+    background: #FFFFFF;
+}
+
+.mycourse-side-handle {
+    position: absolute;
+    top: 60px;
+    left: -18px;
+    width: 24px;
+    height: 48px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background: #7954C6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.mycourse-side-handle img {
+    width: 17px;
+    height: 17px;
+}
+
+.mycourse-side-logo img {
+    height: 34px;
+    display: block;
+    object-fit: contain;
+}
+
+.mycourse-side-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.mycourse-side-user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mycourse-side-dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 56px;
+    padding: 0 32px;
+    border: none;
+    border-radius: 10px;
+    background: #7954C6;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.mycourse-side-dashboard img {
+    width: 17px;
+    height: 17px;
+}
+
+/* 탭 */
+.mycourse-tabs {
+    display: flex;
+    border-bottom: 1px solid #7954C6;
+}
+
+.mycourse-tab {
+    flex: 1 0 0;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    background: #F8F8F8;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.72px;
+    color: #BBBBBB;
+    cursor: pointer;
+}
+
+.mycourse-tab.is-active {
+    background: #FFFFFF;
+    border: 1px solid #7954C6;
+    border-bottom: 1px solid #FFFFFF;
+    margin-bottom: -1px;
+    font-weight: 500;
+    color: #7954C6;
+}
+
+/* 전체 진도율 바 */
+.mycourse-side-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mycourse-side-progress-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mycourse-side-progress-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    color: #333333;
+}
+
+.mycourse-side-progress-label img {
+    width: 18px;
+    height: 18px;
+}
+
+.mycourse-side-progress-count {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    color: #7954C6;
+}
+
+.mycourse-side-progress-bar {
+    height: 20px;
+    border-radius: 100px;
+    background: #F8F5FF;
+    overflow: hidden;
+}
+
+.mycourse-side-progress-fill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 100px;
+    background: #7954C6;
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+/* 커리큘럼 리스트 */
+.mycourse-curriculum {
+    display: flex;
+    flex-direction: column;
+}
+
+.mycourse-chapter {
+    display: flex;
+    flex-direction: column;
+}
+
+.mycourse-chapter-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.mycourse-chapter-toggle {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.mycourse-chapter-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.6px;
+    color: #333333;
+}
+
+.mycourse-chapter-meta {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.26px;
+    color: #888888;
+    white-space: nowrap;
+}
+
+.mycourse-lesson {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid #F4F4F4;
+}
+
+.mycourse-lesson-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.mycourse-lesson-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    color: #333333;
+}
+
+.mycourse-lesson-time {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.26px;
+    color: #888888;
+}
+
+.mycourse-lesson-status {
+    flex-shrink: 0;
+    width: 56px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.26px;
+    color: #888888;
+}
+
+.mycourse-lesson--done {
+    opacity: 0.5;
+}
+
+.mycourse-lesson--current .mycourse-lesson-title {
+    color: #7954C6;
+    font-weight: 500;
+}
+
+.mycourse-lesson--current .mycourse-lesson-status {
+    color: #7954C6;
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .mycourse-dashboard { flex-direction: column; padding: 30px; }
+    .mycourse-side { width: 100%; }
+    .mycourse-side-handle { display: none; }
+}
+
+@media (max-width: 768px) {
+    .mycourse-dashboard { padding: 16px; gap: 16px; }
+    .mycourse-topbox { flex-direction: column; padding: 20px; }
+    .mycourse-topbox-thumb { width: 100%; }
+    .mycourse-stats { flex-direction: column; }
+    .mycourse-statbox,
+    .mycourse-statbox--cert { width: 100%; }
+    .mycourse-review { padding: 20px; }
+    .mycourse-review-header { flex-direction: column; gap: 12px; }
+    .mycourse-side { padding: 20px; }
+    .mycourse-side-user { flex-direction: column; align-items: flex-start; }
+    .mycourse-side-dashboard { width: 100%; }
+    .mycourse-tab { font-size: 15px; }
+    .mycourse-chapter-head { flex-wrap: wrap; }
+}

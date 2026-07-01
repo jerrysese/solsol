@@ -1124,5 +1124,76 @@ function toggleDropdown(id) {
 </div>
 
 
+<div class="sg-section">
+    <div class="sg-title">⑨ MYCOURSE DASHBOARD (일반강의실 대시보드)</div>
+
+    <div class="sg-subtitle">① 진도율 게이지 (.mycourse-gauge)</div>
+    <div style="width:200px;">
+        <div class="mycourse-gauge">
+            <svg class="mycourse-gauge-svg" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+                <path class="mycourse-gauge-track" d="M20,110 A90,90 0 0 1 200,110" />
+                <path class="mycourse-gauge-value" d="M20,110 A90,90 0 0 1 200,110" />
+            </svg>
+            <div class="mycourse-gauge-percent">22<span>%</span></div>
+        </div>
+        <div class="mycourse-gauge-legend">
+            <span class="mycourse-gauge-legend-item">전체 <b class="is-total">27</b></span>
+            <span class="mycourse-gauge-legend-item">완료 <b class="is-done">18</b></span>
+            <span class="mycourse-gauge-legend-item">미완료 <b>9</b></span>
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">② 전체 진도율 바 (.mycourse-side-progress-bar)</div>
+    <div style="max-width:520px;">
+        <div class="mycourse-side-progress-bar">
+            <span class="mycourse-side-progress-fill" style="width:22%">22%</span>
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">③ 탭 — 활성/비활성 (.mycourse-tabs / .mycourse-tab)</div>
+    <div style="max-width:520px;">
+        <div class="mycourse-tabs">
+            <button type="button" class="mycourse-tab is-active">커리큘럼</button>
+            <button type="button" class="mycourse-tab">AI 튜터</button>
+            <button type="button" class="mycourse-tab">자료실</button>
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">④ 버튼 — 더보기(.mycourse-review-more) / 글쓰기(.mycourse-review-write) / 평점(.mycourse-review-rating) / 대시보드 바로가기(.mycourse-side-dashboard)</div>
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:520px;">
+        <div style="display:flex;gap:16px;align-items:center;">
+            <button type="button" class="mycourse-review-more">
+                <img src="../images/side-close-button.svg" alt="">
+                더보기
+            </button>
+            <button type="button" class="mycourse-side-dashboard">
+                <img src="../images/side-close-button.svg" alt="">
+                대시보드 바로가기
+            </button>
+        </div>
+        <button type="button" class="mycourse-review-write">
+            <img src="../images/ico-pencil-white.svg" alt="">
+            글쓰기
+        </button>
+        <div class="mycourse-review-rating">
+            <img src="../images/free-icon-star-yellow.svg" alt="">
+            5.0
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">⑤ 수료 뱃지 (.mycourse-cert-badge)</div>
+    <span class="mycourse-cert-badge">수료 전</span>
+
+</div>
+
+
 </body>
 </html>
