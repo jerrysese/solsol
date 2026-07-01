@@ -12170,8 +12170,8 @@ button.dropdown--ctx-item {
 }
 
 .mycourse-main {
-    flex: 1;
-    min-width: 0;
+    width: 1190px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -12757,15 +12757,14 @@ button.dropdown--ctx-item {
     font-weight: 500;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-    .mycourse-dashboard { flex-direction: column; padding: 30px; }
-    .mycourse-side { width: 100%; }
-    .mycourse-side-handle { display: none; }
-}
-
+/* ===== RESPONSIVE =====
+   Figma는 1920px 고정 2단 디자인. 태블릿 구간에서는 2단을 유지하고
+   (좁은 화면은 가로 스크롤), 모바일(768px)에서만 세로로 전환한다. */
 @media (max-width: 768px) {
-    .mycourse-dashboard { padding: 16px; gap: 16px; }
+    .mycourse-dashboard { flex-direction: column; padding: 16px; gap: 16px; }
+    .mycourse-main { width: 100%; }
+    .mycourse-side { width: 100%; padding: 20px; }
+    .mycourse-side-handle { display: none; }
     .mycourse-topbox { flex-direction: column; padding: 20px; }
     .mycourse-topbox-thumb { width: 100%; }
     .mycourse-stats { flex-direction: column; }
@@ -12773,7 +12772,6 @@ button.dropdown--ctx-item {
     .mycourse-statbox--cert { width: 100%; }
     .mycourse-review { padding: 20px; }
     .mycourse-review-header { flex-direction: column; gap: 12px; }
-    .mycourse-side { padding: 20px; }
     .mycourse-side-user { flex-direction: column; align-items: flex-start; }
     .mycourse-side-dashboard { width: 100%; }
     .mycourse-tab { font-size: 15px; }
