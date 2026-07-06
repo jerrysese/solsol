@@ -7,580 +7,659 @@
     <link rel="stylesheet" href="../../css/base.css">
     <style>
         body {
-            background: #F0EDF8;
-            padding: 48px 40px;
+            background: #FBFBFC;
+            padding: 40px 40px 80px;
             min-height: 100vh;
             font-family: 'Pretendard', -apple-system, sans-serif;
+            color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
         }
 
         .wrap {
-            max-width: 1400px;
+            max-width: 760px;
             margin: 0 auto;
         }
 
-        h1 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #2A1A5E;
-            letter-spacing: -0.8px;
-            margin-bottom: 4px;
+        /* ===== PAGE HEAD ===== */
+        .page-head {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding-bottom: 14px;
+            border-bottom: 3px solid #1A1A1A;
+            margin-bottom: 36px;
         }
 
-        .subtitle {
-            font-size: 13px;
-            color: #9B8FC0;
-            margin-bottom: 32px;
+        .page-head h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.6px;
+            color: #111;
+        }
+
+        .page-head .subtitle {
+            font-size: 12px;
+            color: #A0A0A8;
             letter-spacing: -0.2px;
         }
 
-        .section { margin-bottom: 32px; }
+        /* ===== SECTION ===== */
+        .section { margin-bottom: 34px; }
 
-        .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            color: #7954C6;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
             margin-bottom: 10px;
             padding-left: 2px;
         }
 
-        .section-sublabel {
+        .section-head .label {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1A1A1A;
+            letter-spacing: -0.3px;
+        }
+
+        .section-head .count {
+            font-size: 13px;
+            font-weight: 600;
+            color: #B8B8C0;
+        }
+
+        .sub-label {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
             font-size: 12px;
             font-weight: 600;
-            color: #9B8FC0;
+            color: #8A8A93;
             letter-spacing: -0.2px;
-            margin: 18px 0 8px;
+            margin: 16px 0 7px;
             padding-left: 2px;
         }
 
-        .section-sublabel:first-of-type { margin-top: 4px; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-        }
-
-        .card {
-            background: #FFFFFF;
-            border-radius: 10px;
-            padding: 16px 20px;
-            display: grid;
-            grid-template-columns: 190px 1px 1fr;
-            column-gap: 16px;
-            align-items: center;
-            border: 1px solid #E8E2F5;
-            transition: box-shadow 0.15s;
-        }
-
-        .card:hover { box-shadow: 0 2px 12px rgba(121,84,198,0.1); }
-
-        .card-title {
-            font-size: 15px;
+        .sub-label .count {
+            font-size: 11px;
             font-weight: 600;
-            color: #2A1A5E;
-            letter-spacing: -0.4px;
-            white-space: nowrap;
+            color: #C2C2CA;
+        }
+
+        .sub-label:first-of-type { margin-top: 2px; }
+
+        /* ===== TABLE ===== */
+        .table {
+            background: #FFFFFF;
+            border: 1px solid #ECECF0;
+            border-radius: 12px;
             overflow: hidden;
-            text-overflow: ellipsis;
         }
 
-        .card-divider {
-            width: 1px;
-            height: 16px;
-            background: #E0D8F2;
+        .thead,
+        .row {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            align-items: center;
+            column-gap: 16px;
         }
 
-        .card-link {
-            font-size: 18px;
-            color: #1a56db;
+        .thead {
+            padding: 7px 20px;
+            border-bottom: 1px solid #F0F0F3;
+            background: #FCFCFD;
+        }
+
+        .thead span {
+            font-size: 11px;
+            font-weight: 500;
+            color: #A8A8B0;
+            letter-spacing: 0.2px;
+        }
+
+        .row {
+            padding: 7px 20px;
+            border-bottom: 1px solid #F4F4F6;
+            transition: background 0.12s;
+        }
+
+        .row:last-child { border-bottom: none; }
+        .row:hover { background: #FAFAFB; }
+
+        .row .name {
+            font-size: 12px;
+            font-weight: 500;
+            color: #2A2A32;
+            letter-spacing: -0.2px;
+        }
+
+        .row .link {
+            font-size: 11px;
+            color: #16A34A;
             text-decoration: none;
-            letter-spacing: 0;
+            font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
+            letter-spacing: -0.1px;
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            white-space: nowrap;
-            transition: text-decoration 0.12s;
         }
 
-        .card-link:hover { text-decoration: underline; }
+        .row .link:hover { text-decoration: underline; }
+        .row .link::after {
+            content: ' ↗';
+            color: #C4C4CC;
+        }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            body { padding: 40px 28px; }
-            .card { grid-template-columns: 160px 1px 1fr; }
-            .card-link { font-size: 16px; }
+            body { padding: 32px 24px 64px; }
+            .thead, .row { grid-template-columns: 240px 1fr; }
         }
 
         @media (max-width: 768px) {
-            body { padding: 28px 16px; }
-
-            .grid { grid-template-columns: 1fr; }
-
-            /* 카드: 타이틀만 표시, 전체 카드 클릭 가능 */
-            .card {
-                position: relative;
+            body { padding: 24px 14px 48px; }
+            .page-head { flex-direction: column; gap: 4px; }
+            .thead { display: none; }
+            .row {
                 grid-template-columns: 1fr;
-                padding: 14px 16px;
+                row-gap: 3px;
+                padding: 12px 16px;
             }
-
-            .card-divider { display: none; }
-
-            /* 링크 텍스트는 숨기고, 카드 전체에 투명 오버레이로 링크 적용 */
-            .card-link {
-                position: absolute;
-                inset: 0;
-                font-size: 0;
-                color: transparent;
-                text-decoration: none;
-            }
-
-            /* 모바일에서 타이틀에 링크 화살표 표시 */
-            .card-title::after {
-                content: ' ↗';
-                font-size: 12px;
-                color: #9B8FC0;
-                font-weight: 400;
-            }
+            .row .link { font-size: 11.5px; }
         }
     </style>
 </head>
 <body>
 
     <div class="wrap">
-    <h1>퍼블리싱 페이지 목록</h1>
-    <p class="subtitle">총 63페이지 · jerrysese.github.io/solsol</p>
+    <div class="page-head">
+        <h1>퍼블리싱 페이지 목록</h1>
+        <span class="subtitle">총 63페이지 · jerrysese.github.io/solsol</span>
+    </div>
 
     <!-- 공통 -->
     <div class="section">
-        <div class="section-label">공통</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">Home</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/home.html" target="_blank">/src/views/home.html ↗</a>
+        <div class="section-head">
+            <span class="label">공통</span>
+            <span class="count">3</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">공통 스타일 가이드</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/styleguide.html" target="_blank">/src/views/styleguide.html ↗</a>
+            <div class="row">
+                <span class="name">Home</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/home.html" target="_blank">views/home.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">이미지 아이콘 리스트</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/images.html" target="_blank">/src/views/images.html ↗</a>
+            <div class="row">
+                <span class="name">공통 스타일 가이드</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/styleguide.html" target="_blank">views/styleguide.html</a>
+            </div>
+            <div class="row">
+                <span class="name">이미지 아이콘 리스트</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/images.html" target="_blank">views/images.html</a>
             </div>
         </div>
     </div>
 
     <!-- 메인 -->
     <div class="section">
-        <div class="section-label">메인</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">서비스 이용 제한</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/main/index.html" target="_blank">/src/views/main/index.html ↗</a>
+        <div class="section-head">
+            <span class="label">메인</span>
+            <span class="count">1</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
+            </div>
+            <div class="row">
+                <span class="name">서비스 이용 제한</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/main/index.html" target="_blank">views/main/index.html</a>
             </div>
         </div>
     </div>
 
     <!-- 인증 -->
     <div class="section">
-        <div class="section-label">인증 (Auth)</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">로그인</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/auth/login.html" target="_blank">/src/views/auth/login.html ↗</a>
+        <div class="section-head">
+            <span class="label">인증 (Auth)</span>
+            <span class="count">5</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">로그인 (ver.2)</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/auth/login1.html" target="_blank">/src/views/auth/login1.html ↗</a>
+            <div class="row">
+                <span class="name">로그인</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/auth/login.html" target="_blank">views/auth/login.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">회원가입</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/auth/signup.html" target="_blank">/src/views/auth/signup.html ↗</a>
+            <div class="row">
+                <span class="name">로그인 (ver.2)</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/auth/login1.html" target="_blank">views/auth/login1.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">약관동의</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/auth/agreement.html" target="_blank">/src/views/auth/agreement.html ↗</a>
+            <div class="row">
+                <span class="name">회원가입</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/auth/signup.html" target="_blank">views/auth/signup.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">약관 상세 (모달)</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/auth/agreement-modal.html" target="_blank">/src/views/auth/agreement-modal.html ↗</a>
+            <div class="row">
+                <span class="name">약관동의</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/auth/agreement.html" target="_blank">views/auth/agreement.html</a>
+            </div>
+            <div class="row">
+                <span class="name">약관 상세 (모달)</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/auth/agreement-modal.html" target="_blank">views/auth/agreement-modal.html</a>
             </div>
         </div>
     </div>
 
     <!-- 강의 -->
     <div class="section">
-        <div class="section-label">강의</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">일반강의 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/course/list.html" target="_blank">/src/views/course/list.html ↗</a>
+        <div class="section-head">
+            <span class="label">강의</span>
+            <span class="count">6</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">강의 상세</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/course/detail.html" target="_blank">/src/views/course/detail.html ↗</a>
+            <div class="row">
+                <span class="name">일반강의 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/course/list.html" target="_blank">views/course/list.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">라이브강의 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/live/list.html" target="_blank">/src/views/live/list.html ↗</a>
+            <div class="row">
+                <span class="name">강의 상세</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/course/detail.html" target="_blank">views/course/detail.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">화상강의 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/meeting/list.html" target="_blank">/src/views/meeting/list.html ↗</a>
+            <div class="row">
+                <span class="name">라이브강의 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/live/list.html" target="_blank">views/live/list.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">디지털 상품 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/digital/list.html" target="_blank">/src/views/digital/list.html ↗</a>
+            <div class="row">
+                <span class="name">화상강의 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/meeting/list.html" target="_blank">views/meeting/list.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">패키지 상품 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/package/list.html" target="_blank">/src/views/package/list.html ↗</a>
+            <div class="row">
+                <span class="name">디지털 상품 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/digital/list.html" target="_blank">views/digital/list.html</a>
+            </div>
+            <div class="row">
+                <span class="name">패키지 상품 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/package/list.html" target="_blank">views/package/list.html</a>
             </div>
         </div>
     </div>
 
     <!-- 프리미엄 커뮤니티 -->
     <div class="section">
-        <div class="section-label">프리미엄 커뮤니티</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">커뮤니티 홈</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/community/index.html" target="_blank">/src/views/community/index.html ↗</a>
+        <div class="section-head">
+            <span class="label">프리미엄 커뮤니티</span>
+            <span class="count">5</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">커뮤니티 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/community/list.html" target="_blank">/src/views/community/list.html ↗</a>
+            <div class="row">
+                <span class="name">커뮤니티 홈</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/community/index.html" target="_blank">views/community/index.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">커뮤니티 상세</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/community/detail.html" target="_blank">/src/views/community/detail.html ↗</a>
+            <div class="row">
+                <span class="name">커뮤니티 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/community/list.html" target="_blank">views/community/list.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">글쓰기</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/community/add.html" target="_blank">/src/views/community/add.html ↗</a>
+            <div class="row">
+                <span class="name">커뮤니티 상세</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/community/detail.html" target="_blank">views/community/detail.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">글수정</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/community/edit.html" target="_blank">/src/views/community/edit.html ↗</a>
+            <div class="row">
+                <span class="name">글쓰기</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/community/add.html" target="_blank">views/community/add.html</a>
+            </div>
+            <div class="row">
+                <span class="name">글수정</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/community/edit.html" target="_blank">views/community/edit.html</a>
             </div>
         </div>
     </div>
 
     <!-- 멤버십 상품 -->
     <div class="section">
-        <div class="section-label">멤버십 상품</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">멤버십 상품</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/membership/index.html" target="_blank">/src/views/membership/index.html ↗</a>
+        <div class="section-head">
+            <span class="label">멤버십 상품</span>
+            <span class="count">1</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
+            </div>
+            <div class="row">
+                <span class="name">멤버십 상품</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/membership/index.html" target="_blank">views/membership/index.html</a>
             </div>
         </div>
     </div>
 
     <!-- 자유게시판 -->
     <div class="section">
-        <div class="section-label">자유게시판</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">자유게시판 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/board/list.html" target="_blank">/src/views/board/list.html ↗</a>
+        <div class="section-head">
+            <span class="label">자유게시판</span>
+            <span class="count">5</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">글쓰기</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/board/add.html" target="_blank">/src/views/board/add.html ↗</a>
+            <div class="row">
+                <span class="name">자유게시판 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/board/list.html" target="_blank">views/board/list.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">글수정</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/board/edit.html" target="_blank">/src/views/board/edit.html ↗</a>
+            <div class="row">
+                <span class="name">글쓰기</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/board/add.html" target="_blank">views/board/add.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">상세페이지</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/board/detail.html" target="_blank">/src/views/board/detail.html ↗</a>
+            <div class="row">
+                <span class="name">글수정</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/board/edit.html" target="_blank">views/board/edit.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">상세페이지 2 (디자인)</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/board/detail2.html" target="_blank">/src/views/board/detail2.html ↗</a>
+            <div class="row">
+                <span class="name">상세페이지</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/board/detail.html" target="_blank">views/board/detail.html</a>
+            </div>
+            <div class="row">
+                <span class="name">상세페이지 2 (디자인)</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/board/detail2.html" target="_blank">views/board/detail2.html</a>
             </div>
         </div>
     </div>
 
     <!-- 공지사항 -->
     <div class="section">
-        <div class="section-label">공지사항</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">공지사항 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/notice/list.html" target="_blank">/src/views/notice/list.html ↗</a>
+        <div class="section-head">
+            <span class="label">공지사항</span>
+            <span class="count">2</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">공지사항 상세</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/notice/detail.html" target="_blank">/src/views/notice/detail.html ↗</a>
+            <div class="row">
+                <span class="name">공지사항 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/notice/list.html" target="_blank">views/notice/list.html</a>
+            </div>
+            <div class="row">
+                <span class="name">공지사항 상세</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/notice/detail.html" target="_blank">views/notice/detail.html</a>
             </div>
         </div>
     </div>
 
     <!-- FAQ -->
     <div class="section">
-        <div class="section-label">FAQ</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">FAQ 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/faq/list.html" target="_blank">/src/views/faq/list.html ↗</a>
+        <div class="section-head">
+            <span class="label">FAQ</span>
+            <span class="count">1</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
+            </div>
+            <div class="row">
+                <span class="name">FAQ 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/faq/list.html" target="_blank">views/faq/list.html</a>
             </div>
         </div>
     </div>
 
     <!-- 결제하기 -->
     <div class="section">
-        <div class="section-label">결제하기</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">결제하기</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/payment/index.html" target="_blank">/src/views/payment/index.html ↗</a>
+        <div class="section-head">
+            <span class="label">결제하기</span>
+            <span class="count">5</span>
+        </div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">결제완료</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/payment/success.html" target="_blank">/src/views/payment/success.html ↗</a>
+            <div class="row">
+                <span class="name">결제하기</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/payment/index.html" target="_blank">views/payment/index.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">결제실패</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/payment/fail.html" target="_blank">/src/views/payment/fail.html ↗</a>
+            <div class="row">
+                <span class="name">결제완료</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/payment/success.html" target="_blank">views/payment/success.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">쿠폰 선택 모달</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/payment/coupon-modal.html" target="_blank">/src/views/payment/coupon-modal.html ↗</a>
+            <div class="row">
+                <span class="name">결제실패</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/payment/fail.html" target="_blank">views/payment/fail.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">구매동의 약관 모달</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/payment/agree-modal.html" target="_blank">/src/views/payment/agree-modal.html ↗</a>
+            <div class="row">
+                <span class="name">쿠폰 선택 모달</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/payment/coupon-modal.html" target="_blank">views/payment/coupon-modal.html</a>
+            </div>
+            <div class="row">
+                <span class="name">구매동의 약관 모달</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/payment/agree-modal.html" target="_blank">views/payment/agree-modal.html</a>
             </div>
         </div>
     </div>
 
     <!-- 마이페이지 -->
     <div class="section">
-        <div class="section-label">마이페이지</div>
+        <div class="section-head">
+            <span class="label">마이페이지</span>
+            <span class="count">29</span>
+        </div>
 
-        <div class="section-sublabel">내 게시글</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">내 게시글 — 상품후기</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/posting/review.html" target="_blank">/src/views/my/posting/review.html ↗</a>
+        <div class="sub-label">내 게시글 <span class="count">3</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">내 게시글 — 게시판</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/posting/board.html" target="_blank">/src/views/my/posting/board.html ↗</a>
+            <div class="row">
+                <span class="name">내 게시글 — 상품후기</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/posting/review.html" target="_blank">views/my/posting/review.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">내 게시글 — 커뮤니티</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/posting/community.html" target="_blank">/src/views/my/posting/community.html ↗</a>
+            <div class="row">
+                <span class="name">내 게시글 — 게시판</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/posting/board.html" target="_blank">views/my/posting/board.html</a>
+            </div>
+            <div class="row">
+                <span class="name">내 게시글 — 커뮤니티</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/posting/community.html" target="_blank">views/my/posting/community.html</a>
             </div>
         </div>
 
-        <div class="section-sublabel">1:1 문의</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">1:1 문의내역 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/inquiry/index.html" target="_blank">/src/views/my/inquiry/index.html ↗</a>
+        <div class="sub-label">1:1 문의 <span class="count">4</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">1:1 문의내역 빈 상태</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/inquiry/default.html" target="_blank">/src/views/my/inquiry/default.html ↗</a>
+            <div class="row">
+                <span class="name">1:1 문의내역 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/inquiry/index.html" target="_blank">views/my/inquiry/index.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">1:1 문의하기</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/inquiry/add.html" target="_blank">/src/views/my/inquiry/add.html ↗</a>
+            <div class="row">
+                <span class="name">1:1 문의내역 빈 상태</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/inquiry/default.html" target="_blank">views/my/inquiry/default.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">1:1 문의내역 상세</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/inquiry/detail.html" target="_blank">/src/views/my/inquiry/detail.html ↗</a>
+            <div class="row">
+                <span class="name">1:1 문의하기</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/inquiry/add.html" target="_blank">views/my/inquiry/add.html</a>
             </div>
-        </div>
-
-        <div class="section-sublabel">구독관리</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">구독관리 — 상품 없을 시</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/membership/default.html" target="_blank">/src/views/my/membership/default.html ↗</a>
-            </div>
-            <div class="card">
-                <span class="card-title">구독관리 — 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/membership/list.html" target="_blank">/src/views/my/membership/list.html ↗</a>
-            </div>
-            <div class="card">
-                <span class="card-title">구독관리 — 구독 취소 모달</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/membership/cancel-modal.html" target="_blank">/src/views/my/membership/cancel-modal.html ↗</a>
+            <div class="row">
+                <span class="name">1:1 문의내역 상세</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/inquiry/detail.html" target="_blank">views/my/inquiry/detail.html</a>
             </div>
         </div>
 
-        <div class="section-sublabel">내 상품</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">내 상품 — 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/product/list.html" target="_blank">/src/views/my/product/list.html ↗</a>
+        <div class="sub-label">구독관리 <span class="count">3</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">내 상품 — 패키지 상품리스트 모달</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/product/package-modal.html" target="_blank">/src/views/my/product/package-modal.html ↗</a>
+            <div class="row">
+                <span class="name">구독관리 — 상품 없을 시</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/membership/default.html" target="_blank">views/my/membership/default.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">내 상품 — 디지털 상품리스트 모달</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/product/digital-modal.html" target="_blank">/src/views/my/product/digital-modal.html ↗</a>
+            <div class="row">
+                <span class="name">구독관리 — 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/membership/list.html" target="_blank">views/my/membership/list.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">내 상품 — 빈 상태</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/product/default.html" target="_blank">/src/views/my/product/default.html ↗</a>
+            <div class="row">
+                <span class="name">구독관리 — 구독 취소 모달</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/membership/cancel-modal.html" target="_blank">views/my/membership/cancel-modal.html</a>
             </div>
         </div>
 
-        <div class="section-sublabel">일반강의실</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">일반강의실 — 대시보드</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/course/index.html" target="_blank">/src/views/my/course/index.html ↗</a>
+        <div class="sub-label">내 상품 <span class="count">4</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
+            </div>
+            <div class="row">
+                <span class="name">내 상품 — 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/product/list.html" target="_blank">views/my/product/list.html</a>
+            </div>
+            <div class="row">
+                <span class="name">내 상품 — 패키지 상품리스트 모달</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/product/package-modal.html" target="_blank">views/my/product/package-modal.html</a>
+            </div>
+            <div class="row">
+                <span class="name">내 상품 — 디지털 상품리스트 모달</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/product/digital-modal.html" target="_blank">views/my/product/digital-modal.html</a>
+            </div>
+            <div class="row">
+                <span class="name">내 상품 — 빈 상태</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/product/default.html" target="_blank">views/my/product/default.html</a>
             </div>
         </div>
 
-        <div class="section-sublabel">수료증</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">수료증 — 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/certificate/list.html" target="_blank">/src/views/my/certificate/list.html ↗</a>
+        <div class="sub-label">일반강의실 <span class="count">1</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">수료증 — 빈 상태</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/certificate/default.html" target="_blank">/src/views/my/certificate/default.html ↗</a>
+            <div class="row">
+                <span class="name">일반강의실 — 대시보드</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/course/index.html" target="_blank">views/my/course/index.html</a>
             </div>
         </div>
 
-        <div class="section-sublabel">찜하기</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">찜하기 — 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/bookmark/list.html" target="_blank">/src/views/my/bookmark/list.html ↗</a>
+        <div class="sub-label">수료증 <span class="count">2</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">찜하기 — 빈 상태</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/bookmark/default.html" target="_blank">/src/views/my/bookmark/default.html ↗</a>
+            <div class="row">
+                <span class="name">수료증 — 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/certificate/list.html" target="_blank">views/my/certificate/list.html</a>
             </div>
-        </div>
-
-        <div class="section-sublabel">쿠폰</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">쿠폰 — 빈 상태</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/coupon/default.html" target="_blank">/src/views/my/coupon/default.html ↗</a>
-            </div>
-            <div class="card">
-                <span class="card-title">쿠폰 — 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/coupon/list.html" target="_blank">/src/views/my/coupon/list.html ↗</a>
+            <div class="row">
+                <span class="name">수료증 — 빈 상태</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/certificate/default.html" target="_blank">views/my/certificate/default.html</a>
             </div>
         </div>
 
-        <div class="section-sublabel">결제 내역</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">결제 내역 — 빈 상태</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/payment/default.html" target="_blank">/src/views/my/payment/default.html ↗</a>
+        <div class="sub-label">찜하기 <span class="count">2</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">결제 내역 — 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/payment/list.html" target="_blank">/src/views/my/payment/list.html ↗</a>
+            <div class="row">
+                <span class="name">찜하기 — 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/bookmark/list.html" target="_blank">views/my/bookmark/list.html</a>
             </div>
-        </div>
-
-        <div class="section-sublabel">결제정보</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">결제정보 — 빈 상태</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/card/default.html" target="_blank">/src/views/my/card/default.html ↗</a>
-            </div>
-            <div class="card">
-                <span class="card-title">결제정보 — 목록</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/card/list.html" target="_blank">/src/views/my/card/list.html ↗</a>
+            <div class="row">
+                <span class="name">찜하기 — 빈 상태</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/bookmark/default.html" target="_blank">views/my/bookmark/default.html</a>
             </div>
         </div>
 
-        <div class="section-sublabel">설정</div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-title">설정 — 프로필</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/setting/profile.html" target="_blank">/src/views/my/setting/profile.html ↗</a>
+        <div class="sub-label">쿠폰 <span class="count">2</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
             </div>
-            <div class="card">
-                <span class="card-title">설정 — 프로필 설정 모달</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/setting/profile-modal.html" target="_blank">/src/views/my/setting/profile-modal.html ↗</a>
+            <div class="row">
+                <span class="name">쿠폰 — 빈 상태</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/coupon/default.html" target="_blank">views/my/coupon/default.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">설정 — 닉네임 변경 모달</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/setting/nickname-modal.html" target="_blank">/src/views/my/setting/nickname-modal.html ↗</a>
+            <div class="row">
+                <span class="name">쿠폰 — 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/coupon/list.html" target="_blank">views/my/coupon/list.html</a>
             </div>
-            <div class="card">
-                <span class="card-title">설정 — 회원 탈퇴 모달</span>
-                <div class="card-divider"></div>
-                <a class="card-link" href="https://jerrysese.github.io/solsol/src/views/my/setting/del-account-modal.html" target="_blank">/src/views/my/setting/del-account-modal.html ↗</a>
+        </div>
+
+        <div class="sub-label">결제 내역 <span class="count">2</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
+            </div>
+            <div class="row">
+                <span class="name">결제 내역 — 빈 상태</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/payment/default.html" target="_blank">views/my/payment/default.html</a>
+            </div>
+            <div class="row">
+                <span class="name">결제 내역 — 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/payment/list.html" target="_blank">views/my/payment/list.html</a>
+            </div>
+        </div>
+
+        <div class="sub-label">결제정보 <span class="count">2</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
+            </div>
+            <div class="row">
+                <span class="name">결제정보 — 빈 상태</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/card/default.html" target="_blank">views/my/card/default.html</a>
+            </div>
+            <div class="row">
+                <span class="name">결제정보 — 목록</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/card/list.html" target="_blank">views/my/card/list.html</a>
+            </div>
+        </div>
+
+        <div class="sub-label">설정 <span class="count">4</span></div>
+        <div class="table">
+            <div class="thead">
+                <span>화면명</span>
+                <span>링크</span>
+            </div>
+            <div class="row">
+                <span class="name">설정 — 프로필</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/setting/profile.html" target="_blank">views/my/setting/profile.html</a>
+            </div>
+            <div class="row">
+                <span class="name">설정 — 프로필 설정 모달</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/setting/profile-modal.html" target="_blank">views/my/setting/profile-modal.html</a>
+            </div>
+            <div class="row">
+                <span class="name">설정 — 닉네임 변경 모달</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/setting/nickname-modal.html" target="_blank">views/my/setting/nickname-modal.html</a>
+            </div>
+            <div class="row">
+                <span class="name">설정 — 회원 탈퇴 모달</span>
+                <a class="link" href="https://jerrysese.github.io/solsol/src/views/my/setting/del-account-modal.html" target="_blank">views/my/setting/del-account-modal.html</a>
             </div>
         </div>
     </div>
