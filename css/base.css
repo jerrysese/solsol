@@ -5330,6 +5330,120 @@ h2 {
     letter-spacing: -0.8px;
 }
 
+/* ==============================
+   수료증 한글 가로형 샘플
+   배경은 통이미지(certificate-kor-horizontal-bg.jpg), 텍스트/도장만 오버레이
+   ============================== */
+.cert-stage {
+    padding: 40px;
+    background: #FFFFFF;
+}
+
+.cert-h {
+    container-type: inline-size;
+    position: relative;
+    width: 100%;
+    max-width: 1120px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    background: url('../src/images/certificate-kor-horizontal-bg.jpg') no-repeat center center / cover;
+    font-family: var(--font-base);
+    color: #333333;
+}
+
+.cert-h > * {
+    position: absolute;
+    left: 6.2%;
+    margin: 0;
+}
+
+.cert-h-no {
+    top: 16%;
+    font-size: 1.5cqw;
+    letter-spacing: -0.02em;
+    color: #555555;
+}
+
+.cert-h-title {
+    top: 20.5%;
+    font-size: 7.4cqw;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #1A1A1A;
+}
+
+.cert-h-row {
+    display: flex;
+    align-items: center;
+    gap: 1.4cqw;
+}
+
+.cert-h-name { top: 41%; }
+.cert-h-course { top: 46.5%; }
+
+.cert-h-label {
+    font-size: 1.6cqw;
+    color: #888888;
+}
+
+.cert-h-div {
+    width: 1px;
+    height: 1.5cqw;
+    background: #CCCCCC;
+}
+
+.cert-h-value {
+    font-size: 1.8cqw;
+    font-weight: 700;
+    color: #333333;
+}
+
+.cert-h-desc {
+    top: 54.5%;
+    font-size: 1.6cqw;
+    color: #888888;
+}
+
+.cert-h-dates {
+    top: 66.5%;
+    display: flex;
+    align-items: center;
+    gap: 1.6cqw;
+}
+
+.cert-h-date-start {
+    font-size: 1.5cqw;
+    color: #888888;
+}
+
+.cert-h-date-end {
+    font-size: 1.5cqw;
+    font-weight: 700;
+    color: #EEA23A;
+}
+
+.cert-h-issuer {
+    top: 77%;
+    display: flex;
+    align-items: center;
+    gap: 1.6cqw;
+}
+
+.cert-h-org {
+    font-size: 1.7cqw;
+    color: #333333;
+}
+
+.cert-h-org b {
+    font-weight: 800;
+}
+
+.cert-h-stamp {
+    width: 5.5cqw;
+    height: auto;
+}
+
 .digital-list-top {
     display: flex;
     justify-content: space-between;
