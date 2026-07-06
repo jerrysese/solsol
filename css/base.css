@@ -5641,6 +5641,153 @@ h2 {
     height: auto;
 }
 
+/* ==============================
+   수료증 영문 가로형 샘플 (프레임 1920×1080)
+   ============================== */
+.cert-e {
+    container-type: inline-size;
+    position: relative;
+    width: 1920px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    background: url('../src/images/certificate-eng-horizontal-bg.jpg') no-repeat center center / cover;
+    font-family: var(--font-base);
+    color: #333333;
+}
+
+.cert-e > * {
+    position: absolute;
+    margin: 0;
+}
+
+/* 시리얼넘버: 24px / 500 / #888 */
+.cert-e-no {
+    top: 4.8%;
+    left: 2.6%;
+    font-size: 1.25cqw;
+    font-weight: 500;
+    line-height: 150%;
+    color: #888888;
+}
+
+/* 타이틀: Crimson Text 64px / 700 / uppercase / #555, 중앙 */
+.cert-e-title {
+    top: 13.5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Crimson Text', 'Times New Roman', serif;
+    font-size: 3.333cqw;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #555555;
+}
+
+.cert-e-row {
+    left: 7.5%;
+    display: flex;
+    align-items: center;
+    gap: 1cqw;
+}
+
+.cert-e-name { top: 34.5%; }
+.cert-e-course { top: 40.7%; }
+
+/* 라벨(Name/Course Title): 30px / 400 / #888, 라벨폭 170px */
+.cert-e-label {
+    min-width: 8.85cqw;
+    font-size: 1.5625cqw;
+    font-weight: 400;
+    color: #888888;
+}
+
+.cert-e-div {
+    width: 1px;
+    height: 1.7cqw;
+    background: #CCCCCC;
+}
+
+/* 값: 30px / 600 / #555 */
+.cert-e-value {
+    font-size: 1.5625cqw;
+    font-weight: 600;
+    color: #555555;
+}
+
+/* 설명: 30px / 400 / #888 */
+.cert-e-desc {
+    top: 48.5%;
+    left: 7.5%;
+    font-size: 1.5625cqw;
+    font-weight: 400;
+    color: #888888;
+}
+
+/* 시작일/완료일 블록 (중앙 정렬 컬럼) */
+.cert-e-dates {
+    top: 68.5%;
+    left: 21%;
+    width: 15.625cqw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6cqw;
+    text-align: center;
+}
+
+/* Start Date 라벨/값: 24px / 400 / #888 */
+.cert-e-date-label {
+    font-size: 1.25cqw;
+    font-weight: 400;
+    line-height: 150%;
+    color: #888888;
+}
+
+.cert-e-date-value {
+    font-size: 1.25cqw;
+    font-weight: 400;
+    line-height: 150%;
+    color: #888888;
+    margin-bottom: 1.4cqw;
+}
+
+/* Completion Date 라벨/값: 24px / 600 / #CEB672 */
+.cert-e-date-label--end {
+    font-weight: 600;
+    color: #CEB672;
+}
+
+.cert-e-date-value--end {
+    font-weight: 600;
+    color: #CEB672;
+    margin-bottom: 0;
+}
+
+/* 수평 바: 300×1px #DDD */
+.cert-e-bar {
+    width: 15.625cqw;
+    height: 1px;
+    background: #DDDDDD;
+}
+
+/* DJ Tech Tree */
+.cert-e-org {
+    top: 77.2%;
+    left: 63%;
+    font-size: 1.6667cqw;
+    font-weight: 500;
+    color: #888888;
+}
+
+.cert-e-stamp {
+    top: 72.5%;
+    left: 75.5%;
+    width: 4.5cqw;
+    height: auto;
+}
+
 .digital-list-top {
     display: flex;
     justify-content: space-between;
