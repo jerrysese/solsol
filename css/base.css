@@ -12319,14 +12319,15 @@ button.dropdown--ctx-item {
 }
 
 .course-detail-chapter-arrow {
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 5px;
     flex-shrink: 0;
     transition: transform 0.2s;
+    transform: rotate(180deg);
 }
 
 .course-detail-chapter.is-collapsed .course-detail-chapter-arrow {
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
 }
 
 .course-detail-chapter-name {
@@ -12370,9 +12371,11 @@ button.dropdown--ctx-item {
 }
 
 .course-detail-lesson-num {
-    font-size: 14px;
-    color: #888888;
-    letter-spacing: -0.56px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555555;
+    line-height: 150%;
+    letter-spacing: -0.52px;
     min-width: 22px;
 }
 
