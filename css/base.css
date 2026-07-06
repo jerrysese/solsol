@@ -12161,6 +12161,7 @@ button.dropdown--ctx-item {
    ============================== */
 .mycourse-dashboard {
     display: flex;
+    justify-content: center;
     align-items: flex-start;
     gap: 30px;
     padding: 50px;
@@ -12187,23 +12188,28 @@ button.dropdown--ctx-item {
 }
 
 .mycourse-topbox-thumb {
-    width: 340px;
+    width: 460px;
+    height: 260px;
     flex-shrink: 0;
+    align-self: flex-start;
     border-radius: 20px;
-    background: #F1F1F4;
+    background: url('../src/images/product_bg.png') no-repeat center center / cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: 10px;
 }
 
 .mycourse-topbox-thumb p {
     margin: 0;
-    font-size: 15px;
+    max-width: 305px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
     font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.6px;
-    color: #6A697C;
+    line-height: 150%;
+    letter-spacing: -0.72px;
+    color: #888888;
     text-align: center;
 }
 
@@ -12212,27 +12218,29 @@ button.dropdown--ctx-item {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .mycourse-topbox-category {
-    font-size: 13px;
-    font-weight: 400;
-    color: #6A697C;
-    letter-spacing: -0.26px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #BBBBBB;
+    letter-spacing: -0.6px;
 }
 
 .mycourse-topbox-title {
     margin: 0;
     font-size: 20px;
-    font-weight: 700;
-    line-height: 30px;
+    font-weight: 500;
+    line-height: 150%;
     letter-spacing: -0.8px;
     color: #333333;
 }
 
 .mycourse-topbox .course-detail-info-table {
     margin-top: 4px;
+    gap: 10px;
 }
 
 /* ── 통계 박스 3종 ── */
@@ -12259,15 +12267,15 @@ button.dropdown--ctx-item {
 
 .mycourse-statbox--time {
     flex: 1 0 0;
-    justify-content: center;
-    gap: 70px;
+    justify-content: flex-start;
+    gap: 0;
 }
 
 .mycourse-statbox--cert {
     width: 377px;
     flex-shrink: 0;
-    justify-content: center;
-    gap: 30px;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
 .mycourse-statbox-title {
@@ -12365,6 +12373,7 @@ button.dropdown--ctx-item {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    margin: auto 0;
     font-size: 34px;
     font-weight: 700;
     line-height: 51px;
@@ -12379,16 +12388,66 @@ button.dropdown--ctx-item {
 
 /* 수료 */
 .mycourse-cert-badge {
-    display: inline-flex;
+    display: flex;
+    align-self: stretch;
     align-items: center;
     justify-content: center;
-    padding: 12px 40px;
-    border-radius: 10px;
-    background: #F0F0F0;
+    height: 50px;
+    border-radius: 5px;
+    background: #F1F1F1;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.64px;
     color: #BBBBBB;
+}
+
+/* 수료 — 수료완료 버튼 */
+.mycourse-cert-btn {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background: #7954C6;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.mycourse-cert-btn img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.mycourse-cert-date {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.56px;
+    color: #888888;
+    text-align: center;
+}
+
+.mycourse-cert-empty {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.6px;
+    color: #888888;
+    text-align: center;
+}
+
+/* 수료 상태별 디자인 (참고) */
+.mycourse-cert-states {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 50px 50px;
+    background: #F8F8F8;
 }
 
 /* ── 상품후기 박스 ── */
@@ -12430,8 +12489,7 @@ button.dropdown--ctx-item {
 
 .mycourse-review-more img {
     width: 14px;
-    height: 14px;
-    filter: brightness(0) saturate(100%) invert(34%) sepia(52%) saturate(1000%) hue-rotate(230deg) brightness(90%) contrast(90%);
+    height: auto;
 }
 
 .mycourse-review-list {
@@ -12442,9 +12500,11 @@ button.dropdown--ctx-item {
 .mycourse-review-item {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     gap: 12px;
-    padding: 20px 0;
-    border-bottom: 1px solid #EEEEEE;
+    padding: 20px 10px;
+    border-top: 1px solid #EEEEEE;
 }
 
 .mycourse-review-head {
@@ -12484,10 +12544,10 @@ button.dropdown--ctx-item {
     height: 56px;
     border: 1px solid #FFC107;
     border-radius: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: -0.64px;
-    color: #333333;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #FFCC00;
 }
 
 .mycourse-review-rating img {
@@ -12502,18 +12562,37 @@ button.dropdown--ctx-item {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 0;
     padding: 40px;
     border-radius: 30px;
     background: #FFFFFF;
 }
 
+.mycourse-side-logo {
+    margin-bottom: 30px;
+}
+
+/* 탭 하위 패널 (진도율 + 커리큘럼 외곽 테두리) */
+.mycourse-side-panel {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    flex: 1 0 0;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    border-right: 1px solid #7954C6;
+    border-bottom: 1px solid #7954C6;
+    border-left: 1px solid #7954C6;
+}
+
 .mycourse-side-handle {
     position: absolute;
     top: 60px;
-    left: -18px;
-    width: 24px;
-    height: 48px;
+    left: -20px;
+    width: 20px;
+    height: 50px;
+    padding: 4px;
     border: none;
     border-radius: 8px 0 0 8px;
     background: #7954C6;
@@ -12524,12 +12603,12 @@ button.dropdown--ctx-item {
 }
 
 .mycourse-side-handle img {
-    width: 17px;
-    height: 17px;
+    width: 12px;
+    height: 12px;
 }
 
 .mycourse-side-logo img {
-    height: 34px;
+    height: 20px;
     display: block;
     object-fit: contain;
 }
@@ -12539,6 +12618,7 @@ button.dropdown--ctx-item {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+    margin-bottom: 30px;
 }
 
 .mycourse-side-user-info {
@@ -12552,10 +12632,10 @@ button.dropdown--ctx-item {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    height: 56px;
-    padding: 0 32px;
+    width: 200px;
+    height: 50px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     background: #7954C6;
     font-size: 16px;
     font-weight: 500;
@@ -12619,9 +12699,10 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.6px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.26px;
     color: #333333;
 }
 
@@ -12660,24 +12741,29 @@ button.dropdown--ctx-item {
 .mycourse-curriculum {
     display: flex;
     flex-direction: column;
+    align-self: stretch;
+    gap: 10px;
 }
 
 .mycourse-chapter {
     display: flex;
     flex-direction: column;
+    align-self: stretch;
 }
 
 .mycourse-chapter-head {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 18px 0;
-    border-bottom: 1px solid #EEEEEE;
+    min-height: 50px;
+    padding: 0 10px;
+    border-radius: 5px;
+    background: #F8F8F8;
 }
 
 .mycourse-chapter-toggle {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     flex-shrink: 0;
     cursor: pointer;
 }
@@ -12705,13 +12791,18 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 16px 0;
-    border-bottom: 1px solid #F4F4F4;
+    min-height: 50px;
+    padding: 0 10px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.mycourse-lesson:last-child {
+    border-bottom: none;
 }
 
 .mycourse-lesson-icon {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     flex-shrink: 0;
 }
 
@@ -12744,6 +12835,10 @@ button.dropdown--ctx-item {
 
 .mycourse-lesson--done {
     opacity: 0.5;
+}
+
+.mycourse-lesson--current {
+    background: #F8F5FF;
 }
 
 .mycourse-lesson--current .mycourse-lesson-title {
