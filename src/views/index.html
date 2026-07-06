@@ -16,12 +16,15 @@
         }
 
         .wrap {
-            max-width: 760px;
+            max-width: 1120px;
             margin: 0 auto;
+            column-count: 2;
+            column-gap: 40px;
         }
 
         /* ===== PAGE HEAD ===== */
         .page-head {
+            column-span: all;
             display: flex;
             align-items: baseline;
             gap: 12px;
@@ -44,7 +47,7 @@
         }
 
         /* ===== SECTION ===== */
-        .section { margin-bottom: 34px; }
+        .section { margin-bottom: 34px; break-inside: avoid; }
 
         .section-head {
             display: flex;
@@ -173,7 +176,7 @@
     <div class="wrap">
     <div class="page-head">
         <h1>퍼블리싱 페이지 목록</h1>
-        <span class="subtitle">총 63페이지 · jerrysese.github.io/solsol</span>
+        <span class="subtitle">총 64페이지 · jerrysese.github.io/solsol</span>
     </div>
 
     <!-- 공통 -->
