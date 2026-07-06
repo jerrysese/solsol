@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon/favicon-16x16.png">
     <link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png">
-    <title>AI 튜터 채팅</title>
+    <title>채팅</title>
     <link rel="stylesheet" href="../../../../css/base.css">
 </head>
 <body>
@@ -49,21 +49,10 @@
                 <img src="../../../images/monzo.png" alt="monzo">
             </div>
 
-            <div class="mycourse-side-user">
-                <div class="mycourse-side-user-info">
-                    <img src="../../../images/community-user-avatar.jpg" alt="" class="community-post-avatar">
-                    <span class="community-post-role">학습자</span>
-                    <span class="community-post-author">Monzo</span>
-                </div>
-                <button type="button" class="mycourse-side-dashboard">
-                    <img src="../../../images/side-close-button.svg" alt="">
-                    대시보드 바로가기
-                </button>
-            </div>
+            <div class="mycourse-side-divider"></div>
 
             <div class="mycourse-tabs">
-                <button type="button" class="mycourse-tab">커리큘럼</button>
-                <button type="button" class="mycourse-tab is-active">AI 튜터</button>
+                <button type="button" class="mycourse-tab is-active">채팅</button>
                 <button type="button" class="mycourse-tab">자료실</button>
             </div>
 
@@ -72,10 +61,13 @@
                 <!-- 채팅 내용 (스크롤) -->
                 <div class="chat-body">
 
-                    <p class="chat-updated">10초 전 업데이트</p>
+                    <div class="chat-updated">
+                        <span>10초전 업데이트</span>
+                        <img src="../../../images/refresh-gray.svg" alt="" class="chat-updated-icon">
+                    </div>
 
-                    <!-- 받은 메시지 -->
-                    <div class="chat-msg chat-msg--in">
+                    <!-- 보낸 메시지 -->
+                    <div class="chat-msg chat-msg--out">
                         <div class="chat-bubble">
                             <p class="chat-bubble-text">Great, thanks for letting me know!
 I really look forward to experiencing it soon. 🎉</p>

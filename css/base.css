@@ -13080,13 +13080,22 @@ button.dropdown--ctx-item {
 }
 
 .chat-updated {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
     margin: 0;
-    text-align: center;
     color: #888888;
     font-size: 13px;
     font-weight: 500;
     line-height: 150%;
     letter-spacing: -0.52px;
+}
+
+.chat-updated-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
 }
 
 .chat-msg {
