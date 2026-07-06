@@ -12589,8 +12589,8 @@ button.dropdown--ctx-item {
 .mycourse-side-handle {
     position: absolute;
     top: 60px;
-    left: -20px;
-    width: 20px;
+    left: -25px;
+    width: 25px;
     height: 50px;
     padding: 4px;
     border: none;
@@ -12603,8 +12603,8 @@ button.dropdown--ctx-item {
 }
 
 .mycourse-side-handle img {
-    width: 12px;
-    height: 12px;
+    width: 17px;
+    height: 17px;
 }
 
 .mycourse-side-logo img {
@@ -12674,12 +12674,24 @@ button.dropdown--ctx-item {
 }
 
 .mycourse-tab.is-active {
+    position: relative;
+    z-index: 1;
     background: #FFFFFF;
     border: 1px solid #7954C6;
-    border-bottom: 1px solid #FFFFFF;
-    margin-bottom: -1px;
+    border-bottom: none;
     font-weight: 500;
     color: #7954C6;
+}
+
+/* 활성 탭 하단 이음새(탭바 border-bottom) 흰색으로 확실히 덮기 */
+.mycourse-tab.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 3px;
+    background: #FFFFFF;
 }
 
 /* 전체 진도율 바 */
