@@ -12281,16 +12281,19 @@ button.dropdown--ctx-item {
     height: 14px;
 }
 
-/* 챕터 목록 */
+/* 챕터 목록 (외곽 박스) */
 .course-detail-chapters {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 0 20px 20px;
+    padding: 20px;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    background: #FFFFFF;
 }
 
 .course-detail-chapter {
-    border: 1px solid #EEEEEE;
+    border: none;
     border-radius: 10px;
     overflow: hidden;
 }
