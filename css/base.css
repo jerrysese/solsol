@@ -12419,6 +12419,7 @@ button.dropdown--ctx-item {
 
 /* ─── 상품후기 / 문의하기 탭 ─── */
 .course-detail-review-wrap {
+    margin-top: 0;
     padding: 30px 20px 50px;
 }
 
