@@ -5342,8 +5342,8 @@ h2 {
 .cert-h {
     container-type: inline-size;
     position: relative;
-    width: 100%;
-    max-width: 1120px;
+    width: 1920px;
+    max-width: 100%;
     aspect-ratio: 16 / 9;
     margin: 0 auto;
     background: url('../src/images/certificate-kor-horizontal-bg.jpg') no-repeat center center / cover;
@@ -5353,85 +5353,86 @@ h2 {
 
 .cert-h > * {
     position: absolute;
-    left: 6.2%;
+    left: 6.4%;
     margin: 0;
 }
 
 .cert-h-no {
-    top: 16%;
-    font-size: 1.5cqw;
+    top: 15.3%;
+    font-size: 1.1cqw;
     letter-spacing: -0.02em;
     color: #555555;
 }
 
+/* 실측: 90px / 700 / #555 / ls -3.6px (1920 프레임 기준 = 4.6875cqw) */
 .cert-h-title {
     top: 20.5%;
-    font-size: 7.4cqw;
-    font-weight: 800;
+    font-size: 4.6875cqw;
+    font-weight: 700;
     line-height: 1;
-    letter-spacing: -0.04em;
-    color: #1A1A1A;
+    letter-spacing: -0.1875cqw;
+    color: #555555;
 }
 
 .cert-h-row {
     display: flex;
     align-items: center;
-    gap: 1.4cqw;
+    gap: 1cqw;
 }
 
-.cert-h-name { top: 41%; }
-.cert-h-course { top: 46.5%; }
+.cert-h-name { top: 39.5%; }
+.cert-h-course { top: 44.6%; }
 
 .cert-h-label {
-    font-size: 1.6cqw;
+    font-size: 1.2cqw;
     color: #888888;
 }
 
 .cert-h-div {
     width: 1px;
-    height: 1.5cqw;
+    height: 1.2cqw;
     background: #CCCCCC;
 }
 
 .cert-h-value {
-    font-size: 1.8cqw;
+    font-size: 1.5cqw;
     font-weight: 700;
     color: #333333;
 }
 
 .cert-h-desc {
-    top: 54.5%;
-    font-size: 1.6cqw;
+    top: 52.7%;
+    font-size: 1.35cqw;
     color: #888888;
 }
 
 .cert-h-dates {
-    top: 66.5%;
+    top: 65.4%;
     display: flex;
     align-items: center;
-    gap: 1.6cqw;
+    gap: 1.3cqw;
 }
 
 .cert-h-date-start {
-    font-size: 1.5cqw;
+    font-size: 1.15cqw;
     color: #888888;
 }
 
 .cert-h-date-end {
-    font-size: 1.5cqw;
+    font-size: 1.15cqw;
     font-weight: 700;
     color: #EEA23A;
 }
 
 .cert-h-issuer {
-    top: 77%;
+    top: 78.3%;
     display: flex;
     align-items: center;
-    gap: 1.6cqw;
+    gap: 1.3cqw;
 }
 
 .cert-h-org {
-    font-size: 1.7cqw;
+    font-size: 1.3cqw;
     color: #333333;
 }
 
@@ -5440,7 +5441,7 @@ h2 {
 }
 
 .cert-h-stamp {
-    width: 5.5cqw;
+    width: 3.6cqw;
     height: auto;
 }
 
