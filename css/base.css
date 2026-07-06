@@ -12930,11 +12930,89 @@ button.dropdown--ctx-item {
     filter: none;
 }
 
+/* ── 영상 전체보기 ── */
+.fullview-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    aspect-ratio: 445 / 264;
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+                url('../src/images/thumb-course.jpg') no-repeat center center / cover;
+}
+
+.fullview-play {
+    width: 90px;
+    height: 90px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.fullview-play img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.fullview-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    align-self: stretch;
+}
+
+.fullview-title {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -1.7px;
+    color: #333333;
+}
+
+.fullview-nav {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* 영상 전체보기: 우측 패널 높이를 좌측(영상) 높이에 맞추고 커리큘럼만 내부 스크롤 */
+.mycourse-dashboard--fullview {
+    align-items: stretch;
+}
+
+.mycourse-dashboard--fullview .mycourse-side-panel {
+    min-height: 0;
+}
+
+.mycourse-dashboard--fullview .mycourse-curriculum {
+    flex: 1 0 0;
+    min-height: 0;
+    overflow-y: auto;
+}
+
 /* ===== RESPONSIVE =====
    Figma는 1920px 고정 2단 디자인. 태블릿 구간에서는 2단을 유지하고
    (좁은 화면은 가로 스크롤), 모바일(768px)에서만 세로로 전환한다. */
 @media (max-width: 768px) {
     .mycourse-dashboard { flex-direction: column; padding: 16px; gap: 16px; }
+    .fullview-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .fullview-title { font-size: 22px; letter-spacing: -1px; }
+    .fullview-nav { align-self: stretch; }
+    .fullview-nav .btn { flex: 1 0 0; }
     .mycourse-main { width: 100%; }
     .mycourse-side { width: 100%; padding: 20px; }
     .mycourse-side-handle { display: none; }
