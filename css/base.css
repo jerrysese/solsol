@@ -13098,6 +13098,14 @@ button.dropdown--ctx-item {
     flex-shrink: 0;
 }
 
+/* 채팅 구분선 (업데이트 헤더 아래 / 입력창 위) — 패널 폭 전체 */
+.chat-divider {
+    height: 1px;
+    margin: 0 -20px;
+    background: #EEEEEE;
+    flex-shrink: 0;
+}
+
 .chat-msg {
     display: flex;
     flex-direction: column;
@@ -13196,8 +13204,8 @@ button.dropdown--ctx-item {
 }
 
 .chat-input-send img {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 /* ===== RESPONSIVE =====
