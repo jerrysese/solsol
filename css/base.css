@@ -13003,10 +13003,58 @@ button.dropdown--ctx-item {
     min-height: 0;
 }
 
-.mycourse-dashboard--fullview .mycourse-curriculum {
+.mycourse-dashboard--fullview .mycourse-curriculum,
+.mycourse-dashboard--fullview .mycourse-files {
     flex: 1 0 0;
     min-height: 0;
     overflow-y: auto;
+}
+
+/* 자료실 탭 — 로고 하단 구분선 + 파일 리스트 */
+.mycourse-side-divider {
+    height: 1px;
+    background: #EEEEEE;
+    margin-bottom: 20px;
+}
+
+.mycourse-files-top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mycourse-files {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #EEEEEE;
+}
+
+.mycourse-file {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    padding: 0 0 0 10px;
+    border-bottom: 1px solid #EEEEEE;
+    box-sizing: border-box;
+}
+
+.mycourse-file-icon {
+    width: 15px;
+    height: 15px;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+}
+
+.mycourse-file-name {
+    flex: 1 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333333;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.52px;
 }
 
 /* ===== RESPONSIVE =====
