@@ -12096,7 +12096,7 @@ button.dropdown--ctx-item {
 
 .course-detail-wrap {
     display: flex;
-    gap: 10px;
+    gap: 50px;
     max-width: 1440px;
     margin: 80px auto 0;
     padding: 0 20px 100px;
@@ -12256,18 +12256,22 @@ button.dropdown--ctx-item {
 .course-detail-curriculum-controls {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .course-detail-ctrl-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 4px;
+    width: 128px;
+    height: 40px;
     font-size: 14px;
     font-weight: 500;
     color: #555555;
-    background: none;
-    border: none;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
     cursor: pointer;
     letter-spacing: -0.56px;
 }
