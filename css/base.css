@@ -5788,6 +5788,140 @@ h2 {
     height: auto;
 }
 
+/* ==============================
+   수료증 한글 세로형 2 (프레임 1080×1600, NanumMyeongjo, 중앙 워터마크)
+   ============================== */
+.cert-v2 {
+    container-type: inline-size;
+    position: relative;
+    width: 1080px;
+    max-width: 100%;
+    aspect-ratio: 1080 / 1600;
+    margin: 0 auto;
+    background: url('../src/images/certificate-kor-vertical2-bg.jpg') no-repeat center center / cover;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #555555;
+    overflow: hidden;
+}
+
+.cert-v2 > * {
+    position: absolute;
+    margin: 0;
+}
+
+/* 워터마크: bg_img 640×640, opacity 0.1, 중앙 */
+.cert-v2-watermark {
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 59.26cqw;
+    height: auto;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.cert-v2-no {
+    top: 8%;
+    left: 11.11%;
+    font-size: 2.315cqw;
+    font-weight: 400;
+    color: #888888;
+}
+
+/* 제목: NanumMyeongjo 60px / 700 / #555 / ls -2.4px, 중앙 */
+.cert-v2-title {
+    top: 15.5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 5.556cqw;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.222cqw;
+    color: #555555;
+}
+
+/* 성명/강좌명/시작일/수료일 행 (좌측, 라벨 자간 균등) */
+.cert-v2-row {
+    left: 11.11%;
+    width: 77.78%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.cert-v2-name { top: 29.4%; }
+.cert-v2-course { top: 33%; }
+.cert-v2-start { top: 40.2%; }
+.cert-v2-end { top: 43.8%; }
+
+/* 라벨: 25px / 700(≈600) / #888, 폭 균등 정렬 */
+.cert-v2-label {
+    width: 18.5cqw;
+    flex-shrink: 0;
+    margin-right: 5.2cqw;
+    text-align: justify;
+    text-align-last: justify;
+    font-size: 2.315cqw;
+    font-weight: 700;
+    color: #888888;
+}
+
+/* 값: 25px / 700(≈600) / #555 */
+.cert-v2-value {
+    flex: 1 0 0;
+    font-size: 2.315cqw;
+    font-weight: 700;
+    line-height: 150%;
+    color: #555555;
+}
+
+/* 설명: 30px / 700(≈600) / #555 / ls -1.2px, 중앙 2줄 */
+.cert-v2-desc {
+    top: 54.8%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2.778cqw;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.111cqw;
+    color: #555555;
+}
+
+/* 발급일: 30px / 700(≈600) / #555 / ls -1.2px, 중앙 */
+.cert-v2-issue {
+    top: 82.3%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2.778cqw;
+    font-weight: 700;
+    letter-spacing: -0.111cqw;
+    color: #555555;
+}
+
+/* DJ테크트리 + 도장 (하단 중앙) */
+.cert-v2-issuer {
+    top: 88.4%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8cqw;
+}
+
+.cert-v2-org {
+    font-size: 2.778cqw;
+    font-weight: 700;
+    color: #555555;
+}
+
+.cert-v2-stamp {
+    width: 8cqw;
+    height: auto;
+}
+
 .digital-list-top {
     display: flex;
     justify-content: space-between;
