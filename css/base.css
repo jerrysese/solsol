@@ -12851,6 +12851,85 @@ button.dropdown--ctx-item {
     font-weight: 500;
 }
 
+/* ── 상품후기 모달 ── */
+.review-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.review-modal__author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    padding: 0 30px 20px;
+}
+
+.review-modal__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: stretch;
+    padding: 0 30px 30px;
+}
+
+.review-modal__textarea {
+    height: 170px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #F8F8F8;
+    resize: none;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.52px;
+    color: #333333;
+}
+
+.review-modal__textarea::placeholder {
+    color: #BBBBBB;
+}
+
+.review-modal__save {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border: none;
+    border-radius: 5px;
+    background: #F1F1F1;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+    color: #BBBBBB;
+    cursor: pointer;
+}
+
+.review-modal__save img {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0.73);
+}
+
+.review-modal__save--active {
+    background: #7954C6;
+    color: #FFFFFF;
+}
+
+.review-modal__save--active img {
+    filter: none;
+}
+
 /* ===== RESPONSIVE =====
    Figma는 1920px 고정 2단 디자인. 태블릿 구간에서는 2단을 유지하고
    (좁은 화면은 가로 스크롤), 모바일(768px)에서만 세로로 전환한다. */
