@@ -13033,3 +13033,158 @@ button.dropdown--ctx-item {
     .mycourse-tab { font-size: 15px; }
     .mycourse-chapter-head { flex-wrap: wrap; }
 }
+
+/* ==============================
+   VIDEO FULLVIEW PLAYER (마이페이지 - 일반강의실 영상 전체보기)
+   ============================== */
+.videoview {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: url('../src/images/thumb-course.jpg') no-repeat center center / cover;
+}
+
+/* 중앙 재생 컨트롤 (뒤로10 · 50 · 재생 · 50 · 앞으로10, 화면 정중앙) */
+.videoview-controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.videoview-ctrl,
+.videoview-play {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.videoview-ctrl img,
+.videoview-play img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* refresh 아이콘 중앙 "10" (H4-Bold 18/700) */
+.videoview-ctrl-num {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.72px;
+    pointer-events: none;
+}
+
+/* 하단 진행바 */
+.videoview-progress {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.videoview-track {
+    position: relative;
+    flex: 1 0 0;
+    height: 5px;
+    border-radius: 9px;
+    background: #BBBBBB;
+}
+
+.videoview-track-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 57.6%;
+    height: 5px;
+    border-radius: 9px;
+    background: #7954C6;
+}
+
+.videoview-track-ball {
+    position: absolute;
+    top: 50%;
+    left: 57.6%;
+    transform: translate(-50%, -50%);
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #7954C6;
+}
+
+.videoview-time {
+    flex-shrink: 0;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+}
+
+/* 우측 커리큘럼 열기 탭 (W 100 고정, 화면 우측 끝 중앙) */
+.videoview-tabs {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    width: 100px;
+    padding: 30px 0;
+    border-radius: 20px 0 0 20px;
+    background: #7954C6;
+}
+
+.videoview-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.52px;
+}
+
+.videoview-tab img {
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+.videoview-tab-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .videoview-controls { gap: 30px; }
+    .videoview-tabs { width: 76px; padding: 20px 0; }
+    .videoview-tab { font-size: 12px; }
+}

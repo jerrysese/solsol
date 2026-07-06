@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png">
+    <title>영상 전체보기</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+</head>
+<body>
+
+    <div class="videoview">
+
+        <!-- 중앙 재생 컨트롤 -->
+        <div class="videoview-controls">
+            <button type="button" class="videoview-ctrl" aria-label="10초 뒤로">
+                <img src="../../../images/refresh-left.svg" alt="">
+                <span class="videoview-ctrl-num">10</span>
+            </button>
+            <button type="button" class="videoview-play" aria-label="재생">
+                <img src="../../../images/video-play.svg" alt="">
+            </button>
+            <button type="button" class="videoview-ctrl" aria-label="10초 앞으로">
+                <img src="../../../images/refresh-right.svg" alt="">
+                <span class="videoview-ctrl-num">10</span>
+            </button>
+        </div>
+
+        <!-- 하단 진행바 -->
+        <div class="videoview-progress">
+            <div class="videoview-track">
+                <div class="videoview-track-fill"></div>
+                <span class="videoview-track-ball"></span>
+            </div>
+            <span class="videoview-time">38:47</span>
+        </div>
+
+        <!-- 우측 커리큘럼 열기 탭 -->
+        <div class="videoview-tabs">
+            <button type="button" class="videoview-tab">
+                <img src="../../../images/free-icon-lesson.svg" alt="">
+                <span>커리큘럼</span>
+            </button>
+            <span class="videoview-tab-divider"></span>
+            <button type="button" class="videoview-tab">
+                <img src="../../../images/free-icon-microchip-ai.svg" alt="">
+                <span>AI 튜터</span>
+            </button>
+            <span class="videoview-tab-divider"></span>
+            <button type="button" class="videoview-tab">
+                <img src="../../../images/free-icon-folder-open.svg" alt="">
+                <span>자료실</span>
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>

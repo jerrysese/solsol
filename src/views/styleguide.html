@@ -62,6 +62,13 @@
             border-radius: 8px;
             overflow: hidden;
         }
+        .sg-dark {
+            position: relative;
+            min-height: 160px;
+            background: #2A2A2A;
+            border-radius: 8px;
+            padding: 24px;
+        }
     </style>
 </head>
 <body>
@@ -1221,6 +1228,65 @@ function toggleDropdown(id) {
             <img src="../images/free-icon-slant-arrow.svg" alt="">
             저장하기
         </button>
+    </div>
+
+</div>
+
+
+<!-- ===== 영상 전체보기 플레이어 ===== -->
+<div class="sg-section">
+    <div class="sg-title">영상 전체보기 플레이어 (일반강의실 · .videoview)</div>
+
+    <div class="sg-subtitle">① 중앙 재생 컨트롤 (.videoview-controls / .videoview-ctrl / .videoview-play)</div>
+    <div class="sg-dark">
+        <div class="videoview-controls">
+            <button type="button" class="videoview-ctrl" aria-label="10초 뒤로">
+                <img src="../images/refresh-left.svg" alt="">
+                <span class="videoview-ctrl-num">10</span>
+            </button>
+            <button type="button" class="videoview-play" aria-label="재생">
+                <img src="../images/video-play.svg" alt="">
+            </button>
+            <button type="button" class="videoview-ctrl" aria-label="10초 앞으로">
+                <img src="../images/refresh-right.svg" alt="">
+                <span class="videoview-ctrl-num">10</span>
+            </button>
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">② 하단 진행바 (.videoview-progress / .videoview-track / .videoview-track-fill / .videoview-track-ball / .videoview-time)</div>
+    <div class="sg-dark">
+        <div class="videoview-progress">
+            <div class="videoview-track">
+                <div class="videoview-track-fill"></div>
+                <span class="videoview-track-ball"></span>
+            </div>
+            <span class="videoview-time">38:47</span>
+        </div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-subtitle">③ 우측 커리큘럼 열기 탭 (.videoview-tabs / .videoview-tab / .videoview-tab-divider)</div>
+    <div class="sg-dark">
+        <div class="videoview-tabs">
+            <button type="button" class="videoview-tab">
+                <img src="../images/free-icon-lesson.svg" alt="">
+                <span>커리큘럼</span>
+            </button>
+            <span class="videoview-tab-divider"></span>
+            <button type="button" class="videoview-tab">
+                <img src="../images/free-icon-microchip-ai.svg" alt="">
+                <span>AI 튜터</span>
+            </button>
+            <span class="videoview-tab-divider"></span>
+            <button type="button" class="videoview-tab">
+                <img src="../images/free-icon-folder-open.svg" alt="">
+                <span>자료실</span>
+            </button>
+        </div>
     </div>
 
 </div>
