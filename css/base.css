@@ -5465,6 +5465,182 @@ h2 {
     height: auto;
 }
 
+/* ==============================
+   수료증 한글 세로형 샘플 (프레임 1080×1600, 중앙 정렬)
+   ============================== */
+.cert-v {
+    container-type: inline-size;
+    position: relative;
+    width: 1080px;
+    max-width: 100%;
+    aspect-ratio: 1080 / 1600;
+    margin: 0 auto;
+    background: url('../src/images/certificate-kor-vertical-bg.jpg') no-repeat center center / cover;
+    font-family: var(--font-base);
+    color: #333333;
+}
+
+.cert-v > * {
+    position: absolute;
+    margin: 0;
+}
+
+/* 시리얼넘버 */
+.cert-v-no {
+    top: 6.9%;
+    left: 9.26%;
+    font-size: 2.222cqw;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.055cqw;
+    color: #888888;
+}
+
+/* 제목: 60px / 700 / #555 / ls -2.4px, 중앙 */
+.cert-v-title {
+    top: 27%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 5.556cqw;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.2222cqw;
+    color: #555555;
+}
+
+/* 성명 | 홍길동 (중앙) */
+.cert-v-name {
+    top: 41.7%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8cqw;
+}
+
+/* 성명(라벨): 30px / 400 / #888 / ls -0.6px */
+.cert-v-label {
+    font-size: 2.778cqw;
+    font-weight: 400;
+    letter-spacing: -0.055cqw;
+    color: #888888;
+}
+
+.cert-v-div {
+    width: 1px;
+    height: 3cqw;
+    background: #CCCCCC;
+}
+
+/* 홍길동(값): 30px / 600 / #555 / ls -1.2px */
+.cert-v-value {
+    font-size: 2.778cqw;
+    font-weight: 600;
+    letter-spacing: -0.111cqw;
+    color: #555555;
+}
+
+/* 설명: 30px / 400 / #888 / ls -0.6px (중앙) */
+.cert-v-desc {
+    top: 45.8%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2.778cqw;
+    font-weight: 400;
+    letter-spacing: -0.055cqw;
+    color: #888888;
+}
+
+/* 과정명: 30px / 600 / #555 / lh150% / ls -1.2px (중앙, 2줄) */
+.cert-v-course {
+    top: 58.8%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2.778cqw;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.111cqw;
+    color: #555555;
+}
+
+/* 시작일/수료일 (중앙, 2열) */
+.cert-v-dates {
+    top: 71.2%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 11cqw;
+}
+
+.cert-v-datecol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.852cqw;              /* 라벨-선-값 각 20px */
+}
+
+/* 날짜 라벨: 24px / 500 / #888 / lh150% */
+.cert-v-date-label {
+    font-size: 2.222cqw;
+    font-weight: 500;
+    line-height: 150%;
+    color: #888888;
+}
+
+.cert-v-date-label--end {
+    color: #F0B058;
+}
+
+/* 밑줄: 220×1px */
+.cert-v-line {
+    width: 20.37cqw;
+    height: 1px;
+    background: #DDDDDD;
+}
+
+.cert-v-line--end {
+    background: #F0B058;
+}
+
+.cert-v-date-value {
+    font-size: 2.222cqw;
+    font-weight: 600;
+    color: #555555;
+}
+
+.cert-v-date-value--end {
+    font-weight: 700;
+    color: #F0B058;
+}
+
+/* DJ 테크트리: 32px / 600 / #888 / ls -1.28px (중앙) + 도장 */
+.cert-v-issuer {
+    top: 89.5%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2cqw;
+}
+
+.cert-v-org {
+    font-size: 2.963cqw;
+    font-weight: 600;
+    letter-spacing: -0.1185cqw;
+    color: #888888;
+}
+
+.cert-v-stamp {
+    width: 6cqw;
+    height: auto;
+}
+
 .digital-list-top {
     display: flex;
     justify-content: space-between;
