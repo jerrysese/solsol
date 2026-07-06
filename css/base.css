@@ -5353,20 +5353,23 @@ h2 {
 
 .cert-h > * {
     position: absolute;
-    left: 6.4%;
+    left: 6.25%;              /* 실측: 좌우 패딩 120px = 6.25% */
     margin: 0;
 }
 
+/* 시리얼넘버: 24px / 500 / #888 / lh150% */
 .cert-h-no {
-    top: 15.3%;
-    font-size: 1.1cqw;
-    letter-spacing: -0.02em;
-    color: #555555;
+    top: 15%;
+    font-size: 1.25cqw;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.03125cqw;
+    color: #888888;
 }
 
-/* 실측: 90px / 700 / #555 / ls -3.6px (1920 프레임 기준 = 4.6875cqw) */
+/* 제목: 90px / 700 / #555 / ls -3.6px */
 .cert-h-title {
-    top: 20.5%;
+    top: 20%;
     font-size: 4.6875cqw;
     font-weight: 700;
     line-height: 1;
@@ -5380,64 +5383,86 @@ h2 {
     gap: 1cqw;
 }
 
-.cert-h-name { top: 39.5%; }
-.cert-h-course { top: 44.6%; }
+.cert-h-name { top: 38.8%; }
+.cert-h-course { top: 44%; }
 
+/* 라벨(성명/과정명): 30px / 400 / #888 */
 .cert-h-label {
-    font-size: 1.2cqw;
+    min-width: 4.7cqw;
+    font-size: 1.5625cqw;
+    font-weight: 400;
+    letter-spacing: -0.03125cqw;
     color: #888888;
 }
 
 .cert-h-div {
     width: 1px;
-    height: 1.2cqw;
+    height: 1.7cqw;
     background: #CCCCCC;
 }
 
+/* 값(홍길동/과정명): 30px / 700 / #333 */
 .cert-h-value {
-    font-size: 1.5cqw;
+    font-size: 1.5625cqw;
     font-weight: 700;
+    letter-spacing: -0.03125cqw;
     color: #333333;
 }
 
+/* 설명: 30px / 400 / #888 */
 .cert-h-desc {
-    top: 52.7%;
-    font-size: 1.35cqw;
+    top: 52.3%;
+    font-size: 1.5625cqw;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.03125cqw;
     color: #888888;
 }
 
+/* 시작일/수료일: 24px / 400 / #888, 구분선 좌우 50px */
 .cert-h-dates {
-    top: 65.4%;
+    top: 65.2%;
     display: flex;
     align-items: center;
-    gap: 1.3cqw;
+    gap: 2.6cqw;
 }
 
 .cert-h-date-start {
-    font-size: 1.15cqw;
+    font-size: 1.25cqw;
+    font-weight: 400;
+    letter-spacing: -0.03125cqw;
     color: #888888;
 }
 
 .cert-h-date-end {
-    font-size: 1.15cqw;
+    font-size: 1.25cqw;
     font-weight: 700;
+    letter-spacing: -0.03125cqw;
     color: #EEA23A;
 }
 
+.cert-h-dates .cert-h-div {
+    height: 1.4cqw;
+}
+
+/* DJ 테크트리: 32px / 600 / #888 / ls -1.28px */
 .cert-h-issuer {
-    top: 78.3%;
+    top: 78%;
     display: flex;
     align-items: center;
     gap: 1.3cqw;
 }
 
 .cert-h-org {
-    font-size: 1.3cqw;
-    color: #333333;
+    font-size: 1.6667cqw;
+    font-weight: 600;
+    letter-spacing: -0.0667cqw;
+    color: #888888;
 }
 
 .cert-h-org b {
     font-weight: 800;
+    color: #333333;
 }
 
 .cert-h-stamp {
