@@ -12991,7 +12991,12 @@ button.dropdown--ctx-item {
 
 /* 영상 전체보기: 우측 패널 높이를 좌측(영상) 높이에 맞추고 커리큘럼만 내부 스크롤 */
 .mycourse-dashboard--fullview {
-    align-items: stretch;
+    align-items: flex-start;
+}
+
+/* Figma: 콘텐츠 520×758 + padding 40*2 = 838px (좌측 컬럼 높이와 동일) */
+.mycourse-dashboard--fullview .mycourse-side {
+    height: 838px;
 }
 
 .mycourse-dashboard--fullview .mycourse-side-panel {
