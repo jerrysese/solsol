@@ -12593,10 +12593,11 @@ button.dropdown--ctx-item {
 }
 
 .course-detail-rating-count {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    color: #BBBBBB;
-    letter-spacing: -0.56px;
+    color: #555555;
+    line-height: 20px;
+    letter-spacing: -0.65px;
 }
 
 .course-detail-discount-row {
