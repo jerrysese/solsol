@@ -1172,6 +1172,57 @@ function toggleDropdown(id) {
 </div>
 
 
+<!-- ===== 8-2. 상세페이지 모달 (맛보기영상 / 공유하기) ===== -->
+<div class="sg-section">
+    <div class="sg-title">⑧-2 상세페이지 모달 (공유하기 / 맛보기 영상)</div>
+
+    <div class="sg-subtitle">공유하기 모달 (.share-modal) — login 소셜 버튼(.auth-btn) 재사용</div>
+    <div style="position:relative;">
+        <div class="share-modal" style="position:static;transform:none;">
+            <div class="popup-modal__header">
+                <span class="popup-modal__title">공유하기</span>
+                <button class="popup-modal__close" type="button" aria-label="닫기"><img src="../images/free-icon-modal-close-x.svg" alt=""></button>
+            </div>
+            <div class="share-modal__body">
+                <button class="auth-btn auth-btn--kakao" type="button"><img src="../images/ico_kakao.svg" alt="" class="auth-btn-ico"><span>카카오톡으로 링크 공유하기</span></button>
+                <button class="auth-btn auth-btn--facebook" type="button"><img src="../images/ico-fb.svg" alt="" class="auth-btn-ico"><span>페이스북으로 링크 공유하기</span></button>
+                <button class="auth-btn auth-btn--copy" type="button"><img src="../images/free-icon-clip.svg" alt="" class="auth-btn-ico"><span>공유 링크 복사</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sg-subtitle" style="margin-top:20px;">맛보기 영상 모달 (.preview-modal) — 커리큘럼 요소 참고</div>
+    <div style="position:relative;">
+        <div class="preview-modal" style="position:static;transform:none;">
+            <div class="popup-modal__header">
+                <span class="popup-modal__title">맛보기 영상</span>
+                <button class="popup-modal__close" type="button" aria-label="닫기"><img src="../images/free-icon-modal-close-x.svg" alt=""></button>
+            </div>
+            <div class="preview-modal__body">
+                <div class="preview-modal__video">
+                    <button class="preview-modal__play" type="button" aria-label="재생"><img src="../images/video-play.svg" alt=""></button>
+                </div>
+                <div class="preview-modal__list">
+                    <div class="preview-modal__chapter">AI 개발도구 살펴보기</div>
+                    <div class="preview-modal__lesson">
+                        <div class="preview-modal__lesson-left"><img src="../images/free-icon-play.svg" alt=""><span class="preview-modal__lesson-name">챗봇(chatbots)</span></div>
+                        <span class="preview-modal__lesson-time">20:53</span>
+                    </div>
+                    <div class="preview-modal__lesson">
+                        <div class="preview-modal__lesson-left"><img src="../images/free-icon-play.svg" alt=""><span class="preview-modal__lesson-name">IDE 어시스턴트(IDE Assistants)</span></div>
+                        <span class="preview-modal__lesson-time">20:53</span>
+                    </div>
+                    <div class="preview-modal__lesson">
+                        <div class="preview-modal__lesson-left"><img src="../images/free-icon-play.svg" alt=""><span class="preview-modal__lesson-name">프로젝트 부트스트래퍼(project bootstrappers)</span></div>
+                        <span class="preview-modal__lesson-time">20:53</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="sg-section">
     <div class="sg-title">⑨ MYCOURSE DASHBOARD (일반강의실 대시보드)</div>
 
