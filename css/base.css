@@ -12135,31 +12135,11 @@ button.dropdown--ctx-item {
     flex-shrink: 0;
 }
 
-/* 플레이어 좌상단 LIVE 배지 (라이브강의 상세) */
-.course-detail-live-badge {
+/* 플레이어 좌상단 LIVE 배지 위치 (공통 .badge-status 사용) */
+.course-detail-player-badge {
     position: absolute;
     top: 20px;
     left: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    height: 30px;
-    padding: 0 14px;
-    background: var(--color-red-bg);
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    color: var(--color-red);
-    box-sizing: border-box;
-}
-.course-detail-live-badge::before {
-    content: '';
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--color-red);
-    flex-shrink: 0;
 }
 
 .course-detail-player-text {
