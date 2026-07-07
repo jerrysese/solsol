@@ -12144,9 +12144,6 @@ button.dropdown--ctx-item {
 
 .course-detail-player-text {
     align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     padding: 0 10px;
     box-sizing: border-box;
 }
