@@ -6213,6 +6213,9 @@ h2 {
     white-space: nowrap;
 }
 
+/* 프리미엄커뮤니티는 글자 수가 많아 리본 밴드에 들어가도록 축소 */
+.course-card__ribbon--premium span { font-size: 7px; letter-spacing: -0.3px; }
+
 
 /* =====================================================
    DROPDOWN — 커스텀 드롭다운
@@ -12246,6 +12249,13 @@ button.dropdown--ctx-item {
 .course-detail-compose-list .product-card__info--live  { border-top-color: #FC5758; }
 .course-detail-compose-list .product-card__info--video { border-top-color: #31AD60; }
 
+/* 구성 카드 제목 — H4-Medium (18/500/#888/-0.72) */
+.course-detail-compose-list .bookmark-card__desc {
+    font-size: 18px;
+    color: #888888;
+    letter-spacing: -0.72px;
+}
+
 /* 멤버십 구독 카드 (다크 골드) */
 .course-detail-membership-card {
     position: relative;
@@ -12277,11 +12287,11 @@ button.dropdown--ctx-item {
     line-height: 150%;
 }
 .course-detail-membership-card__note {
-    font-size: 14px;
-    font-weight: 400;
-    color: #DDDDDD;
-    letter-spacing: -0.56px;
-    line-height: 150%;
+    font-size: 15px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: normal;
+    text-align: center;
 }
 
 /* ─── 상품소개 탭 ─── */
