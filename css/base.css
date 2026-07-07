@@ -6216,9 +6216,9 @@ h2 {
 /* 프리미엄커뮤니티는 글자 수가 많아, 밴드가 넓은 아래쪽으로 내려 배치 + 자간 축소 */
 .course-card__ribbon--premium span {
     font-size: 10px;
-    letter-spacing: -0.4px;
-    top: 27px;
-    left: 4px;
+    letter-spacing: -0.7px;
+    top: 23px;
+    left: 3px;
 }
 
 
