@@ -12331,15 +12331,15 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 16px 10px;
+    padding: 10px;
     border-bottom: 1px dashed #DDDDDD;
 }
 .digital-compose-item:first-child { padding-top: 0; }
 .digital-compose-item:last-child { padding-bottom: 0; border-bottom: none; }
 
 .digital-compose-icon {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     flex-shrink: 0;
 }
 
@@ -12348,7 +12348,7 @@ button.dropdown--ctx-item {
     font-weight: 500;
     color: #333333;
     letter-spacing: -0.6px;
-    line-height: 150%;
+    line-height: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
