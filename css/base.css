@@ -6179,6 +6179,7 @@ h2 {
 .course-card__ribbon--package::before { background: #2BACF4; }
 .course-card__ribbon--digital::before { background: #555555; }
 .course-card__ribbon--video::before   { background: #31AD60; }
+.course-card__ribbon--premium::before { background: #B75D00; }
 
 .course-card__ribbon::after {
     content: '';
@@ -6194,6 +6195,7 @@ h2 {
 .course-card__ribbon--package::after { background-image: linear-gradient(135deg, transparent 50%, rgba(5,128,196,0.6) 50%),  linear-gradient(135deg, transparent 50%, rgba(5,128,196,0.6) 50%); }
 .course-card__ribbon--digital::after { background-image: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.6) 50%),      linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.6) 50%); }
 .course-card__ribbon--video::after   { background-image: linear-gradient(135deg, transparent 50%, rgba(26,120,62,0.6) 50%),  linear-gradient(135deg, transparent 50%, rgba(26,120,62,0.6) 50%); }
+.course-card__ribbon--premium::after { background-image: linear-gradient(135deg, transparent 50%, rgba(120,61,0,0.6) 50%),    linear-gradient(135deg, transparent 50%, rgba(120,61,0,0.6) 50%); }
 
 .course-card__ribbon span {
     display: block;
@@ -12208,6 +12210,80 @@ button.dropdown--ctx-item {
     margin-bottom: 20px;
 }
 
+/* ===== 상품구성 (패키지상품 상세) ===== */
+.course-detail-compose-title {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.course-detail-compose-count {
+    font-size: 14px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.56px;
+}
+
+.course-detail-compose-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* 구성 카드 — product-card 골격 재사용, 썸네일 상단 정렬 + 판매정보 */
+.course-detail-compose-list .product-card { height: 542px; }
+.course-detail-compose-list .product-card__thumb {
+    flex: 1;
+    min-height: 0;
+    justify-content: center;
+}
+.course-detail-compose-list .product-card__thumb::after { display: none; }
+.course-detail-compose-list .product-card__info {
+    flex: 0 0 auto;
+    min-height: 0;
+    gap: 20px;
+    border-top: 3px solid #7954C6;
+}
+.course-detail-compose-list .product-card__info--live  { border-top-color: #FC5758; }
+.course-detail-compose-list .product-card__info--video { border-top-color: #31AD60; }
+
+/* 멤버십 구독 카드 (다크 골드) */
+.course-detail-membership-card {
+    position: relative;
+    height: 542px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: url('../src/images/bg_prim-image.png') center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.course-detail-membership-card__name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -1.12px;
+    line-height: 150%;
+}
+.course-detail-membership-card__price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -1.28px;
+    line-height: 150%;
+}
+.course-detail-membership-card__note {
+    font-size: 14px;
+    font-weight: 400;
+    color: #DDDDDD;
+    letter-spacing: -0.56px;
+    line-height: 150%;
+}
+
 /* ─── 상품소개 탭 ─── */
 .course-detail-intro {
     padding: 50px 20px;
@@ -12632,6 +12708,21 @@ button.dropdown--ctx-item {
     letter-spacing: -1.12px;
 }
 
+/* 패키지 가격 — "개별 구매 대비 N% 할인" 라벨 + 할부 안내 */
+.course-detail-discount-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.6px;
+}
+
+.course-detail-price-note {
+    font-size: 13px;
+    font-weight: 500;
+    color: #BBBBBB;
+    letter-spacing: -0.26px;
+}
+
 /* 버튼 그룹 */
 .course-detail-btn-group {
     display: flex;
@@ -12811,6 +12902,10 @@ button.dropdown--ctx-item {
     .course-detail-wrap { flex-direction: column; gap: 0; padding: 0 16px 60px; margin-top: 40px; }
     .course-detail-left { width: 100%; }
     .course-detail-player { width: 100%; height: auto; aspect-ratio: 16/9; }
+    .course-detail-compose-list { grid-template-columns: 1fr; }
+    .course-detail-compose-list .product-card,
+    .course-detail-membership-card { height: auto; }
+    .course-detail-compose-list .product-card__thumb { min-height: 190px; }
     .course-detail-tab-btn { font-size: 14px; height: 52px; }
     .course-detail-intro { padding: 30px 12px; }
     .course-detail-curriculum-header { width: 100%; flex-wrap: wrap; height: auto; gap: 8px; }
