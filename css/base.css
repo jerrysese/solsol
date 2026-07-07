@@ -10571,6 +10571,115 @@ button.dropdown--ctx-item {
     margin: 0 0 30px;
 }
 
+/* =====================================================
+   INBOX — 알림센터
+===================================================== */
+.inbox-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 80px 0 100px;
+    box-sizing: border-box;
+}
+
+.inbox-page__title {
+    font-size: 34px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -1.7px;
+    line-height: 150%;
+    margin: 0 0 30px;
+}
+
+.inbox-group + .inbox-group {
+    margin-top: 50px;
+}
+
+.inbox-group__month {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.72px;
+    line-height: 150%;
+    margin-bottom: 20px;
+}
+
+.inbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inbox-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 30px;
+    border-radius: 10px;
+    background: #F8F8F8;
+    overflow: hidden;
+}
+
+.inbox-item__bar {
+    width: 10px;
+    align-self: stretch;
+    flex-shrink: 0;
+    background: #BBBBBB;
+}
+.inbox-item--unread .inbox-item__bar { background: #7954C6; }
+
+.inbox-item__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.inbox-item__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.inbox-item__head img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.inbox-item__title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.8px;
+    line-height: 150%;
+}
+
+.inbox-item__desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: #555555;
+    letter-spacing: -0.26px;
+    line-height: 150%;
+    margin: 0;
+}
+
+.inbox-item__time {
+    font-size: 13px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: -0.26px;
+    line-height: 150%;
+}
+
+.inbox-item__arrow {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    transform: rotate(-90deg);
+    opacity: 0.35;
+}
+
 .course-card-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -10814,6 +10923,7 @@ button.dropdown--ctx-item {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .course-list-page { padding: 40px 24px 80px; }
+    .inbox-page { padding: 40px 24px 80px; }
     .course-card-list { grid-template-columns: repeat(2, 1fr); }
     .bookmark-list { grid-template-columns: repeat(2, 1fr); }
     .bookmark-card { width: 100%; }
@@ -10821,6 +10931,9 @@ button.dropdown--ctx-item {
 @media (max-width: 768px) {
     .course-list-page { padding: 30px 20px 60px; }
     .course-list-page__title { font-size: 22px; letter-spacing: -1.1px; }
+    .inbox-page { padding: 30px 20px 60px; }
+    .inbox-page__title { font-size: 24px; letter-spacing: -1.2px; }
+    .inbox-item__title { font-size: 16px; letter-spacing: -0.64px; }
     .course-card-list { grid-template-columns: 1fr; }
     .bookmark-list { grid-template-columns: 1fr; }
     .bookmark-card__thumb { height: 130px; }
