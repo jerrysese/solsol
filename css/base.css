@@ -12279,11 +12279,12 @@ button.dropdown--ctx-item {
     text-align: center;
 }
 .course-detail-membership-card__name {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 700;
     color: #FFFFFF;
-    letter-spacing: -1.12px;
+    letter-spacing: -1.36px;
     line-height: 150%;
+    text-align: center;
 }
 .course-detail-membership-card__price {
     font-size: 32px;
