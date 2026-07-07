@@ -6213,8 +6213,13 @@ h2 {
     white-space: nowrap;
 }
 
-/* 프리미엄커뮤니티는 글자 수가 많아 리본 밴드에 들어가도록 축소 */
-.course-card__ribbon--premium span { font-size: 7px; letter-spacing: -0.3px; }
+/* 프리미엄커뮤니티는 글자 수가 많아, 밴드가 넓은 아래쪽으로 내려 배치 + 자간 축소 */
+.course-card__ribbon--premium span {
+    font-size: 10px;
+    letter-spacing: -0.4px;
+    top: 27px;
+    left: 4px;
+}
 
 
 /* =====================================================
@@ -12249,8 +12254,9 @@ button.dropdown--ctx-item {
 .course-detail-compose-list .product-card__info--live  { border-top-color: #FC5758; }
 .course-detail-compose-list .product-card__info--video { border-top-color: #31AD60; }
 
-/* 구성 카드 제목 — H4-Medium (18/500/#888/-0.72) */
-.course-detail-compose-list .bookmark-card__desc {
+/* 구성 카드 썸네일 안 문구 — H4-Medium (18/500/#888/-0.72) */
+.course-detail-compose-list .product-card__thumb-title,
+.course-detail-compose-list .product-card__thumb-desc {
     font-size: 18px;
     color: #888888;
     letter-spacing: -0.72px;
