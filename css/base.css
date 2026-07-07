@@ -12344,11 +12344,11 @@ button.dropdown--ctx-item {
 }
 
 .digital-compose-name {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
-    color: #333333;
-    letter-spacing: -0.6px;
-    line-height: 20px;
+    color: #555555;
+    letter-spacing: -0.52px;
+    line-height: 150%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
