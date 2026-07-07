@@ -10673,10 +10673,9 @@ button.dropdown--ctx-item {
 }
 
 .inbox-item__arrow {
-    width: 16px;
-    height: 8px;
+    width: 14px;
+    height: 28px;
     flex-shrink: 0;
-    transform: rotate(-90deg);
 }
 
 .course-card-list {
