@@ -12325,6 +12325,7 @@ button.dropdown--ctx-item {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px; /* review-wrap padding-top 30 + 20 = 상품후기와 50px */
 }
 
 .digital-compose-item {
