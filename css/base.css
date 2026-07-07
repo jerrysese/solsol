@@ -12301,6 +12301,59 @@ button.dropdown--ctx-item {
     text-align: center;
 }
 
+/* ===== 상품구성 — 자료실형 파일 리스트 (디지털상품 상세) ===== */
+.digital-compose-title {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 24px;
+    letter-spacing: -0.96px;
+}
+.digital-compose-count {
+    font-size: 13px;
+    font-weight: 400;
+    color: #555555;
+    letter-spacing: -0.26px;
+}
+
+.digital-compose-box {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    background: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.digital-compose-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 10px;
+    border-bottom: 1px dashed #DDDDDD;
+}
+.digital-compose-item:first-child { padding-top: 0; }
+.digital-compose-item:last-child { padding-bottom: 0; border-bottom: none; }
+
+.digital-compose-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.digital-compose-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: -0.6px;
+    line-height: 150%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /* ─── 상품소개 탭 ─── */
 .course-detail-intro {
     padding: 50px 20px;
