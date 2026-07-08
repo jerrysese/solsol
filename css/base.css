@@ -14377,3 +14377,375 @@ button.dropdown--ctx-item {
         width: 100%;
     }
 }
+
+/* ===== BUILDER TEMPLATE : LANDING FINANCE (재테크) ===== */
+
+/* 보라 버튼 (edu .bt-btn 초록 → 보라 변형) */
+.bt-btn--purple {
+    background: #7954C6;
+}
+
+/* --- A. HERO (좌측 정렬) --- */
+.btf-hero {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../src/images/investment-main-banner.png') no-repeat center center / auto 100%;
+}
+
+.btf-hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.btf-hero__title {
+    color: #FFFFFF;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -1.7px;
+}
+
+.btf-hero__desc {
+    width: 695px;
+    max-width: 100%;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.8px;
+}
+
+/* --- B. MIDDLE (이미지 좌 / 텍스트 우) --- */
+.btf-mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0;
+    background: #FFFFFF;
+}
+
+.btf-mid__inner {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.btf-mid__img {
+    flex: none;
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.btf-mid__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.btf-mid__title {
+    color: #333333;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.36px;
+}
+
+.btf-mid__desc {
+    margin-top: 20px;
+    color: #555555;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.btf-mid__btns {
+    margin-top: 30px;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* --- D. PRODUCTS (bookmark-card 가로형 변형) --- */
+.btf-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 150px;
+    background: #FFFFFF;
+}
+
+.btf-products__inner {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.btf-products .bookmark-card {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    width: auto;
+    align-items: stretch;
+}
+
+.btf-products .bookmark-card__thumb {
+    width: 336px;
+    flex-shrink: 0;
+    min-height: 0;
+}
+
+.btf-products .bookmark-card__info {
+    flex: 1;
+    min-width: 0;
+    border-top: none;
+    gap: 14px;
+}
+
+.btf-products .bookmark-card__price-area {
+    min-height: 0;
+    margin-top: auto;
+}
+
+/* --- E. SURVEY (행사 참석 여부) --- */
+.btf-survey {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0;
+    background: #F8F8F8;
+}
+
+.btf-survey__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1440px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.btf-survey__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.btf-survey__head-title {
+    color: #333333;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.8px;
+}
+
+.btf-survey__more {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555555;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.48px;
+}
+
+.btf-survey__title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.btf-survey__title {
+    color: #333333;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -1.7px;
+}
+
+.btf-survey__body {
+    color: #555555;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.btf-survey__fields {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.btf-survey__field {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.btf-survey__field-label {
+    color: #333333;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.btf-survey__field-desc {
+    margin-top: 4px;
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.56px;
+}
+
+.btf-survey__input {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px 9px;
+    border: 1px solid #DFE0E5;
+    border-radius: 4px;
+    background: #FFFFFF;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.56px;
+    box-sizing: border-box;
+}
+
+.btf-survey__input::placeholder {
+    color: #AAAAAA;
+}
+
+.btf-survey__submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    height: 50px;
+    border-radius: 5px;
+    background: #7954C6;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.68px;
+}
+
+.btf-survey__submit-arrow {
+    font-size: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .btf-hero__inner,
+    .btf-mid__inner,
+    .btf-products__inner,
+    .btf-survey__card {
+        box-sizing: border-box;
+    }
+    .btf-hero__inner,
+    .btf-mid__inner,
+    .btf-products__inner {
+        padding: 0 40px;
+    }
+    .btf-survey {
+        padding: 100px 40px;
+    }
+    .btf-mid,
+    .btf-products {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .btf-mid {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .btf-products {
+        padding-bottom: 100px;
+    }
+    .btf-mid__img {
+        width: 40%;
+        height: auto;
+        aspect-ratio: 600 / 350;
+    }
+}
+
+@media (max-width: 768px) {
+    .btf-hero {
+        height: 420px;
+    }
+    .btf-hero__inner,
+    .btf-mid__inner,
+    .btf-products__inner {
+        padding: 0 20px;
+    }
+    .btf-survey {
+        padding: 60px 20px;
+    }
+    .btf-hero__title,
+    .btf-mid__title,
+    .btf-survey__title {
+        font-size: 26px;
+        letter-spacing: -1.04px;
+    }
+    .btf-hero__desc {
+        font-size: 16px;
+        letter-spacing: -0.64px;
+    }
+    .btf-mid,
+    .btf-products {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .btf-mid__inner,
+    .btf-products__inner,
+    .btf-survey__fields {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .btf-mid__img {
+        width: 100%;
+    }
+    .btf-products .bookmark-card {
+        flex-direction: column;
+    }
+    .btf-products .bookmark-card__thumb {
+        width: 100%;
+        min-height: 130px;
+    }
+    .btf-survey__field {
+        align-self: stretch;
+    }
+}
