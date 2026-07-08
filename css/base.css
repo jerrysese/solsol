@@ -14188,7 +14188,8 @@ button.dropdown--ctx-item {
 }
 
 .bt-titlesec__title {
-    flex: 1;
+    flex: none;
+    width: 600px;
     color: #333333;
     font-size: 34px;
     font-weight: 700;
@@ -14378,5 +14379,8 @@ button.dropdown--ctx-item {
     .bt-boards__inner {
         flex-direction: column;
         gap: 40px;
+    }
+    .bt-titlesec__title {
+        width: 100%;
     }
 }
