@@ -14653,14 +14653,15 @@ button.dropdown--ctx-item {
     border-radius: 4px;
     background: #FFFFFF;
     color: #333333;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.56px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.52px;
     box-sizing: border-box;
 }
 
 .btf-survey__input::placeholder {
-    color: #AAAAAA;
+    color: #BBBBBB;
 }
 
 .btf-survey__submit {
