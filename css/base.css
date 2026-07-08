@@ -14484,3 +14484,343 @@ button.dropdown--ctx-item {
     .videoview-tabs { width: 76px; padding: 20px 0; }
     .videoview-tab { font-size: 12px; }
 }
+
+/* ===== BUILDER TEMPLATE : LANDING EDU ===== */
+.bt-landing {
+    width: 100%;
+}
+
+/* --- 공통 버튼 (150x50 초록) --- */
+.bt-btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bt-btn {
+    display: flex;
+    width: 150px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: #31AD60;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.bt-btn img {
+    width: 10px;
+    height: 9px;
+    display: block;
+}
+
+/* --- A. HERO BANNER --- */
+.bt-hero {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../src/images/edu-main-banner.png') center / cover no-repeat;
+}
+
+.bt-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.bt-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bt-hero__title {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -1.7px;
+}
+
+.bt-hero__desc {
+    margin-top: 40px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.8px;
+}
+
+.bt-hero .bt-btn-row {
+    margin-top: 50px;
+}
+
+/* --- B. MIDDLE BANNER --- */
+.bt-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0;
+    background: #FFFFFF;
+}
+
+.bt-banner__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bt-banner__title {
+    color: #333333;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.36px;
+}
+
+.bt-banner__img {
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.bt-banner__desc {
+    margin-top: 40px;
+    color: #555555;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.bt-banner .bt-btn-row {
+    margin-top: 40px;
+}
+
+/* --- C. TITLE & DESCRIPTION --- */
+.bt-titlesec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0;
+    background: #F8FAF6;
+}
+
+.bt-titlesec__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bt-titlesec__title {
+    flex: 1;
+    color: #333333;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.36px;
+}
+
+.bt-titlesec__desc {
+    flex: 1;
+    color: #555555;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+/* --- D. BOARD LISTS --- */
+.bt-boards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0;
+    background: #FFFFFF;
+}
+
+.bt-boards__inner {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bt-board {
+    flex: 1;
+    min-width: 0;
+}
+
+.bt-board__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.bt-board__name {
+    color: #333333;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.8px;
+}
+
+.bt-board__more {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #888888;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.bt-board__more-arrow {
+    font-size: 14px;
+}
+
+.bt-board__item {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.bt-board__item-title {
+    overflow: hidden;
+    color: #333333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.bt-board__item-date {
+    flex: none;
+    color: #999999;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+/* --- E. MAP --- */
+.bt-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 150px;
+    background: #FFFFFF;
+}
+
+.bt-map__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bt-map__img {
+    display: block;
+    width: 100%;
+}
+
+.bt-map__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.bt-map__info p {
+    color: #555555;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .bt-hero__inner,
+    .bt-banner__inner,
+    .bt-titlesec__inner,
+    .bt-boards__inner,
+    .bt-map__inner {
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+    .bt-banner,
+    .bt-titlesec,
+    .bt-boards {
+        padding: 100px 0;
+    }
+    .bt-map {
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bt-hero {
+        height: 420px;
+    }
+    .bt-hero__title,
+    .bt-banner__title,
+    .bt-titlesec__title {
+        font-size: 26px;
+        letter-spacing: -1.04px;
+    }
+    .bt-hero__desc {
+        font-size: 16px;
+        letter-spacing: -0.64px;
+    }
+    .bt-hero__inner,
+    .bt-banner__inner,
+    .bt-titlesec__inner,
+    .bt-boards__inner,
+    .bt-map__inner {
+        padding: 0 20px;
+    }
+    .bt-banner,
+    .bt-titlesec,
+    .bt-boards {
+        padding: 60px 0;
+    }
+    .bt-map {
+        padding-bottom: 60px;
+    }
+    .bt-titlesec__inner,
+    .bt-boards__inner {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
