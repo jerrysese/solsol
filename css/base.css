@@ -14527,14 +14527,7 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../src/images/edu-main-banner.png') center / cover no-repeat;
-}
-
-.bt-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.15);
+    background: url('../src/images/edu-main-banner.png') no-repeat center center / auto 100%;
 }
 
 .bt-hero__inner {
