@@ -14925,6 +14925,11 @@ button.dropdown--ctx-item {
     gap: 10px;
 }
 
+/* 중단 → 게시판 간격 150 (중단 padding-bottom 150 + 게시판 top 0) */
+.btf-mid + .bt-boards {
+    padding-top: 0;
+}
+
 /* --- D. PRODUCTS (bookmark-card 가로형 변형) --- */
 .btf-products {
     display: flex;
@@ -14944,13 +14949,14 @@ button.dropdown--ctx-item {
 .btf-products .bookmark-card {
     flex: 1;
     min-width: 0;
+    height: 195px;
     flex-direction: row;
     width: auto;
     align-items: stretch;
 }
 
 .btf-products .bookmark-card__thumb {
-    width: 336px;
+    width: 345px;
     flex-shrink: 0;
     min-height: 0;
 }
@@ -14959,7 +14965,14 @@ button.dropdown--ctx-item {
     flex: 1;
     min-width: 0;
     border-top: none;
-    gap: 14px;
+    gap: 6px;
+    padding: 16px 20px;
+    overflow: hidden;
+}
+
+.btf-products .bookmark-card__desc {
+    -webkit-line-clamp: 1;
+    margin-top: 0;
 }
 
 .btf-products .bookmark-card__price-area {
@@ -15037,10 +15050,10 @@ button.dropdown--ctx-item {
 .btf-survey__body {
     color: #555555;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 150%;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.8px;
 }
 
 .btf-survey__fields {
@@ -15055,11 +15068,12 @@ button.dropdown--ctx-item {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .btf-survey__field-label {
     color: #333333;
+    text-align: center;
     font-size: 15px;
     font-weight: 700;
     line-height: 150%;
@@ -15069,6 +15083,7 @@ button.dropdown--ctx-item {
 .btf-survey__field-desc {
     margin-top: 4px;
     color: #999999;
+    text-align: center;
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
@@ -15076,7 +15091,7 @@ button.dropdown--ctx-item {
 }
 
 .btf-survey__input {
-    margin-top: 10px;
+    margin-top: 20px;
     width: 100%;
     height: 40px;
     padding: 10px 15px 9px;
