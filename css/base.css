@@ -15013,10 +15013,10 @@ button.dropdown--ctx-item {
 
 .btf-survey__head-title {
     color: #333333;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 500;
     line-height: 150%;
-    letter-spacing: -0.8px;
+    letter-spacing: -0.96px;
 }
 
 .btf-survey__more {
