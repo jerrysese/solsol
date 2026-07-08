@@ -14317,6 +14317,7 @@ button.dropdown--ctx-item {
 }
 
 .bt-map__info p {
+    width: fit-content;
     color: #555555;
     font-size: 18px;
     font-weight: 500;
