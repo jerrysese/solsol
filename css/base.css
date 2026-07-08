@@ -14507,10 +14507,11 @@ button.dropdown--ctx-item {
     border-radius: 5px;
     background: #31AD60;
     color: #FFFFFF;
-    font-size: 15px;
+    text-align: center;
+    font-size: 17px;
     font-weight: 500;
-    line-height: 150%;
-    letter-spacing: -0.6px;
+    line-height: normal;
+    letter-spacing: -1px;
 }
 
 .bt-btn img {
@@ -14691,15 +14692,15 @@ button.dropdown--ctx-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #888888;
-    font-size: 15px;
-    font-weight: 400;
+    color: #555555;
+    font-size: 12px;
+    font-weight: 500;
     line-height: 150%;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.48px;
 }
 
 .bt-board__more-arrow {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .bt-board__item {
@@ -14763,10 +14764,10 @@ button.dropdown--ctx-item {
 
 .bt-map__info p {
     color: #555555;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 150%;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.72px;
 }
 
 /* ===== RESPONSIVE ===== */
