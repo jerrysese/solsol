@@ -14061,10 +14061,11 @@ button.dropdown--ctx-item {
     border-radius: 5px;
     background: #31AD60;
     color: #FFFFFF;
-    font-size: 15px;
+    text-align: center;
+    font-size: 17px;
     font-weight: 500;
-    line-height: 150%;
-    letter-spacing: -0.6px;
+    line-height: normal;
+    letter-spacing: -1px;
 }
 
 .bt-btn img {
