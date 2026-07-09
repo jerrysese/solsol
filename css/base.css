@@ -16341,17 +16341,18 @@ button.dropdown--ctx-item {
 }
 
 /* 섹션 그룹 구분 + 라벨 (디자인 시작 지점 = 1440 컨테이너 좌측에 정렬) */
-.bs-group {
-    border-top: 1px dashed #E0E0E0;
+/* 섹션(그룹) 사이 거리 150 */
+.bs-group:not(:first-child) {
+    margin-top: 150px;
 }
-.bs-group:first-child {
-    border-top: none;
-}
-.bs-group__head {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
+.bs-group:first-child .bs-group__head {
     padding-top: 30px;
+}
+/* 라벨 : 1920 블럭 시작 지점에 정렬 + 블럭과 5px 간격 */
+.bs-group__head {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-bottom: 5px;
     box-sizing: border-box;
 }
 .bs-label {
