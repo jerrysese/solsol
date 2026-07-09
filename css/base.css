@@ -14819,7 +14819,7 @@ button.dropdown--ctx-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 150px 0 0;
+    padding: 150px 0;
     background: #FFFFFF;
 }
 
@@ -14871,8 +14871,10 @@ button.dropdown--ctx-item {
 
 .bth-review__thumb {
     flex-shrink: 0;
-    width: 260px;
-    min-height: 195px;
+    width: 345px;
+    height: 195px;
+    min-height: 0;
+    padding: 10px;
     border-radius: 10px;
 }
 
