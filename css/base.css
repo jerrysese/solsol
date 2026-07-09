@@ -14488,6 +14488,7 @@ button.dropdown--ctx-item {
 /* ===== BUILDER TEMPLATE : LANDING EDU ===== */
 .bt-landing {
     width: 100%;
+    overflow-x: hidden;
 }
 
 /* --- 공통 버튼 (150x50 초록) --- */
@@ -14746,7 +14747,10 @@ button.dropdown--ctx-item {
 
 .bt-map__img {
     display: block;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    height: 450px;
+    object-fit: cover;
 }
 
 .bt-map__info {
