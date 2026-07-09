@@ -14732,6 +14732,7 @@ button.dropdown--ctx-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
     padding-bottom: 150px;
     background: #FFFFFF;
 }
@@ -14747,8 +14748,7 @@ button.dropdown--ctx-item {
 
 .bt-map__img {
     display: block;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: 100%;
     height: 450px;
     object-fit: cover;
 }
@@ -15984,6 +15984,10 @@ button.dropdown--ctx-item {
 }
 .btb-landing .bth-products.btb-products {
     padding: 0 0 150px;
+}
+/* 하단 상품 4칸 : 썸네일을 상단 슬라이더 카드와 동일한 표준 높이(195)로 */
+.btb-landing .bth-products .bookmark-card__thumb {
+    min-height: 195px;
 }
 
 /* 상품후기 : 긴 본문 전체 노출 + 별점→작성자 30px */
