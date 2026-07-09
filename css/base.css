@@ -14769,3 +14769,318 @@ button.dropdown--ctx-item {
         align-self: stretch;
     }
 }
+
+/* ===== BUILDER TEMPLATE : LANDING HEALTH (건강) ===== */
+
+/* 파랑 버튼 변형 + 와이드(300) */
+.bt-btn--blue { background: #2BACF4; }
+.bt-btn--w300 { width: 300px; }
+
+/* --- A. HERO (중앙 정렬) --- */
+.bth-hero {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../src/images/health-main-banner.png') no-repeat center center / auto 100%;
+}
+
+.bth-hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bth-hero__title {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -1.7px;
+}
+
+.bth-hero__desc {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.8px;
+}
+
+/* --- B. PRODUCTS (3칸 / 가로 확장) --- */
+.bth-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0 0;
+    background: #FFFFFF;
+}
+
+.bth-products__inner {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bth-products .bookmark-card {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+}
+
+.bth-products .bookmark-card__thumb {
+    min-height: 263px;
+}
+
+/* --- C. TITLE & DESC (꾸준함, 파랑 배경) --- */
+.bt-titlesec--health {
+    background: #F5F8FF;
+}
+
+/* --- D. PRODUCT REVIEWS (상품후기) --- */
+.bth-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 150px;
+    background: #FFFFFF;
+}
+
+.bth-reviews__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bth-review {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.bth-review__thumb {
+    flex-shrink: 0;
+    width: 260px;
+    min-height: 195px;
+    border-radius: 10px;
+}
+
+.bth-review__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bth-review__type {
+    color: #BBBBBB;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.bth-review__title {
+    color: #333333;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.bth-review__rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bth-review__stars {
+    display: flex;
+    gap: 2px;
+}
+
+.bth-review__stars img {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.bth-review__score {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.56px;
+}
+
+.bth-review__author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bth-review__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.bth-review__name {
+    color: #222222;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.28px;
+}
+
+.bth-review__date {
+    color: #AAAAAA;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.24px;
+}
+
+.bth-review__text {
+    color: #555555;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: -0.26px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* --- E. 몸과 마음의 균형 --- */
+.bth-mind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 150px;
+    background: #FFFFFF;
+}
+
+.bth-mind__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bth-mind__title {
+    color: #333333;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.36px;
+}
+
+.bth-mind__desc {
+    margin-top: 20px;
+    color: #555555;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+
+.bth-mind__img {
+    margin-top: 20px;
+    width: 100%;
+    display: block;
+}
+
+.bth-mind__btns {
+    margin-top: 20px;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+/* --- F. BOARD : 상단 간격 제거 (몸과마음 pb150로 150 확보) --- */
+.bth-mind + .bt-boards.bth-boards {
+    padding-top: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .bth-hero__inner,
+    .bth-products__inner,
+    .bth-reviews__inner,
+    .bth-mind__inner {
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+    .bth-products {
+        padding-top: 100px;
+    }
+    .bth-reviews,
+    .bth-mind {
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bth-hero {
+        height: 420px;
+    }
+    .bth-hero__inner,
+    .bth-products__inner,
+    .bth-reviews__inner,
+    .bth-mind__inner {
+        padding: 0 20px;
+    }
+    .bth-hero__title,
+    .bth-mind__title {
+        font-size: 26px;
+        letter-spacing: -1.04px;
+    }
+    .bth-hero__desc {
+        font-size: 16px;
+        letter-spacing: -0.64px;
+    }
+    .bt-btn--w300 {
+        width: 100%;
+        max-width: 300px;
+    }
+    .bth-products {
+        padding-top: 60px;
+    }
+    .bth-reviews,
+    .bth-mind {
+        padding-bottom: 60px;
+    }
+    .bth-products__inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .bth-review {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .bth-review__thumb {
+        width: 100%;
+    }
+    .bth-mind__btns {
+        justify-content: center;
+    }
+}
