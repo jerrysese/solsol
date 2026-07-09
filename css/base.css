@@ -16000,3 +16000,210 @@ button.dropdown--ctx-item {
 .btb-landing .bth-review__author {
     margin-top: 22px;
 }
+
+/* ===== BUILDER TEMPLATE : INTRO BASIC (소개 기본) ===== */
+
+/* --- A. INTRO (상단 타이틀 + 설명, 중앙 정렬) --- */
+.bti-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0;
+    background: #FFFFFF;
+}
+
+.bti-intro__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bti-intro__title {
+    color: #333333;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.36px;
+}
+
+.bti-intro__desc {
+    margin-top: 40px;
+    color: #555555;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 180%;
+    letter-spacing: -0.68px;
+}
+
+/* --- B. MIDDLE (이미지 좌 / 텍스트 우) --- */
+.bti-mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 150px;
+    background: #FFFFFF;
+}
+
+.bti-mid__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bti-mid__img {
+    flex: none;
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.bti-mid__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bti-mid__title {
+    color: #333333;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.36px;
+}
+
+.bti-mid__desc {
+    margin-top: 20px;
+    color: #555555;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 180%;
+    letter-spacing: -0.6px;
+}
+
+.bti-mid__btns {
+    margin-top: 30px;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* --- C. VISUAL (전폭 이미지, 높이 고정 800) --- */
+.bti-visual {
+    width: 100%;
+}
+
+.bti-visual__img {
+    display: block;
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+/* --- D. TEXT & IMAGE (하단 타이틀 + 설명 + 전폭 이미지) --- */
+.bti-textimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0;
+    background: #FFFFFF;
+}
+
+.bti-textimg__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.bti-textimg__title {
+    color: #333333;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.36px;
+}
+
+.bti-textimg__desc {
+    margin-top: 20px;
+    color: #555555;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 180%;
+    letter-spacing: -0.6px;
+}
+
+.bti-textimg__img {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .bti-intro__inner,
+    .bti-mid__inner,
+    .bti-textimg__inner {
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+    .bti-intro,
+    .bti-textimg {
+        padding: 100px 0;
+    }
+    .bti-mid {
+        padding-bottom: 100px;
+    }
+    .bti-mid__img {
+        width: 40%;
+        height: auto;
+        aspect-ratio: 600 / 350;
+    }
+    .bti-visual__img {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bti-intro__inner,
+    .bti-mid__inner,
+    .bti-textimg__inner {
+        padding: 0 20px;
+    }
+    .bti-intro,
+    .bti-textimg {
+        padding: 60px 0;
+    }
+    .bti-mid {
+        padding-bottom: 60px;
+    }
+    .bti-intro__title,
+    .bti-mid__title,
+    .bti-textimg__title {
+        font-size: 26px;
+        letter-spacing: -1.04px;
+    }
+    .bti-intro__desc {
+        font-size: 15px;
+        letter-spacing: -0.6px;
+    }
+    .bti-mid__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .bti-mid__img {
+        width: 100%;
+    }
+    .bti-visual__img {
+        height: 320px;
+    }
+}
