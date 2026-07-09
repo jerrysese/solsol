@@ -16401,6 +16401,11 @@ button.dropdown--ctx-item {
     padding-top: 150px;
 }
 
+/* 상품리스트 4번째 블럭(슬라이더) : 하단 150 추가 (기본 padding 150 0 0 → 150 0) */
+.bs-page .btc-slider-block {
+    padding-bottom: 150px;
+}
+
 /* 상품리스트 정적 4단 : 썸네일 표준 높이 195 */
 .bs-products-4 .bookmark-card__thumb {
     min-height: 195px;
