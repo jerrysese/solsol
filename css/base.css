@@ -14564,7 +14564,7 @@ button.dropdown--ctx-item {
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
-    padding-bottom: 0;
+    padding-bottom: 20px;
     border-bottom: 1px solid #EEEEEE;
 }
 
@@ -14591,7 +14591,8 @@ button.dropdown--ctx-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+    padding-bottom: 20px;
     align-self: stretch;
 }
 
