@@ -16500,6 +16500,17 @@ button.dropdown--ctx-item {
     margin-top: 30px;
 }
 
+/* 배너 변형4(bti-textimg--banner) : 제목-설명-이미지-버튼 내부 간격 모두 20 (스펙) */
+.bs-page .bti-textimg--banner .bti-textimg__desc {
+    margin-top: 20px;
+}
+.bs-page .bti-textimg--banner .bti-textimg__img {
+    margin-top: 20px;
+}
+.bs-page .bti-textimg--banner .bs-btn-right {
+    margin-top: 20px;
+}
+
 /* ===== BUILDER SECTION SHOWCASE : RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .bs-hero__inner {
