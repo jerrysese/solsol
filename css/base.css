@@ -16266,3 +16266,43 @@ button.dropdown--ctx-item {
     line-height: 150%;
     letter-spacing: -0.6px;
 }
+
+/* ===== BUILDER TEMPLATE : INTRO HEALTH (소개 건강) ===== */
+/* 재사용: bt-hero(히어로)/btf-mid(텍스트·이미지 교차)/bt-map(지도) + bih-list(불릿 리스트) */
+
+/* A. 히어로 배경 이미지 교체 (bt-hero 구조/폰트 재사용) */
+.bih-hero {
+    background-image: url('../src/images/intro-health-banner.png');
+}
+
+/* 섹션 간격 : 각 블록 top 150 / bottom 0 로 통일 (블록 간 항상 150) */
+.bih-landing .btf-mid {
+    padding: 150px 0 0;
+}
+.bih-landing .bt-map {
+    padding-top: 150px;
+}
+
+/* 본문 불릿 리스트 */
+.bih-list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+.bih-list li {
+    position: relative;
+    padding-left: 14px;
+    color: #555555;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+.bih-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
