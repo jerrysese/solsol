@@ -15950,3 +15950,43 @@ button.dropdown--ctx-item {
         height: 380px;
     }
 }
+
+/* ===== BUILDER TEMPLATE : LANDING BASIC (기본, 기존 요소 조합) ===== */
+
+/* 히어로 배경만 교체 (edu .bt-hero 구조/폰트 재사용) */
+.btb-hero {
+    background-image: url('../src/images/basic-main-banner.png');
+}
+
+/* 블럭 간 간격 항상 150px : 각 섹션 top 150 / 이전 섹션 bottom 0 (회색 설문은 상하 150, 마지막 상품 top 0) */
+.btb-landing .bt-titlesec {
+    padding: 150px 0 0;
+    background: #FFFFFF;
+}
+.btb-landing .btc-slider-block {
+    padding: 150px 0 0;
+}
+.btb-landing .bt-boards {
+    padding: 150px 0 0;
+}
+.btb-landing .bt-map {
+    padding: 150px 0 0;
+}
+.btb-landing .bth-reviews {
+    padding: 150px 0 0;
+}
+.btb-landing .btf-survey {
+    padding: 150px 0;
+}
+.btb-landing .bth-products.btb-products {
+    padding: 0 0 150px;
+}
+
+/* 상품후기 : 긴 본문 전체 노출 + 별점→작성자 30px */
+.btb-landing .bth-review__text {
+    display: block;
+    -webkit-line-clamp: unset;
+}
+.btb-landing .bth-review__author {
+    margin-top: 22px;
+}
