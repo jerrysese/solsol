@@ -16095,14 +16095,17 @@ button.dropdown--ctx-item {
     gap: 10px;
 }
 
-/* --- C. VISUAL (전폭 이미지, 높이 고정 800) --- */
+/* --- C. VISUAL (전폭 이미지, 높이 고정 800, 디자인 기준 1920 캡) --- */
 .bti-visual {
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
 
 .bti-visual__img {
     display: block;
     width: 100%;
+    max-width: 1920px;
     height: 800px;
     object-fit: cover;
 }
