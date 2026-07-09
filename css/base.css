@@ -16366,11 +16366,14 @@ button.dropdown--ctx-item {
     letter-spacing: -0.56px;
 }
 
-/* 섹션 내부 : 각 블럭 고유 상하 패딩(150) 유지 + 블럭간 30 */
-.bs-group__body {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+/* 섹션 내부 : 모든 블럭 max-width 1920 중앙정렬(풀폭 금지) + 블럭간 30 + 블럭 고유 상하패딩 150 유지 */
+.bs-group__body > section {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bs-group__body > section:not(:first-child) {
+    margin-top: 30px;
 }
 
 /* 텍스트 섹션 : 흰 배경 유지 (bt-titlesec 기본 연녹색 → 흰색) */
@@ -16409,7 +16412,6 @@ button.dropdown--ctx-item {
 /* 메인이미지 히어로 (배경 이미지 + 텍스트 오버레이, 디자인 폭 1920 제한) */
 .bs-hero {
     height: 500px;
-    width: 100%;
     max-width: 1920px;
     margin: 0 auto;
     display: flex;
