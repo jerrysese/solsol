@@ -16365,16 +16365,11 @@ button.dropdown--ctx-item {
     letter-spacing: -0.56px;
 }
 
-/* 섹션 내부 : 상하 150 / 블럭간 30 */
+/* 섹션 내부 : 각 블럭 고유 상하 패딩(150) 유지 + 블럭간 30 */
 .bs-group__body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 150px 0;
-}
-.bs-group__body > section {
-    padding-top: 0;
-    padding-bottom: 0;
 }
 
 /* 텍스트 섹션 : 흰 배경 유지 (bt-titlesec 기본 연녹색 → 흰색) */
@@ -16488,8 +16483,5 @@ button.dropdown--ctx-item {
     .bs-group__head {
         padding-left: 20px;
         padding-right: 20px;
-    }
-    .bs-group__body {
-        padding: 80px 0;
     }
 }
