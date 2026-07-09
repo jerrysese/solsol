@@ -14976,6 +14976,9 @@ button.dropdown--ctx-item {
 }
 
 .btf-products .bookmark-card__price-area {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 11px;
     min-height: 0;
     margin-top: auto;
 }
