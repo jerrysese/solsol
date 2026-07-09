@@ -16306,3 +16306,29 @@ button.dropdown--ctx-item {
     left: 0;
     top: 0;
 }
+
+/* ===== BUILDER TEMPLATE : INTRO COSMETIC (소개 화장품) ===== */
+/* 재사용: bti-textimg(타이틀+본문)/bt-banner(중앙타이틀+전폭배너+본문)/btf-mid(텍스트·이미지 교차)/bti-visual(전폭) */
+
+/* 섹션 간격 : 각 블록 top 150 / bottom 0 통일 (블록 간 항상 150) */
+.bic-landing .bti-textimg,
+.bic-landing .bt-banner,
+.bic-landing .btf-mid {
+    padding: 150px 0 0;
+}
+.bic-landing .bti-visual {
+    padding-top: 150px;
+}
+/* 마지막 섹션 하단 여백 */
+.bic-landing > section:last-child {
+    padding-bottom: 150px;
+}
+
+/* B. 중앙 타이틀 배너 : 본문 좌측 정렬 + 배너 이미지 라운드 */
+.bic-landing .bt-banner__desc {
+    width: 100%;
+    text-align: left;
+}
+.bic-landing .bt-banner__img {
+    border-radius: 12px;
+}
