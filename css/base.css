@@ -16228,3 +16228,34 @@ button.dropdown--ctx-item {
 .bie-landing .bt-map {
     padding-top: 150px;
 }
+
+/* ===== BUILDER TEMPLATE : INTRO FINANCE (소개 재테크) ===== */
+/* 재사용: bt-hero(히어로 중앙정렬)/bti-textimg(타이틀+본문+전폭이미지)/bti-visual(전폭)/bt-map(지도)/bti-intro(회색 마무리) */
+
+/* A. 히어로 배경 이미지 교체 (bt-hero 구조/폰트 재사용) */
+.bif-hero {
+    background-image: url('../src/images/intro-finance-banner.png');
+}
+
+/* 섹션 간격 : 각 블록 top 150 / bottom 0 로 통일 (블록 간 항상 150) */
+.bif-landing .bti-textimg {
+    padding: 150px 0 0;
+}
+.bif-landing .bti-visual {
+    padding-top: 150px;
+}
+.bif-landing .bt-map {
+    padding-top: 150px;
+}
+
+/* B. 버튼 우측 정렬 (이미지 아래) */
+.bif-btn-right {
+    align-self: flex-end;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+/* F. 하단 마무리 : 회색 배경 (bti-intro 기본 흰색 → 회색) */
+.bif-intro {
+    background: #F8F8F8;
+}
