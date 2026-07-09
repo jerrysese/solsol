@@ -16337,6 +16337,7 @@ button.dropdown--ctx-item {
 .bs-page {
     width: 100%;
     overflow-x: hidden;
+    background: #F5F5F5;
 }
 
 /* 섹션 그룹 구분 + 라벨 (디자인 시작 지점 = 1440 컨테이너 좌측에 정렬) */
