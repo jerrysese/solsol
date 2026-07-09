@@ -16259,3 +16259,10 @@ button.dropdown--ctx-item {
 .bif-intro {
     background: #F8F8F8;
 }
+
+/* F. 하단 마무리 본문 : H5-Medium 스펙 (15px / 150% / -0.6px) */
+.bif-intro .bti-intro__desc {
+    font-size: 15px;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
