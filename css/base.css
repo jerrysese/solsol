@@ -16511,6 +16511,11 @@ button.dropdown--ctx-item {
     margin-top: 20px;
 }
 
+/* 지도(bt-map) : base에 padding-top 없음 → 상단 150 보강(블럭 상하 패딩 150) */
+.bs-page .bt-map {
+    padding-top: 150px;
+}
+
 /* ===== BUILDER SECTION SHOWCASE : RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .bs-hero__inner {
