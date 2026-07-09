@@ -16411,13 +16411,30 @@ button.dropdown--ctx-item {
     min-height: 195px;
 }
 
-/* 배너(이미지+텍스트) : 텍스트 높이에 이미지 상하 라인 맞춤 */
+/* 배너(이미지+텍스트) : 썸네일 하단 라인을 텍스트(버튼) 하단에 정확히 맞춤.
+   figure 래퍼(내부 img는 absolute)로 이미지가 고유 비율 높이를 행에 강제하지 않게 하여,
+   행 높이를 텍스트 컬럼이 결정 → 썸네일 하단 = 버튼 하단 */
 .bs-page .btf-mid__inner {
     align-items: stretch;
 }
-.bs-page .btf-mid__img {
-    height: auto;
+.bs-page .btf-mid__figure {
+    flex: none;
+    width: 600px;
     align-self: stretch;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.bs-page .btf-mid__figure .btf-mid__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+/* 타이틀-설명 간격 30 (스펙) */
+.bs-page .btf-mid__desc {
+    margin-top: 30px;
 }
 
 /* 메인이미지 히어로 (배경 이미지 + 텍스트 오버레이, 디자인 폭 1920 제한) */
