@@ -16516,6 +16516,23 @@ button.dropdown--ctx-item {
     padding-top: 150px;
 }
 
+/* 상품후기(bth-reviews) : base에 padding-top 없음 → 상단 150 보강 */
+.bs-page .bth-reviews {
+    padding-top: 150px;
+}
+
+/* 상품후기 : 후기 제목·본문 라인클램프 해제(쇼케이스는 전체 텍스트 노출) */
+.bs-page .bth-review__title,
+.bs-page .bth-review__text,
+.bs-page .btc-review__title,
+.bs-page .btc-review__text {
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: horizontal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
 /* ===== BUILDER SECTION SHOWCASE : RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .bs-hero__inner {
