@@ -16396,12 +16396,9 @@ button.dropdown--ctx-item {
     letter-spacing: -0.6px;
 }
 
-/* 상품리스트 1번째 블럭(2단 가로형) : 블럭 상하패딩 150 + 콘텐츠 폭 1920 */
+/* 상품리스트 1번째 블럭(2단 가로형) : 블럭 상하패딩 150만 조절 (카드 폭 1440 유지) */
 .bs-page .btf-products {
     padding-top: 150px;
-}
-.bs-page .btf-products__inner {
-    max-width: 1920px;
 }
 
 /* 상품리스트 정적 4단 : 썸네일 표준 높이 195 */
